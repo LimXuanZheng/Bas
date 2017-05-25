@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Login Page</title>
+		<script src="Js/signup.js"></script>
+		<link rel="stylesheet" type="text/css" href="Css/Sign n log css/LoginCSS.css"/>
+		<link href="https://fonts.googleapis.com/css?family=Fontdiner+Swanky|Indie+Flower|Lobster+Two|Milonga|Playball" rel="stylesheet">
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+	<link rel="stylesheet" href="Css/NavBar.css" />
+	<script src="Js/nav.js"></script>
+	<style>
+		body {
+			position: fixed;
+			background: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/footer_lodyas.png);
+			-webkit-animation: 100s scroll infinite linear;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		@-webkit-keyframes scroll {
+			100% {
+				background-position: 0px -3000px;
+			}
+		}
+		
+		h1 {
+			background-color: #FF3838;
+			box-shadow:0px 0px 20px rgba(0, 0, 0, 0.7);
+			padding: 30px 20px;
+			color: white;
+			font-size: 1.2em;
+			font-weight: 600;
+			border-radius: 10px 10px 0 0;
+			width:150%;
+			
+		}
+	</style>
+	
+	
+	</head>
+	
+	<body>
+		
+		<div id="Login">
+
+		<h1>NYP Nest - Login</h1>
+		
+		<form onsubmit="return false;">
+			
+			<label for="text"><img src="http://image.flaticon.com/icons/png/128/64/64096.png" style="width:20px; height:20px;"/>&nbsp;&nbsp;Username <span>*</span></label>
+			<br/>
+			<input type="username" id="userName" name="username" required/>
+			<div id="Characters">At least 6 characters.</div>
+			
+			<br/>
+			
+			<label for="password"><img src="http://icons.iconarchive.com/icons/icons8/windows-8/128/Security-Password-2-icon.png" style="width:20px; height:20px;"/>&nbsp;&nbsp;&nbsp;Password <span>*</span></label>
+			<br/>
+			<input type="password" id="passWord" name="password" required/>
+			<div id="Info">Use upper and lowercase letters as well.</div>
+		
+			<br/>
+			<div style="text-align:center;">
+			<button onclick="hahaha()">Login</button>
+			</div>
+			
+			<footer>Don't have an account? <a href="Signup.html" action ="get">Sign up</a></footer>	
+		</form>
+
+		</div>
+				
+	</body>
+</html>
