@@ -1,0 +1,55 @@
+@CHARSET "UTF-8";
+
+*{
+	padding: 0px;
+	margin: 0px;
+}
+
+/* Top Bar */
+#Top-Container{
+	height: 400px;
+	background-color: red;
+}
+
+#Top-Center-Container{
+	position: relative;
+	top: 30%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	border: 1px solid blue;
+}
+
+#welcomeText{
+	color: white;
+	font-size: 36px;
+	font-weight: bold;
+}
+
+#loginBtn{
+	width: 100px;
+}
+
+/* Bottom Part */
+#Bot-Container{
+	height: 100%;
+	min-height: 400px;
+	background-color: rgba(0,0,255,0.2);
+	text-align: center;
+}
+
+#Bot-Container-Container{
+	height: 100%;
+	margin: 20px;
+}
+
+.row{
+	background-color: yellow;
+}
+
+.col-md-2{
+	margin: 30px 60px;
+	padding: 40px;
+	border-radius: 10px;
+	background-color: green;
+}
