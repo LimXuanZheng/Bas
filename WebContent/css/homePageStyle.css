@@ -6,9 +6,16 @@
 }
 
 /* Top Bar */
+#Top-Container-Background{
+	background-image: url(../images/landmark-bridge-cliff-california.jpeg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	padding: 0px;
+}
+
 #Top-Container{
 	height: 400px;
-	background-color: red;
+	background-color: rgba(149,117,205,0.7);
 }
 
 #Top-Center-Container{
@@ -17,7 +24,6 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 	text-align: center;
-	border: 1px solid blue;
 }
 
 #welcomeText{
@@ -27,14 +33,15 @@
 }
 
 #loginBtn{
-	width: 100px;
+	width: 150px;
+	min-width: 150px;
 }
 
 /* Bottom Part */
 #Bot-Container{
 	height: 100%;
 	min-height: 400px;
-	background-color: rgba(0,0,255,0.2);
+	background-color: white;
 	text-align: center;
 }
 
@@ -44,12 +51,14 @@
 }
 
 .row{
-	background-color: yellow;
+	background-color: #EDE7F6;
+	border-radius: 5px;
 }
 
 .col-md-2{
 	margin: 30px 60px;
 	padding: 40px;
 	border-radius: 10px;
-	background-color: green;
+	background-color: #B39DDB;
+	color: white;
 }
