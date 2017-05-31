@@ -31,7 +31,17 @@
 			</nav>
 			<div id="Container-Container">
 				<div class="container-fluid" id="Left-Container">
-					<h2>BOXES!!!!</h2>
+					<form action="Directory" method="POST">
+						<input type="text" name="search" id="searchBox" placeholder="Name">
+						<select name="class">
+							<option value="1E1">1E1</option>
+							<option value="1E2">1E2</option>
+							<option value="1E3">1E3</option>
+							<option value="1E4">1E4</option>
+							<option value="1E5">1E5</option>
+						</select>
+						<input type="submit" name="submit">
+					</form>
 				</div>
 				<div class="container-fluid" id="Right-Container">
 					<table class="table table-striped">
