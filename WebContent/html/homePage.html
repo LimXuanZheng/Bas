@@ -11,6 +11,46 @@
 		<!-- Optional theme -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 		<title>Home Pages</title>
+		<!-- My Own Script -->
+		<script>
+			var open = false;
+			function animate(){
+				var div = document.getElementById("notificationTab"); 
+				var badge = document.getElementById("notificationBadge"); 
+				
+				if(open == false){
+					var width = 50; 
+				    var pos = 35;
+				    var id = setInterval(frame, 1);
+				    function frame() {
+				   		if (pos == 135 && width == 150) {
+				    		clearInterval(id);
+				    	}else{
+					        pos += 2; 
+					        width += 2;
+					        div.style.width = width + 'px';
+					        badge.style.right = pos + 'px'; 
+					    }
+					}
+				    open = true;
+				}else{
+					var width = 150; 
+				    var pos = 135;
+				    var id = setInterval(frame, 1);
+				    function frame() {
+				   		if (pos == 35 && width == 50) {
+				    		clearInterval(id);
+				    	}else{
+					        pos -= 2; 
+					        width -= 2;
+					        div.style.width = width + 'px';
+					        badge.style.right = pos + 'px'; 
+					    }
+					}
+				    open = false;
+				}
+			}
+		</script>
 	</head>
 	<body>
 		<div class="container-fluid" id="Top-Container-Background">
@@ -23,7 +63,7 @@
 						</div>
 						<ul class="nav navbar-nav">
 							<li class="active"><a href="#">Home</a></li>
-							<li><a href="directory.html">Directory</a></li>
+							<li><a href="../jsp/directory.jsp">Directory</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
 							<li id="loginBtn"><a href="#">Welcome, Bob.</a></li>
@@ -36,17 +76,20 @@
 				</div>
 			</div>
 		</div>
+		<!-- Notification Tab -->
+		<div class="glyphicon glyphicon-bullhorn" id="notificationTab" onclick="animate()"></div>
+		<span class="badge" id="notificationBadge">3</span>
 		<!-- Bottom Naviagtion -->
 		<div class="container-fluid" id="Bot-Container">
 			<div class="row" id="Bot-Container-Container">
 				<div class="col-md-2" id="Bot-Nav1">
-					<p>Testing 1</p>
+					<p>View Grades</p>
 				</div>
 				<div class="col-md-2" id="Bot-Nav2">
-					<p>Testing 2</p>
+					<p>Assignment Submission</p>
 				</div>
 				<div class="col-md-2" id="Bot-Nav3">
-					<p>Testing 3</p>
+					<p>View Past Year Exam Papers</p>
 				</div>
 				<div class="col-md-2" id="Bot-Nav4">
 					<p>Testing 4</p>
