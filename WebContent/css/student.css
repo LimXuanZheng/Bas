@@ -1,0 +1,112 @@
+@CHARSET "ISO-8859-1";
+*{
+	padding: 0px;
+	margin: 0px;
+}
+
+#Container{
+	
+	padding: 0px;
+	
+}
+
+#whole{
+	margin-left:5%;
+}
+
+nav{
+	margin: 0px 15px;
+	z-index: 1;
+}
+
+#Container-Container{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+}
+#header1{
+	font-size:30px;
+	
+}
+
+#notices{
+	font-size:20px;
+    width: 100%;
+    margin: auto;
+}
+
+#dueDate{
+	width: 15%;
+    float: left;
+    height: 100px;
+   	border: 2px solid #000000;
+   	margin-right:2%;
+   	
+    
+}
+
+#points{
+	width: 25%;
+    float: left;
+    height: 100px;
+    border: 2px solid #000000;
+    
+}
+#center{
+	text-align:center;
+}
+
+#submissions{
+	clear: both;
+	margin-top:12%;
+	font-size:30px;
+}
+#confirm{
+	margin-top:8%;
+	margin-bottom:2%;
+	font-size:30px;
+}
+#cancel{
+	margin-left:2%;
+	margin-right:10%;
+	border:none;
+	text-align: center;
+	padding:3px;
+	background-color:#BBBDC1;
+	width:20%;
+}
+#submit{
+	background-color:#3FB1F8;
+	border:none;
+	text-align: center;
+	padding:3px;
+	width:20%;
+}
+#button1{
+	border:none;
+	text-align: center;
+	padding:3px;
+	background-color:#BBBDC1;
+	margin-left:5%;
+	
+}
+
+#button2{
+	border:none;
+	text-align: center;
+	padding:3px;
+	background-color:#BBBDC1;
+	margin-left:9%;
+}
+hr{
+	height:3px;
+}
+
+
+
+
+
+
+
