@@ -1,0 +1,138 @@
+@CHARSET "UTF-8";
+
+* {
+	margin: auto;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+body {
+	height: 100%;
+	width: 100%;
+}
+
+#aDiv {
+	width: 60%;
+	margin-top: 240px;
+}
+
+#bDiv {
+	margin: auto;
+	height: 50vh;
+	width: 40%;
+	float: left;
+	background-color: lightgrey;
+}
+
+#basLogo {
+	display: block;
+	margin-top: 30%;
+	height: 200px;
+	width: 200px;
+	border: 3px solid black;
+}
+
+#basTitle {
+	text-align: center;
+}
+
+#cDiv {
+	margin: auto;
+	float: right;
+	height: 50vh;
+	width: 60%;
+	background-color: grey;
+}
+
+#loginForm {
+	text-align: center;
+	padding: 100px;
+	display: block;
+	height: 500px;
+	font-size: 20px;
+}
+
+::-webkit-input-placeholder {
+   font-size: 20px;
+   color: white;
+}
+
+input {
+  	border: none;
+  	border-bottom: solid 1px #1abc9c;
+  	-webkit-transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+    	transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+ 	background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 96%, #1abc9c 4%);
+  	background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #1abc9c 4%);
+  	background-position: -200px 0;
+  	background-size: 200px 100%;
+  	background-repeat: no-repeat;
+  	color: white;
+}
+
+input:focus, input:valid {
+  	box-shadow: none;
+  	outline: none;
+  	background-position: 0 0;
+}
+
+input:focus::-webkit-input-placeholder, input:valid::-webkit-input-placeholder {
+  	-webkit-transform: translateY(-20px);
+    	transform: translateY(-20px);
+  	visibility: visible !important;
+  	color: white;
+}
+
+#namePart {
+	margin-bottom: 20px;
+}
+
+#nameImg {
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	left: 50%;
+}
+
+#userID {
+	width: 80%;
+	height: 30px;
+}
+
+#passPart {
+	margin-bottom: 10px;
+}
+
+#passImg {
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	left: 50%;
+}
+
+#pass {
+	width: 80%;
+	height: 30px;
+}
+
+#loginHeaderDiv {
+	text-align: center;
+	font-size: 30px;
+}
+
+#loginHeader {
+	padding-top: 10px;
+}
+
+#btnDiv {
+	margin: auto;
+	height: 200px;
+}
+
+#btnLogin {
+	text-align: center;
+	height: 30px;
+	width: 80%;
+	border: none;
+	background-color: #F0793F
+}

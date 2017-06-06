@@ -1,53 +1,62 @@
 <!DOCTYPE html>
 <html>
-<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<link rel="stylesheet" href="../css/student.css">
-		<!-- Font Mono-Sans -->
-		<link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		<!-- Optional theme -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-		<title>Student page</title>
-</head>
-<body>
-	<div class="container-fluid" id="Container">
-		<nav class="navbar navbar-default">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<a class="navbar-brand" href="homePage.html">Bas?</a>
+	<head>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+			<link rel="stylesheet" href="../css/student.css">
+			<!-- Font Mono-Sans -->
+			<link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+			<!-- Latest compiled and minified CSS -->
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+			<!-- Optional theme -->
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+			<title>Student page</title>
+			<script>
+				function helloxz() {
+		    		var r = confirm("Are you sure?");
+		    		if (r == true) {
+		    			window.location('homePage.html');
+		    		} else {
+		    			window.location('StudentUpload.html');
+		    		}
+				}
+			</script>
+	</head>
+	<body>
+		<div class="container-fluid" id="Container">
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="homePage.html">Bas?</a>
+					</div>
+						<ul class="nav navbar-nav">
+							<li><a href="homePage.html">Home</a></li>
+							<li class="active"><a href="#">Directory</a></li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li id="loginBtn"><a href="#">Welcome, Bob.</a></li>
+						</ul>
 				</div>
-					<ul class="nav navbar-nav">
-						<li><a href="homePage.html">Home</a></li>
-						<li class="active"><a href="#">Directory</a></li>
-					</ul>
-					<ul class="nav navbar-nav navbar-right">
-						<li id="loginBtn"><a href="#">Welcome, Bob.</a></li>
-					</ul>
-			</div>
-		</nav>
-		<div id="whole">
-			<h1 id="header1">Assignment Submission</h1>
-			<div id="notices">
-				<div id="dueDate">
-					<p id="center">Due by <br><span id="getDate"></span></p>
+			</nav>
+			<div id="whole">
+				<h1 id="header1">Assignment Submission</h1>
+				<div id="notices">
+					<div id="dueDate">
+						<p id="center">Due by <br><span id="getDate"></span></p>
+					</div>
+					<div id="points">
+						<p id="center">Points available:<br> <span id="getPoints"></span></p>
+					</div>
 				</div>
-				<div id="points">
-					<p id="center">Points available:<br> <span id="getPoints"></span></p>
+				<div id="submissions">
+					<hr>
+					<p>Text Submission : <button id="button1">Write Submission</button></p>
+					<p style="font-size:25px; margin-top:3%;">Attach File: <input type="file" name="datafile" style="font-size:20px; float:left;"/></p>
 				</div>
-			</div>
-			<div id="submissions">
-				<hr>
-				<p >Text Submission : <button id="button1">Write Submission</button></p>
-				<p style="margin-top:3%; ">Attach a file :   <button id="button2" action=""file:///C:">Browse my computer</button></p>
-				<p id="fileName" style="font-size:20px; color:#7D7E7F;">No files selected</p>
-			</div>
-			<div id="confirm">
-				<button id="submit">Submit</button><button id="cancel">Cancel</button>
+				<div id="confirm">
+					<button id="submit">Submit</button><button id="cancel" onclick="helloxz()">Cancel</button>
+				</div>
 			</div>
 		</div>
-	</div>
-</body>
+	</body>
 </html>

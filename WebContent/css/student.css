@@ -96,9 +96,8 @@ nav{
 #button2{
 	border:none;
 	text-align: center;
-	padding:3px;
-	background-color:#BBBDC1;
-	margin-left:9%;
+	float:left;
+	
 }
 hr{
 	height:3px;

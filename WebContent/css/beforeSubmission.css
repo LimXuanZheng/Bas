@@ -1,0 +1,42 @@
+@CHARSET "ISO-8859-1";
+*{
+	padding: 0px;
+	margin: 0px;
+}
+
+#Container{
+	
+	padding: 0px;
+	
+}
+nav{
+	margin: 0px 15px;
+	z-index: 1;
+}
+
+#Container-Container{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+}
+#whole{
+	margin-left:2%;
+}
+#first{
+	margin-bottom:2%;
+	background-color:#EDE7F6;
+	
+}
+#second{
+	margin-bottom:2%;
+	background-color:#EDE7F6;
+}
+#title{
+	font-weight:bold;
+	font-size:30px;
+}
+#comments{
+	font-size:15px;
+}
