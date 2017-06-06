@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-		<meta charset="UTF-8">
+<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<link rel="stylesheet" href="../css/student.css">
+		<link rel="stylesheet" href="../css/beforeSubmission.css">
 		<!-- Font Mono-Sans -->
 		<link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 		<!-- Latest compiled and minified CSS -->
@@ -11,10 +12,11 @@
 		<!-- Optional theme -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 		<title>Student page</title>
+<title>Before Submission</title>
 </head>
 <body>
-	<div class="container-fluid" id="Container">
-		<nav class="navbar navbar-default">
+<div class="container-fluid" id="Container">
+	<nav class="navbar navbar-default">
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<a class="navbar-brand" href="homePage.html">Bas?</a>
@@ -28,30 +30,16 @@
 					</ul>
 			</div>
 		</nav>
-		<div id="whole">
-			<h1 id="header1">Assignment Submission</h1>
-			<div id="notices">
-				<div id="dueDate">
-					<p id="center">Due by <br><span id="getDate"></span></p>
-				</div>
-				<div id="points">
-					<p id="center">Points available:<br> <span id="getPoints"></span></p>
-				</div>
-			</div>
-			<div id="submissions">
-				<hr>
-				<p>Text Submission : <button id="button1">Write Submission</button></p>
-				<p style="font-size:25px; margin-top:3%;">Attach File: <input type="file" name="datafile" style="font-size:20px; float:left;"/></p>
-			</div>
-			<div id="confirm">
-				<button id="submit">Submit</button><button id="cancel" onclick="window.location('beforeSubmission.html')">Cancel</button>
-			</div>
+	<div id="whole">
+		<div id="first">
+			<p id="title" onclick="window.location('StudentUpload.html')" style="cursor:pointer;"><img src="../images/checklist.gif">Tutorial 1A</p>
+			<p id="comments">Submit your tutorial questions here</p>
+		</div>
+		<div id="second">
+			<p id="title" onclick="window.location('StudentUpload.html')" style="cursor:pointer;"><img src="../images/checklist.gif">Practical 1A</p>
+			<p id="comments">Zip your practical files and submit here</p>
 		</div>
 	</div>
-	<script>
-		function confirm() {
-    	confirm("Are you sure!");	
-		}
-	</script>
+</div>
 </body>
 </html>
