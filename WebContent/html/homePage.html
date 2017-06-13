@@ -1,22 +1,24 @@
+<!--  Wont be using this "Static" html anymore... Please refer to Home.java instead for home page -->
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<link rel="stylesheet" href="../css/homePageStyle.css">
+		<meta charset='UTF-8'>
+		<meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+		<link rel='stylesheet' href='../css/homePageStyle.css'>
 		<!-- Font Mono-Sans -->
 		<link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u' crossorigin='anonymous'>
 		<!-- Optional theme -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+		<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css' integrity='sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp' crossorigin='anonymous'>
 		<title>Home Pages</title>
 		<!-- My Own Script -->
 		<script>
 			var open = false;
 			function animate(){
-				var div = document.getElementById("notificationTab"); 
-				var badge = document.getElementById("notificationBadge"); 
+				var div = document.getElementById('notificationTab'); 
+				var badge = document.getElementById('notificationBadge'); 
 				
 				if(open == false){
 					var width = 50; 
@@ -53,56 +55,56 @@
 		</script>
 	</head>
 	<body>
-		<div class="container-fluid" id="Top-Container-Background">
-			<div class="container-fluid" id="Top-Container">
+		<div class='container-fluid' id='Top-Container-Background'>
+			<div class='container-fluid' id='Top-Container'>
 				<!-- Navigation -->
-				<nav class="navbar navbar-default">
-					<div class="container-fluid">
-						<div class="navbar-header">
-							<a class="navbar-brand" href="#">Bas?</a>
+				<nav class='navbar navbar-default'>
+					<div class='container-fluid'>
+						<div class='navbar-header'>
+							<a class='navbar-brand' href='#'>Bas?</a>
 						</div>
-						<ul class="nav navbar-nav">
-							<li class="active"><a href="#">Home</a></li>
-							<li><a href="../jsp/directory.jsp">Directory</a></li>
+						<ul class='nav navbar-nav'>
+							<li class='active'><a href='#'>Home</a></li>
+							<li><a href='../html/directory.html'>Directory</a></li>
 						</ul>
-						<ul class="nav navbar-nav navbar-right">
-							<li id="loginBtn"><a href="#">Welcome, Bob.</a></li>
+						<ul class='nav navbar-nav navbar-right'>
+							<li id='loginBtn'><a href='#'>Welcome, Bob.</a></li>
 						</ul>
 					</div>
 				</nav>
 				<!-- Center Words -->
-				<div id="Top-Center-Container">
-					<h2 id="welcomeText">Welcome to BasChunMaen!</h2>
+				<div id='Top-Center-Container'>
+					<h2 id='welcomeText'>Welcome to BasChunMaen!</h2>
 				</div>
 			</div>
 		</div>
 		<!-- Notification Tab -->
-		<div class="glyphicon glyphicon-bullhorn" id="notificationTab" onclick="animate()"></div>
-		<span class="badge" id="notificationBadge">3</span>
+		<div class='glyphicon glyphicon-bullhorn' id='notificationTab' onclick='animate()'></div>
+		<span class='badge' id='notificationBadge'>3</span>
 		<!-- Bottom Naviagtion -->
-		<div class="container-fluid" id="Bot-Container">
-			<div class="row" id="Bot-Container-Container">
-				<div class="col-md-2" id="Bot-Nav1">
+		<div class='container-fluid' id='Bot-Container'>
+			<div class='row container-fluid' id='Bot-Container-Container'>
+				<div class='col-md-2' id='Bot-Nav1'>
 					<p>View Grades</p>
 				</div>
-				<div class="col-md-2" id="Bot-Nav2" onclick="window.location('beforeSubmission.html')">
+				<div class='col-md-2' id='Bot-Nav2' onclick="window.location('beforeSubmission.html')">
 					<p>Assignment Submission</p>
 				</div>
-				<div class="col-md-2" id="Bot-Nav3">
+				<div class='col-md-2' id='Bot-Nav3'>
 					<p>View Past Year Exam Papers</p>
 				</div>
-				<div class="col-md-2" id="Bot-Nav4">
+				<div class='col-md-2' id='Bot-Nav4'>
 					<p>Testing 4</p>
 				</div>
-				<div class="col-md-2" id="Bot-Nav5">
+				<div class='col-md-2' id='Bot-Nav5'>
 					<p>Testing 5</p>
 				</div>
 			</div>
 		</div>
 		
 		<!-- jQuery library -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 		<!-- Latest compiled and minified JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js' integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa' crossorigin='anonymous'></script>
 	</body>
 </html>

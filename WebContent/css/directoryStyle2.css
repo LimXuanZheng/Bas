@@ -23,15 +23,6 @@ nav{
 	width: 100%;
 }
 
-#Left-Container{
-	width: 30%;
-	height: 100%;
-	float: left;
-	padding: 100px 15px 15px 15px;
-	background-color: rgb(149,117,205);
-	border: 1px solid red;
-}
-
 #searchBox{
 	width: 100%;
 	height: 30px;
@@ -43,7 +34,7 @@ select{
 }
 
 #Right-Container{
-	min-width: 70%;
+	min-width: 100%;
 	height: 100%;
 	float: right;
 	padding: 50px 15px 15px 15px;
