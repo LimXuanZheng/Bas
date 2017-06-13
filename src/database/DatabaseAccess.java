@@ -2,6 +2,7 @@ package database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -30,6 +31,12 @@ public class DatabaseAccess {
 
 	private ResultSet getDatabaseData(String sql) throws SQLException{
 		return stmt.executeQuery(sql);
+	}
+	
+	public ResultSet getDatabaseData(String sql, String value) throws SQLException{
+		PreparedStatement ppstmt = conn.prepareStatement(sql);
+		ppstmt.setString(1, "%" + value + "%");
+		return ppstmt.executeQuery();
 	}
 	
 	public ArrayList<UserAll> getDatabaseUserAll() throws SQLException{

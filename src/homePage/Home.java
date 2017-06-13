@@ -67,7 +67,7 @@ public class Home extends HttpServlet {
 		+					 "</div>"
 		+ 					"<ul class='nav navbar-nav'>"
 		+ 						"<li class='active'><a href='#'>Home</a></li>"
-		+ 						"<li><a href='html/directory.html'>Directory</a></li>"
+		+ 						"<li><a href='Directory'>Directory</a></li>"
 		+ 					"</ul>"
 		+ 					"<ul class='nav navbar-nav navbar-right'>"
 		+ 						"<li id='loginBtn'><a href='#'>Welcome, Bob.</a></li>"

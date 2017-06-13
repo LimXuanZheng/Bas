@@ -12,20 +12,131 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.mysql.jdbc.PreparedStatement;
+
 import database.DatabaseAccess;
+import database.model.Teacher;
 import database.model.UserAll;
 
-/**
- * Servlet implementation class Directory
- */
+//If I have time I confirm going to make the out.print nicer... For the time being deal with it
 @WebServlet("/Directory")
 public class Directory extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-	//private DataTable dataTable;
+    private String userType = "Student";
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/html/directory.html").forward(request, response);
+		ArrayList<UserAll> userAllArray = new ArrayList<UserAll>();
+		try {
+			DatabaseAccess dba = new DatabaseAccess();
+			userAllArray = dba.getDatabaseUserAll();
+			
+			response.setContentType("text/html;charset=UTF-8");
+	    	PrintWriter out = response.getWriter();
+	    	out.println("<!DOCTYPE html>"
+	    			+ "<html>"
+	    			+ 	"<head>"
+	    			+ 		"<meta charset='UTF-8'>"
+	    			+ 		"<meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>"
+	    			+ 		"<link rel='stylesheet' href='css/directoryStyle.css'>"
+	    			+ 		"<!-- Font Mono-Sans -->"
+	    			+ 		"<link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>"
+	    			+ 		"<!-- Latest compiled and minified CSS -->"
+	    			+ 		"<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u' crossorigin='anonymous'>"
+	    			+ 		"<!-- Optional theme -->"
+	    			+ 		"<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css' integrity='sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp' crossorigin='anonymous'>"
+	    			+ 		"<title>Directory</title>"
+	    			+ 	"</head>"
+	    			+ 	"<body>"
+	    			+ 		"<div class='container-fluid' id='Container'>"
+	    			+ 			"<!-- Navigation -->" 
+	    			+ 			"<nav class='navbar navbar-default'>"
+	    			+ 				"<div class='container-fluid'>"
+	    			+ 					"<div class='navbar-header'>"
+	    			+ 						"<a class='navbar-brand' href='Home'>Bas?</a>"
+	    			+ 					"</div>"
+	    			+ 					"<ul class='nav navbar-nav'>"
+	    			+ 						"<li>"
+	    			+ 							"<a href='Home'>Home</a>"
+	    			+ 						"</li>"
+	    			+ 						"<li class='active'>"
+	    			+ 							"<a href='#'>Directory</a>"
+	    			+ 						"</li>"
+	    			+ 					"</ul>"
+	    			+ 					"<ul class='nav navbar-nav navbar-right'>"
+	    			+ 						"<li id='loginBtn'>"
+	    			+ 							"<a href='#'>Welcome, Bob.</a>"
+	    			+ 						"</li>"
+	    			+ 					"</ul>"
+	    			+ 				"</div>"
+	    			+ 			"</nav>"
+	    			+ 			"<div id='Container-Container'>"
+	    			+ 				"<div class='container-fluid' id='Left-Container'>"
+	    			+ 					"<form action='Directory' method='POST'>"
+	    			+ 						"<input type='text' name='search' id='searchBox' placeholder='Name'>"
+	    			+ 						"<select name='class'>"
+	    			+ 							"<option value='1E1'>1E1</option>"
+	    			+ 							"<option value='1E2'>1E2</option>"
+	    			+ 							"<option value='1E3'>1E3</option>"
+	    			+ 							"<option value='1E4'>1E4</option>"
+	    			+ 							"<option value='1E5'>1E5</option>"
+	    			+ 						"</select>"
+	    			+ 						"<select name='subject'>"
+	    			+ 							"<option value='English'>English</option>"
+	    			+ 							"<option value='Chinese'>Chinese</option>"
+	    			+ 							"<option value='Science'>Science</option>"
+	    			+ 							"<option value='Math'>Math</option>"
+	    			+ 							"<option value='Art'>Art</option>"
+	    			+ 						"</select>"
+	    			+ 						"<input type='submit' name='submit'>"
+	    			+ 					"</form>"
+	    			+ 				"</div>"
+	    			+ 				"<div class='container-fluid' id='Right-Container'>"
+	    			+ 					"<table class='table table-striped'>"
+	    			+ 						"<thead>"
+	    			+ 							"<tr>");
+	    	
+	    			if(userType.equals("Student")){
+	    				out.println(
+	    						"<th><p>Name</p></th>"
+	    						+ "<th><p>Gender</p></th>"
+	    						+ "<th><p>Class</p></th>"
+	    						+ "<th><p>Contact number</p></th>"
+	    						+ "<th><p>Email</p></th>"
+	    						+ "<th><p>Department</p></th>");
+	    			}
+	    				
+	    			out.print(
+	    			 							"</tr>"
+	    			+ 						"</thead>"
+	    			+ 						"<tbody>");
+	    	
+			for(UserAll u:userAllArray){
+				if(u.getTeacher().getTeacherID() > 0){
+					out.println("<tr><td>" + u.getUser().getName() + "</td><td>" + u.getUser().getGender() + "</td><td>" + u.getUser().getSchoolClass() + "</td><td>" + u.getUser().getContactNo() + "</td><td>" + u.getUser().getEmail() + "</td><td>" + u.getTeacher().getDepartment() + "</td></tr>");
+				}
+			}
+			
+			out.println(					
+											"</tbody>"
+					+ 					"</table>"
+					+ 				"</div>"
+					+ 			"</div>"
+					+ 		"</div>"
+					+ 		"<!-- jQuery library -->"
+					+ 		"<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'>"
+					+ 		"</script>"
+					+ 		"<!-- Latest compiled and minified JavaScript -->"
+					+ 		"<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js' integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa' crossorigin='anonymous'>"
+					+ 		"</script>"
+					+ 	"</body>"
+					+ "</html>");
+			out.close();
+			dba.close();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -35,18 +146,98 @@ public class Directory extends HttpServlet {
     	String schoolClass = request.getParameter("schoolClass");
     	//Get Subject
     	String subject = request.getParameter("subject");
+    	
     	ArrayList<UserAll> userAllArray = new ArrayList<UserAll>();
     	try {
 			DatabaseAccess dba = new DatabaseAccess();
 			userAllArray = dba.getDatabaseUserAll();
-    	
+			
+			String sqlline = "SELECT * FROM User WHERE Name LIKE ?;";
+			ResultSet rs = dba.getDatabaseData(sqlline, name);
+			while(rs.next()){
+				System.out.println(rs.getString("Name"));
+			}
+			rs.close();
+			
 	    	response.setContentType("text/html;charset=UTF-8");
 	    	PrintWriter out = response.getWriter();
-	    	out.println("<!DOCTYPE html><html><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'><link rel='stylesheet' href='css/directoryStyle.css'><!-- Font Mono-Sans --><link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'><!-- Latest compiled and minified CSS --><link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u' crossorigin='anonymous'><!-- Optional theme --><link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css' integrity='sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp' crossorigin='anonymous'><title>Directory</title></head><body><div class='container-fluid' id='Container'><!-- Navigation --><nav class='navbar navbar-default'><div class='container-fluid'><div class='navbar-header'><a class='navbar-brand' href='Home'>Bas?</a></div><ul class='nav navbar-nav'><li><a href='Home'>Home</a></li><li class='active'><a href='#'>Directory</a></li></ul><ul class='nav navbar-nav navbar-right'><li id='loginBtn'><a href='#'>Welcome, Bob.</a></li></ul></div></nav><div id='Container-Container'><div class='container-fluid' id='Right-Container'><table class='table table-striped'><thead><tr><th><p>UserID</p></th><th><p>Username</p></th><th><p>Password</p></th><th><p>Name</p></th></th><th><p>Gender</p></th></th><th><p>Date Of Birth</p></th></th><th><p>Contact Number</p></th></th><th><p>Email</p></th></th><th><p>Class</p></th></th><th><p>Address</p></th></th><th><p>NRIC</p></th></th><th><p>CCA</p></th></th><th><p>TeacherID</p></th></th><th><p>Department</p></th></tr></thead><tbody>");
+	    	out.println("<!DOCTYPE html>"
+	    			+ "<html>"
+	    			+ "<head>"
+	    			+ "<meta charset='UTF-8'>"
+	    			+ "<meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>"
+	    			+ "<link rel='stylesheet' href='css/directoryStyle2.css'>"
+	    			+ "<!-- Font Mono-Sans -->"
+	    			+ "<link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>"
+	    			+ "<!-- Latest compiled and minified CSS -->"
+	    			+ "<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u' crossorigin='anonymous'>"
+	    			+ "<!-- Optional theme -->"
+	    			+ "<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css' integrity='sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp' crossorigin='anonymous'>"
+	    			+ "<title>Directory</title>"
+	    			+ "</head>"
+	    			+ "<body>"
+	    			+ "<div class='container-fluid' id='Container'>"
+	    			+ "<!-- Navigation -->"
+	    			+ "<nav class='navbar navbar-default'>"
+	    			+ "<div class='container-fluid'>"
+	    			+ "<div class='navbar-header'>"
+	    			+ "<a class='navbar-brand' href='Home'>Bas?</a>"
+	    			+ "</div>"
+	    			+ "<ul class='nav navbar-nav'>"
+	    			+ "<li>"
+	    			+ "<a href='Home'>Home</a>"
+	    			+ "</li>"
+	    			+ "<li class='active'>"
+	    			+ "<a href='#'>Directory</a>"
+	    			+ "</li>"
+	    			+ "</ul>"
+	    			+ "<ul class='nav navbar-nav navbar-right'>"
+	    			+ "<li id='loginBtn'>"
+	    			+ "<a href='#'>Welcome, Bob.</a>"
+	    			+ "</li>"
+	    			+ "</ul>"
+	    			+ "</div>"
+	    			+ "</nav>"
+	    			+ "<div id='Container-Container'>"
+	    			+ "<div class='container-fluid' id='Right-Container'>"
+	    			+ "<table class='table table-striped'>"
+	    			+ "<thead>"
+	    			+ "<tr>"
+	    			+ "<th><p>UserID</p></th>"
+	    			+ "<th><p>Username</p></th>"
+	    			+ "<th><p>Password</p></th>"
+	    			+ "<th><p>Name</p></th>"
+	    			+ "<th><p>Gender</p></th>"
+	    			+ "<th><p>Date Of Birth</p></th>"
+	    			+ "<th><p>Contact Number</p></th>"
+	    			+ "<th><p>Email</p></th>"
+	    			+ "<th><p>Class</p></th>"
+	    			+ "<th><p>Address</p></th>"
+	    			+ "<th><p>NRIC</p></th>"
+	    			+ "<th><p>CCA</p></th>"
+	    			+ "<th><p>TeacherID</p></th>"
+	    			+ "<th><p>Department</p></th>"
+	    			+ "</tr>"
+	    			+ "</thead>"
+	    			+ "<tbody>");
+	    	
 			for(UserAll u:userAllArray){
-				out.println("<tr><td>" + u.getUser().getUserID() + "</td><td>" + u.getLogin().getUsername() + "</td><td>" + u.getLogin().getPassword() + "</td><td>" + u.getUser().getName() + "</td><td>" + u.getUser().getGender() + "</td><td>" + u.getUser().getdOB() + "</td><td>" + u.getUser().getContactNo() + "</td><td>" + u.getUser().getEmail() + "</td><td>" + u.getUser().getSchoolClass() + "</td><td>" + u.getUser().getAddress() + "</td><td>" + u.getStudent().getnRIC() + "</td><td>" + u.getStudent().getcCA() + "</td><td>" + u.getTeacher().getTeacherID() + "</td><td>" + u.getTeacher().getTeacherID() + "</td></tr>");
+				out.println("<tr><td>" + u.getUser().getUserID() + "</td><td>" + u.getLogin().getUsername() + "</td><td>" + u.getLogin().getPassword() + "</td><td>" + u.getUser().getName() + "</td><td>" + u.getUser().getGender() + "</td><td>" + u.getUser().getdOB() + "</td><td>" + u.getUser().getContactNo() + "</td><td>" + u.getUser().getEmail() + "</td><td>" + u.getUser().getSchoolClass() + "</td><td>" + u.getUser().getAddress() + "</td><td>" + u.getStudent().getnRIC() + "</td><td>" + u.getStudent().getcCA() + "</td><td>" + u.getTeacher().getTeacherID() + "</td><td>" + u.getTeacher().getDepartment() + "</td></tr>");
 			}
-			out.println("</tbody></table></div></div></div><!-- jQuery library --><script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script><!-- Latest compiled and minified JavaScript --><script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js' integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa' crossorigin='anonymous'></script></body></html>");
+			
+			out.println("</tbody>"
+					+ "</table>"
+					+ "</div>"
+					+ "</div>"
+					+ "</div>"
+					+ "<!-- jQuery library -->"
+					+ "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'>"
+					+ "</script>"
+					+ "<!-- Latest compiled and minified JavaScript -->"
+					+ "<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js' integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa' crossorigin='anonymous'>"
+					+ "</script>"
+					+ "</body>"
+					+ "</html>");
 			out.close();
 			dba.close();
     	} catch (ClassNotFoundException e) {
