@@ -9,12 +9,14 @@
 body {
 	height: 100%;
 	width: 100%;
+	
 }
 
 #aDiv {
 	width: 60%;
 	margin-top: 240px;
 	overflow: hidden;
+	box-shadow: 10px 10px 5px #888888;
 }
 
 #bDiv {
@@ -27,14 +29,15 @@ body {
 
 #basLogo {
 	display: block;
-	margin-top: 30%;
+	margin-top: 25%;
 	height: 200px;
 	width: 200px;
-	border: 3px solid black;
 }
 
 #basTitle {
 	text-align: center;
+	font-size: 30px;
+	color: white;
 }
 
 #cDiv {
@@ -53,38 +56,38 @@ body {
 	font-size: 20px;
 }
 
-::-webkit-input-placeholder {
+.input::-webkit-input-placeholder {
    font-size: 20px;
    color: black;
-   transition: all 0.2s ease;
 }
 
-input {
+.input {
   	border: none;
-  	border-bottom: solid 1px #1abc9c;
+  	border-bottom: solid 1px #1ABC9C;
   	-webkit-transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
     	transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
- 	background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 96%, #1abc9c 4%);
-  	background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #1abc9c 4%);
-  	background-position: -200px 0;
-  	background-size: 200px 100%;
+ 	background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 96%, #1ABC9C 4%);
+  	background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #1ABC9C 4%);
+  	background-position: -600px 0;
+  	/*background-size: 200px 100%;*/
   	background-repeat: no-repeat;
   	color: black;
   	font-size: 20px;
 }
 
-input:focus, input:valid {
+.input:focus, .input:valid {
   	box-shadow: none;
   	outline: none;
-  	background-position: 0 0;
+  	background-position: 0px 0px;
 }
 
-input:focus::-webkit-input-placeholder, input:valid::-webkit-input-placeholder {
+.input:focus::-webkit-input-placeholder, .input:valid::-webkit-input-placeholder {
   	-webkit-transform: translateY(-25px);
     	transform: translateY(-25px);
   	visibility: visible;
-  	color: black;
+  	color: #1ABC9C;
   	transition: all 0.3s ease;
+  	font-size: 15px;
 }
 
 #namePart {
@@ -103,6 +106,28 @@ input:focus::-webkit-input-placeholder, input:valid::-webkit-input-placeholder {
 	height: 40px;
 }
 
+#inputNError {
+	display: none;
+	width: 80%;
+	height: 40px;
+	background-color: #F74225;
+	font-size: 20px;
+	padding: 7px;
+	margin-top: 10px;
+	color: white;
+}
+
+#namePart #inputNError::after {
+	content: "";
+    position: absolute;
+    bottom: 49%;
+    left: 70%;
+    margin-left: -20px;
+    border-width: 20px;
+    border-style: solid;
+    border-color: transparent transparent #F74225 transparent;
+}
+
 #passPart {
 	margin-bottom: 10px;
 }
@@ -114,9 +139,31 @@ input:focus::-webkit-input-placeholder, input:valid::-webkit-input-placeholder {
 	left: 49%;
 }
 
-#pass {
+#passID {
 	width: 80%;
 	height: 40px;
+}
+
+#inputPError {
+	display: none;
+	width: 80%;
+	height: 40px;
+	background-color: #F74225;
+	font-size: 20px;
+	padding: 7px;
+	margin-top: 10px;
+	color: white;
+}
+
+#passPart #inputPError::after {
+	content: "";
+    position: absolute;
+    bottom: 37%;
+    left: 70%;
+    margin-left: -20px;
+    border-width: 20px;
+    border-style: solid;
+    border-color: transparent transparent #F74225 transparent;
 }
 
 #loginHeaderDiv {
@@ -127,26 +174,178 @@ input:focus::-webkit-input-placeholder, input:valid::-webkit-input-placeholder {
 }
 
 #loginHeader {
-	
+	color: white;
+	padding: 10px;
 }
 
 #btnDiv {
 	margin: auto;
 	height: 200px;
 	width: 80%;
-}
-
-#forPass {
-	font-size: 15px;
-	float: left;
 	padding-top: 10px;
 }
 
+#forPass {
+	font-size: 20px;
+	float: left;
+	cursor: pointer;
+}
+
 #btnLogin {
+	font-size: 20px;
 	text-align: center;
 	height: 30px;
-	width: 30%;
+	width: 120px;
 	border: none;
 	float: right;
-	background-color: #F0793F
+	background-color: #9575CD;
+	cursor: pointer;
+	color: white;
+}
+
+#btnLogin:hover, #btnLogin:focus {
+	background-color: white;
+	border: 1px solid #9575CD;
+	color: #9575CD;
+}
+
+#popupDiv {
+	display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+#popupContent {
+	position: relative;
+    background-color: #FEFEFE;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    height: 50%;
+    width: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+@-webkit-keyframes animatetop {
+    from {top: -300px; opacity: 0} 
+    to {top: 0; opacity: 1}
+}
+
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+#close {
+	color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#close:hover, #close:focus {
+	color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#popupHeader {
+	text-align: center;
+	padding: 2px 16px;
+    background-color: #9575CD;
+    color: white;
+    height: 20%;
+}
+
+#popupTitle {
+	margin-top: 5px;
+	font-size: 50px;
+}
+
+#popupBody {
+	padding: 2px 16px;
+	font-size: 30px;
+	text-align: center;
+	height: 80%;
+	background-color: #EDE7F6;
+}
+
+#pInputDiv {
+	margin-top: 80px;
+}
+
+#pInputError {
+	display: none;
+	font-size: 25px;
+	width: 50%;
+	background-color: #F74225;
+	color: white;
+	padding: 10px;
+	margin-top: 11px;
+}
+
+#pInputDiv #pInputError::after {
+	content: "";
+    position: absolute;
+    bottom: 46%;
+    left: 70%;
+    margin-left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #F74225 transparent;
+}
+
+#changeEmail {
+	height: 45px;
+	width: 50%;
+	border: none;
+	padding: 10px;
+	font-size: 20px;
+}
+
+#changeEmail::-webkit-input-placeholder {
+	font-size: 20px;
+}
+
+#changeEmail:focus {
+	border: 1px solid black;
+	outline: none;
+}
+
+.popupWords {
+	position: relative;
+	top: 10%;
+}
+
+#popupFooter {
+	padding: 2px 16px;
+    background-color: #9575CD;
+    color: white;
+    height: 20%;
+}
+
+#popupBtn {
+	height: 50px;
+	width: 200px;
+	font-size: 20px;
+	text-align: center;
+	border: none;
+	position: relative;
+	top: 20%;
+	left: 40%;
+	background-color: white;
+	color: black;
+	cursor: pointer;
 }
