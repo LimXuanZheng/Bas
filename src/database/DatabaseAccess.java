@@ -20,12 +20,30 @@ public class DatabaseAccess {
     final String DB_URL="jdbc:mysql://localhost:3306/nspj_database";
     final String USER = "root";
     final String PASS = "SassyPenguin@123";
+    
+    final String DB_URL2="jdbc:mysql://119.74.135.44:3306/nspj_database";
+    final String USER_S = "Student";
+    final String PASS_S = "StudentPassword_101";
+    
+    final String USER_T = "Teacher";
+    final String PASS_T = "TeacherPassword_102";
     Connection conn;
     Statement stmt;
     
-	public DatabaseAccess() throws ClassNotFoundException, SQLException{
+	public DatabaseAccess(int permission) throws ClassNotFoundException, SQLException{
 		 Class.forName(JDBC_DRIVER);
-	     conn = DriverManager.getConnection(DB_URL, USER, PASS);
+		 switch(permission){
+		 	case 0:
+		 		conn = DriverManager.getConnection(DB_URL, USER, PASS);
+		 		break;
+		 	case 1:
+		 		conn = DriverManager.getConnection(DB_URL2, USER_S, PASS_S);
+		 		break;
+		 	case 2:
+		 		conn = DriverManager.getConnection(DB_URL2, USER_T, PASS_T);
+		 		break;
+		 }
+	     
 	     stmt = conn.createStatement();
 	}
 
@@ -169,6 +187,40 @@ public class DatabaseAccess {
 		return teacherArray;
 	}
 	
+	public ArrayList<UserAll> convertResultSetToArrayList(ResultSet rs) throws SQLException{
+		ArrayList<UserAll> userAllArray = new ArrayList<UserAll>();
+		
+		while(rs.next()){
+			int userID = rs.getInt("userID");
+			String name = rs.getString("Name");
+			String gender = rs.getString("Gender");
+			String dOB = rs.getString("DOB");
+			String contactNo = rs.getString("ContactNo");
+			String email = rs.getString("Email");
+			String schoolClass = rs.getString("Class");
+			String address = rs.getString("Address");
+			User user = new User(userID, name, gender, dOB, contactNo, email, schoolClass, address);
+			
+			String username = rs.getString("Username");
+			String password = rs.getString("Password");
+			Login login = new Login(username, password, user);
+			
+			String nRIC = rs.getString("NRIC");
+			String cCA = rs.getString("CCA");
+			Student student = new Student(nRIC, cCA, user);
+			
+			int teacherID = rs.getInt("TeacherID");
+			String department = rs.getString("Department");
+			Teacher teacher = new Teacher(teacherID, department, user);
+			
+			userAllArray.add(new UserAll(user, login, student, teacher));
+		}
+		
+		rs.close();
+		return userAllArray;
+	}
+	
+	//Working but not done
 	public void updateDatabaseData(String sql) throws SQLException{
 		int count = stmt.executeUpdate(sql);
         if(count ==0){

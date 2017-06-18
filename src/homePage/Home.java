@@ -41,6 +41,11 @@ public class Home extends HttpServlet {
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
+		ArrayList<String> notificationArray = new ArrayList<String>();
+		notificationArray.add("Testing 1");
+		notificationArray.add("Hello");
+		notificationArray.add("Please hand in your Minecraft by 12/3/17 -Mr Chew");
+		
 		PrintWriter out = response.getWriter();
 		out.println(
 		"<!DOCTYPE html><html lang='en'>"
@@ -54,6 +59,8 @@ public class Home extends HttpServlet {
 		+ 	"<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u' crossorigin='anonymous'>"
 		+ 	"<!-- Optional theme -->"
 		+ 	"<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css' integrity='sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp' crossorigin='anonymous'>"
+		+		"<!-- My Own Script -->"
+		+		"<script src='script/homePageScript.js'></script>"
 		+ 	"<title>Home Pages</title>"
 		+ "</head>"
 		+ "<body>"
@@ -64,14 +71,22 @@ public class Home extends HttpServlet {
 		+ 				"<div class='container-fluid'>"
 		+ 					"<div class='navbar-header'>"
 		+ 						"<a class='navbar-brand' href='#'>Bas?</a>"
-		+					 "</div>"
-		+ 					"<ul class='nav navbar-nav'>"
-		+ 						"<li class='active'><a href='#'>Home</a></li>"
-		+ 						"<li><a href='Directory'>Directory</a></li>"
-		+ 					"</ul>"
-		+ 					"<ul class='nav navbar-nav navbar-right'>"
-		+ 						"<li id='loginBtn'><a href='#'>Welcome, Bob.</a></li>"
-		+ 					"</ul>"
+		+					"</div>"
+		+					"<div class='collapse navbar-collapse'>"
+		+ 						"<ul class='nav navbar-nav'>"
+		+ 							"<li class='active'><a href='#'>Home</a></li>"
+		+ 							"<li><a href='Directory'>Directory</a></li>"
+		+ 						"</ul>"
+		+ 						"<ul class='nav navbar-nav navbar-right'>"
+		+							"<li class='dropdown'>"
+		+					   			"<a class='dropdown-toggle' data-toggle='dropdown' href='#'>Welcome, Bob. </a>"
+		+					        	"<ul class='dropdown-menu'>"
+		+					        		"<li><a href='#'>Setting</a></li>"
+		+					        		"<li><a href='html/Login.html'>Logout</a></li>"
+		+								"</ul>"
+		+							"</li>"
+		+ 						"</ul>"
+		+					"</div>"
 		+ 				"</div>"
 		+ 			"</nav>"
 		+ 			"<!-- Center Words -->"
@@ -81,8 +96,23 @@ public class Home extends HttpServlet {
 		+		"</div>"
 		+ 	"</div>"
 		+ 	"<!-- Notification Tab -->"
-		+ 	"<div class='glyphicon glyphicon-bullhorn' id='notificationTab' onclick='animate()'></div>"
-		+ 	"<span class='badge' id='notificationBadge'>3</span>"
+		+	"<span class='badge' id='notificationBadge'>" + notificationArray.size() + "</span>"
+		+	"<div id='notificationTab' onclick='animateNotification()'>"
+		+ 		"<div id='HeadBox'>"
+		+			 "<p id='notiIcon'><span class='glyphicon glyphicon-bullhorn'></span></p>"
+		+ 		"</div>"
+		+ 		"<div id='InfoBox'>");
+		
+		//Input notification's here example: 
+		//<div>Please Handle in you paper by 12/3/17 -Mr Chew</div>
+		//<div>Just wanted to say Hi! -Ms Tay</div>
+		for(String s:notificationArray){
+			out.print("<div>" + s + "</div>");
+		}
+		
+		out.print(
+		 		"</div>"
+		+ 	"</div>"
 		+ 	"<!-- Bottom Naviagtion -->"
 		+ 	"<div class='container-fluid' id='Bot-Container'>"
 		+ 		"<div class='row' id='Bot-Container-Container'>");

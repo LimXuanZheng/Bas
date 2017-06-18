@@ -3,8 +3,6 @@
 *{
 	padding: 0px;
 	margin: 0px;
-	overflow-x: hidden;
-	overflow-y: visible;
 }
 
 /* Top Bar */
@@ -33,11 +31,6 @@
 	color: white;
 	font-size: 36px;
 	font-weight: bold;
-}
-
-#loginBtn{
-	width: 150px;
-	min-width: 150px;
 }
 
 /* Bottom Part */
@@ -71,16 +64,16 @@
 #notificationTab{
 	width: 50px;
 	height: 50px;
-	padding: 10px 0px 0px 0px;
 	position: fixed;
 	top: 100px;
 	right: 0px;
 	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%);
 	border-radius: 10px 0px 0px 10px;
 	text-align: center;
-	vertical-align: middle;
-	font-size: 30px;
+	font-size: 8px;
 	z-index: 1;
+	border: 1px solid purple;
+	overflow: visible;
 }
 
 #notificationBadge{
@@ -89,4 +82,34 @@
 	right: 35px;
 	font-size: 16px;
 	z-index: 2;
+}
+
+#notiIcon{
+	overflow: hidden;
+	font-size: 28px;
+}
+
+.glyphicon-bullhorn{
+	padding: 10px 0px 0px 0px;
+	overflow: visible;
+}
+
+#HeadBox{
+	width: 100%;
+	height: 50px;
+	overflow: hidden;
+}
+
+#InfoBox{
+	height: 0px;
+	overflow-y: auto;
+	display: list-item;
+	padding: 0px;
+}
+
+#InfoBox *{
+	min-width: 100px;
+	width: 100%;
+	height: auto;
+	font-size: 16px;
 }

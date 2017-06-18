@@ -22,12 +22,12 @@ import database.model.UserAll;
 @WebServlet("/Directory")
 public class Directory extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    private String userType = "Student";
+    private int userType = 1;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ArrayList<UserAll> userAllArray = new ArrayList<UserAll>();
 		try {
-			DatabaseAccess dba = new DatabaseAccess();
+			DatabaseAccess dba = new DatabaseAccess(userType);
 			userAllArray = dba.getDatabaseUserAll();
 			
 			response.setContentType("text/html;charset=UTF-8");
@@ -44,7 +44,9 @@ public class Directory extends HttpServlet {
 	    			+ 		"<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u' crossorigin='anonymous'>"
 	    			+ 		"<!-- Optional theme -->"
 	    			+ 		"<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css' integrity='sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp' crossorigin='anonymous'>"
-	    			+ 		"<title>Directory</title>"
+	    			//+		"<!-- My Own Script -->"
+	    			//+		"<script src='script/.js'></script>"
+	    			+		"<title>Directory</title>"
 	    			+ 	"</head>"
 	    			+ 	"<body>"
 	    			+ 		"<div class='container-fluid' id='Container'>"
@@ -95,26 +97,43 @@ public class Directory extends HttpServlet {
 	    			+ 						"<thead>"
 	    			+ 							"<tr>");
 	    	
-	    			if(userType.equals("Student")){
+	    			if(userType == 1){
 	    				out.println(
 	    						"<th><p>Name</p></th>"
 	    						+ "<th><p>Gender</p></th>"
 	    						+ "<th><p>Class</p></th>"
 	    						+ "<th><p>Contact number</p></th>"
 	    						+ "<th><p>Email</p></th>"
-	    						+ "<th><p>Department</p></th>");
-	    			}
+	    						+ "<th><p>Department</p></th>"
+	    						+				"</tr>"
+	    		    			+ 			"</thead>"
+	    		    			+ 		"<tbody>");
 	    				
-	    			out.print(
-	    			 							"</tr>"
-	    			+ 						"</thead>"
-	    			+ 						"<tbody>");
+	    				for(UserAll u:userAllArray){
+	    					if(u.getTeacher().getTeacherID() > 0){ //Only shows if it is teacher... I lazy create a new method in Database Object (DatabaseAccess)
+	    						out.println("<tr><td>" + u.getUser().getName() + "</td><td>" + u.getUser().getGender() + "</td><td>" + u.getUser().getSchoolClass() + "</td><td>" + u.getUser().getContactNo() + "</td><td>" + u.getUser().getEmail() + "</td><td>" + u.getTeacher().getDepartment() + "</td></tr>");
+	    					}
+	    				}
+	    			}
+	    			else if(userType == 2){
+	    				out.println(
+	    						"<th><p>NRIC</p></th>"
+	    						+ "<th><p>Name</p></th>"
+	    						+ "<th><p>Gender</p></th>"
+	    						+ "<th><p>Class</p></th>"
+	    						+ "<th><p>Contact number</p></th>"
+	    						+ "<th><p>Email</p></th>"
+	    						+ "<th><p>CCA</p></th>"
+	    						+				"</tr>"
+	    		    			+ 			"</thead>"
+	    		    			+ 		"<tbody>");
+	    				
+	    				for(UserAll u:userAllArray){
+    						out.println("<tr><td>" + u.getStudent().getnRIC() + "</td><td>" + u.getUser().getName() + "</td><td>" + u.getUser().getGender() + "</td><td>" + u.getUser().getSchoolClass() + "</td><td>" + u.getUser().getContactNo() + "</td><td>" + u.getUser().getEmail() + "</td><td>" + u.getTeacher().getDepartment() + "</td></tr>");
+	    				}
+	    			}
 	    	
-			for(UserAll u:userAllArray){
-				if(u.getTeacher().getTeacherID() > 0){
-					out.println("<tr><td>" + u.getUser().getName() + "</td><td>" + u.getUser().getGender() + "</td><td>" + u.getUser().getSchoolClass() + "</td><td>" + u.getUser().getContactNo() + "</td><td>" + u.getUser().getEmail() + "</td><td>" + u.getTeacher().getDepartment() + "</td></tr>");
-				}
-			}
+			
 			
 			out.println(					
 											"</tbody>"
@@ -130,8 +149,8 @@ public class Directory extends HttpServlet {
 					+ 		"</script>"
 					+ 	"</body>"
 					+ "</html>");
-			out.close();
-			dba.close();
+			out.close(); //PrintWriter Closed...
+			dba.close(); //Database Connection Object Closed...
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
@@ -149,19 +168,21 @@ public class Directory extends HttpServlet {
     	
     	ArrayList<UserAll> userAllArray = new ArrayList<UserAll>();
     	try {
-			DatabaseAccess dba = new DatabaseAccess();
-			userAllArray = dba.getDatabaseUserAll();
+			DatabaseAccess dba = new DatabaseAccess(userType);
+			//userAllArray = dba.getDatabaseUserAll();
 			
-			String sqlline = "SELECT * FROM User WHERE Name LIKE ?;";
-			ResultSet rs = dba.getDatabaseData(sqlline, name);
-			while(rs.next()){
-				System.out.println(rs.getString("Name"));
+			String sqlline = "SELECT User.UserID, Login.Username, Login.Password, User.Name, User.Gender, User.DOB, User.ContactNo, User.Email, User.Class, User.Address, Student.NRIC, Student.CCA, Teacher.TeacherID, Teacher.Department FROM User LEFT OUTER JOIN Login ON (User.UserID = Login.UserID) LEFT OUTER JOIN Student ON (User.UserID = Student.UserID) LEFT OUTER JOIN Teacher ON (User.UserID = Teacher.UserID) WHERE User.Name LIKE ?;"; //Testing Search Name (It's Working)
+			if(validateName(name)){ //If name is not letters, method is exited and (prompts error)
+				userAllArray = dba.convertResultSetToArrayList(dba.getDatabaseData(sqlline, name));
+			}else{
+				dba.close();
+				response.sendRedirect("Directory");
+				return;
 			}
-			rs.close();
 			
 	    	response.setContentType("text/html;charset=UTF-8");
 	    	PrintWriter out = response.getWriter();
-	    	out.println("<!DOCTYPE html>"
+	    	out.println("<!DOCTYPE html>" //Mmmm... Messy... Just I liked...
 	    			+ "<html>"
 	    			+ "<head>"
 	    			+ "<meta charset='UTF-8'>"
@@ -222,7 +243,14 @@ public class Directory extends HttpServlet {
 	    			+ "<tbody>");
 	    	
 			for(UserAll u:userAllArray){
-				out.println("<tr><td>" + u.getUser().getUserID() + "</td><td>" + u.getLogin().getUsername() + "</td><td>" + u.getLogin().getPassword() + "</td><td>" + u.getUser().getName() + "</td><td>" + u.getUser().getGender() + "</td><td>" + u.getUser().getdOB() + "</td><td>" + u.getUser().getContactNo() + "</td><td>" + u.getUser().getEmail() + "</td><td>" + u.getUser().getSchoolClass() + "</td><td>" + u.getUser().getAddress() + "</td><td>" + u.getStudent().getnRIC() + "</td><td>" + u.getStudent().getcCA() + "</td><td>" + u.getTeacher().getTeacherID() + "</td><td>" + u.getTeacher().getDepartment() + "</td></tr>");
+				if(userType == 1){
+		    		if(u.getTeacher().getTeacherID() > 0){ //Only shows if it is teacher...
+		    			out.println("<tr><td>" + u.getUser().getUserID() + "</td><td>" + u.getLogin().getUsername() + "</td><td>" + u.getLogin().getPassword() + "</td><td>" + u.getUser().getName() + "</td><td>" + u.getUser().getGender() + "</td><td>" + u.getUser().getdOB() + "</td><td>" + u.getUser().getContactNo() + "</td><td>" + u.getUser().getEmail() + "</td><td>" + u.getUser().getSchoolClass() + "</td><td>" + u.getUser().getAddress() + "</td><td>" + u.getStudent().getnRIC() + "</td><td>" + u.getStudent().getcCA() + "</td><td>" + u.getTeacher().getTeacherID() + "</td><td>" + u.getTeacher().getDepartment() + "</td></tr>");
+		    		}
+		    	}
+				else if(userType == 2){
+					out.println("<tr><td>" + u.getUser().getUserID() + "</td><td>" + u.getLogin().getUsername() + "</td><td>" + u.getLogin().getPassword() + "</td><td>" + u.getUser().getName() + "</td><td>" + u.getUser().getGender() + "</td><td>" + u.getUser().getdOB() + "</td><td>" + u.getUser().getContactNo() + "</td><td>" + u.getUser().getEmail() + "</td><td>" + u.getUser().getSchoolClass() + "</td><td>" + u.getUser().getAddress() + "</td><td>" + u.getStudent().getnRIC() + "</td><td>" + u.getStudent().getcCA() + "</td><td>" + u.getTeacher().getTeacherID() + "</td><td>" + u.getTeacher().getDepartment() + "</td></tr>");
+				}
 			}
 			
 			out.println("</tbody>"
@@ -238,8 +266,9 @@ public class Directory extends HttpServlet {
 					+ "</script>"
 					+ "</body>"
 					+ "</html>");
-			out.close();
-			dba.close();
+			
+			out.close(); //PrintWriter Closing...
+			dba.close(); //Database Object Closing...
     	} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
@@ -248,7 +277,7 @@ public class Directory extends HttpServlet {
 	}
 
 	private boolean validateName(String name){
-		if(name != null)
+		if(name != null && name != "")
 			if(name.matches("[a-zA-Z]+"))
 				return true;
 			else
