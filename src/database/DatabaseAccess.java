@@ -57,6 +57,12 @@ public class DatabaseAccess {
 		return ppstmt.executeQuery();
 	}
 	
+	public ResultSet getDbData(String sql, String value) throws SQLException{
+		PreparedStatement ppstmt = conn.prepareStatement(sql);
+		ppstmt.setString(1, value);
+		return ppstmt.executeQuery();
+	}
+	
 	public ArrayList<UserAll> getDatabaseUserAll() throws SQLException{
 		ResultSet rs = getDatabaseData("SELECT User.UserID, Login.Username, Login.Password, User.Name, User.Gender, User.DOB, User.ContactNo, User.Email, User.Class, User.Address, Student.NRIC, Student.CCA, Teacher.TeacherID, Teacher.Department FROM User LEFT OUTER JOIN Login ON (User.UserID = Login.UserID) LEFT OUTER JOIN Student ON (User.UserID = Student.UserID) LEFT OUTER JOIN Teacher ON (User.UserID = Teacher.UserID) ORDER BY UserID;");
 		ArrayList<UserAll> userAllArray = new ArrayList<UserAll>();

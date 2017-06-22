@@ -1,7 +1,8 @@
 @CHARSET "UTF-8";
 
 * {
-	margin: auto;
+	/*margin: auto;*/
+	margin: 0px;
 	padding: 0px;
 	box-sizing: border-box;
 }
@@ -12,9 +13,18 @@ body {
 	
 }
 
+#theDiv {
+	height: 100%;
+	width: 100%;
+}
+
 #aDiv {
-	width: 60%;
-	margin-top: 240px;
+	position: absolute;
+	top: 20%;
+	left: 20%;
+	height: 460px;
+	width: 1145px;
+	/*width: 60%;*/
 	overflow: hidden;
 	box-shadow: 10px 10px 5px #888888;
 }
@@ -27,9 +37,15 @@ body {
 	background-color: #673AB7;
 }
 
-#basLogo {
-	display: block;
+#basImgDiv {
+	text-align: center;
 	margin-top: 25%;
+}
+
+#basLogo {
+	/*display: block;*/
+	/*margin-top: 25%;*/
+	/*margin-left: 28%;*/
 	height: 200px;
 	width: 200px;
 }
@@ -63,11 +79,11 @@ body {
 
 .input {
   	border: none;
-  	border-bottom: solid 1px #1ABC9C;
+  	border-bottom: solid 1px #4a89dc;
   	-webkit-transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
     	transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
- 	background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 96%, #1ABC9C 4%);
-  	background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #1ABC9C 4%);
+ 	background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 96%, #4a89dc 4%);
+  	background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #4a89dc 4%);
   	background-position: -600px 0;
   	/*background-size: 200px 100%;*/
   	background-repeat: no-repeat;
@@ -79,15 +95,26 @@ body {
   	box-shadow: none;
   	outline: none;
   	background-position: 0px 0px;
+  	border-bottom: none;
 }
 
 .input:focus::-webkit-input-placeholder, .input:valid::-webkit-input-placeholder {
   	-webkit-transform: translateY(-25px);
     	transform: translateY(-25px);
   	visibility: visible;
-  	color: #1ABC9C;
+  	color: #4a89dc;
   	transition: all 0.3s ease;
   	font-size: 15px;
+  	font-weight: bold;
+}
+
+#flexUInput {
+	display: flex;
+}
+
+#flexPInput {
+	display: flex;
+	margin-top: 20px;
 }
 
 #namePart {
@@ -97,18 +124,20 @@ body {
 #nameImg {
 	width: 40px;
 	height: 40px;
-	position: absolute;
-	left: 49%;
+	margin-right: 10px;
+	/*position: absolute;*/
+	/*left: 49%;*/
 }
 
 #userID {
-	width: 80%;
 	height: 40px;
+	width: 90%;
+	/*width: 80%*/
 }
 
 #inputNError {
-	display: none;
-	width: 80%;
+	
+	width: 100%;
 	height: 40px;
 	background-color: #F74225;
 	font-size: 20px;
@@ -120,8 +149,8 @@ body {
 #namePart #inputNError::after {
 	content: "";
     position: absolute;
-    bottom: 49%;
-    left: 70%;
+    bottom: 54%;
+    left: 73%;
     margin-left: -20px;
     border-width: 20px;
     border-style: solid;
@@ -135,18 +164,20 @@ body {
 #passImg {
 	width: 40px;
 	height: 40px;
-	position: absolute;
-	left: 49%;
+	margin-right: 10px;
+	/*position: absolute;*/
+	/*left: 49%;*/
 }
 
 #passID {
-	width: 80%;
 	height: 40px;
+	width: 90%;
+	/*width: 80%*/
 }
 
 #inputPError {
-	display: none;
-	width: 80%;
+	/*display: none;*/
+	width: 100%;
 	height: 40px;
 	background-color: #F74225;
 	font-size: 20px;
@@ -158,8 +189,8 @@ body {
 #passPart #inputPError::after {
 	content: "";
     position: absolute;
-    bottom: 37%;
-    left: 70%;
+    bottom: 42%;
+    left: 73%;
     margin-left: -20px;
     border-width: 20px;
     border-style: solid;
@@ -180,8 +211,9 @@ body {
 
 #btnDiv {
 	margin: auto;
-	height: 200px;
-	width: 80%;
+	height: 20%;
+	/*height: 200px;*/
+	/*width: 80%;*/
 	padding-top: 10px;
 }
 
@@ -284,6 +316,7 @@ body {
 
 #pInputDiv {
 	margin-top: 80px;
+	text-align: -webkit-center;
 }
 
 #pInputError {
@@ -293,7 +326,7 @@ body {
 	background-color: #F74225;
 	color: white;
 	padding: 10px;
-	margin-top: 11px;
+	margin-top: 9px;
 }
 
 #pInputDiv #pInputError::after {
@@ -336,15 +369,20 @@ body {
     height: 20%;
 }
 
+#pBtnDiv {
+	text-align: center;
+}
+
 #popupBtn {
-	height: 50px;
+	height: 40px;
 	width: 200px;
 	font-size: 20px;
 	text-align: center;
 	border: none;
-	position: relative;
-	top: 20%;
-	left: 40%;
+	margin-top: 20px;
+	/*position: relative;*/
+	/*top: 20%;*/
+	/*left: 40%;*/
 	background-color: white;
 	color: black;
 	cursor: pointer;
