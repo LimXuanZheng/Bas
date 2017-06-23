@@ -20,6 +20,7 @@
 		    			window.location('StudentUpload.html');
 		    		}
 				}
+				
 			</script>
 	</head>
 	<body>
@@ -50,11 +51,13 @@
 				</div>
 				<div id="submissions">
 					<hr>
+					<form id="form" action="../uploads" method="post">
 					<p>Text Submission : <button id="button1">Write Submission</button></p>
-					<p style="font-size:25px; margin-top:3%;">Attach File: <input type="file" name="datafile" style="font-size:20px; float:left;"/></p>
+					<p style="font-size:25px; margin-top:3%;">Attach File: <input type="file" id="datafilepath" name="datafile" style="font-size:20px; float:left;"/></p>
 				</div>
 				<div id="confirm">
-					<button id="submit">Submit</button><button id="cancel" onclick="helloxz()">Cancel</button>
+						<input type="submit" id="submit" value="Submit"></input></form>
+						<button id="cancel" onclick="helloxz()">Cancel</button>
 				</div>
 			</div>
 		</div>
