@@ -4,6 +4,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
@@ -65,10 +66,13 @@ public class upload extends HttpServlet {
             ex.printStackTrace();
             System.out.println("fail");
         }
-        
+        //String test = encryptedFile.toString();
+        //File file = new File("C:/Users/Lim Xuan Zheng/Documents/GitHub/Bas/src/encryptedd");
+		//File f1 = new File(file, test);
+		//f1.createNewFile();
+       
 		
-		
-		
+
 	}
 	
 	
