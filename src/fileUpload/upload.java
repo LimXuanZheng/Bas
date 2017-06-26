@@ -6,6 +6,8 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.nio.file.Files;
@@ -31,6 +33,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.xml.bind.DatatypeConverter;
 
 import fileUpload.CryptoException;
+import teacherSharing.decryption;
 
 
 /**
@@ -52,11 +55,10 @@ public class upload extends HttpServlet {
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		PrintWriter out = response.getWriter();
+		//PrintWriter out = response.getWriter();
 		String path = request.getParameter("datafile");
-		Path paths = Paths.get(path);
-		File f = paths.toFile();
-		out.println(path);
+		File f = new File(path);
+		//out.println(path);
 		String key = "Mary has one cat";
         File encryptedFile = new File("document.encrypted");
         try {
@@ -66,6 +68,29 @@ public class upload extends HttpServlet {
             ex.printStackTrace();
             System.out.println("fail");
         }
+        
+        File decryptedFile = new File("document.decrypted");
+        try {
+        	decryption.decrypt(key, encryptedFile, decryptedFile);
+        } catch (CryptoException ex) {
+            System.out.println(ex.getMessage());
+            ex.printStackTrace();
+            System.out.println("fail");
+        }
+        FileInputStream hh = new FileInputStream(decryptedFile);
+        OutputStream h = response.getOutputStream();
+       
+        byte[] test = new byte[4096];
+        int bytesRead = -1;
+        while ((bytesRead = hh.read(test)) != -1) {
+                           h.write(test, 0, bytesRead);
+                       }
+        
+        
+        
+        
+       
+        
         //String test = encryptedFile.toString();
         //File file = new File("C:/Users/Lim Xuan Zheng/Documents/GitHub/Bas/src/encryptedd");
 		//File f1 = new File(file, test);
