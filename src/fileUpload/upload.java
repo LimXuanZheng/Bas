@@ -33,7 +33,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.xml.bind.DatatypeConverter;
 
 import fileUpload.CryptoException;
-import teacherSharing.decryption;
+//import teacherSharing.decryption;
 
 
 /**
@@ -75,7 +75,7 @@ public class upload extends HttpServlet {
         } catch (CryptoException ex) {
             System.out.println(ex.getMessage());
             ex.printStackTrace();
-            System.out.println("fail");
+            //System.out.println("fail");
         }
         FileInputStream hh = new FileInputStream(decryptedFile);
         OutputStream h = response.getOutputStream();
