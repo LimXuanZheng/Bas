@@ -1,4 +1,16 @@
 /homePage/
 /database/
 /directory/
+<<<<<<< HEAD
 /loginServlet/
+=======
+/fileUpload/
+/hello/
+/homePage/
+/loginServlet/
+/teacherSharing/
+/studentDownload/
+/encrypted/
+/encryptedd/
+/testt.class
+>>>>>>> origin/master
