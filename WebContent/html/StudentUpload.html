@@ -53,7 +53,12 @@
 					<hr>
 					<form id="form" action="../uploads" method="post">
 					<p>Text Submission : <button id="button1">Write Submission</button></p>
-					<p style="font-size:25px; margin-top:3%;">Attach File: <input type="file" id="datafilepath" name="datafile" style="font-size:20px; float:left;"/></p>
+					<p style="font-size:25px; margin-top:3%;">Attach File:
+						<label class="custom-file">
+	  						<input type="file" id="datafilepath" class="custom-file-input" name="datafile" style="font-size:20px; float:left;">
+	  						<span class="custom-file-control"></span>
+						</label>
+					</p>
 				</div>
 				<div id="confirm">
 						<input type="submit" id="submit" value="Submit"></input></form>

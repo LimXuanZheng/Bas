@@ -22,7 +22,7 @@ import fileUpload.CryptoException;
  *
  */
 public class decryption {
-    private static final String ALGORITHM = "AES/CBC/PKCS5Padding";
+    private static final String ALGORITHM = "AES";
     private static final String TRANSFORMATION = "AES";
  
     public static void decrypt(String key, File inputFile, File outputFile)
