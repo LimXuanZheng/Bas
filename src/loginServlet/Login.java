@@ -106,7 +106,7 @@ public class Login extends HttpServlet {
 		try {
 			DatabaseAccess dba = new DatabaseAccess(1);
 			String sqlline = "SELECT Login.UserID, Login.Username, Login.Password FROM Login WHERE Username = ?;"; 
-			ResultSet login = dba.getDbData(sqlline, username);
+			ResultSet login = dba.getDatabaseData(sqlline, username);
 			if (login.next()) {
 				if (login.getString("Password").equals(password)) {
 					System.out.println("Entered If");

@@ -1,5 +1,8 @@
 package database;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -8,7 +11,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import database.model.Lesson;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
+
+import com.mysql.jdbc.Blob;
+
 import database.model.Login;
 import database.model.Student;
 import database.model.Teacher;
@@ -29,6 +38,7 @@ public class DatabaseAccess {
     final String PASS_T = "TeacherPassword_102";
     Connection conn;
     Statement stmt;
+    PreparedStatement ppstmt;
     
 	public DatabaseAccess(int permission) throws ClassNotFoundException, SQLException{
 		 Class.forName(JDBC_DRIVER);
@@ -51,14 +61,14 @@ public class DatabaseAccess {
 		return stmt.executeQuery(sql);
 	}
 	
-	public ResultSet getDatabaseData(String sql, String value) throws SQLException{
-		PreparedStatement ppstmt = conn.prepareStatement(sql);
+	public ResultSet getSearchDatabaseData(String sql, String value) throws SQLException{
+		ppstmt = conn.prepareStatement(sql);
 		ppstmt.setString(1, "%" + value + "%");
 		return ppstmt.executeQuery();
 	}
 	
-	public ResultSet getDbData(String sql, String value) throws SQLException{
-		PreparedStatement ppstmt = conn.prepareStatement(sql);
+	public ResultSet getDatabaseData(String sql, String value) throws SQLException{
+		ppstmt = conn.prepareStatement(sql);
 		ppstmt.setString(1, value);
 		return ppstmt.executeQuery();
 	}
@@ -236,10 +246,29 @@ public class DatabaseAccess {
         }
 	}
 	
+	public void updateDatabaseDataFileUpload(String sql, String fileName, long fileSize, InputStream data) throws SQLException{
+		ppstmt = conn.prepareStatement(sql);
+		ppstmt.setString(1, fileName);
+		ppstmt.setLong(2, fileSize);
+		ppstmt.setBlob(3, data);
+		int count = ppstmt.executeUpdate();
+        if(count ==0){
+        	System.out.println("!!! Update failed !!!\n");
+        }else{
+    	    System.out.println("!!! Update successful !!!\n");
+        }
+	}
+	
 	public void close() throws SQLException{
 		conn.close();
 		stmt.close();
+		ppstmt.close();
 	}
+
+	public Connection getConn() {
+		return conn;
+	}
+	
 	
 	/*
 	public static void main(String[] args) throws ClassNotFoundException, SQLException{
@@ -253,4 +282,71 @@ public class DatabaseAccess {
 		dao.close();
 	}
 	*/
+	
+	/* For File Uploads...
+	 * 
+	 * //"<form action='Home' method='POST' enctype='multipart/form-data'><input type='file' name='file' /><input type='submit' /></form>" (HTML)
+	 * 
+	 * Part filePart = request.getPart("file"); (Java)
+	 * String fileName = getSubmittedFileName(filePart);
+	 * long fileSize = filePart.getSize();
+	 * System.out.println("Name: " + fileName + "\nSpace: " + fileSize);
+	 * InputStream inputStream = filePart.getInputStream();
+	 * try {
+	 * 		DatabaseAccess dba = new DatabaseAccess(0);
+	 * 		String sqlline = "INSERT INTO File(FileName, Size, Data) VALUES (?, ?, ?);";
+	 *		dba.updateDatabaseDataFileUpload(sqlline, fileName, fileSize, inputStream);
+	 *		dba.close();
+	 *	} catch (ClassNotFoundException e) {
+	 *		e.printStackTrace();
+	 *	} catch (SQLException e) {
+	 *		e.printStackTrace();
+	 *	}
+	 *
+	 * 	private static String getSubmittedFileName(Part part) {
+	 * 		for (String cd : part.getHeader("content-disposition").split(";")) {
+	 *       	if (cd.trim().startsWith("filename")) {
+	 *           	String fileName = cd.substring(cd.indexOf('=') + 1).trim().replace("\"", "");
+	 *           	return fileName.substring(fileName.lastIndexOf('/') + 1).substring(fileName.lastIndexOf('\\') + 1);
+	 *     	 	}
+	 *  	}
+	 *  	return null;
+	 *	}
+	 *
+	For File Downloads...
+	*
+	*	private static final int BUFFER_SIZE = 4096;
+	*
+	*	String fileName = "autoplaylist.txt";
+	*	try {
+	*		DatabaseAccess dba = new DatabaseAccess(0);
+	*	  	String sqlline = "SELECT * FROM File WHERE fileName = ?;";
+	*		ResultSet result = dba.getDatabaseData(sqlline, fileName);
+	*	 	response.setHeader("Content-Disposition",
+    *                "attachment;filename=" + fileName);
+	*	 	if (result.next()) {
+    *            Blob blob = result.getBlob("Data");
+    *            InputStream inputStream = blob.getBinaryStream();
+    *            OutputStream out = response.getOutputStream();
+    *
+    *           int bytesRead = -1;
+    *            byte[] buffer = new byte[BUFFER_SIZE];
+    *           while ((bytesRead = inputStream.read(buffer)) != -1) {
+    *                out.write(buffer, 0, bytesRead);
+    *            }
+    *
+    *            inputStream.close();
+    *             out.flush();
+    *            out.close();
+    *           System.out.println("File saved");
+    *       }
+	*	 	dba.close();
+	*	} catch (ClassNotFoundException e) {
+	*	 	e.printStackTrace();
+	*	} catch (SQLException e) {
+	*	 	e.printStackTrace();
+	*	}
+	*
+	*/
+	
 }
