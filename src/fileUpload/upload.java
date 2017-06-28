@@ -3,13 +3,18 @@ package fileUpload;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import database.DatabaseAccess;
 import fileUpload.CryptoException;
 import teacherSharing.decryption;
 
@@ -47,7 +52,7 @@ public class upload extends HttpServlet {
             System.out.println("fail");
         }
         
-        File decryptedFile = new File("document.decrypted");
+        /*File decryptedFile = new File("document.decrypted");
         try {
         	decryption.decrypt(key, encryptedFile, decryptedFile);
         } catch (CryptoException ex) {
@@ -63,6 +68,22 @@ public class upload extends HttpServlet {
         while ((bytesRead = hh.read(test)) != -1) {
                            h.write(test, 0, bytesRead);
                        }
+        */
+        InputStream in = new FileInputStream(encryptedFile);
+        String name = f.getName();
+        System.out.println(name);
+        System.out.println(f.length());
+        
+        try {
+                    DatabaseAccess dba = new DatabaseAccess(1);
+                    String sqlline = "INSERT INTO File(FileName, Size, Data) VALUES (?, ?, ?);";
+                    dba.updateDatabaseDataFileUpload(sqlline, name, f.length(), in);
+                    dba.close();
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
         
         
         
