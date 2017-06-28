@@ -16,6 +16,7 @@
 
 nav{
 	margin: 0px 15px;
+	overflow: show;
 	z-index: 1;
 }
 
