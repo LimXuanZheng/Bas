@@ -15,7 +15,7 @@
 				function helloxz() {
 		    		var r = confirm("Are you sure?");
 		    		if (r == true) {
-		    			window.location('homePage.html');
+		    			window.location('beforeSubmission.html');
 		    		} else {
 		    			window.location('StudentUpload.html');
 		    		}
@@ -25,20 +25,28 @@
 	</head>
 	<body>
 		<div class="container-fluid" id="Container">
-			<nav class="navbar navbar-default">
-				<div class="container-fluid">
-					<div class="navbar-header">
-						<a class="navbar-brand" href="homePage.html">Bas?</a>
+			<nav class='navbar navbar-default'>
+					<div class='container-fluid'>
+						<div class='navbar-header'>
+							<a class='navbar-brand' href='../Home'>Bas?</a>
+						</div>
+						<div class='collapse navbar-collapse'>
+							<ul class='nav navbar-nav'>
+								<li class='active'><a href='../Home'>Home</a></li>
+								<li><a href='../Directory'>Directory</a></li>
+							</ul>
+							<ul class='nav navbar-nav navbar-right'>
+								<li class='dropdown'>
+									<a class='dropdown-toggle' data-toggle='dropdown' href='#'>Welcome, Bob. </a>
+									<ul class='dropdown-menu'>
+										<li><a href='#'>Setting</a></li>
+										<li><a href='Login.html'>Logout</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
 					</div>
-						<ul class="nav navbar-nav">
-							<li><a href="homePage.html">Home</a></li>
-							<li class="active"><a href="#">Directory</a></li>
-						</ul>
-						<ul class="nav navbar-nav navbar-right">
-							<li id="loginBtn"><a href="#">Welcome, Bob.</a></li>
-						</ul>
-				</div>
-			</nav>
+				</nav>
 			<div id="whole">
 				<h1 id="header1">Assignment Submission</h1>
 				<div id="notices">
@@ -53,7 +61,12 @@
 					<hr>
 					<form id="form" action="../uploads" method="post">
 					<p>Text Submission : <button id="button1">Write Submission</button></p>
-					<p style="font-size:25px; margin-top:3%;">Attach File: <input type="file" id="datafilepath" name="datafile" style="font-size:20px; float:left;"/></p>
+					<p style="font-size:25px; margin-top:3%;">Attach File:
+						<label class="custom-file">
+	  						<input type="file" id="datafilepath" class="custom-file-input" name="datafile" style="font-size:20px; float:left;">
+	  						<span class="custom-file-control"></span>
+						</label>
+					</p>
 				</div>
 				<div id="confirm">
 						<input type="submit" id="submit" value="Submit"></input></form>

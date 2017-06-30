@@ -24,26 +24,25 @@ public class encryption {
 	    private static final String ALGORITHM = "AES";
 	    private static final String TRANSFORMATION = "AES";
 	 
-	    public static void encrypt(String key, File inputFile, File outputFile)
-	            throws CryptoException {
-	        doCrypto(Cipher.ENCRYPT_MODE, key, inputFile, outputFile);
+	    public static void encrypt(String key, File inputFile, File outputFile) throws CryptoException {
+	        doCrypto(Cipher.ENCRYPT_MODE, key, inputFile, outputFile);//initialize cipher to encryption mode,
 	    }
 	 
 	 
 	    private static void doCrypto(int cipherMode, String key, File inputFile,
 	            File outputFile) throws CryptoException {
 	        try {
-	            Key secretKey = new SecretKeySpec(key.getBytes(), ALGORITHM);
-	            Cipher cipher = Cipher.getInstance(TRANSFORMATION);
-	            cipher.init(cipherMode, secretKey);
+	            Key secretKey = new SecretKeySpec(key.getBytes(), ALGORITHM);//Constructs a secret key from the given byte array
+	            Cipher cipher = Cipher.getInstance(TRANSFORMATION);//Returns a Cipher object that implements the specified transformation
+	            cipher.init(cipherMode, secretKey);//Initializes this cipher with a key
 	             
 	            FileInputStream inputStream = new FileInputStream(inputFile);
 	            byte[] inputBytes = new byte[(int) inputFile.length()];
 	            inputStream.read(inputBytes);
 	             
-	            byte[] outputBytes = cipher.doFinal(inputBytes);
+	            byte[] outputBytes = cipher.doFinal(inputBytes); //encrypts the byte file
 	             
-	            FileOutputStream outputStream = new FileOutputStream(outputFile);
+	            FileOutputStream outputStream = new FileOutputStream(outputFile);//implements an output stream in which the data is written into a byte array
 	            outputStream.write(outputBytes);
 	             
 	            inputStream.close();

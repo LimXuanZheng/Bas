@@ -2,7 +2,6 @@ package directory;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -12,10 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.mysql.jdbc.PreparedStatement;
-
 import database.DatabaseAccess;
-import database.model.Teacher;
 import database.model.UserAll;
 
 //If I have time I confirm going to make the out.print nicer... For the time being deal with it
@@ -162,9 +158,9 @@ public class Directory extends HttpServlet {
         // Get and validate name.
         String name = request.getParameter("search");
         // Get schoolClass
-    	String schoolClass = request.getParameter("schoolClass");
+    	//String schoolClass = request.getParameter("schoolClass");
     	//Get Subject
-    	String subject = request.getParameter("subject");
+    	//String subject = request.getParameter("subject");
     	
     	ArrayList<UserAll> userAllArray = new ArrayList<UserAll>();
     	try {
