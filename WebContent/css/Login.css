@@ -14,24 +14,30 @@ body {
 }
 
 #theDiv {
+	position: absolute;
+	top: 0;
+	left: 0;
 	height: 100%;
 	width: 100%;
 }
 
 #aDiv {
-	position: absolute;
-	top: 20%;
-	left: 20%;
+	/*position: absolute;*/
+	/*top: 20%;*/
+	/*left: 20%;*/
+	position: relative;
+	margin: auto;
+	margin-top: 100px;
 	height: 460px;
 	width: 1145px;
 	/*width: 60%;*/
-	overflow: hidden;
+	/*overflow: hidden;*/
 	box-shadow: 10px 10px 5px #888888;
 }
 
 #bDiv {
-	margin: auto;
-	height: 50vh;
+	/*margin: auto;*/
+	height: 100%;
 	width: 40%;
 	float: left;
 	background-color: #673AB7;
@@ -57,8 +63,8 @@ body {
 }
 
 #cDiv {
-	margin: auto;
-	height: 50vh;
+	/*margin: auto;*/
+	height: 100%;
 	width: 60%;
 	float: right;
 	background-color: #EDE7F6;
@@ -261,8 +267,8 @@ body {
     margin: auto;
     padding: 0;
     border: 1px solid #888;
-    height: 50%;
-    width: 50%;
+    height: 385px;
+    width: 800px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;

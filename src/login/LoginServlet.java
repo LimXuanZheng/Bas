@@ -1,4 +1,4 @@
-package loginServlet;
+package login;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -14,10 +14,10 @@ import javax.servlet.http.HttpServletResponse;
 import database.DatabaseAccess;
 
 @WebServlet("/Login")
-public class Login extends HttpServlet {
+public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public Login() {
+    public LoginServlet() {
         super();
     }
 
@@ -222,7 +222,7 @@ public class Login extends HttpServlet {
 						+ "<img id='nameImg' src='images/Username.png'/>"
 						+ "<input type='text' id='userID' class='input' name='userID' placeholder='Username' required>"
 						+ "</div>"
-						+ "<div id='inputPError'>Username does not match.</div>"
+						+ "<div id='inputNError'>Username does not match.</div>"
 						+ "</div>"
 						+ "<div id='passPart'>"
 						+ "<div id='flexPInput'>"
@@ -266,9 +266,9 @@ public class Login extends HttpServlet {
 			login.close();
 			dba.close();
 		} catch (ClassNotFoundException e) {
-			System.out.println(e);
+			e.printStackTrace();
 		} catch (SQLException e) {
-			System.out.println(e);
+			e.printStackTrace();
 		}
 	}
 

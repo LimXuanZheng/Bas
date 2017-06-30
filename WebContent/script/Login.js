@@ -21,9 +21,3 @@ function renewPass() {
 		pInputError.style.display = "block";
 	}
 }
-function check() {
-	var username = document.getElementById("userID").value;
-	var password = document.getElementById("passID").value;
-	
-	
-}
