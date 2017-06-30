@@ -140,6 +140,9 @@ public class Home extends HttpServlet {
 				case "Assignment Submission":
 					out.print("onclick=\"location.href='html/beforeSubmission.html'\" style=\"cursor: pointer;\"");
 					break;
+				case "View Past Year Papers":
+					out.print("onclick=\"location.href='html/studentDownload.html'\" style=\"cursor: pointer;\"");
+					break;
 			}
 			out.print(">"
 					+ 	"<p>" + s + "</p>"
