@@ -1,8 +1,6 @@
 package database;
 
-import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -10,13 +8,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
-
-import com.mysql.jdbc.Blob;
 
 import database.model.Login;
 import database.model.Student;
@@ -74,7 +65,7 @@ public class DatabaseAccess {
 	}
 	
 	public ArrayList<UserAll> getDatabaseUserAll() throws SQLException{
-		ResultSet rs = getDatabaseData("SELECT User.UserID, Login.Username, Login.Password, User.Name, User.Gender, User.DOB, User.ContactNo, User.Email, User.Class, User.Address, Student.NRIC, Student.CCA, Teacher.TeacherID, Teacher.Department FROM User LEFT OUTER JOIN Login ON (User.UserID = Login.UserID) LEFT OUTER JOIN Student ON (User.UserID = Student.UserID) LEFT OUTER JOIN Teacher ON (User.UserID = Teacher.UserID) ORDER BY UserID;");
+		ResultSet rs = getDatabaseData("SELECT User.UserID, Login.Username, Login.Password, Login.Salt, User.Name, User.Gender, User.DOB, User.ContactNo, User.Email, User.Class, User.Address, Student.NRIC, Student.CCA, Teacher.TeacherID, Teacher.Department FROM User LEFT OUTER JOIN Login ON (User.UserID = Login.UserID) LEFT OUTER JOIN Student ON (User.UserID = Student.UserID) LEFT OUTER JOIN Teacher ON (User.UserID = Teacher.UserID) ORDER BY UserID;");
 		ArrayList<UserAll> userAllArray = new ArrayList<UserAll>();
 		
 		while(rs.next()){
@@ -90,7 +81,8 @@ public class DatabaseAccess {
 			
 			String username = rs.getString("Username");
 			String password = rs.getString("Password");
-			Login login = new Login(username, password, user);
+			String salt = rs.getString("Salt");
+			Login login = new Login(username, password, salt, user);
 			
 			String nRIC = rs.getString("NRIC");
 			String cCA = rs.getString("CCA");
@@ -144,7 +136,8 @@ public class DatabaseAccess {
 			User user = new User(userID,name,gender,dOB,contactNo,email,schoolClass,address);
 			String username = rs.getString("Username");
 			String password = rs.getString("Password");
-			Login login = new Login(username, password, user);
+			String salt = rs.getString("Salt");
+			Login login = new Login(username, password, salt, user);
 			loginArray.add(login);
 		}
 		
@@ -219,7 +212,8 @@ public class DatabaseAccess {
 			
 			String username = rs.getString("Username");
 			String password = rs.getString("Password");
-			Login login = new Login(username, password, user);
+			String salt = rs.getString("Salt");
+			Login login = new Login(username, password, salt, user);
 			
 			String nRIC = rs.getString("NRIC");
 			String cCA = rs.getString("CCA");

@@ -3,9 +3,10 @@ package database.model;
 public class Login {
 	String username;
 	String password;
+	String salt;
 	int userID;
 	
-	public Login(String username, String password, User user) {
+	public Login(String username, String password, String salt, User user) {
 		this.username = username;
 		this.password = password;
 		this.userID = user.getUserID();
@@ -22,6 +23,12 @@ public class Login {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public String getSalt() {
+		return salt;
+	}
+	public void setSalt(String salt) {
+		this.salt = salt;
 	}
 	public int getUserID() {
 		return userID;
