@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Base64;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -105,10 +106,14 @@ public class LoginServlet extends HttpServlet {
 		System.out.println("Password: " + password);
 		try {
 			DatabaseAccess dba = new DatabaseAccess(1);
-			String sqlline = "SELECT Login.UserID, Login.Username, Login.Password FROM Login WHERE Username = ?;"; 
+			String sqlline = "SELECT Login.UserID, Login.Username, Login.Password, Login.Salt FROM Login WHERE Username = ?;"; 
 			ResultSet login = dba.getDatabaseData(sqlline, username);
+			Base64.Decoder dnc = Base64.getDecoder();
+			byte [] saltDecoded = dnc.decode(login.getString("Salt"));
+			HashPass HP = new HashPass();
+			String hashedPassword = HP.getHashedPassword(password, saltDecoded);
 			if (login.next()) {
-				if (login.getString("Password").equals(password)) {
+				if (login.getString("Password").equals(hashedPassword)) {
 					System.out.println("Entered If");
 					response.sendRedirect("Home");
 				}
