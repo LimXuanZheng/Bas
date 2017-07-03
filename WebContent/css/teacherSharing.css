@@ -3,11 +3,7 @@
 	padding: 0px;
 	margin: 0px;
 }
-body{
-	background-color:red;
-}
-
-#button {
+.button {
   color:white;
   display: block;
   margin: 30px;
@@ -18,13 +14,17 @@ body{
   cursor: pointer;
 } 
 
-#button:hover {
+.button:hover {
   background: #f7f7f7;
   border: 1px solid #8b8b8b;
 }
 
-#button:active {
+.button:active {
   background: #2e2e2e;
   border: 1px solid black;
   color: white;
   }
+  
+body{
+ 	background-color:red;
+ }
