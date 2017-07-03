@@ -1,18 +1,30 @@
 @CHARSET "ISO-8859-1";
-#Container{
-	
+*{
 	padding: 0px;
-	
+	margin: 0px;
 }
-nav{
-	margin: 0px 15px;
-	z-index: 1;
+body{
+	background-color:red;
 }
 
-#Container-Container{
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	height: 100%;
-	width: 100%;
+#button {
+  color:white;
+  display: block;
+  margin: 30px;
+  padding: 7px 35px;
+  font: 300 150% langdon;
+  background: transparent;
+  border: 3px solid black;
+  cursor: pointer;
+} 
+
+#button:hover {
+  background: #f7f7f7;
+  border: 1px solid #8b8b8b;
 }
+
+#button:active {
+  background: #2e2e2e;
+  border: 1px solid black;
+  color: white;
+  }
