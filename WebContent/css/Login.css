@@ -72,7 +72,7 @@ body {
 
 #loginForm {
 	text-align: center;
-	padding: 100px;
+	padding: 90px;
 	display: block;
 	height: 500px;
 	font-size: 20px;
@@ -85,7 +85,7 @@ body {
 
 .input {
   	border: none;
-  	border-bottom: solid 1px #4a89dc;
+  	border-bottom: 1px solid #4a89dc;
   	-webkit-transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
     	transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
  	background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 96%, #4a89dc 4%);
@@ -128,23 +128,24 @@ body {
 }
 
 #nameImg {
-	width: 40px;
 	height: 40px;
+	width: 40px;
 	margin-right: 10px;
+	margin-top: 20px;
 	/*position: absolute;*/
 	/*left: 49%;*/
 }
 
 #userID {
-	height: 40px;
+	height: 60px;
 	width: 90%;
 	/*width: 80%*/
 }
 
 #inputNError {
-	
-	width: 100%;
+	/*display: none;*/
 	height: 40px;
+	width: 100%;
 	background-color: #F74225;
 	font-size: 20px;
 	padding: 7px;
@@ -155,10 +156,10 @@ body {
 #namePart #inputNError::after {
 	content: "";
     position: absolute;
-    bottom: 54%;
-    left: 73%;
-    margin-left: -20px;
-    border-width: 20px;
+    bottom: 52%;
+    left: 87%;
+    margin-left: -10px;
+    border-width: 10px;
     border-style: solid;
     border-color: transparent transparent #F74225 transparent;
 }
@@ -168,23 +169,24 @@ body {
 }
 
 #passImg {
-	width: 40px;
 	height: 40px;
+	width: 40px;
 	margin-right: 10px;
+	margin-top: 20px;
 	/*position: absolute;*/
 	/*left: 49%;*/
 }
 
 #passID {
-	height: 40px;
+	height: 60px;
 	width: 90%;
 	/*width: 80%*/
 }
 
 #inputPError {
 	/*display: none;*/
-	width: 100%;
 	height: 40px;
+	width: 100%;
 	background-color: #F74225;
 	font-size: 20px;
 	padding: 7px;
@@ -195,10 +197,10 @@ body {
 #passPart #inputPError::after {
 	content: "";
     position: absolute;
-    bottom: 42%;
-    left: 73%;
-    margin-left: -20px;
-    border-width: 20px;
+    bottom: 39%;
+    left: 87%;
+    margin-left: -10px;
+    border-width: 10px;
     border-style: solid;
     border-color: transparent transparent #F74225 transparent;
 }
@@ -338,7 +340,7 @@ body {
 #pInputDiv #pInputError::after {
 	content: "";
     position: absolute;
-    bottom: 46%;
+    bottom: 44%;
     left: 70%;
     margin-left: -10px;
     border-width: 10px;

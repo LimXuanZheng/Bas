@@ -29,9 +29,13 @@ public class LoginModel {
 		String output = sb.toString();
 		setNewPass(output);
 	}
+	
+	public void sendEmail(String receipientEmail) {
+		SendEmail SE = new SendEmail();
+		SE.sendEmail(receipientEmail, getNewPass());
+	}
 
 	public static void main(String[] args) {
-		//Test for generateNewPass()
 		LoginModel LM = new LoginModel();
 		LM.generateNewPass();
 		System.out.println("New Password: " + LM.getNewPass());
