@@ -33,19 +33,71 @@ public class teacherSharing extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
-		File decryptedFile = new File("document.decrypted");
-		File file = new File("C:/Users/Lim Xuan Zheng/Documents/GitHub/Bas/src/encrypted/document.encrypted.encrypted");
-		String key = "Mary has one cat";
-        try {
-        	decryption.decrypt(key, file, decryptedFile);
-        } catch (CryptoException ex) {
-            System.out.println(ex.getMessage());
-            ex.printStackTrace();
-            System.out.println("fail");
-        }
-        File files = new File("C:/Users/Lim Xuan Zheng/Documents/GitHub/Bas/src/encrypted");
-		File f1 = new File(files, "document.decrypted");
-		f1.createNewFile();
+		out.println("<!DOCTYPE html>"
+    			+ "<html>"
+    			+ 	"<head>"
+    			+ 		"<meta charset='UTF-8'>"
+    			+ 		"<meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>"
+    			+ 		"<!-- Font Mono-Sans -->"
+    			+ 		"<link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>"
+    			+ 		"<!-- Latest compiled and minified CSS -->"
+    			+ 		"<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u' crossorigin='anonymous'>"
+    			+ 		"<!-- Optional theme -->"
+    			+ 		"<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css' integrity='sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp' crossorigin='anonymous'>"
+    			+		"<link rel='stylesheet' href='css/teacherSharing.css'>"
+    			+		"<title>TeacherSharing</title>"
+    			+		"<script src='script/teacher.js'></script>"
+    			+ 	"</head>"
+    			+ 	"<body id='body'>"
+    			+ 		"<div class='container-fluid' id='Container'>"
+    			+ 			"<!-- Navigation -->" 
+    			+ 			"<nav class='navbar navbar-default'>"
+    			+ 				"<div class='container-fluid'>"
+    			+ 					"<div class='navbar-header'>"
+    			+ 						"<a class='navbar-brand' href='Home'>Bas?</a>"
+    			+ 					"</div>"
+    			+ 					"<ul class='nav navbar-nav'>"
+    			+ 						"<li>"
+    			+ 							"<a href='Home'>Home</a>"
+    			+ 						"</li>"
+    			+ 						"<li class='active'>"
+    			+ 							"<a href='#'>Directory</a>"
+    			+ 						"</li>"
+    			+ 					"</ul>"
+    			+ 					"<ul class='nav navbar-nav navbar-right'>"
+    			+ 						"<li id='loginBtn'>"
+    			+ 							"<a href='#'>Welcome, Bob.</a>"
+    			+ 						"</li>"
+    			+ 					"</ul>"
+    			+ 				"</div>"
+    			+ 			"</nav>"
+    			+			"<div>"
+    			+				"<div class='contents' id='storeButton'>"
+    			+					"<button class='button' id='newbutton' onclick='createNew()'>New</button>"
+    			+					"<button class='button'>My Drive</button>"
+    			+					"<button class='button' id='lastOne'>Shared Drive</button>"
+    			+				"</div>"
+    			+				"<div class='contents'>"
+    			+					"<table>"
+    			+						"<tr>"
+    			+							"<th>Name</th>"
+    			+							"<th>Owner</th>"
+    			+							"<th>Last Modified</th>"
+    			+							"<th>File Size</th>"
+    			+						"</tr>"
+    			+						"<tr>"
+    			+							"<td>nothing to display</td>"
+    			+							"<td>nothing to display</td>"
+    			+							"<td>nothing to display</td>"
+    			+							"<td>nothing to display</td>"
+    			+						"</tr>"
+    			+					"</table>"
+    			+				"</div>"
+    			+			"</div>"
+    			+		"</div>"
+    			+	"</body>"
+    			+"</html>"
+				);
         
 	}
 
