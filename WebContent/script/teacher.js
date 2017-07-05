@@ -1,9 +1,22 @@
 function createNew(){
 	document.getElementById("overlay").style.display ="block";
+	}
 
+function showHidden(){
+	if(document.getElementById("checkifnew").checked){
+		document.getElementById("nameOfNewButton").style.display="block";
+	}
+	else if(document.getElementById("checkifmy").checked){
+		document.getElementById("nameOfNewButton").style.display="none";
+	}
+	else if(document.getElementById("checkifshare").checked){
+		document.getElementById("nameOfNewButton").style.display="none";
+	}
 }
+
 function confirm(){
 	if(document.getElementById("checkifnew").checked){
+		var btnname = document.getElementById("getBtnName").value;
 		var link  = document.createElement("link");
 		link.rel  = "stylesheet";
 	    link.type = "text/css";
@@ -14,7 +27,7 @@ function confirm(){
 		btn.setAttribute("id", "NB");
 		document.getElementById("storeButton").appendChild(btn);
 		document.getElementById("NB").appendChild(link);
-		document.getElementById("NB").innerText = "new1";
+		document.getElementById("NB").innerText = btnname;
 		document.getElementById("overlay").style.display ="none";
 	}
 	else{
