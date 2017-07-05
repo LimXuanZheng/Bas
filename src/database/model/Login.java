@@ -9,6 +9,7 @@ public class Login {
 	public Login(String username, String password, String salt, User user) {
 		this.username = username;
 		this.password = password;
+		this.salt = salt;
 		this.userID = user.getUserID();
 	}
 

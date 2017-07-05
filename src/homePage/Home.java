@@ -149,7 +149,7 @@ public class Home extends HttpServlet {
 					+ "</div>");
 		}
 		
-		out.println("<form action='Home' method='POST' enctype='multipart/form-data'><input type='file' name='file' /><input type='submit' /></form>" 
+		out.println(""
 		+ 		"</div>"
 		+ 	"</div>"
 		+ 	"<!-- jQuery library -->"
