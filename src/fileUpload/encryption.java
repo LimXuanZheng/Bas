@@ -25,7 +25,7 @@ public class encryption {
 	    private static final String TRANSFORMATION = "AES";
 	 
 	    public static void encrypt(String key, File inputFile, File outputFile) throws CryptoException {
-	        doCrypto(Cipher.ENCRYPT_MODE, key, inputFile, outputFile);//initialize cipher to encryption mode,
+	        doCrypto(Cipher.ENCRYPT_MODE, key, inputFile, outputFile);//Constant used to initialize cipher to encryption mode.
 	    }
 	 
 	 

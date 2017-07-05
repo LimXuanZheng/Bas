@@ -1,18 +1,67 @@
 @CHARSET "ISO-8859-1";
-#Container{
-	
+*{
 	padding: 0px;
-	
+	margin: 0px;
 }
-nav{
-	margin: 0px 15px;
-	z-index: 1;
+.button {
+  color:white;
+  display: block;
+  margin: 5px;
+  padding: 7px 35px;
+  font: 300 150% langdon;
+  background-color: #0022FF;
+  border: 3px solid black;
+  cursor: pointer;
+  width:18%;
+} 
+
+.button:hover {
+  background: #9387FD;
+  border: 1px solid #8b8b8b;
 }
 
-#Container-Container{
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	height: 100%;
-	width: 100%;
-}
+.button:active {
+  background: #2e2e2e;
+  border: 1px solid black;
+  color: white;
+  }
+  
+body{
+ 	background-color:#D1D1D1;
+ }
+ 
+ #newbutton{
+ 	font-size:50px;
+ 	margin-bottom:2%;
+ }
+ 
+ table, th{
+ 	 border: 1px solid black;
+ }
+ 
+ .contents{
+ 	display:inline;
+ }
+ 
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+  }
+  
+ #content1{
+ 	background-color: white;
+ }
+ 
+ 
+ 
+ 
+ 

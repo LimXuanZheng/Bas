@@ -12,13 +12,29 @@
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 			<title>Student page</title>
 			<script>
-				function helloxz() {
+				/*function helloxz() {
 		    		var r = confirm("Are you sure?");
 		    		if (r == true) {
 		    			window.location('beforeSubmission.html');
 		    		} else {
 		    			window.location('StudentUpload.html');
 		    		}
+				}
+				
+				/*function showBox(){
+					var btn = document.createElement("TextArea");
+					btn.setAttribute("id", "textbox");
+					btn.setAttribute("rows", 5);
+					btn.setAttribute("cols", 50);
+				    document.getElementById("thisone").appendChild(btn);
+				    //document.getElementById("textbox").style.margin-top ="10px";
+				    
+				    
+				}
+				*/
+				function showhidden(){
+					document.getElementById("area").style.display = "block";
+					
 				}
 				
 			</script>
@@ -57,10 +73,14 @@
 						<p id="center">Points available:<br> <span id="getPoints"></span></p>
 					</div>
 				</div>
+				<form id="form" action="../uploads" method="post">
 				<div id="submissions">
 					<hr>
-					<form id="form" action="../uploads" method="post">
-					<p>Text Submission : <button id="button1">Write Submission</button></p>
+					<!--  <form id="textSub" action="../uploads" method="post"> -->
+					<p id="thisone">Text Submission : <span onclick="showhidden()">Write Submission</span></p>
+						<input type="text" id="area" name="textbox" style="display:none;"></input>
+					
+					<!--  <form id="form" action="../uploads" method="post">-->
 					<p style="font-size:25px; margin-top:3%;">Attach File:
 						<label class="custom-file">
 	  						<input type="file" id="datafilepath" class="custom-file-input" name="datafile" style="font-size:20px; float:left;">
@@ -69,9 +89,10 @@
 					</p>
 				</div>
 				<div id="confirm">
-						<input type="submit" id="submit" value="Submit"></input></form>
-						<button id="cancel" onclick="helloxz()">Cancel</button>
+						<input type="submit" id="submit" value="Submit"></input>
+						<button id="cancel" formaction="beforeSubmission.html">Cancel</button>
 				</div>
+				</form>
 			</div>
 		</div>
 	</body>

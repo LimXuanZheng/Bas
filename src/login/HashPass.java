@@ -36,18 +36,6 @@ public class HashPass {
 	}
 
 	public static void main(String[] args) throws NoSuchAlgorithmException, InvalidKeySpecException, UnsupportedEncodingException {
-		/*
-		SecureRandom SRandomTest =  new SecureRandom();
-		byte [] saltTest = new byte [16];
-		SRandomTest.nextBytes(saltTest);
-		PBEKeySpec spec = new PBEKeySpec("Password".toCharArray(), saltTest, iterations, keyLength);
-		SecretKeyFactory skf = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA512");
-		byte [] hash = skf.generateSecret(spec).getEncoded();
-		Base64.Encoder encTest = Base64.getEncoder();
-		System.out.printf("Salt: %s%n", encTest.encodeToString(saltTest));
-		System.out.printf("Hash: %s%n", encTest.encodeToString(hash));
-		*/
-		
 		HashPass HP = new HashPass();
 		SecureRandom SRandom = new SecureRandom();
 		byte [] salt = new byte [16];
