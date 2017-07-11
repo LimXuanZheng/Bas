@@ -302,6 +302,10 @@ body {
     cursor: pointer;
 }
 
+#popupForm {
+	height: 100%;
+}
+
 #popupHeader {
 	text-align: center;
 	padding: 2px 16px;
@@ -350,20 +354,41 @@ body {
 }
 
 #changeEmail {
-	height: 45px;
+	height: 60px;
 	width: 50%;
 	border: none;
-	padding: 10px;
+	padding-top: 20px;
 	font-size: 20px;
+	border-bottom: 1px solid #4a89dc;
+  	-webkit-transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+    	transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+ 	background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 96%, #4a89dc 4%);
+  	background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #4a89dc 4%);
+  	background-position: -600px 0;
+  	/*background-size: 200px 100%;*/
+  	background-repeat: no-repeat;
+  	color: black;
 }
 
 #changeEmail::-webkit-input-placeholder {
 	font-size: 20px;
 }
 
-#changeEmail:focus {
-	border: 1px solid black;
+#changeEmail:focus, #changeEmail:valid {
 	outline: none;
+	box-shadow: none;
+  	background-position: 0px 0px;
+  	border-bottom: none;
+}
+
+#changeEmail:focus::-webkit-input-placeholder, #changeEmail:valid::-webkit-input-placeholder {
+	-webkit-transform: translateY(-25px);
+    	transform: translateY(-25px);
+  	visibility: visible;
+  	color: #4a89dc;
+  	transition: all 0.3s ease;
+  	font-size: 15px;
+  	font-weight: bold;
 }
 
 .popupWords {
