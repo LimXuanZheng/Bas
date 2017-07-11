@@ -240,11 +240,13 @@ public class DatabaseAccess {
         }
 	}
 	
-	public void updateDatabaseDataFileUpload(String sql, String fileName, long fileSize, InputStream data) throws SQLException{
+	public void updateDatabaseDataFileUpload(String sql, int userID, String fileName, long fileSize, InputStream data) throws SQLException{
 		ppstmt = conn.prepareStatement(sql);
-		ppstmt.setString(1, fileName);
-		ppstmt.setLong(2, fileSize);
-		ppstmt.setBlob(3, data);
+		ppstmt.setInt(1, userID);
+		ppstmt.setString(2, fileName);
+		ppstmt.setLong(3, fileSize);
+		ppstmt.setBlob(4, data);
+		
 		int count = ppstmt.executeUpdate();
         if(count ==0){
         	System.out.println("!!! Update failed !!!\n");
