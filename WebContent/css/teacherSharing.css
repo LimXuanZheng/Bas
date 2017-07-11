@@ -12,7 +12,8 @@
   background-color: #0022FF;
   border: 3px solid black;
   cursor: pointer;
-  width:18%;
+  text-align: center;
+  width:17%;
 } 
 
 .button:hover {
@@ -33,15 +34,20 @@ body{
  #newbutton{
  	font-size:50px;
  	margin-bottom:2%;
+ 	width:22%;
  }
  
  table, th{
  	 border: 1px solid black;
  }
- 
- .contents{
- 	display:inline;
+ th{
+ 	font-size:35px;
  }
+ table{
+ 	width:180%;
+ }
+ 
+
  
 #overlay {
     position: fixed; /* Sit on top of the page content */
@@ -59,6 +65,14 @@ body{
   
  #content1{
  	background-color: white;
+ }
+ #nameOfNewButton{
+ 	display: none;
+ }
+ 
+ #storeTable{
+ 	float: right;
+ 	margin: -10% 35% 0 0;
  }
  
  
