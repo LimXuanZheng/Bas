@@ -1,6 +1,7 @@
 package database;
 
 import java.io.InputStream;
+import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -9,6 +10,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import database.model.File;
 import database.model.Login;
 import database.model.Student;
 import database.model.Teacher;
@@ -194,6 +196,35 @@ public class DatabaseAccess {
 		
 		rs.close();
 		return teacherArray;
+	}
+	
+	public ArrayList<File> getDatabaseFile() throws SQLException{
+		ResultSet rs = getDatabaseData("SELECT * FROM File LEFT INNER JOIN User ON User.userID = File.userID;");
+		ArrayList<File> fileArray = new ArrayList<File>();
+		
+		while(rs.next()){
+			int userID = rs.getInt("userID");
+			String name = rs.getString("Name");
+			String gender = rs.getString("Gender");
+			String dOB = rs.getString("DOB");
+			String contactNo = rs.getString("ContactNo");
+			String email = rs.getString("Email");
+			String schoolClass = rs.getString("Class");
+			String address = rs.getString("Address");
+			
+			User user = new User(userID, name, gender, dOB, contactNo, email, schoolClass, address);
+			
+			int fileID = rs.getInt("userID");
+			String fileName = rs.getString("Name");;
+			int fileSize = rs.getInt("userID");
+			Blob dataBlob = rs.getBlob("Data");
+			byte [] fileData = dataBlob.getBytes(0, (int)dataBlob.length());
+			File file = new File(fileID, fileName, fileSize, fileData, user);
+			fileArray.add(file);
+		}
+		
+		rs.close();
+		return fileArray;
 	}
 	
 	public ArrayList<UserAll> convertResultSetToArrayList(ResultSet rs) throws SQLException{
