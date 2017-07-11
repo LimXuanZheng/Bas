@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import database.DatabaseAccess;
 
@@ -23,13 +24,6 @@ public class LoginServlet extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String receipientEmail = request.getParameter("changeEmail");
-		String popupBtn = request.getParameter("popupBtn");
-		LoginModel LM = new LoginModel();
-		if ("popupBtn".equals(popupBtn)) {
-			LM.generateNewPass();
-			LM.sendEmail(receipientEmail);
-		}
 		PrintWriter out = response.getWriter();
 		out.println("<!DOCTYPE html>"
 				+ "<html>"
@@ -84,19 +78,21 @@ public class LoginServlet extends HttpServlet {
 				+ 					"<span id='close' onclick='closePopup()'>&times</span>"
 				+ 					"<h2 id='popupTitle'>Forgot your Password?</h2>"
 				+ 				"</div>"
-				+ 				"<div id='popupBody'>"
-				+ 					"<div id='pInputDiv'>"
-				+ 						"<input type='email' id='changeEmail' name='changeEmail' placeholder='Email' required>"
-				+ 						"<div id='pInputError'>Please enter your email.</div>"
+				+				"<form id='popupForm' method='POST'>"
+				+ 					"<div id='popupBody'>"
+				+ 						"<div id='pInputDiv'>"
+				+ 							"<input type='email' id='changeEmail' name='changeEmail' placeholder='Email' required>"
+				//+ 							"<div id='pInputError'>Please enter your email.</div>"
+				+ 						"</div>"
+				+ 						"<p class='popupWords'>Enter your email address.</p>"
+				+ 						"<p class='popupWords'>Click the button for a new password to be sent to your email.</p>"
 				+ 					"</div>"
-				+ 					"<p class='popupWords'>Enter your email address.</p>"
-				+ 					"<p class='popupWords'>Click the button for a new password to be sent to your email.</p>"
-				+ 				"</div>"
-				+ 				"<div id='popupFooter'>"
-				+ 					"<div id='pBtnDiv'>"
-				+ 						"<button type='submit' name='popupBtn' value='popupBtn' id='popupBtn' onclick='renewPass()'>Change Password</button>"
+				+ 					"<div id='popupFooter'>"
+				+ 						"<div id='pBtnDiv'>"
+				+ 							"<button type='submit' name='popupBtn' value='popupBtn' id='popupBtn' onclick='renewPass()'>Change Password</button>"
+				+ 						"</div>"
 				+ 					"</div>"
-				+ 				"</div>"
+				+				"</form>"
 				+ 			"</div>"
 				+ 		"</div>"
 				+ 	"</body>"
@@ -106,6 +102,19 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String username = request.getParameter("userID");
 		String password = request.getParameter("passID");
+		String receipientEmail = request.getParameter("changeEmail");
+		String popupBtn = request.getParameter("popupBtn");
+		LoginModel LM = new LoginModel();
+		if (popupBtn == null) {
+			//LM.generateNewPass();
+			//LM.sendEmail(receipientEmail);
+			System.out.println("Button not clicked");
+		}
+		else if (popupBtn.equals("popupBtn")) {
+			//LM.generateNewPass();
+			//LM.sendEmail(receipientEmail);
+			System.out.println("Button clicked");
+		}
 		System.out.println("Username: " + username);
 		System.out.println("Password: " + password);
 		try {
@@ -119,6 +128,8 @@ public class LoginServlet extends HttpServlet {
 				String hashedPassword = HP.getHashedPassword(password, saltDecoded);
 				if (login.getString("Password").equals(hashedPassword)) {
 					System.out.println("Entered If");
+					HttpSession session = request.getSession();
+					session.setAttribute("username", username);
 					response.sendRedirect("Home");
 				}
 				else {
@@ -178,19 +189,21 @@ public class LoginServlet extends HttpServlet {
 							+ 					"<span id='close' onclick='closePopup()'>&times</span>"
 							+ 					"<h2 id='popupTitle'>Forgot your Password?</h2>"
 							+ 				"</div>"
-							+ 				"<div id='popupBody'>"
-							+ 					"<div id='pInputDiv'>"
-							+ 						"<input type='email' id='changeEmail' name='changeEmail' placeholder='Email' required>"
-							+ 						"<div id='pInputError'>Please enter your email.</div>"
+							+				"<form id='popupForm' method='POST'>"
+							+ 					"<div id='popupBody'>"
+							+ 						"<div id='pInputDiv'>"
+							+ 							"<input type='email' id='changeEmail' name='changeEmail' placeholder='Email' required>"
+							//+ 							"<div id='pInputError'>Please enter your email.</div>"
+							+ 						"</div>"
+							+ 						"<p class='popupWords'>Enter your email address.</p>"
+							+ 						"<p class='popupWords'>Click the button for a new password to be sent to your email.</p>"
 							+ 					"</div>"
-							+ 					"<p class='popupWords'>Enter your email address.</p>"
-							+ 					"<p class='popupWords'>Click the button for a new password to be sent to your email.</p>"
-							+ 				"</div>"
-							+ 				"<div id='popupFooter'>"
-							+ 					"<div id='pBtnDiv'>"
-							+ 					"<button type='submit' name='popupBtn' value='popupBtn' id='popupBtn' onclick='renewPass()'>Change Password</button>"
+							+ 					"<div id='popupFooter'>"
+							+ 						"<div id='pBtnDiv'>"
+							+ 							"<button type='submit' name='popupBtn' value='popupBtn' id='popupBtn' onclick='renewPass()'>Change Password</button>"
+							+ 						"</div>"
 							+ 					"</div>"
-							+ 				"</div>"
+							+				"</form>"
 							+ 			"</div>"
 							+ 		"</div>"
 							+ 	"</body>"
@@ -254,19 +267,21 @@ public class LoginServlet extends HttpServlet {
 						+ 					"<span id='close' onclick='closePopup()'>&times</span>"
 						+ 					"<h2 id='popupTitle'>Forgot your Password?</h2>"
 						+ 				"</div>"
-						+ 				"<div id='popupBody'>"
-						+ 					"<div id='pInputDiv'>"
-						+ 						"<input type='email' id='changeEmail' name='changeEmail' placeholder='Email' required>"
-						+ 						"<div id='pInputError'>Please enter your email.</div>"
+						+				"<form id='popupForm' method='POST'>"
+						+ 					"<div id='popupBody'>"
+						+ 						"<div id='pInputDiv'>"
+						+ 							"<input type='email' id='changeEmail' name='changeEmail' placeholder='Email' required>"
+						//+ 							"<div id='pInputError'>Please enter your email.</div>"
+						+ 						"</div>"
+						+ 						"<p class='popupWords'>Enter your email address.</p>"
+						+ 						"<p class='popupWords'>Click the button for a new password to be sent to your email.</p>"
 						+ 					"</div>"
-						+ 					"<p class='popupWords'>Enter your email address.</p>"
-						+ 					"<p class='popupWords'>Click the button for a new password to be sent to your email.</p>"
-						+ 				"</div>"
-						+ 				"<div id='popupFooter'>"
-						+ 					"<div id='pBtnDiv'>"
-						+ 						"<button type='submit' name='popupBtn' value='popupBtn' id='popupBtn' onclick='renewPass()'>Change Password</button>"
+						+ 					"<div id='popupFooter'>"
+						+ 						"<div id='pBtnDiv'>"
+						+ 							"<button type='submit' name='popupBtn' value='popupBtn' id='popupBtn' onclick='renewPass()'>Change Password</button>"
+						+ 						"</div>"
 						+ 					"</div>"
-						+ 				"</div>"
+						+				"</form>"
 						+ 			"</div>"
 						+ 		"</div>"
 						+ 	"</body>"

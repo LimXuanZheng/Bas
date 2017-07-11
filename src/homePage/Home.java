@@ -20,6 +20,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
 import com.mysql.jdbc.PreparedStatement;
@@ -62,6 +63,14 @@ public class Home extends HttpServlet {
 		notificationArray.add("Testing 1");
 		notificationArray.add("Hello");
 		notificationArray.add("Please hand in your Minecraft by 12/3/17 -Mr Chew");
+		String username = "Bob";
+		HttpSession session = request.getSession(false);
+		if (session != null) {
+			username = (String)session.getAttribute("username");
+		}
+		else {
+			System.out.println("Didn't work");
+		}
 		
 		PrintWriter out = response.getWriter();
 		out.println(
@@ -96,7 +105,7 @@ public class Home extends HttpServlet {
 		+ 						"</ul>"
 		+ 						"<ul class='nav navbar-nav navbar-right'>"
 		+							"<li class='dropdown'>"
-		+					   			"<a class='dropdown-toggle' data-toggle='dropdown' href='#'>Welcome, Bob. </a>"
+		+					   			"<a class='dropdown-toggle' data-toggle='dropdown' href='#'>Welcome, " + username + ". </a>"
 		+					        	"<ul class='dropdown-menu'>"
 		+					        		"<li><a href='#'>Setting</a></li>"
 		+					        		"<li><a href='html/Login.html'>Logout</a></li>"

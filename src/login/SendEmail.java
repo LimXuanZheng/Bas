@@ -58,6 +58,6 @@ public class SendEmail {
 
 	public static void main(String[] args) {
 		SendEmail SE = new SendEmail();
-		SE.sendEmail("", "");
+		SE.sendEmail("XXX@gmail.com", "Content");
 	}
 }

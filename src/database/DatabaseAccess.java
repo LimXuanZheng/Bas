@@ -256,7 +256,6 @@ public class DatabaseAccess {
 	public void close() throws SQLException{
 		conn.close();
 		stmt.close();
-		ppstmt.close();
 	}
 
 	public Connection getConn() {
