@@ -33,6 +33,7 @@ public class teacherSharing extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
+		String path = request.getParameter("datafilepath");
 		out.println("<!DOCTYPE html>"
     			+ "<html>"
     			+ 	"<head>"
@@ -73,7 +74,7 @@ public class teacherSharing extends HttpServlet {
     			+ 			"</nav>"
     			+			"<div id='overlay'>"
     			+				"<div id='content1'>"
-    			+					"<form>"
+    			+					"<form action='teacherSharing'>"
     			+						"<input type='radio' id='checkifmy' name='chooseFile' onclick='javascript:showHidden();'>My Drive</input>"
     			+						"<input type='radio' id='checkifshare' name='chooseFile' onclick='javascript:showHidden();'>Shared Drive</input>"
     			+						"<input type='radio' id='checkifnew' name='chooseFile' onclick='javascript:showHidden();'>New Drive</input>"
@@ -101,7 +102,7 @@ public class teacherSharing extends HttpServlet {
     			+							"<th>Last Modified</th>"
     			+							"<th>File Size</th>"
     			+						"</tr>"
-    			+						"<tr>"
+    			+						"<tr id='row1'>"
     			+							"<td>nothing to display</td>"
     			+							"<td>nothing to display</td>"
     			+							"<td>nothing to display</td>"

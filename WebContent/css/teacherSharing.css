@@ -13,7 +13,7 @@
   border: 3px solid black;
   cursor: pointer;
   text-align: center;
-  width:20%;
+  width:17%;
 } 
 
 .button:hover {
@@ -40,8 +40,11 @@ body{
  table, th{
  	 border: 1px solid black;
  }
+ th{
+ 	font-size:35px;
+ }
  table{
- 	width:220%;
+ 	width:180%;
  }
  
 
@@ -69,7 +72,7 @@ body{
  
  #storeTable{
  	float: right;
- 	margin: -10% 40% 0 0;
+ 	margin: -10% 35% 0 0;
  }
  
  
