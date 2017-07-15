@@ -1,13 +1,14 @@
-<<<<<<< HEAD
 /database/
-=======
-/teacherSharing/
-/purpleboard/
-/database/
+/directory/
+/fileUpload/
+/hello/
 /homePage/
-<<<<<<< HEAD
-=======
 /login/
+<<<<<<< HEAD
 >>>>>>> origin/master
 >>>>>>> origin/master
 /fileUpload/
+=======
+/studentDownload/
+/teacherSharing/
+>>>>>>> origin/master
