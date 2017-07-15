@@ -1,3 +1,5 @@
+
+
 function createNew(){
 	document.getElementById("overlay").style.display ="block";
 	}
@@ -27,7 +29,6 @@ function confirm(){
 		btn.setAttribute("id", btnname);
 		document.getElementById("storeButton").appendChild(btn);
 		document.getElementById(btnname).onclick = display5s();
-		document.getElementById(btnname).onclick = findSize();
 		document.getElementById(btnname).appendChild(link);
 		document.getElementById(btnname).innerText = btnname;
 		//upload to server
@@ -37,19 +38,86 @@ function confirm(){
 		
 		document.getElementById("overlay").style.display ="none";
 	}
-	else{
+	else if(document.getElementById("checkifmy").checked){
+		var filePath = document.getElementById("datafilepath").value;
+		if (filePath == ""){
+			alert("Please select a file!");
+		}
+		else{
+			alert("Successful");
+			var filename = filePath.replace(/^.*[\\\/]/, '');
+			document.getElementById("hidehere").innerHTML = filePath;
+			document.getElementById("overlay").style.display ="none";
+		}
+		
+	}
+	else if(document.getElementById("checkifshare").checked){
+		document.getElementById("lastOne").onclick = displayallshare();
 		document.getElementById("overlay").style.display ="none";
 	}
 	
 	//document.getElementById("body").style.color ="red";
 }
+/*function displayallmy(){
+	var filePath = document.getElementById("datafilepath").value;
+	var filename = filePath.replace(/^.*[\\\/]/, '');
+	var lengths = document.getElementById("displaying").row.length
+	if(lengths == 1){
+	
+	document.getElementById("row1.1").innerHTML = filename;
+	var fileInput =  document.getElementById("datafilepath");
+	   try{
+		   document.getElementById("row1.4").innerHTML = fileInput.files[0].size; // Size returned in bytes.
+	   }catch(e){
+	       var objFSO = new ActiveXObject("Scripting.FileSystemObject");
+	       var e = objFSO.getFile(fileInput.value);
+	       var fileSize = e.size;
+	       document.getElementById("row1.4").innerHTML = fileSize;  
+	   }
+	   
+	}
+	else{
+		var lengths = document.getElementById("displaying").row.length;
+		var neew = document.createElement("tr");
+		neew.setAttribute(id, ("row" + length));
+		var details1 = document.createElement("td");
+		details1.setAttribute(id, ("row" + lengths + ".1"));
+		details1.innerHTML = filename;
+		var details2 = document.createElement("td");
+		details2.setAttribute(id, ("row" + lengths + ".2"));
+		var details3 = document.createElement("td");
+		details3.setAttribute(id, ("row" + lengths + ".3"));
+		var details4 = document.createElement("td");
+		details4.setAttribute(id, ("row" + lengths + ".4"));
+		document.getElementById("displaying").appendChild(neew);
+		}
+		
+		
+}
+
+*/
+function displayallshare(){
+	var filePath = document.getElementById("datafilepath").value;
+	var filename = filePath.replace(/^.*[\\\/]/, '');
+	document.getElementById("row1.1").innerHTML = filename;
+	var fileInput =  document.getElementById("datafilepath");
+	   try{
+		   document.getElementById("row1.4").innerHTML = fileInput.files[0].size; // Size returned in bytes.
+	   }catch(e){
+	       var objFSO = new ActiveXObject("Scripting.FileSystemObject");
+	       var e = objFSO.getFile(fileInput.value);
+	       var fileSize = e.size;
+	       document.getElementById("row1.4").innerHTML = fileSize;  
+	   }
+}
+
 function display5s(){
 	var filePath = document.getElementById("datafilepath").value;
 	var filename = filePath.replace(/^.*[\\\/]/, '');
 	document.getElementById("row1.1").innerHTML = filename;
 	var fileInput =  document.getElementById("datafilepath");
 	   try{
-	       alert(fileInput.files[0].size); // Size returned in bytes.
+		   document.getElementById("row1.4").innerHTML = fileInput.files[0].size; // Size returned in bytes.
 	   }catch(e){
 	       var objFSO = new ActiveXObject("Scripting.FileSystemObject");
 	       var e = objFSO.getFile(fileInput.value);
@@ -57,6 +125,7 @@ function display5s(){
 	       document.getElementById("row1.4").innerHTML = fileSize;  
 	   }
 	//var myfile = new File(filePath1);
+	   //checks from database to see if student have submitted their files
 }
 
 function cancel(){

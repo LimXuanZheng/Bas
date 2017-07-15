@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import fileUpload.CryptoException;
 import fileUpload.encryption;
@@ -20,6 +21,7 @@ import fileUpload.encryption;
 public class teacherSharing extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
+	private String filepathes;
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -33,7 +35,6 @@ public class teacherSharing extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
-		String path = request.getParameter("datafilepath");
 		out.println("<!DOCTYPE html>"
     			+ "<html>"
     			+ 	"<head>"
@@ -49,7 +50,7 @@ public class teacherSharing extends HttpServlet {
     			+		"<title>TeacherSharing</title>"
     			+		"<script src='script/teacher.js'></script>"
     			+ 	"</head>"
-    			+ 	"<body id='body' onload='loadFile()'>"
+    			+ 	"<body id='body'>"
     			+ 		"<div class='container-fluid' id='Container'>"
     			+ 			"<!-- Navigation -->" 
     			+ 			"<nav class='navbar navbar-default'>"
@@ -72,10 +73,11 @@ public class teacherSharing extends HttpServlet {
     			+ 					"</ul>"
     			+ 				"</div>"
     			+ 			"</nav>"
+    			+			"<p id='hidehere'>The class path is here</p>"
     			+			"<div id='overlay'>"
     			+				"<div id='content1'>"
-    			+					"<form action='teacherSharing'>"
-    			+						"<input type='radio' id='checkifmy' name='chooseFile' onclick='javascript:showHidden();'>My Drive</input>"
+    			+					"<form id='anything' action='teacherupload'>"
+    			+						"<input type='radio' id='checkifmy' name='chooseFile' onclick='javascript:showHidden();' checked>My Drive</input>"
     			+						"<input type='radio' id='checkifshare' name='chooseFile' onclick='javascript:showHidden();'>Shared Drive</input>"
     			+						"<input type='radio' id='checkifnew' name='chooseFile' onclick='javascript:showHidden();'>New Drive</input>"
     			+						"<br><label class='custom-file'>"
@@ -83,15 +85,17 @@ public class teacherSharing extends HttpServlet {
 				+							"<span class='custom-file-control'></span>"
 				+						"</label>"
     			+						"<br><p id='nameOfNewButton'>Name of File: <input type='text' name='FName' id='getBtnName'></input></p>"
-    			+					"</form>"
-    			+					"<button id='confirm' onclick='confirm();'>Confirm</button>"
+				+						"<input type='submit' id='submit' value='Submit'></input>"
+    			//+					"</form>"
+    			+					"<button id='confirm' onclick='confirm()' >Confirm</button>"
     			+					"<button id='cancel' onclick='cancel()'>Cancel</button>"
+    			+					"</form>"
     			+				"</div>"
     			+			"</div>"
     			+			"<div>"
     			+				"<div class='contents' id='storeButton'>"
     			+					"<button class='button' id='newbutton' onclick='createNew()'>New</button>"
-    			+					"<button class='button'>My Drive</button>"
+    			+					"<button class='button' id='mybutton'>My Drive</button>"//onclick='displayallmy()'
     			+					"<button class='button' id='lastOne'>Shared Drive</button>"
     			+				"</div>"
     			+				"<div class='contents' id='storeTable'>"
@@ -115,23 +119,40 @@ public class teacherSharing extends HttpServlet {
     			+	"</body>"
     			+"</html>"
 				);
+		
         
 	}
+	
+	
+	
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
+		filepathes = request.getParameter("datafile");
+		System.out.println(filepathes);
+		System.out.println("hello");
+		/*HttpSession session = request.getSession(false);
+		if (session != null) {
+			session.setAttribute("thepath", filepath);
+			
+			
+		}
+		else {
+			System.out.println("Didn't work");
+		}
+		*/
+		//doGet(request, response);
 	}
 
 }
