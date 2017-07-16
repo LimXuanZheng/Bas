@@ -27,6 +27,19 @@ public class HashPass {
 	       }
 	   }
 	
+	public byte [] createSalt () {
+		SecureRandom SRandom = new SecureRandom();
+		byte [] salt = new byte [16];
+		SRandom.nextBytes(salt);
+		return salt;
+	}
+	
+	public byte [] getDecodedSalt (String saltToDecode) {
+		Base64.Decoder dnc = Base64.getDecoder();
+		byte [] saltDecoded = dnc.decode(saltToDecode);
+		return saltDecoded;
+	}
+	
 	public String getHashedPassword (String password, byte [] salt) {
 		Base64.Encoder enc = Base64.getEncoder();
 		String hashedPassword = enc.encodeToString(hashPassword(password, salt, iterations, keyLength));
@@ -35,15 +48,13 @@ public class HashPass {
 
 	public static void main(String[] args) throws NoSuchAlgorithmException, InvalidKeySpecException, UnsupportedEncodingException {
 		HashPass HP = new HashPass();
-		SecureRandom SRandom = new SecureRandom();
-		byte [] salt = new byte [16];
-		SRandom.nextBytes(salt);
 		Base64.Encoder enc = Base64.getEncoder();
-		Base64.Decoder dnc = Base64.getDecoder();
-		byte [] saltDecoded = dnc.decode("Hrb9kWHSxFlJVy9tn2mVVg==");
-		//System.out.println("Salt: " + enc.encodeToString(salt));
-		//System.out.println("Hash: " + HP.getHashedPassword("Password", salt));
-		System.out.println("Password: T0122332Y\n" + "Hash: " + HP.getHashedPassword("T0122332Y", saltDecoded));
+		byte [] newSalt = HP.createSalt();
+		System.out.println("Salt: " + enc.encodeToString(newSalt));
+		System.out.println("Hash: " + HP.getHashedPassword("Password", newSalt));
+		//Base64.Decoder dnc = Base64.getDecoder();
+		//byte [] saltDecoded = dnc.decode("Hrb9kWHSxFlJVy9tn2mVVg==");
+		//System.out.println("Password: T0122332Y\n" + "Hash: " + HP.getHashedPassword("T0122332Y", saltDecoded));
 		
 		/*
 		T0122332Y: 

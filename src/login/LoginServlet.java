@@ -106,14 +106,15 @@ public class LoginServlet extends HttpServlet {
 		String popupBtn = request.getParameter("popupBtn");
 		LoginModel LM = new LoginModel();
 		if (popupBtn == null) {
-			//LM.generateNewPass();
-			//LM.sendEmail(receipientEmail);
 			System.out.println("Button not clicked");
 		}
 		else if (popupBtn.equals("popupBtn")) {
 			//LM.generateNewPass();
 			//LM.sendEmail(receipientEmail);
 			System.out.println("Button clicked");
+			HashPass HP = new HashPass();
+			String getNewHashedPassword = HP.getHashedPassword(LM.getNewPass(), HP.createSalt());
+			//Update the newly generated salt and hashed password to database
 		}
 		System.out.println("Username: " + username);
 		System.out.println("Password: " + password);
@@ -122,9 +123,10 @@ public class LoginServlet extends HttpServlet {
 			String sqlline = "SELECT Login.UserID, Login.Username, Login.Password, Login.Salt FROM Login WHERE Username = ?;"; 
 			ResultSet login = dba.getDatabaseData(sqlline, username);
 			if (login.next()) {
-				Base64.Decoder dnc = Base64.getDecoder();
-				byte [] saltDecoded = dnc.decode(login.getString("Salt"));
+				//Base64.Decoder dnc = Base64.getDecoder();
+				//byte [] saltDecoded = dnc.decode(login.getString("Salt"));
 				HashPass HP = new HashPass();
+				byte [] saltDecoded = HP.getDecodedSalt(login.getString("Salt"));
 				String hashedPassword = HP.getHashedPassword(password, saltDecoded);
 				if (login.getString("Password").equals(hashedPassword)) {
 					System.out.println("Entered If");
