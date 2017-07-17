@@ -3,6 +3,7 @@ package database;
 import java.io.InputStream;
 import java.sql.Blob;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -23,7 +24,7 @@ public class DatabaseAccess {
     final String USER = "root";
     final String PASS = "SassyPenguin@123";
     
-    final String DB_URL2="jdbc:mysql://119.74.135.44:3306/nspj_database";
+    final String DB_URL2="jdbc:mysql://172.27.177.211:3306/nspj_database";
     final String USER_S = "Student";
     final String PASS_S = "StudentPassword_101";
     
@@ -199,7 +200,7 @@ public class DatabaseAccess {
 	}
 	
 	public ArrayList<File> getDatabaseFile() throws SQLException{
-		ResultSet rs = getDatabaseData("SELECT * FROM File LEFT INNER JOIN User ON User.userID = File.userID;");
+		ResultSet rs = getDatabaseData("SELECT * FROM File LEFT JOIN User ON User.userID = File.userID;");
 		ArrayList<File> fileArray = new ArrayList<File>();
 		
 		while(rs.next()){
@@ -214,12 +215,14 @@ public class DatabaseAccess {
 			
 			User user = new User(userID, name, gender, dOB, contactNo, email, schoolClass, address);
 			
-			int fileID = rs.getInt("userID");
-			String fileName = rs.getString("Name");;
-			int fileSize = rs.getInt("userID");
+			int fileID = rs.getInt("fileID");
+			String fileName = rs.getString("fileName");;
+			int fileSize = rs.getInt("size");
 			Blob dataBlob = rs.getBlob("Data");
-			byte [] fileData = dataBlob.getBytes(0, (int)dataBlob.length());
-			File file = new File(fileID, fileName, fileSize, fileData, user);
+			String recipient = rs.getString("recipient");
+			Date date = rs.getDate("Date");
+			byte [] fileData = dataBlob.getBytes(1, (int)dataBlob.length());
+			File file = new File(fileID, user, fileName, fileSize, fileData, recipient, date);
 			fileArray.add(file);
 		}
 		
@@ -271,12 +274,13 @@ public class DatabaseAccess {
         }
 	}
 	
-	public void updateDatabaseDataFileUpload(String sql, int userID, String fileName, long fileSize, InputStream data) throws SQLException{
+	public void updateDatabaseDataFileUpload(String sql, int userID, String fileName, long fileSize, InputStream data, Date date) throws SQLException{
 		ppstmt = conn.prepareStatement(sql);
 		ppstmt.setInt(1, userID);
 		ppstmt.setString(2, fileName);
 		ppstmt.setLong(3, fileSize);
 		ppstmt.setBlob(4, data);
+		ppstmt.setObject(5, date);
 		
 		int count = ppstmt.executeUpdate();
         if(count ==0){

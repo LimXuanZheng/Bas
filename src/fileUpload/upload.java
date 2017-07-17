@@ -9,6 +9,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.Date;
 
 import javax.servlet.ServletException;
@@ -44,7 +45,7 @@ public class upload extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		String path = request.getParameter("datafile");
 		String written = request.getParameter("textbox");
-		if(path.equals("")){
+		if(path.equals("") || path.equals(null)){
 			String file1="test.txt";
 		      try{
 		      	//create the PrintWriter
@@ -90,6 +91,36 @@ public class upload extends HttpServlet {
             ex.printStackTrace();
             System.out.println("fail");
         }
+        InputStream in = new FileInputStream(encryptedFile);
+        String name = f.getName();
+        System.out.println(name);
+        System.out.println(f.length());
+        
+        
+        java.text.SimpleDateFormat format = new java.text.SimpleDateFormat("yyyyMMddHHmmss");
+        Date haha = new Date(f.lastModified());
+        String haha2 = format.format(haha);
+        System.out.println(haha2);
+        java.util.Date date = null;
+		try {
+			date = format.parse(haha2);
+		} catch (ParseException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+        java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+        
+        try {
+                    DatabaseAccess dba = new DatabaseAccess(1);
+                    String sqlline = "INSERT INTO File(UserID, FileName, Size, Data, Date) VALUES (?, ?, ?, ?, ?);";
+                    dba.updateDatabaseDataFileUpload(sqlline, 13, name, f.length(), in, sqlDate);
+                    dba.close();
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                } catch (SQLException e) { 
+                    e.printStackTrace();
+                }
+		}
         
 		}
         
@@ -112,22 +143,7 @@ public class upload extends HttpServlet {
         
         /*
         
-        /*InputStream in = new FileInputStream(encryptedFile);
-        String name = f.getName();
-        System.out.println(name);
-        System.out.println(f.length());
-        
-        try {
-                    DatabaseAccess dba = new DatabaseAccess(1);
-                    String sqlline = "INSERT INTO File(FileName, Size, Data) VALUES (?, ?, ?);";
-                    dba.updateDatabaseDataFileUpload(sqlline, name, f.length(), in);
-                    dba.close();
-                } catch (ClassNotFoundException e) {
-                    e.printStackTrace();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-                */
+                
         
         
         
