@@ -1,0 +1,31 @@
+--f15a0000-A--
+[17/Jul/2017:15:34:35 +0800] WWxoi8Co7wEAACGYDeUAAAA- 192.168.1.29 51714 192.168.1.17 80
+--f15a0000-B--
+GET /Bas/Home HTTP/1.1
+Host: 192.168.1.17
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Safari/602.1
+Accept-Language: en-sg
+DNT: 1
+Accept-Encoding: gzip, deflate
+
+--f15a0000-F--
+HTTP/1.1 403 403
+Content-Length: 0
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+
+--f15a0000-E--
+
+--f15a0000-H--
+Apache-Handler: jakarta-servlet
+Stopwatch: 1500276875896312 11032 (- - -)
+Stopwatch2: 1500276875896312 11032; combined=9026, p1=0, p2=0, p3=1002, p4=0, p5=4012, sr=0, sw=4012, l=0, gc=0
+Response-Body-Transformed: Dechunked
+Producer: ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/); OWASP_CRS/3.0.2.
+Server: Apache/2.4.27 (Win64) mod_jk/1.2.42
+Engine-Mode: "ENABLED"
+
+--f15a0000-Z--

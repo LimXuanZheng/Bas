@@ -1,0 +1,57 @@
+--23480000-A--
+[17/Jul/2017:15:42:55 +0800] WWxqf8Co7wEAAC0YBOkAAAA9 127.0.0.1 27957 127.0.0.1 80
+--23480000-B--
+GET / HTTP/1.1
+Host: localhost
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+--23480000-F--
+HTTP/1.1 403 Forbidden
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=iso-8859-1
+
+--23480000-E--
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+ <head>
+  <title>Index of /</title>
+ </head>
+ <body>
+<h1>Index of /</h1>
+<ul><li><a href=".classpath"> .classpath</a></li>
+<li><a href=".git/"> .git/</a></li>
+<li><a href=".gitattributes"> .gitattributes</a></li>
+<li><a href=".gitignore"> .gitignore</a></li>
+<li><a href=".project"> .project</a></li>
+<li><a href=".settings/"> .settings/</a></li>
+<li><a href="Apache%20Software%20Foundation/"> Apache Software Foundation/</a></li>
+<li><a href="WebContent/"> WebContent/</a></li>
+<li><a href="_config.yml"> _config.yml</a></li>
+<li><a href="build/"> build/</a></li>
+<li><a href="javax.mail.jar"> javax.mail.jar</a></li>
+<li><a href="src/"> src/</a></li>
+</ul>
+</body></html>
+
+--23480000-H--
+Message: Access denied with code 403 (phase 4). Pattern match "(?:<(?:TITLE>Index of.*?<H|title>Index of.*?<h)1>Index of|>\\[To Parent Directory\\]<\\/[Aa]><br>)" at RESPONSE_BODY. [file "C:/Apache24/conf/rules/RESPONSE-950-DATA-LEAKAGES.conf"] [line "55"] [id "950130"] [rev "2"] [msg "Directory Listing"] [data "Matched Data: <title>Index of /</title>\x0a </head>\x0a <body>\x0a<h1>Index of found within RESPONSE_BODY: <!DOCTYPE HTML PUBLIC \x22-//W3C//DTD HTML 3.2 Final//EN\x22>\x0a<html>\x0a <head>\x0a  <title>Index of /</title>\x0a </head>\x0a <body>\x0a<h1>Index of /</h1>\x0a<ul><li><a href=\x22.classpath\x22> .classpath</a></li>\x0a<li><a href=\x22.git/\x22> .git/</a></li>\x0a<li><a href=\x22.gitattributes\x22> .gitattributes</a></li>\x0a<li><a href=\x22.gitignore\x22> .gitignore</a></li>\x0a<li><a href=\x22...."] [severity "ERROR"] [ver "OWASP_CRS/3.0.0"] [maturity "9"] [accuracy "9"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-disclosure"] [tag "OWASP_CRS/LEAKAGE/INFO_DIR
+Message: Warning. Operator GE matched 4 at TX:outbound_anomaly_score. [file "C:/Apache24/conf/rules/RESPONSE-980-CORRELATION.conf"] [line "82"] [id "980140"] [msg "Outbound Anomaly Score Exceeded (score 4): Directory Listing"] [tag "event-correlation"]
+Apache-Error: [file "apache2_util.c"] [line 271] [level 3] [client %s] ModSecurity: %s%s [uri "%s"]%s
+Apache-Error: [file "apache2_util.c"] [line 271] [level 3] [client %s] ModSecurity: %s%s [uri "%s"]%s
+Action: Intercepted (phase 4)
+Apache-Handler: httpd/unix-directory
+Stopwatch: 1500277375273989 17548 (- - -)
+Stopwatch2: 1500277375273989 17548; combined=11526, p1=476, p2=0, p3=0, p4=0, p5=5525, sr=0, sw=5015, l=0, gc=510
+Response-Body-Transformed: Dechunked
+Producer: ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/); OWASP_CRS/3.0.2.
+Server: Apache/2.4.27 (Win64) mod_jk/1.2.42
+Engine-Mode: "ENABLED"
+
+--23480000-Z--

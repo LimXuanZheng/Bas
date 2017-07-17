@@ -1,0 +1,43 @@
+--6c3d0000-A--
+[17/Jul/2017:16:21:41 +0800] WWxzlcCo7wEAACdQ9DIAAAA@ 192.168.1.17 28850 192.168.1.17 80
+--6c3d0000-B--
+GET / HTTP/1.1
+Host: 192.168.1.17
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.8
+
+--6c3d0000-F--
+HTTP/1.1 403 Forbidden
+Content-Length: 328
+Keep-Alive: timeout=5, max=98
+Connection: Keep-Alive
+Content-Type: text/html; charset=iso-8859-1
+
+--6c3d0000-E--
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>403 Forbidden</title>
+</head><body>
+<h1>Forbidden</h1>
+<p>You don't have permission to access /
+on this server.<br />
+</p>
+<p>Additionally, a 403 Forbidden
+error was encountered while trying to use an ErrorDocument to handle the request.</p>
+</body></html>
+
+--6c3d0000-H--
+Apache-Error: [file "mod_autoindex.c"] [line 2324] [level 3] AH01276: Cannot serve directory %s: No matching DirectoryIndex (%s) found, and server-generated directory index forbidden by Options directive
+Apache-Handler: httpd/unix-directory
+Stopwatch: 1500279701952922 47389 (- - -)
+Stopwatch2: 1500279701952922 47389; combined=7946, p1=0, p2=0, p3=0, p4=0, p5=3973, sr=0, sw=3973, l=0, gc=0
+Response-Body-Transformed: Dechunked
+Producer: ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/); OWASP_CRS/3.0.2.
+Server: Apache/2.4.27 (Win64) mod_jk/1.2.42
+Engine-Mode: "ENABLED"
+
+--6c3d0000-Z--

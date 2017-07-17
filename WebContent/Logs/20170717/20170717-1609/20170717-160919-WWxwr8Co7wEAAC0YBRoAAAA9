@@ -1,0 +1,32 @@
+--a62e0000-A--
+[17/Jul/2017:16:09:19 +0800] WWxwr8Co7wEAAC0YBRoAAAA9 192.168.1.17 28653 192.168.1.17 80
+--a62e0000-B--
+GET /Bas/Login HTTP/1.1
+Host: 192.168.1.17
+Connection: keep-alive
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Referer: http://192.168.1.17/Bas/Home
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.8
+
+--a62e0000-F--
+HTTP/1.1 403 403
+Content-Length: 0
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+
+--a62e0000-E--
+
+--a62e0000-H--
+Apache-Handler: jakarta-servlet
+Stopwatch: 1500278959862727 14034 (- - -)
+Stopwatch2: 1500278959862727 14034; combined=9936, p1=0, p2=0, p3=0, p4=0, p5=4968, sr=0, sw=4968, l=0, gc=0
+Response-Body-Transformed: Dechunked
+Producer: ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/); OWASP_CRS/3.0.2.
+Server: Apache/2.4.27 (Win64) mod_jk/1.2.42
+Engine-Mode: "ENABLED"
+
+--a62e0000-Z--

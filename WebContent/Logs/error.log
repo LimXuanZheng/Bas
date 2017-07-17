@@ -1,0 +1,617 @@
+[Sun Jul 16 16:09:57.003749 2017] [:notice] [pid 3364:tid 700] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Sun Jul 16 16:09:57.003749 2017] [:notice] [pid 3364:tid 700] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Sun Jul 16 16:09:57.003749 2017] [:notice] [pid 3364:tid 700] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Sun Jul 16 16:09:57.003749 2017] [:warn] [pid 3364:tid 700] ModSecurity: Loaded PCRE do not match with compiled!
+[Sun Jul 16 16:09:57.003749 2017] [:notice] [pid 3364:tid 700] ModSecurity: LUA compiled version="Lua 5.1"
+[Sun Jul 16 16:09:57.003749 2017] [:notice] [pid 3364:tid 700] ModSecurity: YAJL compiled version="2.1.0"
+[Sun Jul 16 16:09:57.003749 2017] [:notice] [pid 3364:tid 700] ModSecurity: LIBXML compiled version="2.9.4"
+[Sun Jul 16 16:09:57.003749 2017] [:notice] [pid 3364:tid 700] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Sun Jul 16 16:09:57.101239 2017] [core:warn] [pid 3364:tid 700] AH00098: pid file C:/Apache24/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Sun Jul 16 16:09:58.003367 2017] [mpm_winnt:notice] [pid 3364:tid 700] AH00455: Apache/2.4.27 (Win64) mod_jk/1.2.42 configured -- resuming normal operations
+[Sun Jul 16 16:09:58.003367 2017] [mpm_winnt:notice] [pid 3364:tid 700] AH00456: Apache Lounge VC15 Server built: Jul  7 2017 12:46:00
+[Sun Jul 16 16:09:58.003367 2017] [core:notice] [pid 3364:tid 700] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Sun Jul 16 16:09:58.006140 2017] [mpm_winnt:notice] [pid 3364:tid 700] AH00418: Parent: Created child process 11672
+[Sun Jul 16 16:09:59.002679 2017] [:notice] [pid 11672:tid 652] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Sun Jul 16 16:09:59.002679 2017] [:notice] [pid 11672:tid 652] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Sun Jul 16 16:09:59.002679 2017] [:notice] [pid 11672:tid 652] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Sun Jul 16 16:09:59.002679 2017] [:warn] [pid 11672:tid 652] ModSecurity: Loaded PCRE do not match with compiled!
+[Sun Jul 16 16:09:59.002679 2017] [:notice] [pid 11672:tid 652] ModSecurity: LUA compiled version="Lua 5.1"
+[Sun Jul 16 16:09:59.002679 2017] [:notice] [pid 11672:tid 652] ModSecurity: YAJL compiled version="2.1.0"
+[Sun Jul 16 16:09:59.002679 2017] [:notice] [pid 11672:tid 652] ModSecurity: LIBXML compiled version="2.9.4"
+[Sun Jul 16 16:09:59.002679 2017] [:notice] [pid 11672:tid 652] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Sun Jul 16 16:10:00.006212 2017] [mpm_winnt:notice] [pid 11672:tid 652] AH00354: Child: Starting 64 worker threads.
+[Sun Jul 16 16:10:29.769630 2017] [mpm_winnt:notice] [pid 3364:tid 700] AH00424: Parent: Received restart signal -- Restarting the server.
+[Sun Jul 16 16:10:30.001865 2017] [mpm_winnt:notice] [pid 3364:tid 700] AH00455: Apache/2.4.27 (Win64) mod_jk/1.2.42 configured -- resuming normal operations
+[Sun Jul 16 16:10:30.002868 2017] [mpm_winnt:notice] [pid 3364:tid 700] AH00456: Apache Lounge VC15 Server built: Jul  7 2017 12:46:00
+[Sun Jul 16 16:10:30.002868 2017] [core:notice] [pid 3364:tid 700] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Sun Jul 16 16:10:30.004874 2017] [mpm_winnt:notice] [pid 3364:tid 700] AH00418: Parent: Created child process 10352
+[Sun Jul 16 16:10:31.002255 2017] [:notice] [pid 10352:tid 628] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Sun Jul 16 16:10:31.003258 2017] [:notice] [pid 10352:tid 628] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Sun Jul 16 16:10:31.003258 2017] [:notice] [pid 10352:tid 628] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Sun Jul 16 16:10:31.003258 2017] [:warn] [pid 10352:tid 628] ModSecurity: Loaded PCRE do not match with compiled!
+[Sun Jul 16 16:10:31.003258 2017] [:notice] [pid 10352:tid 628] ModSecurity: LUA compiled version="Lua 5.1"
+[Sun Jul 16 16:10:31.003258 2017] [:notice] [pid 10352:tid 628] ModSecurity: YAJL compiled version="2.1.0"
+[Sun Jul 16 16:10:31.003258 2017] [:notice] [pid 10352:tid 628] ModSecurity: LIBXML compiled version="2.9.4"
+[Sun Jul 16 16:10:31.003258 2017] [:notice] [pid 10352:tid 628] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Sun Jul 16 16:10:31.771230 2017] [mpm_winnt:notice] [pid 11672:tid 652] AH00364: Child: All worker threads have exited.
+[Sun Jul 16 16:10:32.004062 2017] [mpm_winnt:notice] [pid 10352:tid 628] AH00354: Child: Starting 64 worker threads.
+[Sun Jul 16 16:11:26.683459 2017] [mpm_winnt:notice] [pid 3364:tid 700] AH00424: Parent: Received restart signal -- Restarting the server.
+[Sun Jul 16 16:11:27.002260 2017] [mpm_winnt:notice] [pid 3364:tid 700] AH00455: Apache/2.4.27 (Win64) mod_jk/1.2.42 configured -- resuming normal operations
+[Sun Jul 16 16:11:27.002260 2017] [mpm_winnt:notice] [pid 3364:tid 700] AH00456: Apache Lounge VC15 Server built: Jul  7 2017 12:46:00
+[Sun Jul 16 16:11:27.002260 2017] [core:notice] [pid 3364:tid 700] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Sun Jul 16 16:11:27.004728 2017] [mpm_winnt:notice] [pid 3364:tid 700] AH00418: Parent: Created child process 9744
+[Sun Jul 16 16:11:28.002760 2017] [:notice] [pid 9744:tid 644] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Sun Jul 16 16:11:28.002760 2017] [:notice] [pid 9744:tid 644] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Sun Jul 16 16:11:28.002760 2017] [:notice] [pid 9744:tid 644] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Sun Jul 16 16:11:28.002760 2017] [:warn] [pid 9744:tid 644] ModSecurity: Loaded PCRE do not match with compiled!
+[Sun Jul 16 16:11:28.002760 2017] [:notice] [pid 9744:tid 644] ModSecurity: LUA compiled version="Lua 5.1"
+[Sun Jul 16 16:11:28.002760 2017] [:notice] [pid 9744:tid 644] ModSecurity: YAJL compiled version="2.1.0"
+[Sun Jul 16 16:11:28.002760 2017] [:notice] [pid 9744:tid 644] ModSecurity: LIBXML compiled version="2.9.4"
+[Sun Jul 16 16:11:28.002760 2017] [:notice] [pid 9744:tid 644] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Sun Jul 16 16:11:28.685730 2017] [mpm_winnt:notice] [pid 10352:tid 628] AH00364: Child: All worker threads have exited.
+[Sun Jul 16 16:11:29.004844 2017] [mpm_winnt:notice] [pid 9744:tid 644] AH00354: Child: Starting 64 worker threads.
+[Sun Jul 16 16:13:58.820084 2017] [mpm_winnt:notice] [pid 3364:tid 700] AH00424: Parent: Received restart signal -- Restarting the server.
+AH00526: Syntax error on line 1 of C:/Apache24/conf/whiteblacklist/blacklist.conf:
+ModSecurity: No action id present within the rule
+[Sun Jul 16 16:14:00.821701 2017] [mpm_winnt:notice] [pid 9744:tid 644] AH00364: Child: All worker threads have exited.
+[Sun Jul 16 16:15:14.003016 2017] [:notice] [pid 13976:tid 720] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Sun Jul 16 16:15:14.003016 2017] [:notice] [pid 13976:tid 720] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Sun Jul 16 16:15:14.003016 2017] [:notice] [pid 13976:tid 720] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Sun Jul 16 16:15:14.003016 2017] [:warn] [pid 13976:tid 720] ModSecurity: Loaded PCRE do not match with compiled!
+[Sun Jul 16 16:15:14.003016 2017] [:notice] [pid 13976:tid 720] ModSecurity: LUA compiled version="Lua 5.1"
+[Sun Jul 16 16:15:14.003016 2017] [:notice] [pid 13976:tid 720] ModSecurity: YAJL compiled version="2.1.0"
+[Sun Jul 16 16:15:14.003016 2017] [:notice] [pid 13976:tid 720] ModSecurity: LIBXML compiled version="2.9.4"
+[Sun Jul 16 16:15:14.003016 2017] [:notice] [pid 13976:tid 720] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Sun Jul 16 16:15:14.100689 2017] [core:warn] [pid 13976:tid 720] AH00098: pid file C:/Apache24/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Sun Jul 16 16:15:15.003828 2017] [mpm_winnt:notice] [pid 13976:tid 720] AH00455: Apache/2.4.27 (Win64) mod_jk/1.2.42 configured -- resuming normal operations
+[Sun Jul 16 16:15:15.003828 2017] [mpm_winnt:notice] [pid 13976:tid 720] AH00456: Apache Lounge VC15 Server built: Jul  7 2017 12:46:00
+[Sun Jul 16 16:15:15.003828 2017] [core:notice] [pid 13976:tid 720] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Sun Jul 16 16:15:15.006083 2017] [mpm_winnt:notice] [pid 13976:tid 720] AH00418: Parent: Created child process 9460
+[Sun Jul 16 16:15:16.002888 2017] [:notice] [pid 9460:tid 632] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Sun Jul 16 16:15:16.002888 2017] [:notice] [pid 9460:tid 632] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Sun Jul 16 16:15:16.002888 2017] [:notice] [pid 9460:tid 632] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Sun Jul 16 16:15:16.002888 2017] [:warn] [pid 9460:tid 632] ModSecurity: Loaded PCRE do not match with compiled!
+[Sun Jul 16 16:15:16.002888 2017] [:notice] [pid 9460:tid 632] ModSecurity: LUA compiled version="Lua 5.1"
+[Sun Jul 16 16:15:16.002888 2017] [:notice] [pid 9460:tid 632] ModSecurity: YAJL compiled version="2.1.0"
+[Sun Jul 16 16:15:16.002888 2017] [:notice] [pid 9460:tid 632] ModSecurity: LIBXML compiled version="2.9.4"
+[Sun Jul 16 16:15:16.002888 2017] [:notice] [pid 9460:tid 632] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Sun Jul 16 16:15:17.005057 2017] [mpm_winnt:notice] [pid 9460:tid 632] AH00354: Child: Starting 64 worker threads.
+[Sun Jul 16 16:15:26.526549 2017] [authz_core:error] [pid 9460:tid 1204] [client 127.0.0.1:20634] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/Login
+[Sun Jul 16 16:18:20.397980 2017] [mpm_winnt:notice] [pid 13976:tid 720] AH00424: Parent: Received restart signal -- Restarting the server.
+[Sun Jul 16 16:18:21.003467 2017] [mpm_winnt:notice] [pid 13976:tid 720] AH00455: Apache/2.4.27 (Win64) mod_jk/1.2.42 configured -- resuming normal operations
+[Sun Jul 16 16:18:21.003467 2017] [mpm_winnt:notice] [pid 13976:tid 720] AH00456: Apache Lounge VC15 Server built: Jul  7 2017 12:46:00
+[Sun Jul 16 16:18:21.003467 2017] [core:notice] [pid 13976:tid 720] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Sun Jul 16 16:18:21.005126 2017] [mpm_winnt:notice] [pid 13976:tid 720] AH00418: Parent: Created child process 2904
+[Sun Jul 16 16:18:22.004249 2017] [:notice] [pid 2904:tid 656] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Sun Jul 16 16:18:22.004249 2017] [:notice] [pid 2904:tid 656] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Sun Jul 16 16:18:22.004249 2017] [:notice] [pid 2904:tid 656] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Sun Jul 16 16:18:22.004249 2017] [:warn] [pid 2904:tid 656] ModSecurity: Loaded PCRE do not match with compiled!
+[Sun Jul 16 16:18:22.004249 2017] [:notice] [pid 2904:tid 656] ModSecurity: LUA compiled version="Lua 5.1"
+[Sun Jul 16 16:18:22.004249 2017] [:notice] [pid 2904:tid 656] ModSecurity: YAJL compiled version="2.1.0"
+[Sun Jul 16 16:18:22.004249 2017] [:notice] [pid 2904:tid 656] ModSecurity: LIBXML compiled version="2.9.4"
+[Sun Jul 16 16:18:22.004249 2017] [:notice] [pid 2904:tid 656] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Sun Jul 16 16:18:22.399570 2017] [mpm_winnt:notice] [pid 9460:tid 632] AH00364: Child: All worker threads have exited.
+[Sun Jul 16 16:18:23.005551 2017] [mpm_winnt:notice] [pid 2904:tid 656] AH00354: Child: Starting 64 worker threads.
+[Sun Jul 16 16:18:25.290752 2017] [authz_core:error] [pid 2904:tid 1228] [client 127.0.0.1:20676] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/Login
+[Sun Jul 16 18:00:20.950608 2017] [:error] [pid 2904:tid 1216] [client 127.0.0.1:21999] [client 127.0.0.1] ModSecurity: Access denied with code 403 (phase 4). Pattern match "^5\\\\d{2}$" at RESPONSE_STATUS. [file "C:/Apache24/conf/rules/RESPONSE-950-DATA-LEAKAGES.conf"] [line "93"] [id "950100"] [rev "3"] [msg "The Application Returned a 500-Level Status Code"] [data "Matched Data: 503 found within RESPONSE_STATUS: 503"] [severity "ERROR"] [ver "OWASP_CRS/3.0.0"] [maturity "9"] [accuracy "9"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-disclosure"] [tag "WASCTC/WASC-13"] [tag "OWASP_TOP_10/A6"] [tag "PCI/6.5.6"] [tag "paranoia-level/2"] [hostname "localhost"] [uri "/Bas/Login"] [unique_id "WWs5MsCo7wEAAAtY40EAAAA-"], referer: http://localhost/Bas/Home
+[Sun Jul 16 18:00:20.951139 2017] [:error] [pid 2904:tid 1216] [client 127.0.0.1:21999] [client 127.0.0.1] ModSecurity: Warning. Operator GE matched 4 at TX:outbound_anomaly_score. [file "C:/Apache24/conf/rules/RESPONSE-980-CORRELATION.conf"] [line "82"] [id "980140"] [msg "Outbound Anomaly Score Exceeded (score 4): The Application Returned a 500-Level Status Code"] [tag "event-correlation"] [hostname "localhost"] [uri "/Bas/Login"] [unique_id "WWs5MsCo7wEAAAtY40EAAAA-"], referer: http://localhost/Bas/Home
+[Sun Jul 16 18:00:20.998744 2017] [authz_core:error] [pid 2904:tid 1212] [client 127.0.0.1:22001] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/Login
+[Sun Jul 16 18:00:27.287986 2017] [:error] [pid 2904:tid 1212] [client 127.0.0.1:22001] [client 127.0.0.1] ModSecurity: Access denied with code 403 (phase 4). Pattern match "^5\\\\d{2}$" at RESPONSE_STATUS. [file "C:/Apache24/conf/rules/RESPONSE-950-DATA-LEAKAGES.conf"] [line "93"] [id "950100"] [rev "3"] [msg "The Application Returned a 500-Level Status Code"] [data "Matched Data: 503 found within RESPONSE_STATUS: 503"] [severity "ERROR"] [ver "OWASP_CRS/3.0.0"] [maturity "9"] [accuracy "9"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-disclosure"] [tag "WASCTC/WASC-13"] [tag "OWASP_TOP_10/A6"] [tag "PCI/6.5.6"] [tag "paranoia-level/2"] [hostname "localhost"] [uri "/Bas/Login"] [unique_id "WWs5OcCo7wEAAAtY40MAAAAR"], referer: http://localhost/Bas/Home
+[Sun Jul 16 18:00:27.288497 2017] [:error] [pid 2904:tid 1212] [client 127.0.0.1:22001] [client 127.0.0.1] ModSecurity: Warning. Operator GE matched 4 at TX:outbound_anomaly_score. [file "C:/Apache24/conf/rules/RESPONSE-980-CORRELATION.conf"] [line "82"] [id "980140"] [msg "Outbound Anomaly Score Exceeded (score 4): The Application Returned a 500-Level Status Code"] [tag "event-correlation"] [hostname "localhost"] [uri "/Bas/Login"] [unique_id "WWs5OcCo7wEAAAtY40MAAAAR"], referer: http://localhost/Bas/Home
+[Sun Jul 16 18:00:27.615637 2017] [authz_core:error] [pid 2904:tid 1212] [client 127.0.0.1:22014] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/Login
+[Sun Jul 16 18:01:39.945963 2017] [authz_core:error] [pid 2904:tid 1216] [client 127.0.0.1:22042] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/Login
+[Sun Jul 16 18:01:47.921650 2017] [:error] [pid 2904:tid 1212] [client 127.0.0.1:22045] [client 127.0.0.1] ModSecurity: Access denied with code 403 (phase 4). Pattern match "^5\\\\d{2}$" at RESPONSE_STATUS. [file "C:/Apache24/conf/rules/RESPONSE-950-DATA-LEAKAGES.conf"] [line "93"] [id "950100"] [rev "3"] [msg "The Application Returned a 500-Level Status Code"] [data "Matched Data: 500 found within RESPONSE_STATUS: 500"] [severity "ERROR"] [ver "OWASP_CRS/3.0.0"] [maturity "9"] [accuracy "9"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-disclosure"] [tag "WASCTC/WASC-13"] [tag "OWASP_TOP_10/A6"] [tag "PCI/6.5.6"] [tag "paranoia-level/2"] [hostname "localhost"] [uri "/Bas/Login"] [unique_id "WWs5i8Co7wEAAAtY40cAAAAR"], referer: http://localhost/Bas/Login
+[Sun Jul 16 18:01:47.922153 2017] [:error] [pid 2904:tid 1212] [client 127.0.0.1:22045] [client 127.0.0.1] ModSecurity: Warning. Operator GE matched 4 at TX:outbound_anomaly_score. [file "C:/Apache24/conf/rules/RESPONSE-980-CORRELATION.conf"] [line "82"] [id "980140"] [msg "Outbound Anomaly Score Exceeded (score 4): The Application Returned a 500-Level Status Code"] [tag "event-correlation"] [hostname "localhost"] [uri "/Bas/Login"] [unique_id "WWs5i8Co7wEAAAtY40cAAAAR"], referer: http://localhost/Bas/Login
+[Sun Jul 16 18:01:47.950227 2017] [authz_core:error] [pid 2904:tid 1212] [client 127.0.0.1:22045] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/Login
+[Sun Jul 16 18:01:51.787653 2017] [:error] [pid 2904:tid 1212] [client 127.0.0.1:22045] [client 127.0.0.1] ModSecurity: Access denied with code 403 (phase 4). Pattern match "^5\\\\d{2}$" at RESPONSE_STATUS. [file "C:/Apache24/conf/rules/RESPONSE-950-DATA-LEAKAGES.conf"] [line "93"] [id "950100"] [rev "3"] [msg "The Application Returned a 500-Level Status Code"] [data "Matched Data: 500 found within RESPONSE_STATUS: 500"] [severity "ERROR"] [ver "OWASP_CRS/3.0.0"] [maturity "9"] [accuracy "9"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-disclosure"] [tag "WASCTC/WASC-13"] [tag "OWASP_TOP_10/A6"] [tag "PCI/6.5.6"] [tag "paranoia-level/2"] [hostname "localhost"] [uri "/Bas/Login"] [unique_id "WWs5j8Co7wEAAAtY40kAAAAR"], referer: http://localhost/Bas/Login
+[Sun Jul 16 18:01:51.788155 2017] [:error] [pid 2904:tid 1212] [client 127.0.0.1:22045] [client 127.0.0.1] ModSecurity: Warning. Operator GE matched 4 at TX:outbound_anomaly_score. [file "C:/Apache24/conf/rules/RESPONSE-980-CORRELATION.conf"] [line "82"] [id "980140"] [msg "Outbound Anomaly Score Exceeded (score 4): The Application Returned a 500-Level Status Code"] [tag "event-correlation"] [hostname "localhost"] [uri "/Bas/Login"] [unique_id "WWs5j8Co7wEAAAtY40kAAAAR"], referer: http://localhost/Bas/Login
+[Sun Jul 16 18:01:51.812220 2017] [authz_core:error] [pid 2904:tid 1212] [client 127.0.0.1:22045] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/Login
+[Sun Jul 16 18:01:53.501312 2017] [authz_core:error] [pid 2904:tid 1212] [client 127.0.0.1:22045] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/Login
+[Sun Jul 16 18:01:55.326919 2017] [authz_core:error] [pid 2904:tid 1212] [client 127.0.0.1:22045] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/Login
+[Sun Jul 16 18:03:42.283855 2017] [authz_core:error] [pid 2904:tid 1212] [client 127.0.0.1:22099] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/Home
+[Sun Jul 16 18:23:09.788943 2017] [authz_core:error] [pid 2904:tid 1216] [client 127.0.0.1:22386] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/Login
+[Sun Jul 16 18:23:14.836848 2017] [authz_core:error] [pid 2904:tid 1216] [client 127.0.0.1:22386] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/Login
+[Sun Jul 16 18:23:20.727896 2017] [:error] [pid 2904:tid 1216] [client 127.0.0.1:22398] [client 127.0.0.1] ModSecurity: Access denied with code 403 (phase 4). Pattern match "^5\\\\d{2}$" at RESPONSE_STATUS. [file "C:/Apache24/conf/rules/RESPONSE-950-DATA-LEAKAGES.conf"] [line "93"] [id "950100"] [rev "3"] [msg "The Application Returned a 500-Level Status Code"] [data "Matched Data: 500 found within RESPONSE_STATUS: 500"] [severity "ERROR"] [ver "OWASP_CRS/3.0.0"] [maturity "9"] [accuracy "9"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-disclosure"] [tag "WASCTC/WASC-13"] [tag "OWASP_TOP_10/A6"] [tag "PCI/6.5.6"] [tag "paranoia-level/2"] [hostname "localhost"] [uri "/Bas/Login"] [unique_id "WWs@mMCo7wEAAAtY41QAAAA-"], referer: http://localhost/Bas/Login
+[Sun Jul 16 18:23:20.727896 2017] [:error] [pid 2904:tid 1216] [client 127.0.0.1:22398] [client 127.0.0.1] ModSecurity: Warning. Operator GE matched 4 at TX:outbound_anomaly_score. [file "C:/Apache24/conf/rules/RESPONSE-980-CORRELATION.conf"] [line "82"] [id "980140"] [msg "Outbound Anomaly Score Exceeded (score 4): The Application Returned a 500-Level Status Code"] [tag "event-correlation"] [hostname "localhost"] [uri "/Bas/Login"] [unique_id "WWs@mMCo7wEAAAtY41QAAAA-"], referer: http://localhost/Bas/Login
+[Sun Jul 16 18:23:20.753950 2017] [authz_core:error] [pid 2904:tid 1216] [client 127.0.0.1:22398] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/Login
+[Sun Jul 16 18:33:54.776626 2017] [authz_core:error] [pid 2904:tid 1212] [client 127.0.0.1:22557] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/Login
+[Sun Jul 16 18:34:02.927522 2017] [:error] [pid 2904:tid 1216] [client 127.0.0.1:22561] [client 127.0.0.1] ModSecurity: Access denied with code 403 (phase 4). Pattern match "^5\\\\d{2}$" at RESPONSE_STATUS. [file "C:/Apache24/conf/rules/RESPONSE-950-DATA-LEAKAGES.conf"] [line "93"] [id "950100"] [rev "3"] [msg "The Application Returned a 500-Level Status Code"] [data "Matched Data: 500 found within RESPONSE_STATUS: 500"] [severity "ERROR"] [ver "OWASP_CRS/3.0.0"] [maturity "9"] [accuracy "9"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-disclosure"] [tag "WASCTC/WASC-13"] [tag "OWASP_TOP_10/A6"] [tag "PCI/6.5.6"] [tag "paranoia-level/2"] [hostname "localhost"] [uri "/Bas/Login"] [unique_id "WWtBGsCo7wEAAAtY41gAAAA-"], referer: http://localhost/Bas/Login
+[Sun Jul 16 18:34:02.928024 2017] [:error] [pid 2904:tid 1216] [client 127.0.0.1:22561] [client 127.0.0.1] ModSecurity: Warning. Operator GE matched 4 at TX:outbound_anomaly_score. [file "C:/Apache24/conf/rules/RESPONSE-980-CORRELATION.conf"] [line "82"] [id "980140"] [msg "Outbound Anomaly Score Exceeded (score 4): The Application Returned a 500-Level Status Code"] [tag "event-correlation"] [hostname "localhost"] [uri "/Bas/Login"] [unique_id "WWtBGsCo7wEAAAtY41gAAAA-"], referer: http://localhost/Bas/Login
+[Sun Jul 16 18:34:02.956600 2017] [authz_core:error] [pid 2904:tid 1216] [client 127.0.0.1:22561] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/Login
+[Sun Jul 16 18:36:48.616931 2017] [authz_core:error] [pid 2904:tid 1216] [client 127.0.0.1:22622] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/Login
+[Sun Jul 16 18:36:54.326147 2017] [authz_core:error] [pid 2904:tid 1212] [client 127.0.0.1:22628] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/Login
+[Sun Jul 16 18:40:01.145458 2017] [authz_core:error] [pid 2904:tid 1212] [client 127.0.0.1:22702] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/Login
+[Sun Jul 16 18:40:03.795548 2017] [authz_core:error] [pid 2904:tid 1212] [client 127.0.0.1:22702] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/Home
+[Sun Jul 16 18:40:23.446366 2017] [authz_core:error] [pid 2904:tid 1216] [client 127.0.0.1:22719] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/Directory
+[Sun Jul 16 18:41:22.203222 2017] [authz_core:error] [pid 2904:tid 1212] [client 127.0.0.1:22734] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/Directory
+[Sun Jul 16 18:42:38.668708 2017] [authz_core:error] [pid 2904:tid 1216] [client 127.0.0.1:22752] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/Home
+[Sun Jul 16 18:42:49.446588 2017] [authz_core:error] [pid 2904:tid 1212] [client 127.0.0.1:22766] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/
+[Sun Jul 16 18:44:54.644419 2017] [authz_core:error] [pid 2904:tid 1216] [client 127.0.0.1:22829] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/
+[Sun Jul 16 18:46:33.149764 2017] [mpm_winnt:notice] [pid 13976:tid 720] AH00424: Parent: Received restart signal -- Restarting the server.
+[Sun Jul 16 18:46:34.002950 2017] [mpm_winnt:notice] [pid 13976:tid 720] AH00455: Apache/2.4.27 (Win64) mod_jk/1.2.42 configured -- resuming normal operations
+[Sun Jul 16 18:46:34.002950 2017] [mpm_winnt:notice] [pid 13976:tid 720] AH00456: Apache Lounge VC15 Server built: Jul  7 2017 12:46:00
+[Sun Jul 16 18:46:34.002950 2017] [core:notice] [pid 13976:tid 720] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Sun Jul 16 18:46:34.004954 2017] [mpm_winnt:notice] [pid 13976:tid 720] AH00418: Parent: Created child process 3224
+[Sun Jul 16 18:46:35.002814 2017] [:notice] [pid 3224:tid 708] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Sun Jul 16 18:46:35.002814 2017] [:notice] [pid 3224:tid 708] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Sun Jul 16 18:46:35.002814 2017] [:notice] [pid 3224:tid 708] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Sun Jul 16 18:46:35.002814 2017] [:warn] [pid 3224:tid 708] ModSecurity: Loaded PCRE do not match with compiled!
+[Sun Jul 16 18:46:35.002814 2017] [:notice] [pid 3224:tid 708] ModSecurity: LUA compiled version="Lua 5.1"
+[Sun Jul 16 18:46:35.002814 2017] [:notice] [pid 3224:tid 708] ModSecurity: YAJL compiled version="2.1.0"
+[Sun Jul 16 18:46:35.002814 2017] [:notice] [pid 3224:tid 708] ModSecurity: LIBXML compiled version="2.9.4"
+[Sun Jul 16 18:46:35.002814 2017] [:notice] [pid 3224:tid 708] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Sun Jul 16 18:46:35.151907 2017] [mpm_winnt:notice] [pid 2904:tid 656] AH00364: Child: All worker threads have exited.
+[Sun Jul 16 18:46:36.005920 2017] [mpm_winnt:notice] [pid 3224:tid 708] AH00354: Child: Starting 64 worker threads.
+[Sun Jul 16 18:46:40.839132 2017] [authz_core:error] [pid 3224:tid 1220] [client 127.0.0.1:22853] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/
+[Sun Jul 16 18:50:34.441957 2017] [authz_core:error] [pid 3224:tid 1216] [client 127.0.0.1:22898] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/
+[Sun Jul 16 18:51:35.595594 2017] [mpm_winnt:notice] [pid 13976:tid 720] AH00424: Parent: Received restart signal -- Restarting the server.
+[Sun Jul 16 18:51:36.002715 2017] [mpm_winnt:notice] [pid 13976:tid 720] AH00455: Apache/2.4.27 (Win64) mod_jk/1.2.42 configured -- resuming normal operations
+[Sun Jul 16 18:51:36.002715 2017] [mpm_winnt:notice] [pid 13976:tid 720] AH00456: Apache Lounge VC15 Server built: Jul  7 2017 12:46:00
+[Sun Jul 16 18:51:36.002715 2017] [core:notice] [pid 13976:tid 720] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Sun Jul 16 18:51:36.004956 2017] [mpm_winnt:notice] [pid 13976:tid 720] AH00418: Parent: Created child process 10724
+[Sun Jul 16 18:51:37.003429 2017] [:notice] [pid 10724:tid 688] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Sun Jul 16 18:51:37.003429 2017] [:notice] [pid 10724:tid 688] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Sun Jul 16 18:51:37.003429 2017] [:notice] [pid 10724:tid 688] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Sun Jul 16 18:51:37.003429 2017] [:warn] [pid 10724:tid 688] ModSecurity: Loaded PCRE do not match with compiled!
+[Sun Jul 16 18:51:37.003429 2017] [:notice] [pid 10724:tid 688] ModSecurity: LUA compiled version="Lua 5.1"
+[Sun Jul 16 18:51:37.003429 2017] [:notice] [pid 10724:tid 688] ModSecurity: YAJL compiled version="2.1.0"
+[Sun Jul 16 18:51:37.003429 2017] [:notice] [pid 10724:tid 688] ModSecurity: LIBXML compiled version="2.9.4"
+[Sun Jul 16 18:51:37.003429 2017] [:notice] [pid 10724:tid 688] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Sun Jul 16 18:51:37.596075 2017] [mpm_winnt:notice] [pid 3224:tid 708] AH00364: Child: All worker threads have exited.
+[Sun Jul 16 18:51:38.005755 2017] [mpm_winnt:notice] [pid 10724:tid 688] AH00354: Child: Starting 64 worker threads.
+[Sun Jul 16 18:53:26.203240 2017] [authz_core:error] [pid 10724:tid 1204] [client 127.0.0.1:22971] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/
+[Sun Jul 16 18:53:30.087092 2017] [authz_core:error] [pid 10724:tid 1204] [client 127.0.0.1:22971] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/Bas
+[Sun Jul 16 18:53:30.115667 2017] [authz_core:error] [pid 10724:tid 1204] [client 127.0.0.1:22971] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas
+[Sun Jul 16 18:53:34.210927 2017] [authz_core:error] [pid 10724:tid 1204] [client 127.0.0.1:22971] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/
+[Sun Jul 16 18:55:44.289101 2017] [authz_core:error] [pid 10724:tid 1204] [client 127.0.0.1:23125] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/
+[Sun Jul 16 18:55:50.999311 2017] [authz_core:error] [pid 10724:tid 1200] [client 127.0.0.1:23129] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/Bas
+[Sun Jul 16 18:55:51.064209 2017] [authz_core:error] [pid 10724:tid 1200] [client 127.0.0.1:23129] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas
+[Sun Jul 16 18:55:53.643275 2017] [authz_core:error] [pid 10724:tid 1200] [client 127.0.0.1:23129] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/
+[Sun Jul 16 18:55:53.815753 2017] [authz_core:error] [pid 10724:tid 1200] [client 127.0.0.1:23129] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/
+[Sun Jul 16 18:55:58.065188 2017] [authz_core:error] [pid 10724:tid 1200] [client 127.0.0.1:23129] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/
+[Sun Jul 16 18:57:06.031049 2017] [authz_core:error] [pid 10724:tid 1200] [client 127.0.0.1:23190] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/
+[Sun Jul 16 18:57:06.084163 2017] [authz_core:error] [pid 10724:tid 1200] [client 127.0.0.1:23190] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/
+[Sun Jul 16 18:57:09.482672 2017] [authz_core:error] [pid 10724:tid 1200] [client 127.0.0.1:23190] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/Bas
+[Sun Jul 16 18:57:09.508239 2017] [authz_core:error] [pid 10724:tid 1200] [client 127.0.0.1:23190] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas
+[Sun Jul 16 18:57:13.515744 2017] [authz_core:error] [pid 10724:tid 1200] [client 127.0.0.1:23190] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/
+[Sun Jul 16 18:59:59.358248 2017] [mpm_winnt:notice] [pid 13976:tid 720] AH00424: Parent: Received restart signal -- Restarting the server.
+[Sun Jul 16 19:00:00.003202 2017] [mpm_winnt:notice] [pid 13976:tid 720] AH00455: Apache/2.4.27 (Win64) mod_jk/1.2.42 configured -- resuming normal operations
+[Sun Jul 16 19:00:00.003202 2017] [mpm_winnt:notice] [pid 13976:tid 720] AH00456: Apache Lounge VC15 Server built: Jul  7 2017 12:46:00
+[Sun Jul 16 19:00:00.003202 2017] [core:notice] [pid 13976:tid 720] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Sun Jul 16 19:00:00.005735 2017] [mpm_winnt:notice] [pid 13976:tid 720] AH00418: Parent: Created child process 5644
+[Sun Jul 16 19:00:01.003248 2017] [:notice] [pid 5644:tid 668] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Sun Jul 16 19:00:01.003248 2017] [:notice] [pid 5644:tid 668] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Sun Jul 16 19:00:01.003248 2017] [:notice] [pid 5644:tid 668] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Sun Jul 16 19:00:01.003248 2017] [:warn] [pid 5644:tid 668] ModSecurity: Loaded PCRE do not match with compiled!
+[Sun Jul 16 19:00:01.003248 2017] [:notice] [pid 5644:tid 668] ModSecurity: LUA compiled version="Lua 5.1"
+[Sun Jul 16 19:00:01.003248 2017] [:notice] [pid 5644:tid 668] ModSecurity: YAJL compiled version="2.1.0"
+[Sun Jul 16 19:00:01.003248 2017] [:notice] [pid 5644:tid 668] ModSecurity: LIBXML compiled version="2.9.4"
+[Sun Jul 16 19:00:01.003248 2017] [:notice] [pid 5644:tid 668] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Sun Jul 16 19:00:01.358765 2017] [mpm_winnt:notice] [pid 10724:tid 688] AH00364: Child: All worker threads have exited.
+[Sun Jul 16 19:00:02.004544 2017] [mpm_winnt:notice] [pid 5644:tid 668] AH00354: Child: Starting 64 worker threads.
+[Sun Jul 16 19:00:10.911580 2017] [authz_core:error] [pid 5644:tid 1220] [client 127.0.0.1:23285] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/
+[Sun Jul 16 19:00:21.301993 2017] [authz_core:error] [pid 5644:tid 1216] [client 127.0.0.1:23288] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/Home
+[Sun Jul 16 19:00:24.870233 2017] [authz_core:error] [pid 5644:tid 1216] [client 127.0.0.1:23288] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/
+[Sun Jul 16 19:00:27.346822 2017] [authz_core:error] [pid 5644:tid 1216] [client 127.0.0.1:23288] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/Bas
+[Sun Jul 16 19:00:27.406880 2017] [authz_core:error] [pid 5644:tid 1216] [client 127.0.0.1:23288] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas
+[Sun Jul 16 19:00:31.419248 2017] [authz_core:error] [pid 5644:tid 1216] [client 127.0.0.1:23288] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/
+[Sun Jul 16 19:07:30.377800 2017] [mpm_winnt:notice] [pid 13976:tid 720] AH00424: Parent: Received restart signal -- Restarting the server.
+[Sun Jul 16 19:07:31.002338 2017] [mpm_winnt:notice] [pid 13976:tid 720] AH00455: Apache/2.4.27 (Win64) mod_jk/1.2.42 configured -- resuming normal operations
+[Sun Jul 16 19:07:31.002338 2017] [mpm_winnt:notice] [pid 13976:tid 720] AH00456: Apache Lounge VC15 Server built: Jul  7 2017 12:46:00
+[Sun Jul 16 19:07:31.002338 2017] [core:notice] [pid 13976:tid 720] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Sun Jul 16 19:07:31.004291 2017] [mpm_winnt:notice] [pid 13976:tid 720] AH00418: Parent: Created child process 10576
+[Sun Jul 16 19:07:32.003492 2017] [:notice] [pid 10576:tid 672] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Sun Jul 16 19:07:32.003492 2017] [:notice] [pid 10576:tid 672] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Sun Jul 16 19:07:32.003492 2017] [:notice] [pid 10576:tid 672] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Sun Jul 16 19:07:32.003492 2017] [:warn] [pid 10576:tid 672] ModSecurity: Loaded PCRE do not match with compiled!
+[Sun Jul 16 19:07:32.003492 2017] [:notice] [pid 10576:tid 672] ModSecurity: LUA compiled version="Lua 5.1"
+[Sun Jul 16 19:07:32.003492 2017] [:notice] [pid 10576:tid 672] ModSecurity: YAJL compiled version="2.1.0"
+[Sun Jul 16 19:07:32.003492 2017] [:notice] [pid 10576:tid 672] ModSecurity: LIBXML compiled version="2.9.4"
+[Sun Jul 16 19:07:32.003492 2017] [:notice] [pid 10576:tid 672] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Sun Jul 16 19:07:32.379071 2017] [mpm_winnt:notice] [pid 5644:tid 668] AH00364: Child: All worker threads have exited.
+[Sun Jul 16 19:07:33.005376 2017] [mpm_winnt:notice] [pid 10576:tid 672] AH00354: Child: Starting 64 worker threads.
+[Sun Jul 16 19:07:53.872291 2017] [authz_core:error] [pid 10576:tid 1236] [client 127.0.0.1:23502] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/
+[Sun Jul 16 19:08:50.915819 2017] [mpm_winnt:notice] [pid 13976:tid 720] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Sun Jul 16 19:08:56.130540 2017] [mpm_winnt:notice] [pid 10576:tid 672] AH00364: Child: All worker threads have exited.
+[Sun Jul 16 19:08:56.156238 2017] [mpm_winnt:notice] [pid 13976:tid 720] AH00430: Parent: Child process 10576 exited successfully.
+[Sun Jul 16 19:19:23.003349 2017] [:notice] [pid 6360:tid 720] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Sun Jul 16 19:19:23.003349 2017] [:notice] [pid 6360:tid 720] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Sun Jul 16 19:19:23.003349 2017] [:notice] [pid 6360:tid 720] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Sun Jul 16 19:19:23.003349 2017] [:warn] [pid 6360:tid 720] ModSecurity: Loaded PCRE do not match with compiled!
+[Sun Jul 16 19:19:23.003349 2017] [:notice] [pid 6360:tid 720] ModSecurity: LUA compiled version="Lua 5.1"
+[Sun Jul 16 19:19:23.003349 2017] [:notice] [pid 6360:tid 720] ModSecurity: YAJL compiled version="2.1.0"
+[Sun Jul 16 19:19:23.003349 2017] [:notice] [pid 6360:tid 720] ModSecurity: LIBXML compiled version="2.9.4"
+[Sun Jul 16 19:19:23.003349 2017] [:notice] [pid 6360:tid 720] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Sun Jul 16 19:19:24.003542 2017] [mpm_winnt:notice] [pid 6360:tid 720] AH00455: Apache/2.4.27 (Win64) mod_jk/1.2.42 configured -- resuming normal operations
+[Sun Jul 16 19:19:24.004045 2017] [mpm_winnt:notice] [pid 6360:tid 720] AH00456: Apache Lounge VC15 Server built: Jul  7 2017 12:46:00
+[Sun Jul 16 19:19:24.004045 2017] [core:notice] [pid 6360:tid 720] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Sun Jul 16 19:19:24.006556 2017] [mpm_winnt:notice] [pid 6360:tid 720] AH00418: Parent: Created child process 6708
+[Sun Jul 16 19:19:25.002705 2017] [:notice] [pid 6708:tid 676] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Sun Jul 16 19:19:25.002705 2017] [:notice] [pid 6708:tid 676] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Sun Jul 16 19:19:25.002705 2017] [:notice] [pid 6708:tid 676] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Sun Jul 16 19:19:25.002705 2017] [:warn] [pid 6708:tid 676] ModSecurity: Loaded PCRE do not match with compiled!
+[Sun Jul 16 19:19:25.002705 2017] [:notice] [pid 6708:tid 676] ModSecurity: LUA compiled version="Lua 5.1"
+[Sun Jul 16 19:19:25.002705 2017] [:notice] [pid 6708:tid 676] ModSecurity: YAJL compiled version="2.1.0"
+[Sun Jul 16 19:19:25.003206 2017] [:notice] [pid 6708:tid 676] ModSecurity: LIBXML compiled version="2.9.4"
+[Sun Jul 16 19:19:25.003206 2017] [:notice] [pid 6708:tid 676] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Sun Jul 16 19:19:26.005899 2017] [mpm_winnt:notice] [pid 6708:tid 676] AH00354: Child: Starting 64 worker threads.
+[Sun Jul 16 19:20:46.473500 2017] [mpm_winnt:notice] [pid 6360:tid 720] AH00424: Parent: Received restart signal -- Restarting the server.
+AH00526: Syntax error on line 1 of C:/Apache24/conf/whiteblacklist/blacklist.conf:
+SecAction takes one argument, an action list
+[Sun Jul 16 19:20:48.474535 2017] [mpm_winnt:notice] [pid 6708:tid 676] AH00364: Child: All worker threads have exited.
+[Sun Jul 16 19:23:02.003513 2017] [:notice] [pid 9784:tid 700] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Sun Jul 16 19:23:02.003513 2017] [:notice] [pid 9784:tid 700] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Sun Jul 16 19:23:02.003513 2017] [:notice] [pid 9784:tid 700] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Sun Jul 16 19:23:02.003513 2017] [:warn] [pid 9784:tid 700] ModSecurity: Loaded PCRE do not match with compiled!
+[Sun Jul 16 19:23:02.004029 2017] [:notice] [pid 9784:tid 700] ModSecurity: LUA compiled version="Lua 5.1"
+[Sun Jul 16 19:23:02.004029 2017] [:notice] [pid 9784:tid 700] ModSecurity: YAJL compiled version="2.1.0"
+[Sun Jul 16 19:23:02.004029 2017] [:notice] [pid 9784:tid 700] ModSecurity: LIBXML compiled version="2.9.4"
+[Sun Jul 16 19:23:02.004029 2017] [:notice] [pid 9784:tid 700] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Sun Jul 16 19:23:02.107385 2017] [core:warn] [pid 9784:tid 700] AH00098: pid file C:/Apache24/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Sun Jul 16 19:23:03.004183 2017] [mpm_winnt:notice] [pid 9784:tid 700] AH00455: Apache/2.4.27 (Win64) mod_jk/1.2.42 configured -- resuming normal operations
+[Sun Jul 16 19:23:03.004704 2017] [mpm_winnt:notice] [pid 9784:tid 700] AH00456: Apache Lounge VC15 Server built: Jul  7 2017 12:46:00
+[Sun Jul 16 19:23:03.004704 2017] [core:notice] [pid 9784:tid 700] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Sun Jul 16 19:23:03.007212 2017] [mpm_winnt:notice] [pid 9784:tid 700] AH00418: Parent: Created child process 6396
+[Sun Jul 16 19:23:04.002268 2017] [:notice] [pid 6396:tid 680] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Sun Jul 16 19:23:04.002268 2017] [:notice] [pid 6396:tid 680] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Sun Jul 16 19:23:04.002268 2017] [:notice] [pid 6396:tid 680] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Sun Jul 16 19:23:04.002268 2017] [:warn] [pid 6396:tid 680] ModSecurity: Loaded PCRE do not match with compiled!
+[Sun Jul 16 19:23:04.002268 2017] [:notice] [pid 6396:tid 680] ModSecurity: LUA compiled version="Lua 5.1"
+[Sun Jul 16 19:23:04.002268 2017] [:notice] [pid 6396:tid 680] ModSecurity: YAJL compiled version="2.1.0"
+[Sun Jul 16 19:23:04.002268 2017] [:notice] [pid 6396:tid 680] ModSecurity: LIBXML compiled version="2.9.4"
+[Sun Jul 16 19:23:04.002268 2017] [:notice] [pid 6396:tid 680] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Sun Jul 16 19:23:05.004854 2017] [mpm_winnt:notice] [pid 6396:tid 680] AH00354: Child: Starting 64 worker threads.
+[Sun Jul 16 19:23:11.677720 2017] [authz_core:error] [pid 6396:tid 1204] [client 127.0.0.1:23786] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/
+[Sun Jul 16 19:23:11.731988 2017] [authz_core:error] [pid 6396:tid 1204] [client 127.0.0.1:23786] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/
+[Sun Jul 16 19:23:15.182747 2017] [authz_core:error] [pid 6396:tid 1204] [client 127.0.0.1:23786] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/
+[Sun Jul 16 19:24:37.692950 2017] [mpm_winnt:notice] [pid 9784:tid 700] AH00424: Parent: Received restart signal -- Restarting the server.
+[Sun Jul 16 19:24:38.003724 2017] [mpm_winnt:notice] [pid 9784:tid 700] AH00455: Apache/2.4.27 (Win64) mod_jk/1.2.42 configured -- resuming normal operations
+[Sun Jul 16 19:24:38.003724 2017] [mpm_winnt:notice] [pid 9784:tid 700] AH00456: Apache Lounge VC15 Server built: Jul  7 2017 12:46:00
+[Sun Jul 16 19:24:38.003724 2017] [core:notice] [pid 9784:tid 700] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Sun Jul 16 19:24:38.006285 2017] [mpm_winnt:notice] [pid 9784:tid 700] AH00418: Parent: Created child process 8276
+[Sun Jul 16 19:24:39.002941 2017] [:notice] [pid 8276:tid 440] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Sun Jul 16 19:24:39.002941 2017] [:notice] [pid 8276:tid 440] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Sun Jul 16 19:24:39.002941 2017] [:notice] [pid 8276:tid 440] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Sun Jul 16 19:24:39.002941 2017] [:warn] [pid 8276:tid 440] ModSecurity: Loaded PCRE do not match with compiled!
+[Sun Jul 16 19:24:39.002941 2017] [:notice] [pid 8276:tid 440] ModSecurity: LUA compiled version="Lua 5.1"
+[Sun Jul 16 19:24:39.002941 2017] [:notice] [pid 8276:tid 440] ModSecurity: YAJL compiled version="2.1.0"
+[Sun Jul 16 19:24:39.002941 2017] [:notice] [pid 8276:tid 440] ModSecurity: LIBXML compiled version="2.9.4"
+[Sun Jul 16 19:24:39.002941 2017] [:notice] [pid 8276:tid 440] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Sun Jul 16 19:24:39.694079 2017] [mpm_winnt:notice] [pid 6396:tid 680] AH00364: Child: All worker threads have exited.
+[Sun Jul 16 19:24:40.004220 2017] [mpm_winnt:notice] [pid 8276:tid 440] AH00354: Child: Starting 64 worker threads.
+[Sun Jul 16 19:24:43.540199 2017] [authz_core:error] [pid 8276:tid 1220] [client 127.0.0.1:23804] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/
+[Sun Jul 16 19:24:59.614455 2017] [mpm_winnt:notice] [pid 9784:tid 700] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Sun Jul 16 19:25:09.340959 2017] [mpm_winnt:notice] [pid 8276:tid 440] AH00364: Child: All worker threads have exited.
+[Sun Jul 16 19:25:09.369022 2017] [mpm_winnt:notice] [pid 9784:tid 700] AH00430: Parent: Child process 8276 exited successfully.
+[Mon Jul 17 00:06:30.042073 2017] [:notice] [pid 3604:tid 704] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Mon Jul 17 00:06:30.063125 2017] [:notice] [pid 3604:tid 704] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Mon Jul 17 00:06:30.063125 2017] [:notice] [pid 3604:tid 704] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Mon Jul 17 00:06:30.063125 2017] [:warn] [pid 3604:tid 704] ModSecurity: Loaded PCRE do not match with compiled!
+[Mon Jul 17 00:06:30.063125 2017] [:notice] [pid 3604:tid 704] ModSecurity: LUA compiled version="Lua 5.1"
+[Mon Jul 17 00:06:30.063125 2017] [:notice] [pid 3604:tid 704] ModSecurity: YAJL compiled version="2.1.0"
+[Mon Jul 17 00:06:30.063125 2017] [:notice] [pid 3604:tid 704] ModSecurity: LIBXML compiled version="2.9.4"
+[Mon Jul 17 00:06:30.063125 2017] [:notice] [pid 3604:tid 704] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Mon Jul 17 00:06:31.004041 2017] [mpm_winnt:notice] [pid 3604:tid 704] AH00455: Apache/2.4.27 (Win64) mod_jk/1.2.42 configured -- resuming normal operations
+[Mon Jul 17 00:06:31.004041 2017] [mpm_winnt:notice] [pid 3604:tid 704] AH00456: Apache Lounge VC15 Server built: Jul  7 2017 12:46:00
+[Mon Jul 17 00:06:31.004041 2017] [core:notice] [pid 3604:tid 704] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Mon Jul 17 00:06:31.006034 2017] [mpm_winnt:notice] [pid 3604:tid 704] AH00418: Parent: Created child process 8848
+[Mon Jul 17 00:06:32.002867 2017] [:notice] [pid 8848:tid 656] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Mon Jul 17 00:06:32.002867 2017] [:notice] [pid 8848:tid 656] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Mon Jul 17 00:06:32.002867 2017] [:notice] [pid 8848:tid 656] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Mon Jul 17 00:06:32.002867 2017] [:warn] [pid 8848:tid 656] ModSecurity: Loaded PCRE do not match with compiled!
+[Mon Jul 17 00:06:32.002867 2017] [:notice] [pid 8848:tid 656] ModSecurity: LUA compiled version="Lua 5.1"
+[Mon Jul 17 00:06:32.002867 2017] [:notice] [pid 8848:tid 656] ModSecurity: YAJL compiled version="2.1.0"
+[Mon Jul 17 00:06:32.002867 2017] [:notice] [pid 8848:tid 656] ModSecurity: LIBXML compiled version="2.9.4"
+[Mon Jul 17 00:06:32.002867 2017] [:notice] [pid 8848:tid 656] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Mon Jul 17 00:06:33.009676 2017] [mpm_winnt:notice] [pid 8848:tid 656] AH00354: Child: Starting 64 worker threads.
+[Mon Jul 17 00:06:57.091832 2017] [authz_core:error] [pid 8848:tid 1236] [client 127.0.0.1:25592] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/html/StudentUpload.html
+[Mon Jul 17 00:07:07.838893 2017] [authz_core:error] [pid 8848:tid 1232] [client 127.0.0.1:25607] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/uploads
+[Mon Jul 17 00:07:14.974513 2017] [authz_core:error] [pid 8848:tid 1236] [client 127.0.0.1:25608] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/html/StudentUpload.html
+[Mon Jul 17 00:10:24.133986 2017] [authz_core:error] [pid 8848:tid 1236] [client 127.0.0.1:25613] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/Home
+[Mon Jul 17 00:10:34.563206 2017] [authz_core:error] [pid 8848:tid 1232] [client 127.0.0.1:25623] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/Login
+[Mon Jul 17 00:10:46.258812 2017] [authz_core:error] [pid 8848:tid 1236] [client 127.0.0.1:25625] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/Home
+[Mon Jul 17 00:10:48.928769 2017] [authz_core:error] [pid 8848:tid 1236] [client 127.0.0.1:25625] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/Directory
+[Mon Jul 17 00:10:50.724919 2017] [authz_core:error] [pid 8848:tid 1236] [client 127.0.0.1:25625] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/Home
+[Mon Jul 17 00:10:51.801262 2017] [authz_core:error] [pid 8848:tid 1236] [client 127.0.0.1:25625] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/html/beforeSubmission.html
+[Mon Jul 17 00:10:54.892667 2017] [authz_core:error] [pid 8848:tid 1236] [client 127.0.0.1:25625] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/Home
+[Mon Jul 17 00:10:58.451612 2017] [authz_core:error] [pid 8848:tid 1232] [client 127.0.0.1:25632] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/html/studentDownload.html
+[Mon Jul 17 00:10:59.325658 2017] [authz_core:error] [pid 8848:tid 1232] [client 127.0.0.1:25632] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/studentdownload
+[Mon Jul 17 00:11:00.877016 2017] [authz_core:error] [pid 8848:tid 1232] [client 127.0.0.1:25632] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/html/studentDownload.html
+[Mon Jul 17 00:11:02.808428 2017] [authz_core:error] [pid 8848:tid 1232] [client 127.0.0.1:25632] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/Directory
+[Mon Jul 17 00:22:54.330749 2017] [authz_core:error] [pid 8848:tid 1232] [client 127.0.0.1:25656] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/
+[Mon Jul 17 00:22:59.167833 2017] [authz_core:error] [pid 8848:tid 1232] [client 127.0.0.1:25656] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/Bas
+[Mon Jul 17 00:22:59.209948 2017] [authz_core:error] [pid 8848:tid 1232] [client 127.0.0.1:25656] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas
+[Mon Jul 17 00:23:26.178741 2017] [authz_core:error] [pid 8848:tid 1236] [client 127.0.0.1:25665] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/
+[Mon Jul 17 00:52:03.592053 2017] [mpm_winnt:notice] [pid 3604:tid 704] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Mon Jul 17 00:52:05.600886 2017] [mpm_winnt:notice] [pid 8848:tid 656] AH00364: Child: All worker threads have exited.
+[Mon Jul 17 00:52:05.718781 2017] [mpm_winnt:notice] [pid 3604:tid 704] AH00430: Parent: Child process 8848 exited successfully.
+[Mon Jul 17 11:24:28.013250 2017] [:notice] [pid 12324:tid 704] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Mon Jul 17 11:24:28.013250 2017] [:notice] [pid 12324:tid 704] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Mon Jul 17 11:24:28.013250 2017] [:notice] [pid 12324:tid 704] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Mon Jul 17 11:24:28.013250 2017] [:warn] [pid 12324:tid 704] ModSecurity: Loaded PCRE do not match with compiled!
+[Mon Jul 17 11:24:28.013250 2017] [:notice] [pid 12324:tid 704] ModSecurity: LUA compiled version="Lua 5.1"
+[Mon Jul 17 11:24:28.013250 2017] [:notice] [pid 12324:tid 704] ModSecurity: YAJL compiled version="2.1.0"
+[Mon Jul 17 11:24:28.013250 2017] [:notice] [pid 12324:tid 704] ModSecurity: LIBXML compiled version="2.9.4"
+[Mon Jul 17 11:24:28.013250 2017] [:notice] [pid 12324:tid 704] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Mon Jul 17 11:24:29.004425 2017] [mpm_winnt:notice] [pid 12324:tid 704] AH00455: Apache/2.4.27 (Win64) mod_jk/1.2.42 configured -- resuming normal operations
+[Mon Jul 17 11:24:29.004425 2017] [mpm_winnt:notice] [pid 12324:tid 704] AH00456: Apache Lounge VC15 Server built: Jul  7 2017 12:46:00
+[Mon Jul 17 11:24:29.004425 2017] [core:notice] [pid 12324:tid 704] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Mon Jul 17 11:24:29.006447 2017] [mpm_winnt:notice] [pid 12324:tid 704] AH00418: Parent: Created child process 11240
+[Mon Jul 17 11:24:30.002419 2017] [:notice] [pid 11240:tid 656] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Mon Jul 17 11:24:30.002419 2017] [:notice] [pid 11240:tid 656] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Mon Jul 17 11:24:30.002419 2017] [:notice] [pid 11240:tid 656] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Mon Jul 17 11:24:30.002419 2017] [:warn] [pid 11240:tid 656] ModSecurity: Loaded PCRE do not match with compiled!
+[Mon Jul 17 11:24:30.002419 2017] [:notice] [pid 11240:tid 656] ModSecurity: LUA compiled version="Lua 5.1"
+[Mon Jul 17 11:24:30.002419 2017] [:notice] [pid 11240:tid 656] ModSecurity: YAJL compiled version="2.1.0"
+[Mon Jul 17 11:24:30.002419 2017] [:notice] [pid 11240:tid 656] ModSecurity: LIBXML compiled version="2.9.4"
+[Mon Jul 17 11:24:30.002419 2017] [:notice] [pid 11240:tid 656] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Mon Jul 17 11:24:31.005571 2017] [mpm_winnt:notice] [pid 11240:tid 656] AH00354: Child: Starting 64 worker threads.
+[Mon Jul 17 11:24:57.326255 2017] [authz_core:error] [pid 11240:tid 1192] [client 127.0.0.1:26347] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/Login
+[Mon Jul 17 11:25:33.806410 2017] [authz_core:error] [pid 11240:tid 1188] [client 127.0.0.1:26354] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/Login
+[Mon Jul 17 11:27:07.836696 2017] [mpm_winnt:notice] [pid 12324:tid 704] AH00424: Parent: Received restart signal -- Restarting the server.
+[Mon Jul 17 11:27:08.003433 2017] [mpm_winnt:notice] [pid 12324:tid 704] AH00455: Apache/2.4.27 (Win64) mod_jk/1.2.42 configured -- resuming normal operations
+[Mon Jul 17 11:27:08.003433 2017] [mpm_winnt:notice] [pid 12324:tid 704] AH00456: Apache Lounge VC15 Server built: Jul  7 2017 12:46:00
+[Mon Jul 17 11:27:08.003433 2017] [core:notice] [pid 12324:tid 704] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Mon Jul 17 11:27:08.005434 2017] [mpm_winnt:notice] [pid 12324:tid 704] AH00418: Parent: Created child process 6292
+[Mon Jul 17 11:27:09.003558 2017] [:notice] [pid 6292:tid 640] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Mon Jul 17 11:27:09.003558 2017] [:notice] [pid 6292:tid 640] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Mon Jul 17 11:27:09.003558 2017] [:notice] [pid 6292:tid 640] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Mon Jul 17 11:27:09.003558 2017] [:warn] [pid 6292:tid 640] ModSecurity: Loaded PCRE do not match with compiled!
+[Mon Jul 17 11:27:09.003558 2017] [:notice] [pid 6292:tid 640] ModSecurity: LUA compiled version="Lua 5.1"
+[Mon Jul 17 11:27:09.003558 2017] [:notice] [pid 6292:tid 640] ModSecurity: YAJL compiled version="2.1.0"
+[Mon Jul 17 11:27:09.003558 2017] [:notice] [pid 6292:tid 640] ModSecurity: LIBXML compiled version="2.9.4"
+[Mon Jul 17 11:27:09.003558 2017] [:notice] [pid 6292:tid 640] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Mon Jul 17 11:27:09.837856 2017] [mpm_winnt:notice] [pid 11240:tid 656] AH00364: Child: All worker threads have exited.
+[Mon Jul 17 11:27:10.005176 2017] [mpm_winnt:notice] [pid 6292:tid 640] AH00354: Child: Starting 64 worker threads.
+[Mon Jul 17 11:27:18.933791 2017] [authz_core:error] [pid 6292:tid 1192] [client 127.0.0.1:26382] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/Login
+[Mon Jul 17 11:27:29.352656 2017] [authz_core:error] [pid 6292:tid 1188] [client 127.0.0.1:26385] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/Home
+[Mon Jul 17 11:27:31.976028 2017] [authz_core:error] [pid 6292:tid 1188] [client 127.0.0.1:26385] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/html/beforeSubmission.html
+[Mon Jul 17 11:29:16.363512 2017] [authz_core:error] [pid 6292:tid 1188] [client 127.0.0.1:26526] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/html/StudentUpload.html
+[Mon Jul 17 11:30:12.581669 2017] [authz_core:error] [pid 6292:tid 1192] [client 127.0.0.1:26554] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/uploads
+[Mon Jul 17 11:30:41.550509 2017] [authz_core:error] [pid 6292:tid 1188] [client 127.0.0.1:26562] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/html/StudentUpload.html
+[Mon Jul 17 11:30:53.342964 2017] [authz_core:error] [pid 6292:tid 1192] [client 127.0.0.1:26570] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/uploads
+[Mon Jul 17 11:34:14.415552 2017] [authz_core:error] [pid 6292:tid 1188] [client 127.0.0.1:26711] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/html/StudentUpload.html
+[Mon Jul 17 11:34:30.862210 2017] [authz_core:error] [pid 6292:tid 1192] [client 127.0.0.1:26716] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/uploads
+[Mon Jul 17 11:58:41.591040 2017] [mpm_winnt:notice] [pid 12324:tid 704] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Mon Jul 17 11:58:43.622921 2017] [mpm_winnt:notice] [pid 6292:tid 640] AH00364: Child: All worker threads have exited.
+[Mon Jul 17 11:58:43.653935 2017] [mpm_winnt:notice] [pid 12324:tid 704] AH00430: Parent: Child process 6292 exited successfully.
+[Mon Jul 17 12:00:40.003859 2017] [:notice] [pid 6180:tid 680] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Mon Jul 17 12:00:40.003859 2017] [:notice] [pid 6180:tid 680] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Mon Jul 17 12:00:40.003859 2017] [:notice] [pid 6180:tid 680] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Mon Jul 17 12:00:40.003859 2017] [:warn] [pid 6180:tid 680] ModSecurity: Loaded PCRE do not match with compiled!
+[Mon Jul 17 12:00:40.003859 2017] [:notice] [pid 6180:tid 680] ModSecurity: LUA compiled version="Lua 5.1"
+[Mon Jul 17 12:00:40.003859 2017] [:notice] [pid 6180:tid 680] ModSecurity: YAJL compiled version="2.1.0"
+[Mon Jul 17 12:00:40.003859 2017] [:notice] [pid 6180:tid 680] ModSecurity: LIBXML compiled version="2.9.4"
+[Mon Jul 17 12:00:40.003859 2017] [:notice] [pid 6180:tid 680] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Mon Jul 17 12:00:41.003325 2017] [mpm_winnt:notice] [pid 6180:tid 680] AH00455: Apache/2.4.27 (Win64) mod_jk/1.2.42 configured -- resuming normal operations
+[Mon Jul 17 12:00:41.003325 2017] [mpm_winnt:notice] [pid 6180:tid 680] AH00456: Apache Lounge VC15 Server built: Jul  7 2017 12:46:00
+[Mon Jul 17 12:00:41.003325 2017] [core:notice] [pid 6180:tid 680] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Mon Jul 17 12:00:41.005298 2017] [mpm_winnt:notice] [pid 6180:tid 680] AH00418: Parent: Created child process 2044
+[Mon Jul 17 12:00:42.002838 2017] [:notice] [pid 2044:tid 644] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Mon Jul 17 12:00:42.002838 2017] [:notice] [pid 2044:tid 644] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Mon Jul 17 12:00:42.002838 2017] [:notice] [pid 2044:tid 644] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Mon Jul 17 12:00:42.002838 2017] [:warn] [pid 2044:tid 644] ModSecurity: Loaded PCRE do not match with compiled!
+[Mon Jul 17 12:00:42.002838 2017] [:notice] [pid 2044:tid 644] ModSecurity: LUA compiled version="Lua 5.1"
+[Mon Jul 17 12:00:42.002838 2017] [:notice] [pid 2044:tid 644] ModSecurity: YAJL compiled version="2.1.0"
+[Mon Jul 17 12:00:42.002838 2017] [:notice] [pid 2044:tid 644] ModSecurity: LIBXML compiled version="2.9.4"
+[Mon Jul 17 12:00:42.002838 2017] [:notice] [pid 2044:tid 644] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Mon Jul 17 12:00:43.006440 2017] [mpm_winnt:notice] [pid 2044:tid 644] AH00354: Child: Starting 64 worker threads.
+[Mon Jul 17 12:00:55.881100 2017] [authz_core:error] [pid 2044:tid 1192] [client 127.0.0.1:26797] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/html/StudentUpload.html
+[Mon Jul 17 12:01:00.850998 2017] [authz_core:error] [pid 2044:tid 1192] [client 127.0.0.1:26797] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/uploads
+[Mon Jul 17 12:01:29.044413 2017] [:error] [pid 2044:tid 1188] [client 127.0.0.1:26835] [client 127.0.0.1] ModSecurity: Access denied with code 403 (phase 4). Pattern match "^5\\\\d{2}$" at RESPONSE_STATUS. [file "C:/Apache24/conf/rules/RESPONSE-950-DATA-LEAKAGES.conf"] [line "93"] [id "950100"] [rev "3"] [msg "The Application Returned a 500-Level Status Code"] [data "Matched Data: 500 found within RESPONSE_STATUS: 500"] [severity "ERROR"] [ver "OWASP_CRS/3.0.0"] [maturity "9"] [accuracy "9"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-disclosure"] [tag "WASCTC/WASC-13"] [tag "OWASP_TOP_10/A6"] [tag "PCI/6.5.6"] [tag "paranoia-level/2"] [hostname "localhost"] [uri "/Bas/uploads"] [unique_id "WWw2mcCo7wEAAAf8uIcAAAA8"]
+[Mon Jul 17 12:01:29.045417 2017] [:error] [pid 2044:tid 1188] [client 127.0.0.1:26835] [client 127.0.0.1] ModSecurity: Warning. Operator GE matched 4 at TX:outbound_anomaly_score. [file "C:/Apache24/conf/rules/RESPONSE-980-CORRELATION.conf"] [line "82"] [id "980140"] [msg "Outbound Anomaly Score Exceeded (score 4): The Application Returned a 500-Level Status Code"] [tag "event-correlation"] [hostname "localhost"] [uri "/Bas/uploads"] [unique_id "WWw2mcCo7wEAAAf8uIcAAAA8"]
+[Mon Jul 17 12:01:37.529180 2017] [authz_core:error] [pid 2044:tid 1188] [client 127.0.0.1:26839] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/html/StudentUpload.html
+[Mon Jul 17 12:04:22.742451 2017] [authz_core:error] [pid 2044:tid 1192] [client 127.0.0.1:26886] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico
+[Mon Jul 17 12:04:41.961435 2017] [authz_core:error] [pid 2044:tid 1188] [client 127.0.0.1:26893] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico
+[Mon Jul 17 12:05:44.273085 2017] [authz_core:error] [pid 2044:tid 1192] [client 127.0.0.1:26952] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/html/StudentUpload.html
+[Mon Jul 17 12:05:50.512117 2017] [authz_core:error] [pid 2044:tid 1188] [client 127.0.0.1:26953] AH01630: client denied by server configuration: C:/Users/Wei Xuan/Documents/GitHub/Bas/favicon.ico, referer: http://localhost/Bas/uploads
+[Mon Jul 17 12:15:12.081161 2017] [mpm_winnt:notice] [pid 6180:tid 680] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Mon Jul 17 12:15:14.083726 2017] [mpm_winnt:notice] [pid 2044:tid 644] AH00364: Child: All worker threads have exited.
+[Mon Jul 17 12:15:14.105332 2017] [mpm_winnt:notice] [pid 6180:tid 680] AH00430: Parent: Child process 2044 exited successfully.
+[Mon Jul 17 15:26:28.019446 2017] [:notice] [pid 13324:tid 704] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Mon Jul 17 15:26:28.019446 2017] [:notice] [pid 13324:tid 704] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Mon Jul 17 15:26:28.019446 2017] [:notice] [pid 13324:tid 704] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Mon Jul 17 15:26:28.019446 2017] [:warn] [pid 13324:tid 704] ModSecurity: Loaded PCRE do not match with compiled!
+[Mon Jul 17 15:26:28.019924 2017] [:notice] [pid 13324:tid 704] ModSecurity: LUA compiled version="Lua 5.1"
+[Mon Jul 17 15:26:28.019924 2017] [:notice] [pid 13324:tid 704] ModSecurity: YAJL compiled version="2.1.0"
+[Mon Jul 17 15:26:28.019924 2017] [:notice] [pid 13324:tid 704] ModSecurity: LIBXML compiled version="2.9.4"
+[Mon Jul 17 15:26:28.019924 2017] [:notice] [pid 13324:tid 704] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Mon Jul 17 15:26:29.014299 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00455: Apache/2.4.27 (Win64) mod_jk/1.2.42 configured -- resuming normal operations
+[Mon Jul 17 15:26:29.014299 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00456: Apache Lounge VC15 Server built: Jul  7 2017 12:46:00
+[Mon Jul 17 15:26:29.014299 2017] [core:notice] [pid 13324:tid 704] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Mon Jul 17 15:26:29.014299 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00418: Parent: Created child process 8608
+[Mon Jul 17 15:26:30.016305 2017] [:notice] [pid 8608:tid 652] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Mon Jul 17 15:26:30.016305 2017] [:notice] [pid 8608:tid 652] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Mon Jul 17 15:26:30.016305 2017] [:notice] [pid 8608:tid 652] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Mon Jul 17 15:26:30.016305 2017] [:warn] [pid 8608:tid 652] ModSecurity: Loaded PCRE do not match with compiled!
+[Mon Jul 17 15:26:30.016305 2017] [:notice] [pid 8608:tid 652] ModSecurity: LUA compiled version="Lua 5.1"
+[Mon Jul 17 15:26:30.016305 2017] [:notice] [pid 8608:tid 652] ModSecurity: YAJL compiled version="2.1.0"
+[Mon Jul 17 15:26:30.016305 2017] [:notice] [pid 8608:tid 652] ModSecurity: LIBXML compiled version="2.9.4"
+[Mon Jul 17 15:26:30.016305 2017] [:notice] [pid 8608:tid 652] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Mon Jul 17 15:26:31.016155 2017] [mpm_winnt:notice] [pid 8608:tid 652] AH00354: Child: Starting 64 worker threads.
+[Mon Jul 17 15:26:44.784516 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00424: Parent: Received restart signal -- Restarting the server.
+[Mon Jul 17 15:26:45.003304 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00455: Apache/2.4.27 (Win64) mod_jk/1.2.42 configured -- resuming normal operations
+[Mon Jul 17 15:26:45.003304 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00456: Apache Lounge VC15 Server built: Jul  7 2017 12:46:00
+[Mon Jul 17 15:26:45.003304 2017] [core:notice] [pid 13324:tid 704] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Mon Jul 17 15:26:45.003304 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00418: Parent: Created child process 8600
+[Mon Jul 17 15:26:46.003255 2017] [:notice] [pid 8600:tid 668] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Mon Jul 17 15:26:46.003255 2017] [:notice] [pid 8600:tid 668] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Mon Jul 17 15:26:46.003255 2017] [:notice] [pid 8600:tid 668] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Mon Jul 17 15:26:46.003255 2017] [:warn] [pid 8600:tid 668] ModSecurity: Loaded PCRE do not match with compiled!
+[Mon Jul 17 15:26:46.003255 2017] [:notice] [pid 8600:tid 668] ModSecurity: LUA compiled version="Lua 5.1"
+[Mon Jul 17 15:26:46.003255 2017] [:notice] [pid 8600:tid 668] ModSecurity: YAJL compiled version="2.1.0"
+[Mon Jul 17 15:26:46.003255 2017] [:notice] [pid 8600:tid 668] ModSecurity: LIBXML compiled version="2.9.4"
+[Mon Jul 17 15:26:46.003255 2017] [:notice] [pid 8600:tid 668] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Mon Jul 17 15:26:46.809989 2017] [mpm_winnt:notice] [pid 8608:tid 652] AH00364: Child: All worker threads have exited.
+[Mon Jul 17 15:26:47.013148 2017] [mpm_winnt:notice] [pid 8600:tid 668] AH00354: Child: Starting 64 worker threads.
+[Mon Jul 17 15:28:45.354663 2017] [:error] [pid 8600:tid 1220] [client 127.0.0.1:27685] [client 127.0.0.1] ModSecurity: Access denied with code 403 (phase 4). Pattern match "(?:<(?:TITLE>Index of.*?<H|title>Index of.*?<h)1>Index of|>\\\\[To Parent Directory\\\\]<\\\\/[Aa]><br>)" at RESPONSE_BODY. [file "C:/Apache24/conf/rules/RESPONSE-950-DATA-LEAKAGES.conf"] [line "55"] [id "950130"] [rev "2"] [msg "Directory Listing"] [data "Matched Data: <title>Index of /</title>\\x0a </head>\\x0a <body>\\x0a<h1>Index of found within RESPONSE_BODY: <!DOCTYPE HTML PUBLIC \\x22-//W3C//DTD HTML 3.2 Final//EN\\x22>\\x0a<html>\\x0a <head>\\x0a  <title>Index of /</title>\\x0a </head>\\x0a <body>\\x0a<h1>Index of /</h1>\\x0a<ul><li><a href=\\x22.classpath\\x22> .classpath</a></li>\\x0a<li><a href=\\x22.git/\\x22> .git/</a></li>\\x0a<li><a href=\\x22.gitattributes\\x22> .gitattributes</a></li>\\x0a<li><a href=\\x22.gitignore\\x22> .gitignore</a></li>\\x0a<li><a href=\\x22...."] [severity "ERROR"] [ver "OWASP_CRS/3.0.0"] [maturity "9"] [accuracy "9"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-disclosure"] [tag "OWASP_CRS/LEAKAGE/INFO_DIR [hostname "localhost"] [uri "/"] [unique_id "WWxnLcCo7wEAACGYDd4AAAA-"]
+[Mon Jul 17 15:28:45.355704 2017] [:error] [pid 8600:tid 1220] [client 127.0.0.1:27685] [client 127.0.0.1] ModSecurity: Warning. Operator GE matched 4 at TX:outbound_anomaly_score. [file "C:/Apache24/conf/rules/RESPONSE-980-CORRELATION.conf"] [line "82"] [id "980140"] [msg "Outbound Anomaly Score Exceeded (score 4): Directory Listing"] [tag "event-correlation"] [hostname "localhost"] [uri "/"] [unique_id "WWxnLcCo7wEAACGYDd4AAAA-"]
+[Mon Jul 17 15:28:49.104662 2017] [:error] [pid 8600:tid 1220] [client 127.0.0.1:27685] [client 127.0.0.1] ModSecurity: Access denied with code 403 (phase 4). Pattern match "(?:<(?:TITLE>Index of.*?<H|title>Index of.*?<h)1>Index of|>\\\\[To Parent Directory\\\\]<\\\\/[Aa]><br>)" at RESPONSE_BODY. [file "C:/Apache24/conf/rules/RESPONSE-950-DATA-LEAKAGES.conf"] [line "55"] [id "950130"] [rev "2"] [msg "Directory Listing"] [data "Matched Data: <title>Index of /</title>\\x0a </head>\\x0a <body>\\x0a<h1>Index of found within RESPONSE_BODY: <!DOCTYPE HTML PUBLIC \\x22-//W3C//DTD HTML 3.2 Final//EN\\x22>\\x0a<html>\\x0a <head>\\x0a  <title>Index of /</title>\\x0a </head>\\x0a <body>\\x0a<h1>Index of /</h1>\\x0a<ul><li><a href=\\x22.classpath\\x22> .classpath</a></li>\\x0a<li><a href=\\x22.git/\\x22> .git/</a></li>\\x0a<li><a href=\\x22.gitattributes\\x22> .gitattributes</a></li>\\x0a<li><a href=\\x22.gitignore\\x22> .gitignore</a></li>\\x0a<li><a href=\\x22...."] [severity "ERROR"] [ver "OWASP_CRS/3.0.0"] [maturity "9"] [accuracy "9"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-disclosure"] [tag "OWASP_CRS/LEAKAGE/INFO_DIR [hostname "localhost"] [uri "/"] [unique_id "WWxnMcCo7wEAACGYDeAAAAA-"]
+[Mon Jul 17 15:28:49.104662 2017] [:error] [pid 8600:tid 1220] [client 127.0.0.1:27685] [client 127.0.0.1] ModSecurity: Warning. Operator GE matched 4 at TX:outbound_anomaly_score. [file "C:/Apache24/conf/rules/RESPONSE-980-CORRELATION.conf"] [line "82"] [id "980140"] [msg "Outbound Anomaly Score Exceeded (score 4): Directory Listing"] [tag "event-correlation"] [hostname "localhost"] [uri "/"] [unique_id "WWxnMcCo7wEAACGYDeAAAAA-"]
+[Mon Jul 17 15:34:41.070037 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00424: Parent: Received restart signal -- Restarting the server.
+[Mon Jul 17 15:34:42.002516 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00455: Apache/2.4.27 (Win64) mod_jk/1.2.42 configured -- resuming normal operations
+[Mon Jul 17 15:34:42.002516 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00456: Apache Lounge VC15 Server built: Jul  7 2017 12:46:00
+[Mon Jul 17 15:34:42.002516 2017] [core:notice] [pid 13324:tid 704] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Mon Jul 17 15:34:42.005500 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00418: Parent: Created child process 7072
+[Mon Jul 17 15:34:43.003960 2017] [:notice] [pid 7072:tid 636] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Mon Jul 17 15:34:43.003960 2017] [:notice] [pid 7072:tid 636] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Mon Jul 17 15:34:43.003960 2017] [:notice] [pid 7072:tid 636] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Mon Jul 17 15:34:43.003960 2017] [:warn] [pid 7072:tid 636] ModSecurity: Loaded PCRE do not match with compiled!
+[Mon Jul 17 15:34:43.003960 2017] [:notice] [pid 7072:tid 636] ModSecurity: LUA compiled version="Lua 5.1"
+[Mon Jul 17 15:34:43.003960 2017] [:notice] [pid 7072:tid 636] ModSecurity: YAJL compiled version="2.1.0"
+[Mon Jul 17 15:34:43.003960 2017] [:notice] [pid 7072:tid 636] ModSecurity: LIBXML compiled version="2.9.4"
+[Mon Jul 17 15:34:43.003960 2017] [:notice] [pid 7072:tid 636] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Mon Jul 17 15:34:43.071023 2017] [mpm_winnt:notice] [pid 8600:tid 668] AH00364: Child: All worker threads have exited.
+[Mon Jul 17 15:34:44.004347 2017] [mpm_winnt:notice] [pid 7072:tid 636] AH00354: Child: Starting 64 worker threads.
+[Mon Jul 17 15:37:33.330146 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00424: Parent: Received restart signal -- Restarting the server.
+[Mon Jul 17 15:37:34.002815 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00455: Apache/2.4.27 (Win64) mod_jk/1.2.42 configured -- resuming normal operations
+[Mon Jul 17 15:37:34.002815 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00456: Apache Lounge VC15 Server built: Jul  7 2017 12:46:00
+[Mon Jul 17 15:37:34.002815 2017] [core:notice] [pid 13324:tid 704] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Mon Jul 17 15:37:34.005235 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00418: Parent: Created child process 5228
+[Mon Jul 17 15:37:35.003412 2017] [:notice] [pid 5228:tid 684] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Mon Jul 17 15:37:35.003412 2017] [:notice] [pid 5228:tid 684] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Mon Jul 17 15:37:35.003412 2017] [:notice] [pid 5228:tid 684] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Mon Jul 17 15:37:35.003412 2017] [:warn] [pid 5228:tid 684] ModSecurity: Loaded PCRE do not match with compiled!
+[Mon Jul 17 15:37:35.003412 2017] [:notice] [pid 5228:tid 684] ModSecurity: LUA compiled version="Lua 5.1"
+[Mon Jul 17 15:37:35.003412 2017] [:notice] [pid 5228:tid 684] ModSecurity: YAJL compiled version="2.1.0"
+[Mon Jul 17 15:37:35.003412 2017] [:notice] [pid 5228:tid 684] ModSecurity: LIBXML compiled version="2.9.4"
+[Mon Jul 17 15:37:35.003412 2017] [:notice] [pid 5228:tid 684] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Mon Jul 17 15:37:35.331179 2017] [mpm_winnt:notice] [pid 7072:tid 636] AH00364: Child: All worker threads have exited.
+[Mon Jul 17 15:37:36.004466 2017] [mpm_winnt:notice] [pid 5228:tid 684] AH00354: Child: Starting 64 worker threads.
+[Mon Jul 17 15:42:47.662894 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00424: Parent: Received restart signal -- Restarting the server.
+[Mon Jul 17 15:42:48.002875 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00455: Apache/2.4.27 (Win64) mod_jk/1.2.42 configured -- resuming normal operations
+[Mon Jul 17 15:42:48.002875 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00456: Apache Lounge VC15 Server built: Jul  7 2017 12:46:00
+[Mon Jul 17 15:42:48.002875 2017] [core:notice] [pid 13324:tid 704] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Mon Jul 17 15:42:48.004913 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00418: Parent: Created child process 11544
+[Mon Jul 17 15:42:49.003089 2017] [:notice] [pid 11544:tid 668] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Mon Jul 17 15:42:49.003089 2017] [:notice] [pid 11544:tid 668] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Mon Jul 17 15:42:49.003089 2017] [:notice] [pid 11544:tid 668] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Mon Jul 17 15:42:49.003089 2017] [:warn] [pid 11544:tid 668] ModSecurity: Loaded PCRE do not match with compiled!
+[Mon Jul 17 15:42:49.003089 2017] [:notice] [pid 11544:tid 668] ModSecurity: LUA compiled version="Lua 5.1"
+[Mon Jul 17 15:42:49.003089 2017] [:notice] [pid 11544:tid 668] ModSecurity: YAJL compiled version="2.1.0"
+[Mon Jul 17 15:42:49.003089 2017] [:notice] [pid 11544:tid 668] ModSecurity: LIBXML compiled version="2.9.4"
+[Mon Jul 17 15:42:49.003089 2017] [:notice] [pid 11544:tid 668] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Mon Jul 17 15:42:49.664104 2017] [mpm_winnt:notice] [pid 5228:tid 684] AH00364: Child: All worker threads have exited.
+[Mon Jul 17 15:42:50.004299 2017] [mpm_winnt:notice] [pid 11544:tid 668] AH00354: Child: Starting 64 worker threads.
+[Mon Jul 17 15:42:55.284544 2017] [:error] [pid 11544:tid 1204] [client 127.0.0.1:27957] [client 127.0.0.1] ModSecurity: Access denied with code 403 (phase 4). Pattern match "(?:<(?:TITLE>Index of.*?<H|title>Index of.*?<h)1>Index of|>\\\\[To Parent Directory\\\\]<\\\\/[Aa]><br>)" at RESPONSE_BODY. [file "C:/Apache24/conf/rules/RESPONSE-950-DATA-LEAKAGES.conf"] [line "55"] [id "950130"] [rev "2"] [msg "Directory Listing"] [data "Matched Data: <title>Index of /</title>\\x0a </head>\\x0a <body>\\x0a<h1>Index of found within RESPONSE_BODY: <!DOCTYPE HTML PUBLIC \\x22-//W3C//DTD HTML 3.2 Final//EN\\x22>\\x0a<html>\\x0a <head>\\x0a  <title>Index of /</title>\\x0a </head>\\x0a <body>\\x0a<h1>Index of /</h1>\\x0a<ul><li><a href=\\x22.classpath\\x22> .classpath</a></li>\\x0a<li><a href=\\x22.git/\\x22> .git/</a></li>\\x0a<li><a href=\\x22.gitattributes\\x22> .gitattributes</a></li>\\x0a<li><a href=\\x22.gitignore\\x22> .gitignore</a></li>\\x0a<li><a href=\\x22...."] [severity "ERROR"] [ver "OWASP_CRS/3.0.0"] [maturity "9"] [accuracy "9"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-disclosure"] [tag "OWASP_CRS/LEAKAGE/INFO_DIR [hostname "localhost"] [uri "/"] [unique_id "WWxqf8Co7wEAAC0YBOkAAAA9"]
+[Mon Jul 17 15:42:55.285018 2017] [:error] [pid 11544:tid 1204] [client 127.0.0.1:27957] [client 127.0.0.1] ModSecurity: Warning. Operator GE matched 4 at TX:outbound_anomaly_score. [file "C:/Apache24/conf/rules/RESPONSE-980-CORRELATION.conf"] [line "82"] [id "980140"] [msg "Outbound Anomaly Score Exceeded (score 4): Directory Listing"] [tag "event-correlation"] [hostname "localhost"] [uri "/"] [unique_id "WWxqf8Co7wEAAC0YBOkAAAA9"]
+[Mon Jul 17 15:42:58.146460 2017] [:error] [pid 11544:tid 1204] [client 127.0.0.1:27957] [client 127.0.0.1] ModSecurity: Access denied with code 403 (phase 4). Pattern match "(?:<(?:TITLE>Index of.*?<H|title>Index of.*?<h)1>Index of|>\\\\[To Parent Directory\\\\]<\\\\/[Aa]><br>)" at RESPONSE_BODY. [file "C:/Apache24/conf/rules/RESPONSE-950-DATA-LEAKAGES.conf"] [line "55"] [id "950130"] [rev "2"] [msg "Directory Listing"] [data "Matched Data: <title>Index of /</title>\\x0a </head>\\x0a <body>\\x0a<h1>Index of found within RESPONSE_BODY: <!DOCTYPE HTML PUBLIC \\x22-//W3C//DTD HTML 3.2 Final//EN\\x22>\\x0a<html>\\x0a <head>\\x0a  <title>Index of /</title>\\x0a </head>\\x0a <body>\\x0a<h1>Index of /</h1>\\x0a<ul><li><a href=\\x22.classpath\\x22> .classpath</a></li>\\x0a<li><a href=\\x22.git/\\x22> .git/</a></li>\\x0a<li><a href=\\x22.gitattributes\\x22> .gitattributes</a></li>\\x0a<li><a href=\\x22.gitignore\\x22> .gitignore</a></li>\\x0a<li><a href=\\x22...."] [severity "ERROR"] [ver "OWASP_CRS/3.0.0"] [maturity "9"] [accuracy "9"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-disclosure"] [tag "OWASP_CRS/LEAKAGE/INFO_DIR [hostname "localhost"] [uri "/"] [unique_id "WWxqgsCo7wEAAC0YBOoAAAA9"]
+[Mon Jul 17 15:42:58.146460 2017] [:error] [pid 11544:tid 1204] [client 127.0.0.1:27957] [client 127.0.0.1] ModSecurity: Warning. Operator GE matched 4 at TX:outbound_anomaly_score. [file "C:/Apache24/conf/rules/RESPONSE-980-CORRELATION.conf"] [line "82"] [id "980140"] [msg "Outbound Anomaly Score Exceeded (score 4): Directory Listing"] [tag "event-correlation"] [hostname "localhost"] [uri "/"] [unique_id "WWxqgsCo7wEAAC0YBOoAAAA9"]
+[Mon Jul 17 16:20:38.861435 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00424: Parent: Received restart signal -- Restarting the server.
+[Mon Jul 17 16:20:39.002049 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00455: Apache/2.4.27 (Win64) mod_jk/1.2.42 configured -- resuming normal operations
+[Mon Jul 17 16:20:39.002049 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00456: Apache Lounge VC15 Server built: Jul  7 2017 12:46:00
+[Mon Jul 17 16:20:39.002049 2017] [core:notice] [pid 13324:tid 704] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Mon Jul 17 16:20:39.002049 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00418: Parent: Created child process 8380
+[Mon Jul 17 16:20:40.005592 2017] [:notice] [pid 8380:tid 704] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Mon Jul 17 16:20:40.005592 2017] [:notice] [pid 8380:tid 704] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Mon Jul 17 16:20:40.005592 2017] [:notice] [pid 8380:tid 704] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Mon Jul 17 16:20:40.005592 2017] [:warn] [pid 8380:tid 704] ModSecurity: Loaded PCRE do not match with compiled!
+[Mon Jul 17 16:20:40.005592 2017] [:notice] [pid 8380:tid 704] ModSecurity: LUA compiled version="Lua 5.1"
+[Mon Jul 17 16:20:40.005592 2017] [:notice] [pid 8380:tid 704] ModSecurity: YAJL compiled version="2.1.0"
+[Mon Jul 17 16:20:40.005592 2017] [:notice] [pid 8380:tid 704] ModSecurity: LIBXML compiled version="2.9.4"
+[Mon Jul 17 16:20:40.005592 2017] [:notice] [pid 8380:tid 704] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Mon Jul 17 16:20:40.881224 2017] [mpm_winnt:notice] [pid 11544:tid 668] AH00364: Child: All worker threads have exited.
+[Mon Jul 17 16:20:41.005817 2017] [mpm_winnt:notice] [pid 8380:tid 704] AH00354: Child: Starting 64 worker threads.
+[Mon Jul 17 16:21:33.404215 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00424: Parent: Received restart signal -- Restarting the server.
+[Mon Jul 17 16:21:34.012785 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00455: Apache/2.4.27 (Win64) mod_jk/1.2.42 configured -- resuming normal operations
+[Mon Jul 17 16:21:34.012785 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00456: Apache Lounge VC15 Server built: Jul  7 2017 12:46:00
+[Mon Jul 17 16:21:34.012785 2017] [core:notice] [pid 13324:tid 704] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Mon Jul 17 16:21:34.012785 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00418: Parent: Created child process 10064
+[Mon Jul 17 16:21:35.013129 2017] [:notice] [pid 10064:tid 636] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Mon Jul 17 16:21:35.013129 2017] [:notice] [pid 10064:tid 636] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Mon Jul 17 16:21:35.013129 2017] [:notice] [pid 10064:tid 636] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Mon Jul 17 16:21:35.013129 2017] [:warn] [pid 10064:tid 636] ModSecurity: Loaded PCRE do not match with compiled!
+[Mon Jul 17 16:21:35.013129 2017] [:notice] [pid 10064:tid 636] ModSecurity: LUA compiled version="Lua 5.1"
+[Mon Jul 17 16:21:35.013129 2017] [:notice] [pid 10064:tid 636] ModSecurity: YAJL compiled version="2.1.0"
+[Mon Jul 17 16:21:35.013129 2017] [:notice] [pid 10064:tid 636] ModSecurity: LIBXML compiled version="2.9.4"
+[Mon Jul 17 16:21:35.013129 2017] [:notice] [pid 10064:tid 636] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Mon Jul 17 16:21:35.435050 2017] [mpm_winnt:notice] [pid 8380:tid 704] AH00364: Child: All worker threads have exited.
+[Mon Jul 17 16:21:36.008177 2017] [mpm_winnt:notice] [pid 10064:tid 636] AH00354: Child: Starting 64 worker threads.
+[Mon Jul 17 16:21:41.955180 2017] [autoindex:error] [pid 10064:tid 1204] [client 192.168.1.17:28850] AH01276: Cannot serve directory C:/Users/Wei Xuan/Documents/GitHub/Bas/: No matching DirectoryIndex (login.html) found, and server-generated directory index forbidden by Options directive
+[Mon Jul 17 16:22:16.244542 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00424: Parent: Received restart signal -- Restarting the server.
+[Mon Jul 17 16:22:17.010492 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00455: Apache/2.4.27 (Win64) mod_jk/1.2.42 configured -- resuming normal operations
+[Mon Jul 17 16:22:17.010492 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00456: Apache Lounge VC15 Server built: Jul  7 2017 12:46:00
+[Mon Jul 17 16:22:17.010492 2017] [core:notice] [pid 13324:tid 704] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Mon Jul 17 16:22:17.010492 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00418: Parent: Created child process 10432
+[Mon Jul 17 16:22:18.026356 2017] [:notice] [pid 10432:tid 640] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Mon Jul 17 16:22:18.026356 2017] [:notice] [pid 10432:tid 640] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Mon Jul 17 16:22:18.026356 2017] [:notice] [pid 10432:tid 640] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Mon Jul 17 16:22:18.026356 2017] [:warn] [pid 10432:tid 640] ModSecurity: Loaded PCRE do not match with compiled!
+[Mon Jul 17 16:22:18.026356 2017] [:notice] [pid 10432:tid 640] ModSecurity: LUA compiled version="Lua 5.1"
+[Mon Jul 17 16:22:18.026356 2017] [:notice] [pid 10432:tid 640] ModSecurity: YAJL compiled version="2.1.0"
+[Mon Jul 17 16:22:18.026356 2017] [:notice] [pid 10432:tid 640] ModSecurity: LIBXML compiled version="2.9.4"
+[Mon Jul 17 16:22:18.026356 2017] [:notice] [pid 10432:tid 640] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Mon Jul 17 16:22:18.260790 2017] [mpm_winnt:notice] [pid 10064:tid 636] AH00364: Child: All worker threads have exited.
+[Mon Jul 17 16:22:19.004428 2017] [mpm_winnt:notice] [pid 10432:tid 640] AH00354: Child: Starting 64 worker threads.
+[Mon Jul 17 16:22:19.010439 2017] [autoindex:error] [pid 10432:tid 1232] [client 192.168.1.17:28855] AH01276: Cannot serve directory C:/Users/Wei Xuan/Documents/GitHub/Bas/: No matching DirectoryIndex (login.html) found, and server-generated directory index forbidden by Options directive
+[Mon Jul 17 16:22:23.309087 2017] [autoindex:error] [pid 10432:tid 1232] [client 192.168.1.17:28855] AH01276: Cannot serve directory C:/Users/Wei Xuan/Documents/GitHub/Bas/: No matching DirectoryIndex (login.html) found, and server-generated directory index forbidden by Options directive
+[Mon Jul 17 16:22:39.617683 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00424: Parent: Received restart signal -- Restarting the server.
+[Mon Jul 17 16:22:40.008310 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00455: Apache/2.4.27 (Win64) mod_jk/1.2.42 configured -- resuming normal operations
+[Mon Jul 17 16:22:40.008310 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00456: Apache Lounge VC15 Server built: Jul  7 2017 12:46:00
+[Mon Jul 17 16:22:40.008310 2017] [core:notice] [pid 13324:tid 704] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Mon Jul 17 16:22:40.008310 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00418: Parent: Created child process 9880
+[Mon Jul 17 16:22:41.024031 2017] [:notice] [pid 9880:tid 652] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Mon Jul 17 16:22:41.024031 2017] [:notice] [pid 9880:tid 652] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Mon Jul 17 16:22:41.024031 2017] [:notice] [pid 9880:tid 652] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Mon Jul 17 16:22:41.024031 2017] [:warn] [pid 9880:tid 652] ModSecurity: Loaded PCRE do not match with compiled!
+[Mon Jul 17 16:22:41.024031 2017] [:notice] [pid 9880:tid 652] ModSecurity: LUA compiled version="Lua 5.1"
+[Mon Jul 17 16:22:41.024031 2017] [:notice] [pid 9880:tid 652] ModSecurity: YAJL compiled version="2.1.0"
+[Mon Jul 17 16:22:41.024031 2017] [:notice] [pid 9880:tid 652] ModSecurity: LIBXML compiled version="2.9.4"
+[Mon Jul 17 16:22:41.024031 2017] [:notice] [pid 9880:tid 652] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Mon Jul 17 16:22:41.633898 2017] [mpm_winnt:notice] [pid 10432:tid 640] AH00364: Child: All worker threads have exited.
+[Mon Jul 17 16:22:42.016056 2017] [mpm_winnt:notice] [pid 9880:tid 652] AH00354: Child: Starting 64 worker threads.
+[Mon Jul 17 16:22:46.193754 2017] [autoindex:error] [pid 9880:tid 1220] [client 192.168.1.17:28857] AH01276: Cannot serve directory C:/Users/Wei Xuan/Documents/GitHub/Bas/: No matching DirectoryIndex (login.html) found, and server-generated directory index forbidden by Options directive
+[Mon Jul 17 16:23:06.032060 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00424: Parent: Received restart signal -- Restarting the server.
+[Mon Jul 17 16:23:07.013371 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00455: Apache/2.4.27 (Win64) mod_jk/1.2.42 configured -- resuming normal operations
+[Mon Jul 17 16:23:07.013371 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00456: Apache Lounge VC15 Server built: Jul  7 2017 12:46:00
+[Mon Jul 17 16:23:07.013371 2017] [core:notice] [pid 13324:tid 704] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Mon Jul 17 16:23:07.013371 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00418: Parent: Created child process 4852
+[Mon Jul 17 16:23:08.013477 2017] [:notice] [pid 4852:tid 696] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Mon Jul 17 16:23:08.013477 2017] [:notice] [pid 4852:tid 696] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Mon Jul 17 16:23:08.013477 2017] [:notice] [pid 4852:tid 696] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Mon Jul 17 16:23:08.013477 2017] [:warn] [pid 4852:tid 696] ModSecurity: Loaded PCRE do not match with compiled!
+[Mon Jul 17 16:23:08.013477 2017] [:notice] [pid 4852:tid 696] ModSecurity: LUA compiled version="Lua 5.1"
+[Mon Jul 17 16:23:08.013477 2017] [:notice] [pid 4852:tid 696] ModSecurity: YAJL compiled version="2.1.0"
+[Mon Jul 17 16:23:08.013477 2017] [:notice] [pid 4852:tid 696] ModSecurity: LIBXML compiled version="2.9.4"
+[Mon Jul 17 16:23:08.013477 2017] [:notice] [pid 4852:tid 696] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Mon Jul 17 16:23:08.060132 2017] [mpm_winnt:notice] [pid 9880:tid 652] AH00364: Child: All worker threads have exited.
+[Mon Jul 17 16:23:09.014238 2017] [mpm_winnt:notice] [pid 4852:tid 696] AH00354: Child: Starting 64 worker threads.
+[Mon Jul 17 16:23:19.791079 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00424: Parent: Received restart signal -- Restarting the server.
+[Mon Jul 17 16:23:20.025487 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00455: Apache/2.4.27 (Win64) mod_jk/1.2.42 configured -- resuming normal operations
+[Mon Jul 17 16:23:20.025487 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00456: Apache Lounge VC15 Server built: Jul  7 2017 12:46:00
+[Mon Jul 17 16:23:20.025487 2017] [core:notice] [pid 13324:tid 704] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Mon Jul 17 16:23:20.025487 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00418: Parent: Created child process 5168
+[Mon Jul 17 16:23:21.004805 2017] [:notice] [pid 5168:tid 632] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Mon Jul 17 16:23:21.004805 2017] [:notice] [pid 5168:tid 632] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Mon Jul 17 16:23:21.004805 2017] [:notice] [pid 5168:tid 632] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Mon Jul 17 16:23:21.004805 2017] [:warn] [pid 5168:tid 632] ModSecurity: Loaded PCRE do not match with compiled!
+[Mon Jul 17 16:23:21.004805 2017] [:notice] [pid 5168:tid 632] ModSecurity: LUA compiled version="Lua 5.1"
+[Mon Jul 17 16:23:21.004805 2017] [:notice] [pid 5168:tid 632] ModSecurity: YAJL compiled version="2.1.0"
+[Mon Jul 17 16:23:21.004805 2017] [:notice] [pid 5168:tid 632] ModSecurity: LIBXML compiled version="2.9.4"
+[Mon Jul 17 16:23:21.004805 2017] [:notice] [pid 5168:tid 632] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Mon Jul 17 16:23:21.795235 2017] [mpm_winnt:notice] [pid 4852:tid 696] AH00364: Child: All worker threads have exited.
+[Mon Jul 17 16:23:22.007706 2017] [mpm_winnt:notice] [pid 5168:tid 632] AH00354: Child: Starting 64 worker threads.
+[Mon Jul 17 16:23:23.966343 2017] [autoindex:error] [pid 5168:tid 1236] [client 192.168.1.17:28864] AH01276: Cannot serve directory C:/Users/Wei Xuan/Documents/GitHub/Bas/: No matching DirectoryIndex (login.html) found, and server-generated directory index forbidden by Options directive
+[Mon Jul 17 16:23:31.076500 2017] [autoindex:error] [pid 5168:tid 1236] [client 192.168.1.17:28867] AH01276: Cannot serve directory C:/Users/Wei Xuan/Documents/GitHub/Bas/: No matching DirectoryIndex (login.html) found, and server-generated directory index forbidden by Options directive
+[Mon Jul 17 16:23:59.555735 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00424: Parent: Received restart signal -- Restarting the server.
+[Mon Jul 17 16:24:00.024495 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00455: Apache/2.4.27 (Win64) mod_jk/1.2.42 configured -- resuming normal operations
+[Mon Jul 17 16:24:00.024495 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00456: Apache Lounge VC15 Server built: Jul  7 2017 12:46:00
+[Mon Jul 17 16:24:00.024495 2017] [core:notice] [pid 13324:tid 704] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Mon Jul 17 16:24:00.024495 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00418: Parent: Created child process 13668
+[Mon Jul 17 16:24:01.016779 2017] [:notice] [pid 13668:tid 660] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Mon Jul 17 16:24:01.016779 2017] [:notice] [pid 13668:tid 660] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Mon Jul 17 16:24:01.016779 2017] [:notice] [pid 13668:tid 660] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Mon Jul 17 16:24:01.016779 2017] [:warn] [pid 13668:tid 660] ModSecurity: Loaded PCRE do not match with compiled!
+[Mon Jul 17 16:24:01.016779 2017] [:notice] [pid 13668:tid 660] ModSecurity: LUA compiled version="Lua 5.1"
+[Mon Jul 17 16:24:01.016779 2017] [:notice] [pid 13668:tid 660] ModSecurity: YAJL compiled version="2.1.0"
+[Mon Jul 17 16:24:01.016779 2017] [:notice] [pid 13668:tid 660] ModSecurity: LIBXML compiled version="2.9.4"
+[Mon Jul 17 16:24:01.016779 2017] [:notice] [pid 13668:tid 660] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Mon Jul 17 16:24:01.572106 2017] [mpm_winnt:notice] [pid 5168:tid 632] AH00364: Child: All worker threads have exited.
+[Mon Jul 17 16:24:02.003857 2017] [mpm_winnt:notice] [pid 13668:tid 660] AH00354: Child: Starting 64 worker threads.
+[Mon Jul 17 16:24:03.149543 2017] [autoindex:error] [pid 13668:tid 1232] [client 192.168.1.17:28871] AH01276: Cannot serve directory C:/Users/Wei Xuan/Documents/GitHub/Bas/: No matching DirectoryIndex (login.html) found, and server-generated directory index forbidden by Options directive
+[Mon Jul 17 16:25:51.962112 2017] [autoindex:error] [pid 13668:tid 1232] [client 192.168.1.17:28945] AH01276: Cannot serve directory C:/Users/Wei Xuan/Documents/GitHub/Bas/: No matching DirectoryIndex (login.html) found, and server-generated directory index forbidden by Options directive
+[Mon Jul 17 16:26:02.578836 2017] [:error] [pid 13668:tid 1232] [client 192.168.1.17:28952] [client 192.168.1.17] ModSecurity: Access denied with code 403 (phase 4). Pattern match "^5\\\\d{2}$" at RESPONSE_STATUS. [file "C:/Apache24/conf/rules/RESPONSE-950-DATA-LEAKAGES.conf"] [line "93"] [id "950100"] [rev "3"] [msg "The Application Returned a 500-Level Status Code"] [data "Matched Data: 503 found within RESPONSE_STATUS: 503"] [severity "ERROR"] [ver "OWASP_CRS/3.0.0"] [maturity "9"] [accuracy "9"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-disclosure"] [tag "WASCTC/WASC-13"] [tag "OWASP_TOP_10/A6"] [tag "PCI/6.5.6"] [tag "paranoia-level/2"] [hostname "192.168.1.17"] [uri "/Bas/Home"] [unique_id "WWx0mMCo7wEAADVkU2oAAAAh"]
+[Mon Jul 17 16:26:02.578836 2017] [:error] [pid 13668:tid 1232] [client 192.168.1.17:28952] [client 192.168.1.17] ModSecurity: Warning. Operator GE matched 4 at TX:outbound_anomaly_score. [file "C:/Apache24/conf/rules/RESPONSE-980-CORRELATION.conf"] [line "82"] [id "980140"] [msg "Outbound Anomaly Score Exceeded (score 4): The Application Returned a 500-Level Status Code"] [tag "event-correlation"] [hostname "192.168.1.17"] [uri "/Bas/Home"] [unique_id "WWx0mMCo7wEAADVkU2oAAAAh"]
+[Mon Jul 17 16:27:27.602771 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Mon Jul 17 16:27:29.624317 2017] [mpm_winnt:notice] [pid 13668:tid 660] AH00364: Child: All worker threads have exited.
+[Mon Jul 17 16:27:29.655325 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00430: Parent: Child process 13668 exited successfully.
