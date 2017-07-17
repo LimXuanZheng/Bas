@@ -3,6 +3,8 @@ package teacherSharing;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import database.DatabaseAccess;
 import fileUpload.CryptoException;
 import fileUpload.encryption;
 
@@ -35,6 +38,19 @@ public class teacherSharing extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
+		try {
+			DatabaseAccess dbms = new DatabaseAccess(1);
+			ArrayList<database.model.File> fileArray = dbms.getDatabaseFile();
+			for(database.model.File s:fileArray){
+				System.out.println(s.getFileName());
+			}
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		
 		out.println("<!DOCTYPE html>"
     			+ "<html>"
     			+ 	"<head>"
@@ -76,7 +92,7 @@ public class teacherSharing extends HttpServlet {
     			+			"<p id='hidehere'>The class path is here</p>"
     			+			"<div id='overlay'>"
     			+				"<div id='content1'>"
-    			+					"<form id='anything' action='teacherupload'>"
+    			+					"<form id='anything' action='teacherupload' onsubmit='asubmit()'>"
     			+						"<input type='radio' id='checkifmy' name='chooseFile' onclick='javascript:showHidden();' checked>My Drive</input>"
     			+						"<input type='radio' id='checkifshare' name='chooseFile' onclick='javascript:showHidden();'>Shared Drive</input>"
     			+						"<input type='radio' id='checkifnew' name='chooseFile' onclick='javascript:showHidden();'>New Drive</input>"
@@ -84,7 +100,20 @@ public class teacherSharing extends HttpServlet {
 				+							"<input type='file' id='datafilepath' class='custom-file-input' name='datafile' style='font-size:20px;'>"
 				+							"<span class='custom-file-control'></span>"
 				+						"</label>"
-    			+						"<br><p id='nameOfNewButton'>Name of File: <input type='text' name='FName' id='getBtnName'></input></p>"
+    			+						"<br><p id='nameOfNewButton'>Name of Folder: <input type='text' name='FName' id='getBtnName'></input></p>"
+    			+						"<br><div class='dropdown'>"
+				+			    			"<button  type='button' onclick='showsomething()' class='dropbtn'>Dropdown</button>"
+				+			    			 "<div id='myDropdown' class='dropdown-content'>"
+				+			    			  	"<input type='text' placeholder='Search..' id='myInput' onkeyup='filterFunction()'>"
+				+			    			    "<a href='#about'>Darren</a>"
+				+			    			    "<a href='#base'>Nicholson</a>"
+				+			    			    "<a href='#blog'>Mr Loo</a>"
+				+			    			    "<a href='#contact'>Mr Thumb</a>"
+				+			    			    "<a href='#custom'>Strong women</a>"
+				+			    			    "<a href='#support'>Matthew</a>"
+				+			    			    "<a href='#tools'>Doggy</a>"
+				+			    			  "</div>"
+				+			    			"</div>"
 				+						"<input type='submit' id='submit' value='Submit'></input>"
     			//+					"</form>"
     			+					"<button id='confirm' onclick='confirm()' >Confirm</button>"
