@@ -121,42 +121,9 @@ public class upload extends HttpServlet {
                     e.printStackTrace();
                 }
 		}
-        
-		}
-        
-        /*File decryptedFile = new File("document.decrypted");
-        try {
-        	decryption.decrypt(key, encryptedFile, decryptedFile);
-        } catch (CryptoException ex) {
-            System.out.println(ex.getMessage());
-            ex.printStackTrace();
-            //System.out.println("fail");
-        }
-        FileInputStream hh = new FileInputStream(decryptedFile);
-        OutputStream h = response.getOutputStream();
-       
-        byte[] test = new byte[4096];
-        int bytesRead = -1;
-        while ((bytesRead = hh.read(test)) != -1) {
-                           h.write(test, 0, bytesRead);
-                       }
-        
-        /*
-        
-                
-        
-        
-        
-        
-        
-        
-       
-        
-        //String test = encryptedFile.toString();
-        //File file = new File("C:/Users/Lim Xuan Zheng/Documents/GitHub/Bas/src/encryptedd");
-		//File f1 = new File(file, test);
-		//f1.createNewFile();
-       
+		
+		
+		
 		out.println("<!DOCTYPE html>"
     			+ "<html>"
     			+ 	"<head>"
@@ -200,19 +167,49 @@ public class upload extends HttpServlet {
     			+				"<p style='background-color:#7FFF00; font-size:70px; text-align:center;'> Assignment Successfully submitted</p>"
     			+				"<button class='btn btn-success' onclick='goHome()'>Continue</button>"
     			+			"</div>"
-    			
-				
-				
-				
-				
-				
-				
-				
+
 				);
+		
+		
+        
+		}
+        
+        /*File decryptedFile = new File("document.decrypted");
+        try {
+        	decryption.decrypt(key, encryptedFile, decryptedFile);
+        } catch (CryptoException ex) {
+            System.out.println(ex.getMessage());
+            ex.printStackTrace();
+            //System.out.println("fail");
+        }
+        FileInputStream hh = new FileInputStream(decryptedFile);
+        OutputStream h = response.getOutputStream();
+       
+        byte[] test = new byte[4096];
+        int bytesRead = -1;
+        while ((bytesRead = hh.read(test)) != -1) {
+                           h.write(test, 0, bytesRead);
+                       }
+        
+                
+        
+        
+        
+        
+        
+        
+       
+        
+        //String test = encryptedFile.toString();
+        //File file = new File("C:/Users/Lim Xuan Zheng/Documents/GitHub/Bas/src/encryptedd");
+		//File f1 = new File(file, test);
+		//f1.createNewFile();
+       
 		
 		out.println(written);
 
 	}
+	*/
 	
 	
     
