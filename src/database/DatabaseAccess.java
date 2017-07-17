@@ -24,7 +24,7 @@ public class DatabaseAccess {
     final String USER = "root";
     final String PASS = "SassyPenguin@123";
     
-    final String DB_URL2="jdbc:mysql://172.27.177.211:3306/nspj_database";
+    final String DB_URL2="jdbc:mysql://119.74.135.44:3306/nspj_database";
     final String USER_S = "Student";
     final String PASS_S = "StudentPassword_101";
     

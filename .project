@@ -28,4 +28,36 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>WebContent/Logs/WOLF.log</name>
+			<type>1</type>
+			<locationURI>PARENT-5-PROJECT_LOC/ProgramData/MySQL/MySQL%20Server%205.7/Data/WOLF.log</locationURI>
+		</link>
+		<link>
+			<name>WebContent/Logs/access.log</name>
+			<type>1</type>
+			<locationURI>PARENT-5-PROJECT_LOC/Apache24/logs/access.log</locationURI>
+		</link>
+		<link>
+			<name>WebContent/Logs/audit</name>
+			<type>2</type>
+			<locationURI>PARENT-5-PROJECT_LOC/Apache24/logs/audit</locationURI>
+		</link>
+		<link>
+			<name>WebContent/Logs/debug.log</name>
+			<type>1</type>
+			<locationURI>PARENT-5-PROJECT_LOC/Apache24/logs/modsec/debug.log</locationURI>
+		</link>
+		<link>
+			<name>WebContent/Logs/error.log</name>
+			<type>1</type>
+			<locationURI>PARENT-5-PROJECT_LOC/Apache24/logs/error.log</locationURI>
+		</link>
+		<link>
+			<name>WebContent/Logs/modsec_audit.log</name>
+			<type>1</type>
+			<locationURI>PARENT-5-PROJECT_LOC/Apache24/logs/modsec/modsec_audit.log</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>
