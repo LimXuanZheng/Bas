@@ -1,4 +1,7 @@
 /database/
+<<<<<<< HEAD
+/login/
+=======
 /directory/
 /fileUpload/
 /hello/
@@ -11,4 +14,5 @@
 =======
 /studentDownload/
 /teacherSharing/
+>>>>>>> origin/master
 >>>>>>> origin/master

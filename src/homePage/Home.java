@@ -35,6 +35,7 @@ import database.DatabaseAccess;
 public class Home extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private ArrayList<String> boxes = new ArrayList<String>();
+	private static String username = "Bob";
 	
     public Home() {
         super();
@@ -58,12 +59,6 @@ public class Home extends HttpServlet {
     }
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("text/html;charset=UTF-8");
-		ArrayList<String> notificationArray = new ArrayList<String>();
-		notificationArray.add("Testing 1");
-		notificationArray.add("Hello");
-		notificationArray.add("Please hand in your Minecraft by 12/3/17 -Mr Chew");
-		String username = "Bob";
 		HttpSession session = request.getSession(false);
 		if (session != null) {
 			username = (String)session.getAttribute("username");
@@ -71,6 +66,11 @@ public class Home extends HttpServlet {
 		else {
 			System.out.println("Didn't work");
 		}
+		response.setContentType("text/html;charset=UTF-8");
+		ArrayList<String> notificationArray = new ArrayList<String>();
+		notificationArray.add("Testing 1");
+		notificationArray.add("Hello");
+		notificationArray.add("Please hand in your assignment by 12/3/17 -Mr Chew");
 		
 		PrintWriter out = response.getWriter();
 		out.println(
@@ -96,7 +96,7 @@ public class Home extends HttpServlet {
 		+ 			"<nav class='navbar navbar-default'>"
 		+ 				"<div class='container-fluid'>"
 		+ 					"<div class='navbar-header'>"
-		+ 						"<a class='navbar-brand' href='#'>Bas?</a>"
+		+ 						"<a class='navbar-brand' href='#'>Purple</a>"
 		+					"</div>"
 		+					"<div class='collapse navbar-collapse'>"
 		+ 						"<ul class='nav navbar-nav'>"
@@ -108,7 +108,7 @@ public class Home extends HttpServlet {
 		+					   			"<a class='dropdown-toggle' data-toggle='dropdown' href='#'>Welcome, " + username + ". </a>"
 		+					        	"<ul class='dropdown-menu'>"
 		+					        		"<li><a href='#'>Setting</a></li>"
-		+					        		"<li><a href='html/Login.html'>Logout</a></li>"
+		+					        		"<li><a href='Login'>Logout</a></li>"
 		+								"</ul>"
 		+							"</li>"
 		+ 						"</ul>"
