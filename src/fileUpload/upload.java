@@ -44,6 +44,7 @@ public class upload extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
+		
 		try {
 			DatabaseAccess dbms = new DatabaseAccess(1);
 			ArrayList<database.model.File> fileArray = dbms.getDatabaseFile();
