@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 /directory/
 /login/
 /database/
 /fileUpload/
 /teacherSharing/
+=======
+/database/
+/fileUpload/
+/teacherSharing/
+/directory/
+/login/
+>>>>>>> origin/master
