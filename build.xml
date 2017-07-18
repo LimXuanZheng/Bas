@@ -77,6 +77,7 @@
     <copy file="C:/Apache24/logs/error.log" todir="C:/Users/Wei Xuan/Documents/GitHub/Bas/WebContent/Logs"/>
     <copy file="C:/Apache24/logs/modsec/debug.log" todir="C:/Users/Wei Xuan/Documents/GitHub/Bas/WebContent/Logs"/>
     <copy file="C:/Apache24/logs/modsec/modsec_audit.log" todir="C:/Users/Wei Xuan/Documents/GitHub/Bas/WebContent/Logs"/>
+    <copy file="C:/ProgramData/MySQL/MySQL Server 5.7/Data/WOLF.log" todir="C:/Users/Wei Xuan/Documents/GitHub/Bas/WebContent/Logs"/>
     <copy todir="C:/Users/Wei Xuan/Documents/GitHub/Bas/WebContent/Logs">
   	    <fileset dir="C:/Apache24/logs/audit">
   	    </fileset>

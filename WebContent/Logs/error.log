@@ -615,3 +615,94 @@ SecAction takes one argument, an action list
 [Mon Jul 17 16:27:27.602771 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00422: Parent: Received shutdown signal -- Shutting down the server.
 [Mon Jul 17 16:27:29.624317 2017] [mpm_winnt:notice] [pid 13668:tid 660] AH00364: Child: All worker threads have exited.
 [Mon Jul 17 16:27:29.655325 2017] [mpm_winnt:notice] [pid 13324:tid 704] AH00430: Parent: Child process 13668 exited successfully.
+[Mon Jul 17 23:37:18.004672 2017] [:notice] [pid 9028:tid 696] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Mon Jul 17 23:37:18.004672 2017] [:notice] [pid 9028:tid 696] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Mon Jul 17 23:37:18.004672 2017] [:notice] [pid 9028:tid 696] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Mon Jul 17 23:37:18.004672 2017] [:warn] [pid 9028:tid 696] ModSecurity: Loaded PCRE do not match with compiled!
+[Mon Jul 17 23:37:18.004672 2017] [:notice] [pid 9028:tid 696] ModSecurity: LUA compiled version="Lua 5.1"
+[Mon Jul 17 23:37:18.004672 2017] [:notice] [pid 9028:tid 696] ModSecurity: YAJL compiled version="2.1.0"
+[Mon Jul 17 23:37:18.004672 2017] [:notice] [pid 9028:tid 696] ModSecurity: LIBXML compiled version="2.9.4"
+[Mon Jul 17 23:37:18.004672 2017] [:notice] [pid 9028:tid 696] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Mon Jul 17 23:37:19.003859 2017] [mpm_winnt:notice] [pid 9028:tid 696] AH00455: Apache/2.4.27 (Win64) mod_jk/1.2.42 configured -- resuming normal operations
+[Mon Jul 17 23:37:19.003859 2017] [mpm_winnt:notice] [pid 9028:tid 696] AH00456: Apache Lounge VC15 Server built: Jul  7 2017 12:46:00
+[Mon Jul 17 23:37:19.003859 2017] [core:notice] [pid 9028:tid 696] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Mon Jul 17 23:37:19.005363 2017] [mpm_winnt:notice] [pid 9028:tid 696] AH00418: Parent: Created child process 1032
+[Mon Jul 17 23:37:20.003517 2017] [:notice] [pid 1032:tid 676] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Mon Jul 17 23:37:20.003517 2017] [:notice] [pid 1032:tid 676] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Mon Jul 17 23:37:20.003517 2017] [:notice] [pid 1032:tid 676] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Mon Jul 17 23:37:20.003517 2017] [:warn] [pid 1032:tid 676] ModSecurity: Loaded PCRE do not match with compiled!
+[Mon Jul 17 23:37:20.003517 2017] [:notice] [pid 1032:tid 676] ModSecurity: LUA compiled version="Lua 5.1"
+[Mon Jul 17 23:37:20.003517 2017] [:notice] [pid 1032:tid 676] ModSecurity: YAJL compiled version="2.1.0"
+[Mon Jul 17 23:37:20.003517 2017] [:notice] [pid 1032:tid 676] ModSecurity: LIBXML compiled version="2.9.4"
+[Mon Jul 17 23:37:20.003517 2017] [:notice] [pid 1032:tid 676] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Mon Jul 17 23:37:21.004583 2017] [mpm_winnt:notice] [pid 1032:tid 676] AH00354: Child: Starting 64 worker threads.
+[Mon Jul 17 23:40:02.054534 2017] [:error] [pid 1032:tid 1204] [client 192.168.1.17:33149] [client 192.168.1.17] ModSecurity: Access denied with code 403 (phase 4). Pattern match "^5\\\\d{2}$" at RESPONSE_STATUS. [file "C:/Apache24/conf/rules/RESPONSE-950-DATA-LEAKAGES.conf"] [line "93"] [id "950100"] [rev "3"] [msg "The Application Returned a 500-Level Status Code"] [data "Matched Data: 503 found within RESPONSE_STATUS: 503"] [severity "ERROR"] [ver "OWASP_CRS/3.0.0"] [maturity "9"] [accuracy "9"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-disclosure"] [tag "WASCTC/WASC-13"] [tag "OWASP_TOP_10/A6"] [tag "PCI/6.5.6"] [tag "paranoia-level/2"] [hostname "192.168.1.17"] [uri "/Bas/Home"] [unique_id "WWzaT8Co7wEAAAQIWNkAAAA-"]
+[Mon Jul 17 23:40:02.055052 2017] [:error] [pid 1032:tid 1204] [client 192.168.1.17:33149] [client 192.168.1.17] ModSecurity: Warning. Operator GE matched 4 at TX:outbound_anomaly_score. [file "C:/Apache24/conf/rules/RESPONSE-980-CORRELATION.conf"] [line "82"] [id "980140"] [msg "Outbound Anomaly Score Exceeded (score 4): The Application Returned a 500-Level Status Code"] [tag "event-correlation"] [hostname "192.168.1.17"] [uri "/Bas/Home"] [unique_id "WWzaT8Co7wEAAAQIWNkAAAA-"]
+[Mon Jul 17 23:40:11.464493 2017] [:error] [pid 1032:tid 1204] [client 192.168.1.29:51860] [client 192.168.1.29] ModSecurity: Access denied with code 403 (phase 4). Pattern match "^5\\\\d{2}$" at RESPONSE_STATUS. [file "C:/Apache24/conf/rules/RESPONSE-950-DATA-LEAKAGES.conf"] [line "93"] [id "950100"] [rev "3"] [msg "The Application Returned a 500-Level Status Code"] [data "Matched Data: 503 found within RESPONSE_STATUS: 503"] [severity "ERROR"] [ver "OWASP_CRS/3.0.0"] [maturity "9"] [accuracy "9"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-disclosure"] [tag "WASCTC/WASC-13"] [tag "OWASP_TOP_10/A6"] [tag "PCI/6.5.6"] [tag "paranoia-level/2"] [hostname "192.168.1.17"] [uri "/Bas/"] [unique_id "WWzaWcCo7wEAAAQIWNoAAAA-"]
+[Mon Jul 17 23:40:11.465025 2017] [:error] [pid 1032:tid 1204] [client 192.168.1.29:51860] [client 192.168.1.29] ModSecurity: Warning. Operator GE matched 4 at TX:outbound_anomaly_score. [file "C:/Apache24/conf/rules/RESPONSE-980-CORRELATION.conf"] [line "82"] [id "980140"] [msg "Outbound Anomaly Score Exceeded (score 4): The Application Returned a 500-Level Status Code"] [tag "event-correlation"] [hostname "192.168.1.17"] [uri "/Bas/"] [unique_id "WWzaWcCo7wEAAAQIWNoAAAA-"]
+[Mon Jul 17 23:53:33.859703 2017] [mpm_winnt:notice] [pid 9028:tid 696] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Mon Jul 17 23:53:35.860781 2017] [mpm_winnt:notice] [pid 1032:tid 676] AH00364: Child: All worker threads have exited.
+[Mon Jul 17 23:53:35.900407 2017] [mpm_winnt:notice] [pid 9028:tid 696] AH00430: Parent: Child process 1032 exited successfully.
+[Tue Jul 18 09:39:50.000224 2017] [:notice] [pid 11704:tid 708] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Tue Jul 18 09:39:50.066945 2017] [:notice] [pid 11704:tid 708] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Tue Jul 18 09:39:50.066945 2017] [:notice] [pid 11704:tid 708] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Tue Jul 18 09:39:50.066945 2017] [:warn] [pid 11704:tid 708] ModSecurity: Loaded PCRE do not match with compiled!
+[Tue Jul 18 09:39:50.066945 2017] [:notice] [pid 11704:tid 708] ModSecurity: LUA compiled version="Lua 5.1"
+[Tue Jul 18 09:39:50.066945 2017] [:notice] [pid 11704:tid 708] ModSecurity: YAJL compiled version="2.1.0"
+[Tue Jul 18 09:39:50.066945 2017] [:notice] [pid 11704:tid 708] ModSecurity: LIBXML compiled version="2.9.4"
+[Tue Jul 18 09:39:50.066945 2017] [:notice] [pid 11704:tid 708] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Tue Jul 18 09:39:51.002055 2017] [mpm_winnt:notice] [pid 11704:tid 708] AH00455: Apache/2.4.27 (Win64) mod_jk/1.2.42 configured -- resuming normal operations
+[Tue Jul 18 09:39:51.002055 2017] [mpm_winnt:notice] [pid 11704:tid 708] AH00456: Apache Lounge VC15 Server built: Jul  7 2017 12:46:00
+[Tue Jul 18 09:39:51.002055 2017] [core:notice] [pid 11704:tid 708] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Tue Jul 18 09:39:51.005149 2017] [mpm_winnt:notice] [pid 11704:tid 708] AH00418: Parent: Created child process 11272
+[Tue Jul 18 09:39:52.001141 2017] [:notice] [pid 11272:tid 124] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Tue Jul 18 09:39:52.001141 2017] [:notice] [pid 11272:tid 124] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Tue Jul 18 09:39:52.001141 2017] [:notice] [pid 11272:tid 124] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Tue Jul 18 09:39:52.001141 2017] [:warn] [pid 11272:tid 124] ModSecurity: Loaded PCRE do not match with compiled!
+[Tue Jul 18 09:39:52.001141 2017] [:notice] [pid 11272:tid 124] ModSecurity: LUA compiled version="Lua 5.1"
+[Tue Jul 18 09:39:52.001141 2017] [:notice] [pid 11272:tid 124] ModSecurity: YAJL compiled version="2.1.0"
+[Tue Jul 18 09:39:52.001141 2017] [:notice] [pid 11272:tid 124] ModSecurity: LIBXML compiled version="2.9.4"
+[Tue Jul 18 09:39:52.001141 2017] [:notice] [pid 11272:tid 124] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Tue Jul 18 09:39:53.002243 2017] [mpm_winnt:notice] [pid 11272:tid 124] AH00354: Child: Starting 64 worker threads.
+[Tue Jul 18 09:39:55.580407 2017] [mpm_winnt:notice] [pid 11704:tid 708] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Tue Jul 18 09:39:57.581359 2017] [mpm_winnt:notice] [pid 11272:tid 124] AH00364: Child: All worker threads have exited.
+[Tue Jul 18 09:39:57.659041 2017] [mpm_winnt:notice] [pid 11704:tid 708] AH00430: Parent: Child process 11272 exited successfully.
+[Tue Jul 18 09:40:05.005914 2017] [:notice] [pid 1888:tid 700] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Tue Jul 18 09:40:05.005914 2017] [:notice] [pid 1888:tid 700] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Tue Jul 18 09:40:05.005914 2017] [:notice] [pid 1888:tid 700] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Tue Jul 18 09:40:05.005914 2017] [:warn] [pid 1888:tid 700] ModSecurity: Loaded PCRE do not match with compiled!
+[Tue Jul 18 09:40:05.005914 2017] [:notice] [pid 1888:tid 700] ModSecurity: LUA compiled version="Lua 5.1"
+[Tue Jul 18 09:40:05.005914 2017] [:notice] [pid 1888:tid 700] ModSecurity: YAJL compiled version="2.1.0"
+[Tue Jul 18 09:40:05.005914 2017] [:notice] [pid 1888:tid 700] ModSecurity: LIBXML compiled version="2.9.4"
+[Tue Jul 18 09:40:05.005914 2017] [:notice] [pid 1888:tid 700] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Tue Jul 18 09:40:06.022042 2017] [mpm_winnt:notice] [pid 1888:tid 700] AH00455: Apache/2.4.27 (Win64) mod_jk/1.2.42 configured -- resuming normal operations
+[Tue Jul 18 09:40:06.022042 2017] [mpm_winnt:notice] [pid 1888:tid 700] AH00456: Apache Lounge VC15 Server built: Jul  7 2017 12:46:00
+[Tue Jul 18 09:40:06.022042 2017] [core:notice] [pid 1888:tid 700] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Tue Jul 18 09:40:06.022042 2017] [mpm_winnt:notice] [pid 1888:tid 700] AH00418: Parent: Created child process 12416
+[Tue Jul 18 09:40:07.022016 2017] [:notice] [pid 12416:tid 676] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Tue Jul 18 09:40:07.022016 2017] [:notice] [pid 12416:tid 676] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Tue Jul 18 09:40:07.022016 2017] [:notice] [pid 12416:tid 676] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Tue Jul 18 09:40:07.022016 2017] [:warn] [pid 12416:tid 676] ModSecurity: Loaded PCRE do not match with compiled!
+[Tue Jul 18 09:40:07.022016 2017] [:notice] [pid 12416:tid 676] ModSecurity: LUA compiled version="Lua 5.1"
+[Tue Jul 18 09:40:07.022016 2017] [:notice] [pid 12416:tid 676] ModSecurity: YAJL compiled version="2.1.0"
+[Tue Jul 18 09:40:07.022016 2017] [:notice] [pid 12416:tid 676] ModSecurity: LIBXML compiled version="2.9.4"
+[Tue Jul 18 09:40:07.022016 2017] [:notice] [pid 12416:tid 676] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Tue Jul 18 09:40:08.022120 2017] [mpm_winnt:notice] [pid 12416:tid 676] AH00354: Child: Starting 64 worker threads.
+[Tue Jul 18 09:48:24.289730 2017] [mpm_winnt:notice] [pid 1888:tid 700] AH00424: Parent: Received restart signal -- Restarting the server.
+[Tue Jul 18 09:48:25.006108 2017] [mpm_winnt:notice] [pid 1888:tid 700] AH00455: Apache/2.4.27 (Win64) mod_jk/1.2.42 configured -- resuming normal operations
+[Tue Jul 18 09:48:25.006108 2017] [mpm_winnt:notice] [pid 1888:tid 700] AH00456: Apache Lounge VC15 Server built: Jul  7 2017 12:46:00
+[Tue Jul 18 09:48:25.006108 2017] [core:notice] [pid 1888:tid 700] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Tue Jul 18 09:48:25.006108 2017] [mpm_winnt:notice] [pid 1888:tid 700] AH00418: Parent: Created child process 3780
+[Tue Jul 18 09:48:26.022064 2017] [:notice] [pid 3780:tid 668] ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/) configured.
+[Tue Jul 18 09:48:26.022064 2017] [:notice] [pid 3780:tid 668] ModSecurity: APR compiled version="1.6.2"; loaded version="1.6.2"
+[Tue Jul 18 09:48:26.022064 2017] [:notice] [pid 3780:tid 668] ModSecurity: PCRE compiled version="8.40 "; loaded version="8.41 2017-07-05"
+[Tue Jul 18 09:48:26.022064 2017] [:warn] [pid 3780:tid 668] ModSecurity: Loaded PCRE do not match with compiled!
+[Tue Jul 18 09:48:26.022064 2017] [:notice] [pid 3780:tid 668] ModSecurity: LUA compiled version="Lua 5.1"
+[Tue Jul 18 09:48:26.022064 2017] [:notice] [pid 3780:tid 668] ModSecurity: YAJL compiled version="2.1.0"
+[Tue Jul 18 09:48:26.022064 2017] [:notice] [pid 3780:tid 668] ModSecurity: LIBXML compiled version="2.9.4"
+[Tue Jul 18 09:48:26.022064 2017] [:notice] [pid 3780:tid 668] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+[Tue Jul 18 09:48:26.303243 2017] [mpm_winnt:notice] [pid 12416:tid 676] AH00364: Child: All worker threads have exited.
+[Tue Jul 18 09:48:27.014365 2017] [mpm_winnt:notice] [pid 3780:tid 668] AH00354: Child: Starting 64 worker threads.
+[Tue Jul 18 10:19:54.729954 2017] [mpm_winnt:notice] [pid 1888:tid 700] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Tue Jul 18 10:19:56.759771 2017] [mpm_winnt:notice] [pid 3780:tid 668] AH00364: Child: All worker threads have exited.
+[Tue Jul 18 10:19:56.790777 2017] [mpm_winnt:notice] [pid 1888:tid 700] AH00430: Parent: Child process 3780 exited successfully.

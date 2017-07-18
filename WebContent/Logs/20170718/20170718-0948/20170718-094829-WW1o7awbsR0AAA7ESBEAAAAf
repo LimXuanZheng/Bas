@@ -1,0 +1,31 @@
+--84670000-A--
+[18/Jul/2017:09:48:29 +0800] WW1o7awbsR0AAA7ESBEAAAAf 127.0.0.1 34111 127.0.0.1 80
+--84670000-B--
+GET /Bas/Login HTTP/1.1
+Host: localhost
+Connection: keep-alive
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+--84670000-F--
+HTTP/1.1 403 403
+Content-Length: 0
+Keep-Alive: timeout=5, max=99
+Connection: Keep-Alive
+
+--84670000-E--
+
+--84670000-H--
+Apache-Handler: jakarta-servlet
+Stopwatch: 1500342509907452 12024 (- - -)
+Stopwatch2: 1500342509907452 12024; combined=7960, p1=0, p2=0, p3=0, p4=0, p5=3980, sr=0, sw=3980, l=0, gc=0
+Response-Body-Transformed: Dechunked
+Producer: ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/); OWASP_CRS/3.0.2.
+Server: Apache/2.4.27 (Win64) mod_jk/1.2.42
+Engine-Mode: "ENABLED"
+
+--84670000-Z--
