@@ -10,6 +10,7 @@ public class File {
 	byte[] fileData;
 	String recipient;
 	Date date;
+	User user;
 	
 	
 	public File(int fileID, User user, String fileName, int fileSize, byte[] fileData,String recipient, Date date) {
@@ -20,6 +21,15 @@ public class File {
 		this.fileData = fileData;
 		this.recipient = recipient;
 		this.date = date;
+		this.user = user;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	public int getFileID() {

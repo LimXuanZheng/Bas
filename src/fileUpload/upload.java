@@ -81,7 +81,7 @@ public class upload extends HttpServlet {
 		else{
 		File f = new File(path);
 		//out.println(path);
-		String key = "Mary has one cat";
+		String key = "Mary has manyyyyyyyyyyyy cats";
         File encryptedFile = new File("document.encrypted");
         System.out.println("hti" + new Date(encryptedFile.lastModified()));
         try {
