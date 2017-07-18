@@ -6,8 +6,12 @@ public class UserAll{
 	Student student;
 	Teacher teacher;
 
+	public UserAll(User user, Login login) {
+		this.user = user;
+		this.login = login;
+	}
+	
 	public UserAll(User user, Login login, Student student, Teacher teacher) {
-		super();
 		this.user = user;
 		this.login = login;
 		this.student = student;

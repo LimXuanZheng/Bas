@@ -69,7 +69,7 @@ public class DatabaseAccess {
 	}
 	
 	public ArrayList<UserAll> getDatabaseUserAll() throws SQLException{
-		ResultSet rs = getDatabaseData("SELECT User.UserID, Login.Username, Login.Password, Login.Salt, User.NRIC, User.Name, User.Gender, User.DOB, User.ContactNo, User.Email, User.Class, User.Address, User.Keys, Student.NRIC, Student.CCA, Teacher.TeacherID, Teacher.Department FROM User LEFT OUTER JOIN Login ON (User.UserID = Login.UserID) LEFT OUTER JOIN Student ON (User.UserID = Student.UserID) LEFT OUTER JOIN Teacher ON (User.UserID = Teacher.UserID) ORDER BY UserID;");
+		ResultSet rs = getDatabaseData("SELECT User.UserID, Login.Username, Login.Password, Login.Salt, User.NRIC, User.Name, User.Gender, User.DOB, User.ContactNo, User.Email, User.Class, User.Address, User.Keys, Student.CCA, Teacher.TeacherID, Teacher.Department FROM User LEFT OUTER JOIN Login ON (User.UserID = Login.UserID) LEFT OUTER JOIN Student ON (User.UserID = Student.UserID) LEFT OUTER JOIN Teacher ON (User.UserID = Teacher.UserID) ORDER BY UserID;");
 		ArrayList<UserAll> userAllArray = new ArrayList<UserAll>();
 		
 		while(rs.next()){
@@ -82,7 +82,7 @@ public class DatabaseAccess {
 			String email = rs.getString("Email");
 			String schoolClass = rs.getString("Class");
 			String address = rs.getString("Address");
-			byte[] keys = rs.getBytes("Keys");
+			String keys = rs.getString("Keys");
 			User user = new User(userID, nRIC, name, gender, dOB, contactNo, email, schoolClass, address, keys);
 			
 			String username = rs.getString("Username");
@@ -118,7 +118,7 @@ public class DatabaseAccess {
 			String email = rs.getString("Email");
 			String schoolClass = rs.getString("Class");
 			String address = rs.getString("Address");
-			byte[] keys = rs.getBytes("Keys");
+			String keys = rs.getString("Keys");
 			userArray.add(new User(userID, nRIC, name, gender, dOB, contactNo, email, schoolClass, address, keys));
 		}
 		
@@ -140,7 +140,7 @@ public class DatabaseAccess {
 			String email = rs.getString("Email");
 			String schoolClass = rs.getString("Class");
 			String address = rs.getString("Address");
-			byte[] keys = rs.getBytes("Keys");
+			String keys = rs.getString("Keys");
 			
 			User user = new User(userID, nRIC, name, gender, dOB, contactNo, email, schoolClass, address, keys);
 			String username = rs.getString("Username");
@@ -168,7 +168,8 @@ public class DatabaseAccess {
 			String email = rs.getString("Email");
 			String schoolClass = rs.getString("Class");
 			String address = rs.getString("Address");
-			byte[] keys = rs.getBytes("Keys");
+			String keys = rs.getString("Keys");
+			
 			User user = new User(userID, nRIC, name, gender, dOB, contactNo, email, schoolClass, address, keys);
 			
 			String cCA = rs.getString("CCA");
@@ -195,7 +196,7 @@ public class DatabaseAccess {
 			String email = rs.getString("Email");
 			String schoolClass = rs.getString("Class");
 			String address = rs.getString("Address");
-			byte[] keys = rs.getBytes("Keys");
+			String keys = rs.getString("Keys");
 			
 			User user = new User(userID, nRIC, name, gender, dOB, contactNo, email, schoolClass, address, keys);
 			int teacherID = rs.getInt("TeacherID");
@@ -222,7 +223,7 @@ public class DatabaseAccess {
 			String email = rs.getString("Email");
 			String schoolClass = rs.getString("Class");
 			String address = rs.getString("Address");
-			byte[] keys = rs.getBytes("Keys");
+			String keys = rs.getString("Keys");
 			
 			User user = new User(userID, nRIC, name, gender, dOB, contactNo, email, schoolClass, address, keys);
 			
@@ -254,7 +255,7 @@ public class DatabaseAccess {
 			String email = rs.getString("Email");
 			String schoolClass = rs.getString("Class");
 			String address = rs.getString("Address");
-			byte[] keys = rs.getBytes("Keys");
+			String keys = rs.getString("Keys");
 			
 			User user = new User(userID, nRIC, name, gender, dOB, contactNo, email, schoolClass, address, keys);
 			
@@ -303,18 +304,6 @@ public class DatabaseAccess {
         }
 	}
 	
-	public void updateDatabaseDataKey(String sql, byte[] keys) throws SQLException{
-		PreparedStatement pstmt = conn.prepareStatement(sql);
-	    pstmt.setBytes(1, keys);
-	     
-	    int count = ppstmt.executeUpdate();
-        if(count ==0){
-        	System.out.println("!!! Update failed !!!\n");
-        }else{
-    	    System.out.println("!!! Update successful !!!\n");
-        }
-	}
-	
 	public void close() throws SQLException{
 		conn.close();
 		stmt.close();
@@ -324,22 +313,28 @@ public class DatabaseAccess {
 		return conn;
 	}
 	
-	
-	
+	/*
 	public static void main(String[] args) throws ClassNotFoundException, SQLException{
-		DatabaseAccess dao = new DatabaseAccess(0);
-		SecureRandom random = new SecureRandom();
-        byte [] bytes= new byte[16];
-        random.nextBytes(bytes);
+		DatabaseDAO dao = new DatabaseDAO(0);
+		
+		String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+        StringBuilder salt = new StringBuilder();
+        Random rnd = new Random();
+        while (salt.length() < 16) { // length of the random string.
+            int index = (int) (rnd.nextFloat() * SALTCHARS.length());
+            salt.append(SALTCHARS.charAt(index));
+        }
+        String keys = salt.toString();
+        
         Connection conn = dao.getConn();
         String query = "UPDATE User SET User.Keys = ? WHERE User.UserID = 13";
         PreparedStatement pstmt = conn.prepareStatement(query);
-        pstmt.setBytes(1, bytes);
+        pstmt.setString(1, keys);
         pstmt.execute();
         
 		dao.close();
 	}
-	
+	*/
 	
 	/* For File Uploads...
 	 * 
