@@ -8,7 +8,7 @@ public class SendEmail {
 	
 	public void sendEmail(String receipientEmail, String content) {
 		// Recipient's email ID needs to be mentioned
-		String to = "receipientEmail";
+		String to = receipientEmail;
 
 		// Sender's email ID needs to be mentioned
 		String from = "theFridge.CustomerHelpdesk@gmail.com";
