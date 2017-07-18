@@ -3,8 +3,12 @@ package teacherSharing;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Date;
 
 import javax.servlet.ServletException;
@@ -13,6 +17,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import database.DatabaseAccess;
 import fileUpload.CryptoException;
 import fileUpload.encryption;
 
@@ -36,24 +41,63 @@ public class teacherUpload extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
+		String key1 = "";
+		try {
+			DatabaseAccess dbms = new DatabaseAccess(1);
+			ArrayList<database.model.File> fileArray = dbms.getDatabaseFile();
+			database.model.File file1 = fileArray.get(0);
+			key1 = file1.getUser().getKeys();
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}	
 		String filepathess = request.getParameter("datafile");
 		File f = new File(filepathess);
 		//out.println(path);
-		String key = "Mary has one cat";
+		//String key = "Mary has one cat";
         File encryptedFile = new File("document.encrypted");
         try {
-        	encryption.encrypt(key, f, encryptedFile);
+        	encryption.encrypt(key1, f, encryptedFile);
         } catch (CryptoException ex) {
             System.out.println(ex.getMessage());
             ex.printStackTrace();
             System.out.println("fail");
         }
         
-        /*InputStream in = new FileInputStream(encryptedFile);
+        InputStream in = new FileInputStream(encryptedFile);
         String name = f.getName();
         System.out.println(name);
         System.out.println(f.length());
-        */
+        
+        
+        java.text.SimpleDateFormat format = new java.text.SimpleDateFormat("yyyyMMddHHmmss");
+        Date haha = new Date(f.lastModified());
+        String haha2 = format.format(haha);
+        System.out.println(haha2);
+        java.util.Date date = null;
+		try {
+			date = format.parse(haha2);
+		} catch (ParseException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+        java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+        
+        try {
+                    DatabaseAccess dba = new DatabaseAccess(1);
+                    String sqlline = "INSERT INTO File(UserID, FileName, Size, Data, Date) VALUES (?, ?, ?, ?, ?);";
+                    dba.updateDatabaseDataFileUpload(sqlline, 13, name, f.length(), in, sqlDate);
+                    dba.close();
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                } catch (SQLException e) { 
+                    e.printStackTrace();
+                }
+		
+        
+        
         
         
         

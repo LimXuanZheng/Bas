@@ -44,8 +44,21 @@ public class teacherSharing extends HttpServlet {
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//PrintWriter out = response.getWriter();
-		String key = "Mary has one cat";
+		PrintWriter out = response.getWriter();
+		String key1 = "";
+		try {
+			DatabaseAccess dbms = new DatabaseAccess(1);
+			ArrayList<database.model.File> fileArray = dbms.getDatabaseFile();
+			database.model.File file1 = fileArray.get(0);
+			key1 = file1.getUser().getKeys();
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}	
+		//String key = "Mary has one cat";
+		/*
 		String filename1 = "Nothing to show";
 		int filesize1;
 		Date date1;
@@ -70,7 +83,7 @@ public class teacherSharing extends HttpServlet {
 				
 				File decryptedFile = new File("document.decrypted");
 		        try {
-		        	decryption.decrypt(key, tempFile, decryptedFile);
+		        	decryption.decrypt(key1, tempFile, decryptedFile);
 		        } catch (CryptoException ex) {
 		            System.out.println(ex.getMessage());
 		            ex.printStackTrace();
@@ -100,8 +113,9 @@ public class teacherSharing extends HttpServlet {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}	
+		*/
 		
-		/*
+		
 		out.println("<!DOCTYPE html>"
     			+ "<html>"
     			+ 	"<head>"
@@ -199,7 +213,7 @@ public class teacherSharing extends HttpServlet {
     			+	"</body>"
     			+"</html>"
 				);
-		*/
+		
         
 	}
 	
