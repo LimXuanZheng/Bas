@@ -1,0 +1,36 @@
+--49160000-A--
+[19/Jul/2017:09:14:31 +0800] WW6yd6wbsSkAABcE0qIAAAA- 172.27.177.240 2660 172.27.177.41 80
+--49160000-B--
+GET / HTTP/1.0
+
+--49160000-F--
+HTTP/1.1 403 Forbidden
+Content-Length: 209
+Connection: close
+Content-Type: text/html; charset=iso-8859-1
+
+--49160000-E--
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>403 Forbidden</title>
+</head><body>
+<h1>Forbidden</h1>
+<p>You don't have permission to access /
+on this server.<br />
+</p>
+</body></html>
+
+--49160000-H--
+Message: Warning. Operator EQ matched 0 at REQUEST_HEADERS. [file "C:/Apache24/conf/rules/REQUEST-920-PROTOCOL-ENFORCEMENT.conf"] [line "612"] [id "920280"] [rev "2"] [msg "Request Missing a Host Header"] [severity "WARNING"] [ver "OWASP_CRS/3.0.0"] [maturity "9"] [accuracy "9"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-protocol"] [tag "OWASP_CRS/PROTOCOL_VIOLATION/MISSING_HEADER_HOST"] [tag "WASCTC/WASC-21"] [tag "OWASP_TOP_10/A7"] [tag "PCI/6.5.10"]
+Message: Access denied with code 403 (phase 2). Operator EQ matched 0 at REQUEST_HEADERS. [file "C:/Apache24/conf/rules/REQUEST-920-PROTOCOL-ENFORCEMENT.conf"] [line "1331"] [id "920320"] [rev "1"] [msg "Missing User Agent Header"] [severity "NOTICE"] [ver "OWASP_CRS/3.0.0"] [maturity "9"] [accuracy "9"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-protocol"] [tag "OWASP_CRS/PROTOCOL_VIOLATION/MISSING_HEADER_UA"] [tag "WASCTC/WASC-21"] [tag "OWASP_TOP_10/A7"] [tag "PCI/6.5.10"] [tag "paranoia-level/2"]
+Apache-Error: [file "apache2_util.c"] [line 271] [level 3] [client %s] ModSecurity: %s%s [uri "%s"]%s
+Apache-Error: [file "apache2_util.c"] [line 271] [level 3] [client %s] ModSecurity: %s%s [uri "%s"]%s
+Action: Intercepted (phase 2)
+Stopwatch: 1500426871478191 6020 (- - -)
+Stopwatch2: 1500426871478191 6020; combined=7053, p1=0, p2=1039, p3=0, p4=0, p5=3007, sr=0, sw=3007, l=0, gc=0
+Response-Body-Transformed: Dechunked
+Producer: ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/); OWASP_CRS/3.0.2.
+Server: Apache/2.4.27 (Win64) mod_jk/1.2.42
+Engine-Mode: "ENABLED"
+
+--49160000-Z--
