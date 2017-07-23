@@ -6271,3 +6271,2434 @@ Log-Entry: 1500279998073776
  				Bytes received: 415
  				Bytes sent: 176
 
+
+Log-Entry: 1500305914982176
+ 				The time: 17/07/2017 23:38:34
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.17
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/ HTTP/1.1
+ 				Status of the request: 404
+ 				Size of response in bytes, excluding HTTP headers: 1085
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 385
+ 				Bytes sent: 1326
+
+
+Log-Entry: 1500305915104118
+ 				The time: 17/07/2017 23:38:35
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.17
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /favicon.ico HTTP/1.1
+ 				Status of the request: 404
+ 				Size of response in bytes, excluding HTTP headers: 209
+ 				Referer: http://192.168.1.17/Bas/
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 351
+ 				Bytes sent: 438
+
+
+Log-Entry: 1500305941854105
+ 				The time: 17/07/2017 23:39:01
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.17
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/Home HTTP/1.1
+ 				Status of the request: 404
+ 				Size of response in bytes, excluding HTTP headers: 1089
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 389
+ 				Bytes sent: 1330
+
+
+Log-Entry: 1500305999948785
+ 				The time: 17/07/2017 23:39:59
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.17
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/Home HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 346
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 415
+ 				Bytes sent: 518
+
+
+Log-Entry: 1500306009360477
+ 				The time: 17/07/2017 23:40:09
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.29
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/ HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 342
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Safari/602.1
+ 				Bytes received: 382
+ 				Bytes sent: 514
+
+
+Log-Entry: 1500306029056362
+ 				The time: 17/07/2017 23:40:29
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.17
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/ HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 1811
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 385
+ 				Bytes sent: 1991
+
+
+Log-Entry: 1500306032879393
+ 				The time: 17/07/2017 23:40:32
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.29
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/ HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 0
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Safari/602.1
+ 				Bytes received: 382
+ 				Bytes sent: 177
+
+
+Log-Entry: 1500342026191268
+ 				The time: 18/07/2017 09:40:26
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 127.0.0.1
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/ HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 0
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 386
+ 				Bytes sent: 177
+
+
+Log-Entry: 1500342295815324
+ 				The time: 18/07/2017 09:44:55
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 127.0.0.1
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/Login HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 0
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 391
+ 				Bytes sent: 177
+
+
+Log-Entry: 1500342356084747
+ 				The time: 18/07/2017 09:45:56
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.0
+ 				Remote hostname: 127.0.0.1
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: -
+ 				Status of the request: 408
+ 				Size of response in bytes, excluding HTTP headers: 0
+ 				Referer: -
+ 				User-Agent: -
+ 				Bytes received: 0
+ 				Bytes sent: 0
+
+
+Log-Entry: 1500342509000060
+ 				The time: 18/07/2017 09:48:29
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 127.0.0.1
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/Login HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 0
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 417
+ 				Bytes sent: 177
+
+
+Log-Entry: 1500342509907452
+ 				The time: 18/07/2017 09:48:29
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 127.0.0.1
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/Login HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 0
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 417
+ 				Bytes sent: 176
+
+
+Log-Entry: 1500342516124791
+ 				The time: 18/07/2017 09:48:36
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 127.0.0.1
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/Login HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 0
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 417
+ 				Bytes sent: 177
+
+
+Log-Entry: 1500342516357560
+ 				The time: 18/07/2017 09:48:36
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 127.0.0.1
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/Login HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 0
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 417
+ 				Bytes sent: 176
+
+
+Log-Entry: 1500342516673836
+ 				The time: 18/07/2017 09:48:36
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 127.0.0.1
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/Login HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 0
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 417
+ 				Bytes sent: 176
+
+
+Log-Entry: 1500342517070379
+ 				The time: 18/07/2017 09:48:37
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 127.0.0.1
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/Login HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 0
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 417
+ 				Bytes sent: 176
+
+
+Log-Entry: 1500342647058721
+ 				The time: 18/07/2017 09:50:47
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 127.0.0.1
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/Login HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 0
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 417
+ 				Bytes sent: 177
+
+
+Log-Entry: 1500342678630262
+ 				The time: 18/07/2017 09:51:18
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 127.0.0.1
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/Login HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 0
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 417
+ 				Bytes sent: 177
+
+
+Log-Entry: 1500342679502567
+ 				The time: 18/07/2017 09:51:19
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 127.0.0.1
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/Login HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 0
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 417
+ 				Bytes sent: 176
+
+
+Log-Entry: 1500342695454753
+ 				The time: 18/07/2017 09:51:35
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 127.0.0.1
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/Login HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 0
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 417
+ 				Bytes sent: 177
+
+
+Log-Entry: 1500342696246395
+ 				The time: 18/07/2017 09:51:36
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 127.0.0.1
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/Login HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 0
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 417
+ 				Bytes sent: 176
+
+
+Log-Entry: 1500342743751740
+ 				The time: 18/07/2017 09:52:23
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 127.0.0.1
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/Login HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 1811
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 417
+ 				Bytes sent: 1991
+
+
+Log-Entry: 1500342743837757
+ 				The time: 18/07/2017 09:52:23
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 127.0.0.1
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/script/Login.js HTTP/1.1
+ 				Status of the request: 304
+ 				Size of response in bytes, excluding HTTP headers: 0
+ 				Referer: http://localhost/Bas/Login
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 414
+ 				Bytes sent: 186
+
+
+Log-Entry: 1500342743921918
+ 				The time: 18/07/2017 09:52:23
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 127.0.0.1
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/css/Login.css HTTP/1.1
+ 				Status of the request: 304
+ 				Size of response in bytes, excluding HTTP headers: 0
+ 				Referer: http://localhost/Bas/Login
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 428
+ 				Bytes sent: 187
+
+
+Log-Entry: 1500342743953961
+ 				The time: 18/07/2017 09:52:23
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 127.0.0.1
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/images/BasLogo.png HTTP/1.1
+ 				Status of the request: 304
+ 				Size of response in bytes, excluding HTTP headers: 0
+ 				Referer: http://localhost/Bas/Login
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 455
+ 				Bytes sent: 188
+
+
+Log-Entry: 1500342743977993
+ 				The time: 18/07/2017 09:52:23
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 127.0.0.1
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/images/Username.png HTTP/1.1
+ 				Status of the request: 304
+ 				Size of response in bytes, excluding HTTP headers: 0
+ 				Referer: http://localhost/Bas/Login
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 455
+ 				Bytes sent: 187
+
+
+Log-Entry: 1500342743981998
+ 				The time: 18/07/2017 09:52:23
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 127.0.0.1
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/images/Password.png HTTP/1.1
+ 				Status of the request: 304
+ 				Size of response in bytes, excluding HTTP headers: 0
+ 				Referer: http://localhost/Bas/Login
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 455
+ 				Bytes sent: 187
+
+
+Log-Entry: 1500342744094148
+ 				The time: 18/07/2017 09:52:24
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 127.0.0.1
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /favicon.ico HTTP/1.1
+ 				Status of the request: 404
+ 				Size of response in bytes, excluding HTTP headers: 209
+ 				Referer: http://localhost/Bas/Login
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 397
+ 				Bytes sent: 438
+
+
+Log-Entry: 1500342777780509
+ 				The time: 18/07/2017 09:52:57
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 127.0.0.1
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /favicon.ico HTTP/1.1
+ 				Status of the request: 404
+ 				Size of response in bytes, excluding HTTP headers: 209
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 393
+ 				Bytes sent: 439
+
+
+Log-Entry: 1500342838034130
+ 				The time: 18/07/2017 09:53:58
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.0
+ 				Remote hostname: 127.0.0.1
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: -
+ 				Status of the request: 408
+ 				Size of response in bytes, excluding HTTP headers: 0
+ 				Referer: -
+ 				User-Agent: -
+ 				Bytes received: 0
+ 				Bytes sent: 0
+
+
+Log-Entry: 1500388360276021
+ 				The time: 18/07/2017 22:32:40
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.17
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/Home HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 2940
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 415
+ 				Bytes sent: 3159
+
+
+Log-Entry: 1500388360799392
+ 				The time: 18/07/2017 22:32:40
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.17
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /favicon.ico HTTP/1.1
+ 				Status of the request: 404
+ 				Size of response in bytes, excluding HTTP headers: 209
+ 				Referer: http://192.168.1.17/Bas/Home
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 398
+ 				Bytes sent: 438
+
+
+Log-Entry: 1500388403178457
+ 				The time: 18/07/2017 22:33:23
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.29
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/ HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 0
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Safari/602.1
+ 				Bytes received: 382
+ 				Bytes sent: 177
+
+
+Log-Entry: 1500388605021041
+ 				The time: 18/07/2017 22:36:45
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.29
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/ HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 0
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Safari/602.1
+ 				Bytes received: 382
+ 				Bytes sent: 177
+
+
+Log-Entry: 1500388610300470
+ 				The time: 18/07/2017 22:36:50
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.29
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/Login HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 0
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Safari/602.1
+ 				Bytes received: 413
+ 				Bytes sent: 177
+
+
+Log-Entry: 1500388621808627
+ 				The time: 18/07/2017 22:37:01
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.29
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/Login HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 0
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Safari/602.1
+ 				Bytes received: 387
+ 				Bytes sent: 177
+
+
+Log-Entry: 1500388641253214
+ 				The time: 18/07/2017 22:37:21
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.29
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/Login HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 1811
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Safari/602.1
+ 				Bytes received: 387
+ 				Bytes sent: 1991
+
+
+Log-Entry: 1500388641311071
+ 				The time: 18/07/2017 22:37:21
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.29
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/script/Login.js HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 569
+ 				Referer: http://192.168.1.17/Bas/Login
+ 				User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Safari/602.1
+ 				Bytes received: 373
+ 				Bytes sent: 883
+
+
+Log-Entry: 1500388641311071
+ 				The time: 18/07/2017 22:37:21
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.29
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/images/BasLogo.png HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 24140
+ 				Referer: http://192.168.1.17/Bas/Login
+ 				User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Safari/602.1
+ 				Bytes received: 420
+ 				Bytes sent: 24445
+
+
+Log-Entry: 1500388641311071
+ 				The time: 18/07/2017 22:37:21
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.29
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/images/Username.png HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 1723
+ 				Referer: http://192.168.1.17/Bas/Login
+ 				User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Safari/602.1
+ 				Bytes received: 421
+ 				Bytes sent: 2026
+
+
+Log-Entry: 1500388641304522
+ 				The time: 18/07/2017 22:37:21
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.29
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/css/Login.css HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 7771
+ 				Referer: http://192.168.1.17/Bas/Login
+ 				User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Safari/602.1
+ 				Bytes received: 386
+ 				Bytes sent: 8072
+
+
+Log-Entry: 1500388641359740
+ 				The time: 18/07/2017 22:37:21
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.29
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/images/Password.png HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 1896
+ 				Referer: http://192.168.1.17/Bas/Login
+ 				User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Safari/602.1
+ 				Bytes received: 421
+ 				Bytes sent: 2198
+
+
+Log-Entry: 1500389441209430
+ 				The time: 18/07/2017 22:50:41
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.17
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/Home HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 2940
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 415
+ 				Bytes sent: 3159
+
+
+Log-Entry: 1500389449500441
+ 				The time: 18/07/2017 22:50:49
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.29
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/Login HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 1811
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Safari/602.1
+ 				Bytes received: 387
+ 				Bytes sent: 1991
+
+
+Log-Entry: 1500389449553443
+ 				The time: 18/07/2017 22:50:49
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.29
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/css/Login.css HTTP/1.1
+ 				Status of the request: 304
+ 				Size of response in bytes, excluding HTTP headers: 0
+ 				Referer: http://192.168.1.17/Bas/Login
+ 				User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Safari/602.1
+ 				Bytes received: 475
+ 				Bytes sent: 187
+
+
+Log-Entry: 1500389449560572
+ 				The time: 18/07/2017 22:50:49
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.29
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/script/Login.js HTTP/1.1
+ 				Status of the request: 304
+ 				Size of response in bytes, excluding HTTP headers: 0
+ 				Referer: http://192.168.1.17/Bas/Login
+ 				User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Safari/602.1
+ 				Bytes received: 461
+ 				Bytes sent: 187
+
+
+Log-Entry: 1500389449561618
+ 				The time: 18/07/2017 22:50:49
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.29
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/images/BasLogo.png HTTP/1.1
+ 				Status of the request: 304
+ 				Size of response in bytes, excluding HTTP headers: 0
+ 				Referer: http://192.168.1.17/Bas/Login
+ 				User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Safari/602.1
+ 				Bytes received: 510
+ 				Bytes sent: 189
+
+
+Log-Entry: 1500389449563082
+ 				The time: 18/07/2017 22:50:49
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.29
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/images/Password.png HTTP/1.1
+ 				Status of the request: 304
+ 				Size of response in bytes, excluding HTTP headers: 0
+ 				Referer: http://192.168.1.17/Bas/Login
+ 				User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Safari/602.1
+ 				Bytes received: 510
+ 				Bytes sent: 187
+
+
+Log-Entry: 1500389449561618
+ 				The time: 18/07/2017 22:50:49
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.29
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/images/Username.png HTTP/1.1
+ 				Status of the request: 304
+ 				Size of response in bytes, excluding HTTP headers: 0
+ 				Referer: http://192.168.1.17/Bas/Login
+ 				User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Safari/602.1
+ 				Bytes received: 510
+ 				Bytes sent: 188
+
+
+Log-Entry: 1500389453207845
+ 				The time: 18/07/2017 22:50:53
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.17
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/Login HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 1811
+ 				Referer: http://192.168.1.17/Bas/Home
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 429
+ 				Bytes sent: 1991
+
+
+Log-Entry: 1500389453223882
+ 				The time: 18/07/2017 22:50:53
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.17
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/css/Login.css HTTP/1.1
+ 				Status of the request: 304
+ 				Size of response in bytes, excluding HTTP headers: 0
+ 				Referer: http://192.168.1.17/Bas/Login
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 430
+ 				Bytes sent: 187
+
+
+Log-Entry: 1500389453224385
+ 				The time: 18/07/2017 22:50:53
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.17
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/script/Login.js HTTP/1.1
+ 				Status of the request: 304
+ 				Size of response in bytes, excluding HTTP headers: 0
+ 				Referer: http://192.168.1.17/Bas/Login
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 416
+ 				Bytes sent: 187
+
+
+Log-Entry: 1500389459373396
+ 				The time: 18/07/2017 22:50:59
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.17
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: POST /Bas/Login HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 1865
+ 				Referer: http://192.168.1.17/Bas/Login
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 612
+ 				Bytes sent: 2045
+
+
+Log-Entry: 1500389534004244
+ 				The time: 18/07/2017 22:52:14
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.17
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/Login HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 1811
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 416
+ 				Bytes sent: 1991
+
+
+Log-Entry: 1500389537112142
+ 				The time: 18/07/2017 22:52:17
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.17
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: POST /Bas/Login HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 1865
+ 				Referer: http://192.168.1.17/Bas/Login
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 612
+ 				Bytes sent: 2044
+
+
+Log-Entry: 1500389655586270
+ 				The time: 18/07/2017 22:54:15
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.17
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: POST /Bas/Login HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 1865
+ 				Referer: http://192.168.1.17/Bas/Login
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 616
+ 				Bytes sent: 2045
+
+
+Log-Entry: 1500389698671970
+ 				The time: 18/07/2017 22:54:58
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.17
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/Login HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 1811
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 416
+ 				Bytes sent: 1991
+
+
+Log-Entry: 1500389702125494
+ 				The time: 18/07/2017 22:55:02
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.17
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: POST /Bas/Login HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 1865
+ 				Referer: http://192.168.1.17/Bas/Login
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 614
+ 				Bytes sent: 2044
+
+
+Log-Entry: 1500389764821544
+ 				The time: 18/07/2017 22:56:04
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.17
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/Login HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 1811
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 416
+ 				Bytes sent: 1991
+
+
+Log-Entry: 1500389768278586
+ 				The time: 18/07/2017 22:56:08
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.17
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: POST /Bas/Login HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 1865
+ 				Referer: http://192.168.1.17/Bas/Login
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 614
+ 				Bytes sent: 2044
+
+
+Log-Entry: 1500389811940877
+ 				The time: 18/07/2017 22:56:51
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.17
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/Login HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 1811
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 416
+ 				Bytes sent: 1991
+
+
+Log-Entry: 1500389815705088
+ 				The time: 18/07/2017 22:56:55
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.17
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: POST /Bas/Login HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 218
+ 				Referer: http://192.168.1.17/Bas/Login
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 617
+ 				Bytes sent: 447
+
+
+Log-Entry: 1500389869495248
+ 				The time: 18/07/2017 22:57:49
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.17
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/Login HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 1811
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 416
+ 				Bytes sent: 1991
+
+
+Log-Entry: 1500389874313394
+ 				The time: 18/07/2017 22:57:54
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.17
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: POST /Bas/Login HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 1865
+ 				Referer: http://192.168.1.17/Bas/Login
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 617
+ 				Bytes sent: 2044
+
+
+Log-Entry: 1500390034448679
+ 				The time: 18/07/2017 23:00:34
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.17
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/Login HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 218
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 416
+ 				Bytes sent: 448
+
+
+Log-Entry: 1500390096067845
+ 				The time: 18/07/2017 23:01:36
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.17
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/Login HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 218
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 416
+ 				Bytes sent: 448
+
+
+Log-Entry: 1500390099056879
+ 				The time: 18/07/2017 23:01:39
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.17
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/Login HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 218
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 416
+ 				Bytes sent: 447
+
+
+Log-Entry: 1500390118039258
+ 				The time: 18/07/2017 23:01:58
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.17
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/Login HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 218
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 416
+ 				Bytes sent: 448
+
+
+Log-Entry: 1500390120820436
+ 				The time: 18/07/2017 23:02:00
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.17
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/Login HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 218
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 416
+ 				Bytes sent: 447
+
+
+Log-Entry: 1500390136006125
+ 				The time: 18/07/2017 23:02:16
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.17
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/Login HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 1811
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 416
+ 				Bytes sent: 1991
+
+
+Log-Entry: 1500390142468214
+ 				The time: 18/07/2017 23:02:22
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.17
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/Login HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 1811
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 416
+ 				Bytes sent: 1991
+
+
+Log-Entry: 1500390567990142
+ 				The time: 18/07/2017 23:09:27
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.17
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/Login HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 1811
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 416
+ 				Bytes sent: 1991
+
+
+Log-Entry: 1500390594633376
+ 				The time: 18/07/2017 23:09:54
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.17
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/Login HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 1811
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 416
+ 				Bytes sent: 1991
+
+
+Log-Entry: 1500390606824032
+ 				The time: 18/07/2017 23:10:06
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.17
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: POST /Bas/Login HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 218
+ 				Referer: http://192.168.1.17/Bas/Login
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 614
+ 				Bytes sent: 448
+
+
+Log-Entry: 1500390638656247
+ 				The time: 18/07/2017 23:10:38
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.29
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/Login HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 1811
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Safari/602.1
+ 				Bytes received: 387
+ 				Bytes sent: 1991
+
+
+Log-Entry: 1500390680128571
+ 				The time: 18/07/2017 23:11:20
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.29
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: POST /Bas/Login HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 1865
+ 				Referer: http://192.168.1.17/Bas/Login
+ 				User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Safari/602.1
+ 				Bytes received: 583
+ 				Bytes sent: 2045
+
+
+Log-Entry: 1500390739983400
+ 				The time: 18/07/2017 23:12:19
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.29
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: POST /Bas/Login HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 1865
+ 				Referer: http://192.168.1.17/Bas/Login
+ 				User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Safari/602.1
+ 				Bytes received: 584
+ 				Bytes sent: 2045
+
+
+Log-Entry: 1500390978696634
+ 				The time: 18/07/2017 23:16:18
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.29
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/ HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 1811
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Safari/602.1
+ 				Bytes received: 382
+ 				Bytes sent: 1991
+
+
+Log-Entry: 1500390978728726
+ 				The time: 18/07/2017 23:16:18
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.29
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/css/Login.css HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 7771
+ 				Referer: http://192.168.1.17/Bas/
+ 				User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Safari/602.1
+ 				Bytes received: 355
+ 				Bytes sent: 8072
+
+
+Log-Entry: 1500390978734709
+ 				The time: 18/07/2017 23:16:18
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.29
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/images/Username.png HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 1723
+ 				Referer: http://192.168.1.17/Bas/
+ 				User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Safari/602.1
+ 				Bytes received: 390
+ 				Bytes sent: 2026
+
+
+Log-Entry: 1500390978734709
+ 				The time: 18/07/2017 23:16:18
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.29
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/images/BasLogo.png HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 24140
+ 				Referer: http://192.168.1.17/Bas/
+ 				User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Safari/602.1
+ 				Bytes received: 389
+ 				Bytes sent: 24445
+
+
+Log-Entry: 1500390978734709
+ 				The time: 18/07/2017 23:16:18
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.29
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/script/Login.js HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 569
+ 				Referer: http://192.168.1.17/Bas/
+ 				User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Safari/602.1
+ 				Bytes received: 342
+ 				Bytes sent: 883
+
+
+Log-Entry: 1500390978742762
+ 				The time: 18/07/2017 23:16:18
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.29
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/images/Password.png HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 1896
+ 				Referer: http://192.168.1.17/Bas/
+ 				User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Safari/602.1
+ 				Bytes received: 390
+ 				Bytes sent: 2198
+
+
+Log-Entry: 1500391005487195
+ 				The time: 18/07/2017 23:16:45
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 192.168.1.29
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: POST /Bas/ HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 1865
+ 				Referer: http://192.168.1.17/Bas/
+ 				User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Safari/602.1
+ 				Bytes received: 575
+ 				Bytes sent: 2045
+
+
+Log-Entry: 1500426273106185
+ 				The time: 19/07/2017 09:04:33
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.41
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/ HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 1811
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 386
+ 				Bytes sent: 1991
+
+
+Log-Entry: 1500426273181390
+ 				The time: 19/07/2017 09:04:33
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.41
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/script/Login.js HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 569
+ 				Referer: http://172.27.177.41/Bas/
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 325
+ 				Bytes sent: 883
+
+
+Log-Entry: 1500426273310574
+ 				The time: 19/07/2017 09:04:33
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.41
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/css/Login.css HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 7771
+ 				Referer: http://172.27.177.41/Bas/
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 338
+ 				Bytes sent: 8072
+
+
+Log-Entry: 1500426273310574
+ 				The time: 19/07/2017 09:04:33
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.41
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/images/BasLogo.png HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 24140
+ 				Referer: http://172.27.177.41/Bas/
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 364
+ 				Bytes sent: 24444
+
+
+Log-Entry: 1500426273364714
+ 				The time: 19/07/2017 09:04:33
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.41
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/images/Password.png HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 1896
+ 				Referer: http://172.27.177.41/Bas/
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 365
+ 				Bytes sent: 2199
+
+
+Log-Entry: 1500426273364714
+ 				The time: 19/07/2017 09:04:33
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.41
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/images/Username.png HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 1723
+ 				Referer: http://172.27.177.41/Bas/
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 365
+ 				Bytes sent: 2025
+
+
+Log-Entry: 1500426273432898
+ 				The time: 19/07/2017 09:04:33
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.41
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /favicon.ico HTTP/1.1
+ 				Status of the request: 404
+ 				Size of response in bytes, excluding HTTP headers: 209
+ 				Referer: http://172.27.177.41/Bas/
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 353
+ 				Bytes sent: 438
+
+
+Log-Entry: 1500426398804024
+ 				The time: 19/07/2017 09:06:38
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.41
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/ HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 1811
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 412
+ 				Bytes sent: 1991
+
+
+Log-Entry: 1500426421082791
+ 				The time: 19/07/2017 09:07:01
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.185.112
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/ HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 0
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Safari/602.1
+ 				Bytes received: 383
+ 				Bytes sent: 177
+
+
+Log-Entry: 1500426864323805
+ 				The time: 19/07/2017 09:14:24
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.0
+ 				Remote hostname: 172.27.177.240
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET / HTTP/1.0
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 209
+ 				Referer: -
+ 				User-Agent: -
+ 				Bytes received: 18
+ 				Bytes sent: 402
+
+
+Log-Entry: 1500426871487385
+ 				The time: 19/07/2017 09:14:31
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.240
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET / HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 209
+ 				Referer: -
+ 				User-Agent: -
+ 				Bytes received: 39
+ 				Bytes sent: 383
+
+
+Log-Entry: 1500426871478191
+ 				The time: 19/07/2017 09:14:31
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.0
+ 				Remote hostname: 172.27.177.240
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET / HTTP/1.0
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 209
+ 				Referer: -
+ 				User-Agent: -
+ 				Bytes received: 18
+ 				Bytes sent: 402
+
+
+Log-Entry: 1500426893130263
+ 				The time: 19/07/2017 09:14:53
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.0
+ 				Remote hostname: 172.27.177.240
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET / HTTP/1.0
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 209
+ 				Referer: -
+ 				User-Agent: -
+ 				Bytes received: 18
+ 				Bytes sent: 402
+
+
+Log-Entry: 1500426898049871
+ 				The time: 19/07/2017 09:14:58
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.240
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: OPTIONS / HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 209
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)
+ 				Bytes received: 155
+ 				Bytes sent: 402
+
+
+Log-Entry: 1500426898068914
+ 				The time: 19/07/2017 09:14:58
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.240
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: PROPFIND / HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 209
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)
+ 				Bytes received: 185
+ 				Bytes sent: 402
+
+
+Log-Entry: 1500426898050868
+ 				The time: 19/07/2017 09:14:58
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.240
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET / HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 209
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)
+ 				Bytes received: 217
+ 				Bytes sent: 402
+
+
+Log-Entry: 1500426898050868
+ 				The time: 19/07/2017 09:14:58
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.240
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: OPTIONS / HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 209
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)
+ 				Bytes received: 213
+ 				Bytes sent: 402
+
+
+Log-Entry: 1500426898050868
+ 				The time: 19/07/2017 09:14:58
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.240
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: PROPFIND / HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 209
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)
+ 				Bytes received: 166
+ 				Bytes sent: 402
+
+
+Log-Entry: 1500426898050868
+ 				The time: 19/07/2017 09:14:58
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.240
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: POST / HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 209
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)
+ 				Bytes received: 309
+ 				Bytes sent: 402
+
+
+Log-Entry: 1500426898050868
+ 				The time: 19/07/2017 09:14:58
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.240
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /.git/HEAD HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 218
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)
+ 				Bytes received: 160
+ 				Bytes sent: 411
+
+
+Log-Entry: 1500426898050868
+ 				The time: 19/07/2017 09:14:58
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.0
+ 				Remote hostname: 172.27.177.240
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET / HTTP/1.0
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 209
+ 				Referer: -
+ 				User-Agent: -
+ 				Bytes received: 18
+ 				Bytes sent: 402
+
+
+Log-Entry: 1500426898069904
+ 				The time: 19/07/2017 09:14:58
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.240
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: QTPE / HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 209
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)
+ 				Bytes received: 152
+ 				Bytes sent: 402
+
+
+Log-Entry: 1500426898050868
+ 				The time: 19/07/2017 09:14:58
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.240
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /robots.txt HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 219
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)
+ 				Bytes received: 161
+ 				Bytes sent: 412
+
+
+Log-Entry: 1500426898050868
+ 				The time: 19/07/2017 09:14:58
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.240
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: PROPFIND / HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 209
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)
+ 				Bytes received: 166
+ 				Bytes sent: 402
+
+
+Log-Entry: 1500426898050868
+ 				The time: 19/07/2017 09:14:58
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.240
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /nmaplowercheck1500426974 HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 233
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)
+ 				Bytes received: 175
+ 				Bytes sent: 426
+
+
+Log-Entry: 1500426898069904
+ 				The time: 19/07/2017 09:14:58
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.240
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: OPTIONS / HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 209
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)
+ 				Bytes received: 212
+ 				Bytes sent: 402
+
+
+Log-Entry: 1500426898050868
+ 				The time: 19/07/2017 09:14:58
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.240
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: OPTIONS / HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 209
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)
+ 				Bytes received: 155
+ 				Bytes sent: 402
+
+
+Log-Entry: 1500426898070908
+ 				The time: 19/07/2017 09:14:58
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.240
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET / HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 209
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)
+ 				Bytes received: 151
+ 				Bytes sent: 402
+
+
+Log-Entry: 1500426898069904
+ 				The time: 19/07/2017 09:14:58
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.240
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET / HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 209
+ 				Referer: -
+ 				User-Agent: -
+ 				Bytes received: 39
+ 				Bytes sent: 383
+
+
+Log-Entry: 1500426898069904
+ 				The time: 19/07/2017 09:14:58
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.240
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /HNAP1 HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 214
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)
+ 				Bytes received: 156
+ 				Bytes sent: 407
+
+
+Log-Entry: 1500426898101990
+ 				The time: 19/07/2017 09:14:58
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.240
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /favicon.ico HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 220
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)
+ 				Bytes received: 162
+ 				Bytes sent: 413
+
+
+Log-Entry: 1500426898085948
+ 				The time: 19/07/2017 09:14:58
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.240
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: OPTIONS / HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 209
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)
+ 				Bytes received: 213
+ 				Bytes sent: 402
+
+
+Log-Entry: 1500426898087953
+ 				The time: 19/07/2017 09:14:58
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.240
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET / HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 209
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)
+ 				Bytes received: 151
+ 				Bytes sent: 402
+
+
+Log-Entry: 1500426898099992
+ 				The time: 19/07/2017 09:14:58
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.240
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: HEAD / HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 0
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)
+ 				Bytes received: 152
+ 				Bytes sent: 172
+
+
+Log-Entry: 1500426898099992
+ 				The time: 19/07/2017 09:14:58
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.240
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: OPTIONS / HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 209
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)
+ 				Bytes received: 212
+ 				Bytes sent: 402
+
+
+Log-Entry: 1500426898166396
+ 				The time: 19/07/2017 09:14:58
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.240
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: OPTIONS / HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 209
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)
+ 				Bytes received: 215
+ 				Bytes sent: 402
+
+
+Log-Entry: 1500426898169408
+ 				The time: 19/07/2017 09:14:58
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.240
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: POST / HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 209
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)
+ 				Bytes received: 171
+ 				Bytes sent: 402
+
+
+Log-Entry: 1500426898180462
+ 				The time: 19/07/2017 09:14:58
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.240
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: OPTIONS / HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 209
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)
+ 				Bytes received: 214
+ 				Bytes sent: 402
+
+
+Log-Entry: 1500426898181466
+ 				The time: 19/07/2017 09:14:58
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.240
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: OPTIONS / HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 209
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)
+ 				Bytes received: 155
+ 				Bytes sent: 402
+
+
+Log-Entry: 1500426898232355
+ 				The time: 19/07/2017 09:14:58
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.240
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: OPTIONS / HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 209
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)
+ 				Bytes received: 216
+ 				Bytes sent: 402
+
+
+Log-Entry: 1500426898191499
+ 				The time: 19/07/2017 09:14:58
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.240
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: OPTIONS / HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 209
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)
+ 				Bytes received: 216
+ 				Bytes sent: 402
+
+
+Log-Entry: 1500426898246121
+ 				The time: 19/07/2017 09:14:58
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.240
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: OPTIONS / HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 209
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)
+ 				Bytes received: 214
+ 				Bytes sent: 402
+
+
+Log-Entry: 1500429066460227
+ 				The time: 19/07/2017 09:51:06
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.41
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/ HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 1811
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 386
+ 				Bytes sent: 1991
+
+
+Log-Entry: 1500429066560495
+ 				The time: 19/07/2017 09:51:06
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.41
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /favicon.ico HTTP/1.1
+ 				Status of the request: 404
+ 				Size of response in bytes, excluding HTTP headers: 209
+ 				Referer: http://172.27.177.41/Bas/
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 353
+ 				Bytes sent: 438
+
+
+Log-Entry: 1500429077099314
+ 				The time: 19/07/2017 09:51:17
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.41
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: POST /Bas/ HTTP/1.1
+ 				Status of the request: 302
+ 				Size of response in bytes, excluding HTTP headers: 0
+ 				Referer: http://172.27.177.41/Bas/
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 581
+ 				Bytes sent: 271
+
+
+Log-Entry: 1500429077670465
+ 				The time: 19/07/2017 09:51:17
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.41
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/Home HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 2946
+ 				Referer: http://172.27.177.41/Bas/
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 505
+ 				Bytes sent: 3164
+
+
+Log-Entry: 1500429077719364
+ 				The time: 19/07/2017 09:51:17
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.41
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/script/homePageScript.js HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 1783
+ 				Referer: http://172.27.177.41/Bas/Home
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 391
+ 				Bytes sent: 2099
+
+
+Log-Entry: 1500429077716348
+ 				The time: 19/07/2017 09:51:17
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.41
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/css/homePageStyle.css HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 1859
+ 				Referer: http://172.27.177.41/Bas/Home
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 403
+ 				Bytes sent: 2160
+
+
+Log-Entry: 1500429077796247
+ 				The time: 19/07/2017 09:51:17
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.41
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/images/landmark-bridge-cliff-california.jpeg HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 5421800
+ 				Referer: http://172.27.177.41/Bas/css/homePageStyle.css
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 464
+ 				Bytes sent: 5422109
+
+
+Log-Entry: 1500429087870858
+ 				The time: 19/07/2017 09:51:27
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.185.112
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/ HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 0
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Safari/602.1
+ 				Bytes received: 383
+ 				Bytes sent: 177
+
+
+Log-Entry: 1500429201759494
+ 				The time: 19/07/2017 09:53:21
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.41
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/ HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 1811
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 439
+ 				Bytes sent: 1991
+
+
+Log-Entry: 1500429218132054
+ 				The time: 19/07/2017 09:53:38
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.185.112
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/ HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 1811
+ 				Referer: -
+ 				User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Safari/602.1
+ 				Bytes received: 383
+ 				Bytes sent: 1991
+
+
+Log-Entry: 1500429218154915
+ 				The time: 19/07/2017 09:53:38
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.185.112
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/css/Login.css HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 7771
+ 				Referer: http://172.27.177.41/Bas/
+ 				User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Safari/602.1
+ 				Bytes received: 357
+ 				Bytes sent: 8072
+
+
+Log-Entry: 1500429218166834
+ 				The time: 19/07/2017 09:53:38
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.185.112
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/script/Login.js HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 569
+ 				Referer: http://172.27.177.41/Bas/
+ 				User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Safari/602.1
+ 				Bytes received: 344
+ 				Bytes sent: 883
+
+
+Log-Entry: 1500429218168900
+ 				The time: 19/07/2017 09:53:38
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.185.112
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/images/Password.png HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 1896
+ 				Referer: http://172.27.177.41/Bas/
+ 				User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Safari/602.1
+ 				Bytes received: 392
+ 				Bytes sent: 2198
+
+
+Log-Entry: 1500429218168900
+ 				The time: 19/07/2017 09:53:38
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.185.112
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/images/Username.png HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 1723
+ 				Referer: http://172.27.177.41/Bas/
+ 				User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Safari/602.1
+ 				Bytes received: 392
+ 				Bytes sent: 2026
+
+
+Log-Entry: 1500429218168900
+ 				The time: 19/07/2017 09:53:38
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.185.112
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: GET /Bas/images/BasLogo.png HTTP/1.1
+ 				Status of the request: 200
+ 				Size of response in bytes, excluding HTTP headers: 24140
+ 				Referer: http://172.27.177.41/Bas/
+ 				User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Safari/602.1
+ 				Bytes received: 391
+ 				Bytes sent: 24445
+
+
+Log-Entry: 1500429224444106
+ 				The time: 19/07/2017 09:53:44
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.41
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: POST /Bas/ HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 213
+ 				Referer: http://172.27.177.41/Bas/
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 661
+ 				Bytes sent: 443
+
+
+Log-Entry: 1500429233248752
+ 				The time: 19/07/2017 09:53:53
+ 				ServerName: localhost
+ 				Server Port 80
+ 				The request protocol: HTTP/1.1
+ 				Remote hostname: 172.27.177.41
+ 				Remote logname(from identd, if supplied): -
+ 				Remote user(if authenticated): -
+ 				First line of request: POST /Bas/ HTTP/1.1
+ 				Status of the request: 403
+ 				Size of response in bytes, excluding HTTP headers: 213
+ 				Referer: http://172.27.177.41/Bas/
+ 				User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+ 				Bytes received: 664
+ 				Bytes sent: 443
+

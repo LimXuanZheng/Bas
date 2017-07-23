@@ -6,8 +6,12 @@ public class Teacher {
 	int userType = 2;
 	int userID;
 	
+	public Teacher(String department, User user) {
+		this.department = department;
+		this.userID = user.getUserID();
+	}
+	
 	public Teacher(int teacherID, String department, User user) {
-		super();
 		this.teacherID = teacherID;
 		this.department = department;
 		this.userID = user.getUserID();

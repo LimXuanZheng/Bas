@@ -144,7 +144,7 @@ public class Directory extends HttpServlet {
 	    		    			+ 		"<tbody>");
 	    				
 	    				for(UserAll u:userAllArray){
-    						out.println("<tr><td>" + u.getStudent().getnRIC() + "</td><td>" + u.getUser().getName() + "</td><td>" + u.getUser().getGender() + "</td><td>" + u.getUser().getSchoolClass() + "</td><td>" + u.getUser().getContactNo() + "</td><td>" + u.getUser().getEmail() + "</td><td>" + u.getTeacher().getDepartment() + "</td></tr>");
+    						out.println("<tr><td>" + u.getUser().getnRIC() + "</td><td>" + u.getUser().getName() + "</td><td>" + u.getUser().getGender() + "</td><td>" + u.getUser().getSchoolClass() + "</td><td>" + u.getUser().getContactNo() + "</td><td>" + u.getUser().getEmail() + "</td><td>" + u.getTeacher().getDepartment() + "</td></tr>");
 	    				}
 	    			}
 	    	
@@ -264,11 +264,11 @@ public class Directory extends HttpServlet {
 			for(UserAll u:userAllArray){
 				if(userType == 1){
 		    		if(u.getTeacher().getTeacherID() > 0){ //Only shows if it is teacher...
-		    			out.println("<tr><td>" + u.getUser().getUserID() + "</td><td>" + u.getLogin().getUsername() + "</td><td>" + u.getLogin().getPassword() + "</td><td>" + u.getUser().getName() + "</td><td>" + u.getUser().getGender() + "</td><td>" + u.getUser().getdOB() + "</td><td>" + u.getUser().getContactNo() + "</td><td>" + u.getUser().getEmail() + "</td><td>" + u.getUser().getSchoolClass() + "</td><td>" + u.getUser().getAddress() + "</td><td>" + u.getStudent().getnRIC() + "</td><td>" + u.getStudent().getcCA() + "</td><td>" + u.getTeacher().getTeacherID() + "</td><td>" + u.getTeacher().getDepartment() + "</td></tr>");
+		    			out.println("<tr><td>" + u.getUser().getUserID() + "</td><td>" + u.getLogin().getUsername() + "</td><td>" + u.getLogin().getPassword() + "</td><td>" + u.getUser().getnRIC() + "</td><td>" + u.getUser().getName() + "</td><td>" + u.getUser().getGender() + "</td><td>" + u.getUser().getdOB() + "</td><td>" + u.getUser().getContactNo() + "</td><td>" + u.getUser().getEmail() + "</td><td>" + u.getUser().getSchoolClass() + "</td><td>" + u.getUser().getAddress() + "</td><td>" + u.getStudent().getcCA() + "</td><td>" + u.getTeacher().getTeacherID() + "</td><td>" + u.getTeacher().getDepartment() + "</td></tr>");
 		    		}
 		    	}
 				else if(userType == 2){
-					out.println("<tr><td>" + u.getUser().getUserID() + "</td><td>" + u.getLogin().getUsername() + "</td><td>" + u.getLogin().getPassword() + "</td><td>" + u.getUser().getName() + "</td><td>" + u.getUser().getGender() + "</td><td>" + u.getUser().getdOB() + "</td><td>" + u.getUser().getContactNo() + "</td><td>" + u.getUser().getEmail() + "</td><td>" + u.getUser().getSchoolClass() + "</td><td>" + u.getUser().getAddress() + "</td><td>" + u.getStudent().getnRIC() + "</td><td>" + u.getStudent().getcCA() + "</td><td>" + u.getTeacher().getTeacherID() + "</td><td>" + u.getTeacher().getDepartment() + "</td></tr>");
+					out.println("<tr><td>" + u.getUser().getUserID() + "</td><td>" + u.getLogin().getUsername() + "</td><td>" + u.getLogin().getPassword() + "</td><td>" + u.getUser().getnRIC() + "</td><td>" + u.getUser().getName() + "</td><td>" + u.getUser().getGender() + "</td><td>" + u.getUser().getdOB() + "</td><td>" + u.getUser().getContactNo() + "</td><td>" + u.getUser().getEmail() + "</td><td>" + u.getUser().getSchoolClass() + "</td><td>" + u.getUser().getAddress() + "</td><td>" + u.getStudent().getcCA() + "</td><td>" + u.getTeacher().getTeacherID() + "</td><td>" + u.getTeacher().getDepartment() + "</td></tr>");
 				}
 			}
 			

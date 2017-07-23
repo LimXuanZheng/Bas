@@ -6,8 +6,12 @@ public class UserAll{
 	Student student;
 	Teacher teacher;
 
+	public UserAll(User user, Login login) {
+		this.user = user;
+		this.login = login;
+	}
+	
 	public UserAll(User user, Login login, Student student, Teacher teacher) {
-		super();
 		this.user = user;
 		this.login = login;
 		this.student = student;
@@ -39,6 +43,6 @@ public class UserAll{
 		this.teacher = teacher;
 	}
 	public void printInfo() {
-		System.out.println("UserID: " + user.getUserID() + ", Username: " + login.getUsername() + ", Password: " + login.getPassword() + ", Name: " + user.getName() + ", Gender: " + user.getGender() + ", Date Of Birth: " + user.getdOB() + ", Contact Number: " + user.getContactNo() + ", Email: " + user.getEmail() + ", Class: " + user.getSchoolClass() + ", Address: " + user.getAddress() + ", NRIC: " + student.getnRIC() + ", CCA: " + student.getcCA() + ", TeacherID: " + teacher.getTeacherID() + ", Department: " + teacher.getTeacherID());
+		System.out.println("UserID: " + user.getUserID() + ", Username: " + login.getUsername() + ", Password: " + login.getPassword() + ", NRIC: " + user.getnRIC() + ", Name: " + user.getName() + ", Gender: " + user.getGender() + ", Date Of Birth: " + user.getdOB() + ", Contact Number: " + user.getContactNo() + ", Email: " + user.getEmail() + ", Class: " + user.getSchoolClass() + ", Address: " + user.getAddress() + ", CCA: " + student.getcCA() + ", TeacherID: " + teacher.getTeacherID() + ", Department: " + teacher.getTeacherID());
 	}
 }

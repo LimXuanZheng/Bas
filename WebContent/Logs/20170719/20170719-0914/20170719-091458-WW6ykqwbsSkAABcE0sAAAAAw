@@ -1,0 +1,39 @@
+--ae720000-A--
+[19/Jul/2017:09:14:58 +0800] WW6ykqwbsSkAABcE0sAAAAAw 172.27.177.240 2692 172.27.177.41 80
+--ae720000-B--
+OPTIONS / HTTP/1.1
+Host: 172.27.177.41
+Origin: example.com
+Access-Control-Request-Method: CONNECT
+User-Agent: Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)
+Connection: close
+
+--ae720000-F--
+HTTP/1.1 403 Forbidden
+Content-Length: 209
+Connection: close
+Content-Type: text/html; charset=iso-8859-1
+
+--ae720000-E--
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>403 Forbidden</title>
+</head><body>
+<h1>Forbidden</h1>
+<p>You don't have permission to access /
+on this server.<br />
+</p>
+</body></html>
+
+--ae720000-H--
+Message: Access denied with code 403 (phase 2). Operator EQ matched 1 at IP:reput_block_flag. [file "C:/Apache24/conf/rules/REQUEST-910-IP-REPUTATION.conf"] [line "45"] [id "910000"] [msg "Request from Known Malicious Client (Based on previous traffic violations)."] [data "Previous Block Reason: Found User-Agent associated with security scanner"] [severity "CRITICAL"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-reputation-ip"] [tag "IP_REPUTATION/MALICIOUS_CLIENT"]
+Apache-Error: [file "apache2_util.c"] [line 271] [level 3] [client %s] ModSecurity: %s%s [uri "%s"]%s
+Action: Intercepted (phase 2)
+Stopwatch: 1500426898232355 6762 (- - -)
+Stopwatch2: 1500426898232355 6762; combined=8954, p1=0, p2=0, p3=0, p4=0, p5=4976, sr=0, sw=3978, l=0, gc=0
+Response-Body-Transformed: Dechunked
+Producer: ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/); OWASP_CRS/3.0.2.
+Server: Apache/2.4.27 (Win64) mod_jk/1.2.42
+Engine-Mode: "ENABLED"
+
+--ae720000-Z--

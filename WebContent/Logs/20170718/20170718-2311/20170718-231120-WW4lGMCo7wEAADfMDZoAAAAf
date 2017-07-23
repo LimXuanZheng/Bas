@@ -1,0 +1,33 @@
+--ae720000-A--
+[18/Jul/2017:23:11:20 +0800] WW4lGMCo7wEAADfMDZoAAAAf 192.168.1.29 53278 192.168.1.17 80
+--ae720000-B--
+POST /Bas/Login HTTP/1.1
+Host: 192.168.1.17
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-sg
+Accept-Encoding: gzip, deflate
+Content-Type: application/x-www-form-urlencoded
+Origin: http://192.168.1.17
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Safari/602.1
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Referer: http://192.168.1.17/Bas/Login
+DNT: 1
+Content-Length: 57
+
+--ae720000-F--
+HTTP/1.1 200 200
+Content-Length: 1865
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+
+--ae720000-H--
+Message: Access allowed (phase 1). IPmatch: "192.168.1.29" matched at REMOTE_ADDR. [file "C:/Apache24/conf/whiteblacklist/whitelist.conf"] [line "2"] [id "999945"]
+Apache-Error: [file "apache2_util.c"] [line 271] [level 3] [client %s] ModSecurity: %s%s [uri "%s"]%s
+Apache-Handler: jakarta-servlet
+Stopwatch: 1500390680128571 71543 (- - -)
+Stopwatch2: 1500390680128571 71543; combined=0, p1=0, p2=0, p3=0, p4=0, p5=0, sr=0, sw=0, l=0, gc=0
+Producer: ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/); OWASP_CRS/3.0.2.
+Server: Apache/2.4.27 (Win64) mod_jk/1.2.42
+
+--ae720000-Z--

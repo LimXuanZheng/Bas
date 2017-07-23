@@ -10,6 +10,7 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Date;
 
 import javax.servlet.ServletException;
@@ -43,6 +44,18 @@ public class upload extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
+		String key1 = "";
+		try {
+			DatabaseAccess dbms = new DatabaseAccess(1);
+			ArrayList<database.model.File> fileArray = dbms.getDatabaseFile();
+			database.model.File file1 = fileArray.get(0);
+			key1 = file1.getUser().getKeys();
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}	
 		String path = request.getParameter("datafile");
 		String written = request.getParameter("textbox");
 		if(path.equals("") || path.equals(null)){
@@ -67,10 +80,10 @@ public class upload extends HttpServlet {
 			File ff = new File(file1);
 			String mypath = ff.getAbsolutePath();
 			File ffs = new File(mypath);
-			String key = "Mary has one cat";
+			//String key = "Mary has one cat";
 	        File encryptedFile = new File("document.encrypted");
 	        try {
-	        	encryption.encrypt(key, ffs, encryptedFile);
+	        	encryption.encrypt(key1, ffs, encryptedFile);
 	        } catch (CryptoException ex) {
 	            System.out.println(ex.getMessage());
 	            ex.printStackTrace();
@@ -81,11 +94,11 @@ public class upload extends HttpServlet {
 		else{
 		File f = new File(path);
 		//out.println(path);
-		String key = "Mary has one cat";
+		//String key = "Mary has manyyyyyyyyyyyy cats";
         File encryptedFile = new File("document.encrypted");
         System.out.println("hti" + new Date(encryptedFile.lastModified()));
         try {
-        	encryption.encrypt(key, f, encryptedFile);
+        	encryption.encrypt(key1, f, encryptedFile);
         } catch (CryptoException ex) {
             System.out.println(ex.getMessage());
             ex.printStackTrace();

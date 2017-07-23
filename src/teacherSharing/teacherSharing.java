@@ -1,9 +1,16 @@
 package teacherSharing;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.sql.Blob;
+import java.sql.Date;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -11,9 +18,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import database.DatabaseAccess;
+import database.model.User;
 import fileUpload.CryptoException;
 import fileUpload.encryption;
 
@@ -38,17 +45,75 @@ public class teacherSharing extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
+		String key1 = "";
 		try {
 			DatabaseAccess dbms = new DatabaseAccess(1);
 			ArrayList<database.model.File> fileArray = dbms.getDatabaseFile();
+			database.model.File file1 = fileArray.get(0);
+			key1 = file1.getUser().getKeys();
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}	
+		//String key = "Mary has one cat";
+		/*
+		String filename1 = "Nothing to show";
+		int filesize1;
+		Date date1;
+		byte [] filedata;
+		try {
+			DatabaseAccess dbms = new DatabaseAccess(1);
+			ArrayList<database.model.File> fileArray = dbms.getDatabaseFile();
+			database.model.File file1 = fileArray.get(0);
+			String name1 = file1.getUser().getName();
+			System.out.println(name1);
 			for(database.model.File s:fileArray){
-				System.out.println(s.getFileName());
+				filename1 = s.getFileName();
+				filesize1 = s.getFileSize();
+				date1 = s.getDate();
+				filedata = s.getFileData();
+				System.out.println(filename1);
+				System.out.println(filesize1);
+				System.out.println(date1);
+				File tempFile = File.createTempFile(filename1, ".tmp", null);
+				FileOutputStream fos = new FileOutputStream(tempFile);
+				fos.write(filedata);
+				
+				File decryptedFile = new File("document.decrypted");
+		        try {
+		        	decryption.decrypt(key1, tempFile, decryptedFile);
+		        } catch (CryptoException ex) {
+		            System.out.println(ex.getMessage());
+		            ex.printStackTrace();
+		            System.out.println("fail");
+		        }
+		        
+		        
+		        
+		        
+		        FileInputStream hh = new FileInputStream(decryptedFile);
+		        OutputStream h = response.getOutputStream();
+		       
+		        byte[] test = new byte[4096];
+		        int bytesRead = -1;
+		        while ((bytesRead = hh.read(test)) != -1) {
+		                           h.write(test, 0, bytesRead);
+		                       }
+		        
+		        
+		        
+		        
+		        
+		        
 			}
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}
+		}	
+		*/
 		
 		
 		out.println("<!DOCTYPE html>"
@@ -66,7 +131,7 @@ public class teacherSharing extends HttpServlet {
     			+		"<title>TeacherSharing</title>"
     			+		"<script src='script/teacher.js'></script>"
     			+ 	"</head>"
-    			+ 	"<body id='body'>"
+    			+ 	"<body id='body' onload='loadalltheshit()'>"
     			+ 		"<div class='container-fluid' id='Container'>"
     			+ 			"<!-- Navigation -->" 
     			+ 			"<nav class='navbar navbar-default'>"
