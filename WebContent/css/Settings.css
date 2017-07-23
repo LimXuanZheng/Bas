@@ -1,0 +1,67 @@
+@CHARSET "UTF-8";
+
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+body {
+	height: 100%;
+	width: 100%;
+}
+
+#theDiv {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%
+}
+
+#contentDiv {
+	height: 600px;
+	width: 800px;
+	margin: auto;
+	font-size: 20px;
+}
+
+#headerDiv {
+	height: 10%;
+	width: 100%;
+}
+
+#aDiv {
+	height: 90%;
+	width: 100%;
+	padding: 50px;
+	box-shadow: 1px 1px 5px #888888;
+}
+
+#setForm {
+	height: 100%;
+	width: 100%;
+}
+
+.flexDiv {
+	display: flex;
+}
+
+#showName {
+	
+}
+
+#showEmail {
+	
+}
+
+#showPEmail {
+	width: 95%;
+}
+
+.editLink {
+	width: 5%;
+	cursor: pointer;
+	font-size: 15px;
+	padding-top: 5px;
+}
