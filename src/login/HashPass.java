@@ -51,12 +51,28 @@ public class HashPass {
 		Base64.Encoder enc = Base64.getEncoder();
 		byte [] newSalt = HP.createSalt();
 		System.out.println("Salt: " + enc.encodeToString(newSalt));
-		System.out.println("Hash: " + HP.getHashedPassword("Password", newSalt));
+		System.out.println("Hash: " + HP.getHashedPassword("S3675418I", newSalt));
 		//Base64.Decoder dnc = Base64.getDecoder();
 		//byte [] saltDecoded = dnc.decode("Hrb9kWHSxFlJVy9tn2mVVg==");
 		//System.out.println("Password: T0122332Y\n" + "Hash: " + HP.getHashedPassword("T0122332Y", saltDecoded));
 		
 		/*
+		Teacher:
+		
+		S9217382F:
+			Salt: jvkoFs+PG6wU74JtW9XmZw==
+			Hash: y7+5/yOsGBEvLA63xLAobtjJPy/TmTpCpdn25Rvq2IBFrawBK1wcAimNFomCHUQA05Mn7m53XF0VicSZ2Fldxw==
+			
+		S3692132J:
+			Salt: KeUrvHon2Uv9Fe1YyjSemw==
+			Hash: +G8wQNcpieMEbgE5mbV+gfDLrEA/OSrfC/9HSkHJ1kVIeRKccpUzpn75bhb95o212gtQfSlXNtRp5qNlnmyYPQ==
+			
+		S3675418I:
+			Salt: JCI2dQ2+3F6SgoaYyh4mPQ==
+			Hash: X69dECvIhJfWJ8iNSTR1NKiODFv4mVv/YkL819TRee46SulqAuF0oBH1Yxxaz5rnejYKJdmEPvfyRRKC5SkG6Q==
+			
+		Student:
+		
 		T0122332Y: 
 			Salt: Hrb9kWHSxFlJVy9tn2mVVg==
 			Hash: RLmqx//VSr8QfklsRWx4TO1QstI4JobVsLLGPgcK8emTsDUPIc7+oClVWv2uXTbqDNVDekd66fhpDIEZPSAHGg==

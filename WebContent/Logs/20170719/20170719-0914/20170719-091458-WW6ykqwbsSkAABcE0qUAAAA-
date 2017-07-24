@@ -1,0 +1,37 @@
+--e9260000-A--
+[19/Jul/2017:09:14:58 +0800] WW6ykqwbsSkAABcE0qUAAAA- 172.27.177.240 2664 172.27.177.41 80
+--e9260000-B--
+OPTIONS / HTTP/1.1
+Host: 172.27.177.41
+User-Agent: Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)
+Connection: close
+
+--e9260000-F--
+HTTP/1.1 403 Forbidden
+Content-Length: 209
+Connection: close
+Content-Type: text/html; charset=iso-8859-1
+
+--e9260000-E--
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>403 Forbidden</title>
+</head><body>
+<h1>Forbidden</h1>
+<p>You don't have permission to access /
+on this server.<br />
+</p>
+</body></html>
+
+--e9260000-H--
+Message: Access denied with code 403 (phase 2). Matched phrase "nmap scripting engine" at REQUEST_HEADERS:User-Agent. [file "C:/Apache24/conf/rules/REQUEST-913-SCANNER-DETECTION.conf"] [line "60"] [id "913100"] [rev "2"] [msg "Found User-Agent associated with security scanner"] [data "Matched Data: nmap scripting engine found within REQUEST_HEADERS:User-Agent: mozilla/5.0 (compatible; nmap scripting engine; https://nmap.org/book/nse.html)"] [severity "CRITICAL"] [ver "OWASP_CRS/3.0.0"] [maturity "9"] [accuracy "9"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-reputation-scanner"] [tag "OWASP_CRS/AUTOMATION/SECURITY_SCANNER"] [tag "WASCTC/WASC-21"] [tag "OWASP_TOP_10/A7"] [tag "PCI/6.5.10"]
+Apache-Error: [file "apache2_util.c"] [line 271] [level 3] [client %s] ModSecurity: %s%s [uri "%s"]%s
+Action: Intercepted (phase 2)
+Stopwatch: 1500426898049871 7005 (- - -)
+Stopwatch2: 1500426898049871 7005; combined=12016, p1=0, p2=0, p3=0, p4=0, p5=6008, sr=0, sw=6008, l=0, gc=0
+Response-Body-Transformed: Dechunked
+Producer: ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/); OWASP_CRS/3.0.2.
+Server: Apache/2.4.27 (Win64) mod_jk/1.2.42
+Engine-Mode: "ENABLED"
+
+--e9260000-Z--
