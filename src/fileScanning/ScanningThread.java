@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 public class ScanningThread extends Thread{
 	File fileToBeScanned = new File("C:/Users/Wei Xuan/Desktop/autoplaylist.txt");
+	static boolean n;
 	
 	public ScanningThread(){
 		System.out.println("Thread have been created");
@@ -17,9 +18,11 @@ public class ScanningThread extends Thread{
 	public ScanningThread(File fileToBeScanned){
 		super();
 		this.fileToBeScanned = fileToBeScanned;
+		
     }
     
     public void run(){
+    	
     	try{
     		//File temp = new File("C:/Users/Wei Xuan/Desktop/autoplaylist.txt");
     		//String filePath = "C:/Users/Wei Xuan/Desktop/School Work";
@@ -53,7 +56,11 @@ public class ScanningThread extends Thread{
 		    	System.out.println(s);
     	    
 		    if(outputText2.size() > 3){
+		    	cancelupload(true);
 		    	System.out.println("Virus Detected");
+		    }
+		    else{
+		    	cancelupload(false);
 		    }
     	    System.out.println("File Location: " + fileToBeScanned.getAbsolutePath());
 		    Thread.sleep(1000);
@@ -64,5 +71,12 @@ public class ScanningThread extends Thread{
 		e.printStackTrace();
 	}
       System.out.println("End of Scanning Thread" );
+    }
+    public void cancelupload(boolean n){
+    	this.n = n;
+    	
+    }
+    public boolean cancelupload(){
+    	return this.n;
     }
 }

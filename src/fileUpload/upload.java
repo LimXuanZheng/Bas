@@ -20,6 +20,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import database.DatabaseAccess;
+import fileScanning.ScanningThread;
 import fileUpload.CryptoException;
 import teacherSharing.decryption;
 
@@ -93,6 +94,62 @@ public class upload extends HttpServlet {
 		}
 		else{
 		File f = new File(path);
+		ScanningThread st = new ScanningThread(f);
+		Thread thread =new Thread(st);
+		thread.start();
+		if(st.cancelupload()){
+			
+			out.println("<!DOCTYPE html>"
+	    			+ "<html>"
+	    			+ 	"<head>"
+	    			+ 		"<meta charset='UTF-8'>"
+	    			+ 		"<meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>"
+	    			//+ 		"<link rel='stylesheet' href='css/teacherSharing.css'>"
+	    			+ 		"<!-- Font Mono-Sans -->"
+	    			+ 		"<link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>"
+	    			+ 		"<!-- Latest compiled and minified CSS -->"
+	    			+ 		"<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u' crossorigin='anonymous'>"
+	    			+ 		"<!-- Optional theme -->"
+	    			+ 		"<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css' integrity='sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp' crossorigin='anonymous'>"
+	    			+		"<title>After Submit</title>"
+			    	+		"<script>function goHome() {window.location('Home');}"
+					+		"</script>"
+	    			+ 	"</head>"
+	    			+ 	"<body>"
+	    			+ 		"<div class='container-fluid' id='Container'>"
+	    			+ 			"<!-- Navigation -->" 
+	    			+ 			"<nav class='navbar navbar-default'>"
+	    			+ 				"<div class='container-fluid'>"
+	    			+ 					"<div class='navbar-header'>"
+	    			+ 						"<a class='navbar-brand' href='Home'>Bas?</a>"
+	    			+ 					"</div>"
+	    			+ 					"<ul class='nav navbar-nav'>"
+	    			+ 						"<li>"
+	    			+ 							"<a href='Home'>Home</a>"
+	    			+ 						"</li>"
+	    			+ 						"<li class='active'>"
+	    			+ 							"<a href='#'>Directory</a>"
+	    			+ 						"</li>"
+	    			+ 					"</ul>"
+	    			+ 					"<ul class='nav navbar-nav navbar-right'>"
+	    			+ 						"<li id='loginBtn'>"
+	    			+ 							"<a href='#'>Welcome, Bob.</a>"
+	    			+ 						"</li>"
+	    			+ 					"</ul>"
+	    			+ 				"</div>"
+	    			+ 			"</nav>"
+	    			+			"<div>"
+	    			+				"<p style='background-color:#7FFF00; font-size:70px; text-align:center;'> Assignment failed to submit because you try to send virus</p>"
+	    			+				"<button class='btn btn-success' onclick='goHome()'>Continue</button>"
+	    			+			"</div>"
+
+					);
+			
+			
+			System.out.println("File cannot be uploaded");
+			
+		}
+		else{
 		//out.println(path);
 		//String key = "Mary has manyyyyyyyyyyyy cats";
         File encryptedFile = new File("document.encrypted");
@@ -133,6 +190,7 @@ public class upload extends HttpServlet {
                 } catch (SQLException e) { 
                     e.printStackTrace();
                 }
+		}
 		}
 		
 		
