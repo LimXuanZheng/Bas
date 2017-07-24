@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 public class ScanningThread extends Thread{
 	File fileToBeScanned = new File("C:/Users/Wei Xuan/Desktop/autoplaylist.txt");
@@ -44,12 +45,16 @@ public class ScanningThread extends Thread{
     		InputStream is2 = p2.getInputStream();
     		BufferedReader br2 = new BufferedReader(new InputStreamReader(is2));
     		String line2 = null;
-		    String outputText2 = "";
+		    ArrayList<String> outputText2 = new ArrayList<String>();
 		    while ((line2 = br2.readLine()) != null) {
-		      outputText2 += line2 + "\n";
+		      outputText2.add(line2);
 		    }
-		    System.out.println(outputText2);
+		    for(String s:outputText2)
+		    	System.out.println(s);
     	    
+		    if(outputText2.size() > 3){
+		    	System.out.println("Virus Detected");
+		    }
     	    System.out.println("File Location: " + fileToBeScanned.getAbsolutePath());
 		    Thread.sleep(1000);
       }

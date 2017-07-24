@@ -1,5 +1,6 @@
 package fileScanning;
 
+import java.io.File;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class VirusScanning
  */
 @WebServlet("/VirusScanning")
-public class VirusScanning extends HttpServlet{
+public class VirusScanning{
 	private static final long serialVersionUID = 1L;
     
     public VirusScanning() {
@@ -27,9 +28,10 @@ public class VirusScanning extends HttpServlet{
 	}
 	
 	public static void main(String[] args) throws Exception{
-		//ScanningThread st = new ScanningThread();
-		//Thread thread =new Thread(st);
-		//thread.start();
+		File file = new File("C:/Users/Wei Xuan/Desktop/eicar.com.txt");
+		ScanningThread st = new ScanningThread(file);
+		Thread thread =new Thread(st);
+		thread.start();
 	}
 	
 }
