@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -20,6 +21,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import database.DatabaseAccess;
+import database.model.User;
 import fileScanning.ScanningThread;
 import fileUpload.CryptoException;
 import teacherSharing.decryption;
@@ -45,12 +47,12 @@ public class upload extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
-		String key1 = "";
+		String key1 = "nhibgu";
 		try {
 			DatabaseAccess dbms = new DatabaseAccess(1);
-			ArrayList<database.model.File> fileArray = dbms.getDatabaseFile();
-			database.model.File file1 = fileArray.get(0);
-			key1 = file1.getUser().getKeys();
+			String sql = "SELECT Keys FROM User WHERE UserID = 13";
+			key1 = dbms.getDatabaseData(sql).getString("Keys");
+			System.out.println(key1);
 		}
 		catch (ClassNotFoundException e) {
 			e.printStackTrace();
@@ -142,6 +144,9 @@ public class upload extends HttpServlet {
 	    			+				"<p style='background-color:#7FFF00; font-size:70px; text-align:center;'> Assignment failed to submit because you try to send virus</p>"
 	    			+				"<button class='btn btn-success' onclick='goHome()'>Continue</button>"
 	    			+			"</div>"
+	    			+		"</div>"
+	    			+	"</body>"
+	    			+"</html>"
 
 					);
 			
