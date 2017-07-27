@@ -12093,3 +12093,926 @@ I†@EÔI*ÿ˛£»Hã‡üG∑Û«Ê^˘±¯K¨≥]Á+Ωé\'wOSÅóÜºÖ{Äl°Z9@oˇ%m|&ÇÁöÅiP®iXàÍ“π
 2017-07-19T01:51:17.554562Z	   18 Query	SET autocommit=1
 2017-07-19T01:51:17.568566Z	   18 Query	SELECT Login.UserID, Login.Username, Login.Password, Login.Salt FROM Login WHERE Username = 'S9937260E'
 2017-07-19T01:51:17.663480Z	   18 Quit	
+C:\Program Files\MySQL\MySQL Server 5.7\bin\mysqld.exe, Version: 5.7.18-log (MySQL Community Server (GPL)). started with:
+TCP Port: 3306, Named Pipe: (null)
+Time                 Id Command    Argument
+2017-07-24T12:07:40.050935Z	    2 Query	SELECT TABLE_SCHEMA, TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE CREATE_OPTIONS LIKE '%partitioned%';
+2017-07-24T12:21:48.955704Z	    3 Connect	Student@101.127.149.138 on nspj_database using SSL/TLS
+2017-07-24T12:21:48.995942Z	    3 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-24T12:21:49.135658Z	    3 Query	SET character_set_results = NULL
+2017-07-24T12:21:49.142483Z	    3 Query	SET autocommit=1
+2017-07-24T12:21:49.165032Z	    3 Query	SELECT * FROM File LEFT JOIN User ON User.userID = File.userID
+2017-07-24T12:21:50.261324Z	    4 Connect	Student@101.127.149.138 on nspj_database using SSL/TLS
+2017-07-24T12:21:50.269763Z	    4 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-24T12:21:50.278464Z	    4 Query	SET character_set_results = NULL
+2017-07-24T12:21:50.284800Z	    4 Query	SET autocommit=1
+2017-07-24T12:21:50.314527Z	    4 Query	INSERT INTO File(UserID, FileName, Size, Data, Date) VALUES (13, 'eicar.com.txt', 68, _binary'ñ.8ìî6?Û5¢|◊m<z}Õ◊[Q)}ú™ˇô‹•êoﬂs’‹K˙Ñ≈ç∆£ñ<ø‚b∆TCáÑRò/øeÁAÖ6Ï£h=Ö≈&ˇ2ﬂ
+°µì—', '2017-07-24')
+2017-07-24T12:21:50.551360Z	    4 Quit	
+2017-07-24T12:23:45.027674Z	    5 Connect	root@localhost on  using SSL/TLS
+2017-07-24T12:23:45.028194Z	    5 Query	set autocommit=1
+2017-07-24T12:23:45.029178Z	    5 Query	SET SESSION TRANSACTION ISOLATION LEVEL REPEATABLE READ
+2017-07-24T12:23:45.056294Z	    5 Query	SHOW SESSION VARIABLES LIKE 'lower_case_table_names'
+2017-07-24T12:23:45.123961Z	    5 Query	SELECT current_user()
+2017-07-24T12:23:45.189142Z	    5 Query	SET CHARACTER SET utf8
+2017-07-24T12:23:45.190640Z	    5 Query	SET NAMES utf8
+2017-07-24T12:23:45.232339Z	    5 Query	SHOW SESSION VARIABLES LIKE 'sql_mode'
+2017-07-24T12:23:45.281969Z	    5 Query	SELECT CONNECTION_ID()
+2017-07-24T12:23:45.310015Z	    5 Query	SHOW SESSION STATUS LIKE 'Ssl_cipher'
+2017-07-24T12:23:45.340585Z	    5 Query	USE `nspj_database`
+2017-07-24T12:23:45.340585Z	    5 Query	set autocommit=1
+2017-07-24T12:23:45.370709Z	    6 Connect	root@localhost on  using SSL/TLS
+2017-07-24T12:23:45.371166Z	    6 Query	set autocommit=1
+2017-07-24T12:23:45.371166Z	    6 Query	SET SESSION TRANSACTION ISOLATION LEVEL REPEATABLE READ
+2017-07-24T12:23:45.371166Z	    6 Query	SHOW SESSION VARIABLES LIKE 'lower_case_table_names'
+2017-07-24T12:23:45.373674Z	    6 Query	SELECT current_user()
+2017-07-24T12:23:45.373674Z	    6 Query	SET CHARACTER SET utf8
+2017-07-24T12:23:45.373674Z	    6 Query	SET NAMES utf8
+2017-07-24T12:23:45.374173Z	    6 Query	SET SQL_SAFE_UPDATES=1
+2017-07-24T12:23:45.374173Z	    6 Query	SELECT CONNECTION_ID()
+2017-07-24T12:23:45.374173Z	    6 Query	SHOW SESSION STATUS LIKE 'Ssl_cipher'
+2017-07-24T12:23:45.375685Z	    6 Query	USE `nspj_database`
+2017-07-24T12:23:45.375685Z	    6 Query	set autocommit=1
+2017-07-24T12:23:45.376179Z	    6 Query	SHOW SESSION VARIABLES LIKE 'sql_mode'
+2017-07-24T12:23:45.378184Z	    6 Query	SHOW SESSION VARIABLES LIKE 'version_comment'
+2017-07-24T12:23:45.380729Z	    6 Query	SHOW SESSION VARIABLES LIKE 'version'
+2017-07-24T12:23:45.388239Z	    6 Query	SELECT current_user()
+2017-07-24T12:23:45.388714Z	    6 Query	SHOW SESSION VARIABLES LIKE 'lower_case_table_names'
+2017-07-24T12:23:47.732892Z	    5 Query	SHOW DATABASES
+2017-07-24T12:23:47.743390Z	    5 Query	show databases
+2017-07-24T12:23:47.744376Z	    5 Query	SELECT NAME FROM mysql.func
+2017-07-24T12:23:47.757109Z	    5 Query	SELECT logfile_group_name FROM information_schema.FILES
+2017-07-24T12:23:47.804863Z	    6 Query	SHOW SESSION VARIABLES LIKE 'version_compile_os'
+2017-07-24T12:23:47.806875Z	    6 Query	SHOW SESSION VARIABLES LIKE 'offline_mode'
+2017-07-24T12:23:47.831437Z	    5 Query	SELECT tablespace_name FROM information_schema.FILES
+2017-07-24T12:23:47.832443Z	    5 Query	SHOW GLOBAL VARIABLES
+2017-07-24T12:23:47.883975Z	    5 Query	SHOW ENGINES
+2017-07-24T12:23:47.909161Z	    5 Query	show charset
+2017-07-24T12:23:48.014194Z	    5 Query	show collation
+2017-07-24T12:23:48.126292Z	    6 Query	SHOW SESSION VARIABLES LIKE 'wait_timeout'
+2017-07-24T12:23:48.128298Z	    6 Query	SHOW SESSION VARIABLES LIKE 'interactive_timeout'
+2017-07-24T12:23:50.867872Z	    5 Query	SHOW FULL TABLES FROM `nspj_database`
+2017-07-24T12:23:50.868370Z	    5 Query	SHOW PROCEDURE STATUS WHERE Db='nspj_database'
+2017-07-24T12:23:50.924085Z	    5 Query	SHOW FUNCTION STATUS WHERE Db='nspj_database'
+2017-07-24T12:23:50.924619Z	    5 Query	SHOW COLUMNS FROM `nspj_database`.`file`
+2017-07-24T12:23:50.947642Z	    5 Query	SHOW COLUMNS FROM `nspj_database`.`lesson`
+2017-07-24T12:23:50.949147Z	    5 Query	SHOW COLUMNS FROM `nspj_database`.`login`
+2017-07-24T12:23:50.950683Z	    5 Query	SHOW COLUMNS FROM `nspj_database`.`student`
+2017-07-24T12:23:50.952654Z	    5 Query	SHOW COLUMNS FROM `nspj_database`.`teacher`
+2017-07-24T12:23:50.954158Z	    5 Query	SHOW COLUMNS FROM `nspj_database`.`user`
+2017-07-24T12:24:00.771990Z	    6 Query	SELECT * FROM File
+LIMIT 0, 1000
+2017-07-24T12:24:00.869171Z	    5 Query	SELECT st.* FROM performance_schema.events_statements_current st JOIN performance_schema.threads thr ON thr.thread_id = st.thread_id WHERE thr.processlist_id = 6
+2017-07-24T12:24:00.900411Z	    5 Query	SELECT st.* FROM performance_schema.events_stages_history_long st WHERE st.nesting_event_id = 22
+2017-07-24T12:24:00.900930Z	    5 Query	SELECT st.* FROM performance_schema.events_waits_history_long st WHERE st.nesting_event_id = 22
+2017-07-24T12:24:00.902918Z	    5 Query	SHOW INDEX FROM `nspj_database`.`File`
+2017-07-24T12:24:14.250559Z	    6 Query	ALTER TABLE file AUTO_INCREMENT = 7
+2017-07-24T12:36:16.459697Z	    7 Connect	Student@101.127.149.138 on nspj_database using SSL/TLS
+2017-07-24T12:36:16.481750Z	    7 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-24T12:36:16.635238Z	    7 Query	SET character_set_results = NULL
+2017-07-24T12:36:16.644025Z	    7 Query	SET autocommit=1
+2017-07-24T12:36:16.659720Z	    7 Query	SELECT * FROM File LEFT JOIN User ON User.userID = File.userID
+2017-07-24T12:36:17.630620Z	    8 Connect	Student@101.127.149.138 on nspj_database using SSL/TLS
+2017-07-24T12:36:17.638606Z	    8 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-24T12:36:17.650391Z	    8 Query	SET character_set_results = NULL
+2017-07-24T12:36:17.660100Z	    8 Query	SET autocommit=1
+2017-07-24T12:36:17.687449Z	    8 Query	INSERT INTO File(UserID, FileName, Size, Data, Date) VALUES (13, 'eicar.com.txt', 68, _binary'ñ.8ìî6?Û5¢|◊m<z}Õ◊[Q)}ú™ˇô‹•êoﬂs’‹K˙Ñ≈ç∆£ñ<ø‚b∆TCáÑRò/øeÁAÖ6Ï£h=Ö≈&ˇ2ﬂ
+°µì—', '2017-07-24')
+2017-07-24T12:36:17.851713Z	    8 Quit	
+2017-07-24T12:48:23.770338Z	    6 Quit	
+2017-07-24T12:48:23.770842Z	    5 Quit	
+C:\Program Files\MySQL\MySQL Server 5.7\bin\mysqld.exe, Version: 5.7.18-log (MySQL Community Server (GPL)). started with:
+TCP Port: 3306, Named Pipe: (null)
+Time                 Id Command    Argument
+2017-07-25T05:25:11.590623Z	    2 Query	SELECT TABLE_SCHEMA, TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE CREATE_OPTIONS LIKE '%partitioned%';
+C:\Program Files\MySQL\MySQL Server 5.7\bin\mysqld.exe, Version: 5.7.18-log (MySQL Community Server (GPL)). started with:
+TCP Port: 3306, Named Pipe: (null)
+Time                 Id Command    Argument
+2017-07-25T05:49:31.681562Z	    2 Query	SELECT TABLE_SCHEMA, TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE CREATE_OPTIONS LIKE '%partitioned%';
+2017-07-25T05:54:00.057716Z	    3 Connect	Student@Wolf on nspj_database using SSL/TLS
+2017-07-25T05:54:00.115926Z	    3 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-25T05:54:00.256099Z	    3 Query	SET character_set_results = NULL
+2017-07-25T05:54:00.256099Z	    3 Query	SET autocommit=1
+2017-07-25T05:54:00.288091Z	    3 Query	SELECT Login.UserID, Login.Username, Login.Password, Login.Salt FROM Login WHERE Username = 'T0122332Y'
+2017-07-25T05:54:00.423778Z	    3 Quit	
+2017-07-25T05:54:03.482584Z	    4 Connect	Student@Wolf on nspj_database using SSL/TLS
+2017-07-25T05:54:03.483586Z	    4 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-25T05:54:03.484589Z	    4 Query	SET character_set_results = NULL
+2017-07-25T05:54:03.484589Z	    4 Query	SET autocommit=1
+2017-07-25T05:54:03.520733Z	    4 Query	SELECT User.UserID, Login.Username, Login.Password, Login.Salt, User.NRIC, User.Name, User.Gender, User.DOB, User.ContactNo, User.Email, User.Class, User.Address, User.Keys, Student.CCA, Teacher.TeacherID, Teacher.Department FROM User LEFT OUTER JOIN Login ON (User.UserID = Login.UserID) LEFT OUTER JOIN Student ON (User.UserID = Student.UserID) LEFT OUTER JOIN Teacher ON (User.UserID = Teacher.UserID) ORDER BY UserID
+2017-07-25T05:54:03.655249Z	    4 Quit	
+2017-07-25T05:55:50.742949Z	    5 Connect	Student@Wolf on nspj_database using SSL/TLS
+2017-07-25T05:55:50.747991Z	    5 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-25T05:55:50.777041Z	    5 Query	SET character_set_results = NULL
+2017-07-25T05:55:50.778044Z	    5 Query	SET autocommit=1
+2017-07-25T05:55:50.782082Z	    5 Query	SELECT User.UserID, Login.Username, Login.Password, Login.Salt, User.NRIC, User.Name, User.Gender, User.DOB, User.ContactNo, User.Email, User.Class, User.Address, User.Keys, Student.CCA, Teacher.TeacherID, Teacher.Department FROM User LEFT OUTER JOIN Login ON (User.UserID = Login.UserID) LEFT OUTER JOIN Student ON (User.UserID = Student.UserID) LEFT OUTER JOIN Teacher ON (User.UserID = Teacher.UserID) ORDER BY UserID
+2017-07-25T05:55:50.794086Z	    5 Quit	
+2017-07-25T05:56:38.868224Z	    6 Connect	Student@Wolf on nspj_database using SSL/TLS
+2017-07-25T05:56:38.869238Z	    6 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-25T05:56:38.869238Z	    6 Query	SET character_set_results = NULL
+2017-07-25T05:56:38.870228Z	    6 Query	SET autocommit=1
+2017-07-25T05:56:38.870228Z	    6 Query	SELECT User.UserID, Login.Username, Login.Password, Login.Salt, User.NRIC, User.Name, User.Gender, User.DOB, User.ContactNo, User.Email, User.Class, User.Address, User.Keys, Student.CCA, Teacher.TeacherID, Teacher.Department FROM User LEFT OUTER JOIN Login ON (User.UserID = Login.UserID) LEFT OUTER JOIN Student ON (User.UserID = Student.UserID) LEFT OUTER JOIN Teacher ON (User.UserID = Teacher.UserID) ORDER BY UserID
+2017-07-25T05:56:38.876244Z	    6 Quit	
+2017-07-25T05:56:45.274135Z	    7 Connect	Student@Wolf on nspj_database using SSL/TLS
+2017-07-25T05:56:45.275137Z	    7 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-25T05:56:45.276140Z	    7 Query	SET character_set_results = NULL
+2017-07-25T05:56:45.276140Z	    7 Query	SET autocommit=1
+2017-07-25T05:56:45.285995Z	    7 Query	SELECT Login.UserID, Login.Username, Login.Password, Login.Salt FROM Login WHERE Username = 'T0122332Y'
+2017-07-25T05:56:45.309711Z	    7 Quit	
+2017-07-25T05:56:49.801479Z	    8 Connect	Student@Wolf on nspj_database using SSL/TLS
+2017-07-25T05:56:49.801479Z	    8 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-25T05:56:49.802205Z	    8 Query	SET character_set_results = NULL
+2017-07-25T05:56:49.802205Z	    8 Query	SET autocommit=1
+2017-07-25T05:56:49.803209Z	    8 Query	SELECT User.UserID, Login.Username, Login.Password, Login.Salt, User.NRIC, User.Name, User.Gender, User.DOB, User.ContactNo, User.Email, User.Class, User.Address, User.Keys, Student.CCA, Teacher.TeacherID, Teacher.Department FROM User LEFT OUTER JOIN Login ON (User.UserID = Login.UserID) LEFT OUTER JOIN Student ON (User.UserID = Student.UserID) LEFT OUTER JOIN Teacher ON (User.UserID = Teacher.UserID) ORDER BY UserID
+2017-07-25T05:56:49.808222Z	    8 Quit	
+2017-07-25T06:21:40.741426Z	    9 Connect	Student@172.27.181.127 on nspj_database using SSL/TLS
+2017-07-25T06:21:40.757056Z	    9 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-25T06:21:40.866440Z	    9 Query	SET character_set_results = NULL
+2017-07-25T06:21:40.866440Z	    9 Query	SET autocommit=1
+2017-07-25T06:21:40.882078Z	    9 Query	SELECT * FROM File LEFT JOIN User ON User.userID = File.userID
+2017-07-25T06:21:41.491489Z	   10 Connect	Student@172.27.181.127 on nspj_database using SSL/TLS
+2017-07-25T06:21:41.491489Z	   10 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-25T06:21:41.506918Z	   10 Query	SET character_set_results = NULL
+2017-07-25T06:21:41.506918Z	   10 Query	SET autocommit=1
+2017-07-25T06:21:41.522537Z	   10 Query	SELECT * FROM User
+2017-07-25T06:26:10.018147Z	   11 Connect	Student@172.27.181.127 on nspj_database using SSL/TLS
+2017-07-25T06:26:10.018147Z	   11 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-25T06:26:10.033978Z	   11 Query	SET character_set_results = NULL
+2017-07-25T06:26:10.033978Z	   11 Query	SET autocommit=1
+2017-07-25T06:26:10.033978Z	   11 Query	SELECT * FROM File LEFT JOIN User ON User.userID = File.userID
+2017-07-25T06:26:10.346502Z	   12 Connect	Student@172.27.181.127 on nspj_database using SSL/TLS
+2017-07-25T06:26:10.362127Z	   12 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-25T06:26:10.362127Z	   12 Query	SET character_set_results = NULL
+2017-07-25T06:26:10.362127Z	   12 Query	SET autocommit=1
+2017-07-25T06:26:10.377507Z	   12 Query	SELECT * FROM User
+2017-07-25T06:26:53.011381Z	   13 Connect	Student@172.27.181.127 on nspj_database using SSL/TLS
+2017-07-25T06:26:53.021556Z	   13 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-25T06:26:53.118558Z	   13 Query	SET character_set_results = NULL
+2017-07-25T06:26:53.123830Z	   13 Query	SET autocommit=1
+2017-07-25T06:26:53.132599Z	   13 Query	SELECT * FROM File LEFT JOIN User ON User.userID = File.userID
+2017-07-25T06:26:53.478474Z	   14 Connect	Student@172.27.181.127 on nspj_database using SSL/TLS
+2017-07-25T06:26:53.484234Z	   14 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-25T06:26:53.491006Z	   14 Query	SET character_set_results = NULL
+2017-07-25T06:26:53.496257Z	   14 Query	SET autocommit=1
+2017-07-25T06:26:53.500742Z	   14 Query	SELECT * FROM File LEFT JOIN User ON User.userID = File.userID
+2017-07-25T06:28:18.558151Z	   15 Connect	root@localhost on  using SSL/TLS
+2017-07-25T06:28:18.558151Z	   15 Query	set autocommit=1
+2017-07-25T06:28:18.573744Z	   15 Query	SET SESSION TRANSACTION ISOLATION LEVEL REPEATABLE READ
+2017-07-25T06:28:18.589372Z	   15 Query	SHOW SESSION VARIABLES LIKE 'lower_case_table_names'
+2017-07-25T06:28:18.636288Z	   15 Query	SELECT current_user()
+2017-07-25T06:28:18.698803Z	   15 Query	SET CHARACTER SET utf8
+2017-07-25T06:28:18.698803Z	   15 Query	SET NAMES utf8
+2017-07-25T06:28:18.714425Z	   15 Query	SHOW SESSION VARIABLES LIKE 'sql_mode'
+2017-07-25T06:28:18.745676Z	   15 Query	SELECT CONNECTION_ID()
+2017-07-25T06:28:18.776930Z	   15 Query	SHOW SESSION STATUS LIKE 'Ssl_cipher'
+2017-07-25T06:28:18.808187Z	   15 Query	USE `nspj_database`
+2017-07-25T06:28:18.808187Z	   15 Query	set autocommit=1
+2017-07-25T06:28:18.823771Z	   16 Connect	root@localhost on  using SSL/TLS
+2017-07-25T06:28:18.823771Z	   16 Query	set autocommit=1
+2017-07-25T06:28:18.823771Z	   16 Query	SET SESSION TRANSACTION ISOLATION LEVEL REPEATABLE READ
+2017-07-25T06:28:18.823771Z	   16 Query	SHOW SESSION VARIABLES LIKE 'lower_case_table_names'
+2017-07-25T06:28:18.823771Z	   16 Query	SELECT current_user()
+2017-07-25T06:28:18.823771Z	   16 Query	SET CHARACTER SET utf8
+2017-07-25T06:28:18.823771Z	   16 Query	SET NAMES utf8
+2017-07-25T06:28:18.823771Z	   16 Query	SET SQL_SAFE_UPDATES=1
+2017-07-25T06:28:18.823771Z	   16 Query	SELECT CONNECTION_ID()
+2017-07-25T06:28:18.823771Z	   16 Query	SHOW SESSION STATUS LIKE 'Ssl_cipher'
+2017-07-25T06:28:18.839397Z	   16 Query	USE `nspj_database`
+2017-07-25T06:28:18.839397Z	   16 Query	set autocommit=1
+2017-07-25T06:28:18.839397Z	   16 Query	SHOW SESSION VARIABLES LIKE 'sql_mode'
+2017-07-25T06:28:18.839397Z	   16 Query	SHOW SESSION VARIABLES LIKE 'version_comment'
+2017-07-25T06:28:18.839397Z	   16 Query	SHOW SESSION VARIABLES LIKE 'version'
+2017-07-25T06:28:18.839397Z	   16 Query	SELECT current_user()
+2017-07-25T06:28:18.839397Z	   16 Query	SHOW SESSION VARIABLES LIKE 'lower_case_table_names'
+2017-07-25T06:28:20.777381Z	   15 Query	SHOW DATABASES
+2017-07-25T06:28:20.792809Z	   15 Query	show databases
+2017-07-25T06:28:20.792809Z	   15 Query	SELECT NAME FROM mysql.func
+2017-07-25T06:28:20.808630Z	   15 Query	SELECT logfile_group_name FROM information_schema.FILES
+2017-07-25T06:28:20.855502Z	   16 Query	SHOW SESSION VARIABLES LIKE 'version_compile_os'
+2017-07-25T06:28:20.855502Z	   16 Query	SHOW SESSION VARIABLES LIKE 'offline_mode'
+2017-07-25T06:28:20.933631Z	   15 Query	SELECT tablespace_name FROM information_schema.FILES
+2017-07-25T06:28:20.933631Z	   15 Query	SHOW GLOBAL VARIABLES
+2017-07-25T06:28:20.964885Z	   15 Query	SHOW ENGINES
+2017-07-25T06:28:20.964885Z	   15 Query	show charset
+2017-07-25T06:28:21.074009Z	   15 Query	show collation
+2017-07-25T06:28:21.199298Z	   16 Query	SHOW SESSION VARIABLES LIKE 'wait_timeout'
+2017-07-25T06:28:21.199298Z	   16 Query	SHOW SESSION VARIABLES LIKE 'interactive_timeout'
+2017-07-25T06:28:23.799119Z	   15 Query	SHOW FULL TABLES FROM `nspj_database`
+2017-07-25T06:28:23.799119Z	   15 Query	SHOW PROCEDURE STATUS WHERE Db='nspj_database'
+2017-07-25T06:28:23.877228Z	   15 Query	SHOW FUNCTION STATUS WHERE Db='nspj_database'
+2017-07-25T06:28:23.877228Z	   15 Query	SHOW COLUMNS FROM `nspj_database`.`file`
+2017-07-25T06:28:23.971023Z	   15 Query	SHOW COLUMNS FROM `nspj_database`.`lesson`
+2017-07-25T06:28:23.971023Z	   15 Query	SHOW COLUMNS FROM `nspj_database`.`login`
+2017-07-25T06:28:23.971023Z	   15 Query	SHOW COLUMNS FROM `nspj_database`.`student`
+2017-07-25T06:28:23.971023Z	   15 Query	SHOW COLUMNS FROM `nspj_database`.`teacher`
+2017-07-25T06:28:23.971023Z	   15 Query	SHOW COLUMNS FROM `nspj_database`.`user`
+2017-07-25T06:28:26.658771Z	   16 Query	SELECT * FROM File
+LIMIT 0, 1000
+2017-07-25T06:28:26.799437Z	   15 Query	SELECT st.* FROM performance_schema.events_statements_current st JOIN performance_schema.threads thr ON thr.thread_id = st.thread_id WHERE thr.processlist_id = 16
+2017-07-25T06:28:26.815088Z	   15 Query	SELECT st.* FROM performance_schema.events_stages_history_long st WHERE st.nesting_event_id = 22
+2017-07-25T06:28:26.815088Z	   15 Query	SELECT st.* FROM performance_schema.events_waits_history_long st WHERE st.nesting_event_id = 22
+2017-07-25T06:28:26.815088Z	   15 Query	SHOW INDEX FROM `nspj_database`.`File`
+2017-07-25T06:28:39.730118Z	   16 Query	ALTER TABLE file AUTO_INCREMENT = 7
+2017-07-25T06:28:41.855472Z	   16 Query	set autocommit=0
+2017-07-25T06:28:42.918154Z	   16 Prepare	DELETE FROM `nspj_database`.`File` WHERE `fileID`='8'
+2017-07-25T06:28:42.918154Z	   16 Execute	DELETE FROM `nspj_database`.`File` WHERE `fileID`='8'
+2017-07-25T06:28:43.027586Z	   16 Prepare	DELETE FROM `nspj_database`.`File` WHERE `fileID`='9'
+2017-07-25T06:28:43.027586Z	   16 Close stmt	
+2017-07-25T06:28:43.027586Z	   16 Execute	DELETE FROM `nspj_database`.`File` WHERE `fileID`='9'
+2017-07-25T06:28:43.027586Z	   16 Prepare	DELETE FROM `nspj_database`.`File` WHERE `fileID`='10'
+2017-07-25T06:28:43.027586Z	   16 Close stmt	
+2017-07-25T06:28:43.027586Z	   16 Execute	DELETE FROM `nspj_database`.`File` WHERE `fileID`='10'
+2017-07-25T06:28:43.027586Z	   16 Query	commit
+2017-07-25T06:28:43.121103Z	   16 Close stmt	
+2017-07-25T06:28:43.121103Z	   16 Query	SELECT * FROM File
+LIMIT 0, 1000
+2017-07-25T06:28:43.143406Z	   15 Query	SHOW INDEX FROM `nspj_database`.`File`
+2017-07-25T06:28:43.987297Z	   16 Query	set autocommit=1
+2017-07-25T06:28:47.136037Z	   16 Quit	
+2017-07-25T06:28:47.136037Z	   15 Quit	
+2017-07-25T06:28:52.688378Z	   17 Connect	Student@172.27.181.127 on nspj_database using SSL/TLS
+2017-07-25T06:28:52.688378Z	   17 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-25T06:28:52.703968Z	   17 Query	SET character_set_results = NULL
+2017-07-25T06:28:52.703968Z	   17 Query	SET autocommit=1
+2017-07-25T06:28:52.703968Z	   17 Query	SELECT * FROM File LEFT JOIN User ON User.userID = File.userID
+2017-07-25T06:28:53.188667Z	   18 Connect	Student@172.27.181.127 on nspj_database using SSL/TLS
+2017-07-25T06:28:53.204295Z	   18 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-25T06:28:53.204295Z	   18 Query	SET character_set_results = NULL
+2017-07-25T06:28:53.219905Z	   18 Query	SET autocommit=1
+2017-07-25T06:28:53.219905Z	   18 Query	SELECT * FROM File LEFT JOIN User ON User.userID = File.userID
+2017-07-25T06:29:20.131196Z	   19 Connect	Student@172.27.181.127 on nspj_database using SSL/TLS
+2017-07-25T06:29:20.146868Z	   19 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-25T06:29:20.240611Z	   19 Query	SET character_set_results = NULL
+2017-07-25T06:29:20.240611Z	   19 Query	SET autocommit=1
+2017-07-25T06:29:20.256238Z	   19 Query	SELECT * FROM File LEFT JOIN User ON User.userID = File.userID
+2017-07-25T06:29:20.693783Z	   20 Connect	Student@172.27.181.127 on nspj_database using SSL/TLS
+2017-07-25T06:29:20.709403Z	   20 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-25T06:29:20.709403Z	   20 Query	SET character_set_results = NULL
+2017-07-25T06:29:20.725002Z	   20 Query	SET autocommit=1
+2017-07-25T06:29:20.725002Z	   20 Query	SELECT * FROM File LEFT JOIN User ON User.userID = File.userID
+2017-07-25T06:31:04.754060Z	   21 Connect	root@localhost on  using SSL/TLS
+2017-07-25T06:31:04.754060Z	   21 Query	set autocommit=1
+2017-07-25T06:31:04.754060Z	   21 Query	SET SESSION TRANSACTION ISOLATION LEVEL REPEATABLE READ
+2017-07-25T06:31:04.754060Z	   21 Query	SHOW SESSION VARIABLES LIKE 'lower_case_table_names'
+2017-07-25T06:31:04.754060Z	   21 Query	SELECT current_user()
+2017-07-25T06:31:04.754060Z	   21 Query	SET CHARACTER SET utf8
+2017-07-25T06:31:04.754060Z	   21 Query	SET NAMES utf8
+2017-07-25T06:31:04.754060Z	   21 Query	SHOW SESSION VARIABLES LIKE 'sql_mode'
+2017-07-25T06:31:04.769689Z	   21 Query	SELECT CONNECTION_ID()
+2017-07-25T06:31:04.769689Z	   21 Query	SHOW SESSION STATUS LIKE 'Ssl_cipher'
+2017-07-25T06:31:04.769689Z	   21 Query	USE `nspj_database`
+2017-07-25T06:31:04.769689Z	   21 Query	set autocommit=1
+2017-07-25T06:31:04.785364Z	   22 Connect	root@localhost on  using SSL/TLS
+2017-07-25T06:31:04.785364Z	   22 Query	set autocommit=1
+2017-07-25T06:31:04.785364Z	   22 Query	SET SESSION TRANSACTION ISOLATION LEVEL REPEATABLE READ
+2017-07-25T06:31:04.785364Z	   22 Query	SHOW SESSION VARIABLES LIKE 'lower_case_table_names'
+2017-07-25T06:31:04.800941Z	   22 Query	SELECT current_user()
+2017-07-25T06:31:04.800941Z	   22 Query	SET CHARACTER SET utf8
+2017-07-25T06:31:04.800941Z	   22 Query	SET NAMES utf8
+2017-07-25T06:31:04.800941Z	   22 Query	SET SQL_SAFE_UPDATES=1
+2017-07-25T06:31:04.800941Z	   22 Query	SELECT CONNECTION_ID()
+2017-07-25T06:31:04.800941Z	   22 Query	SHOW SESSION STATUS LIKE 'Ssl_cipher'
+2017-07-25T06:31:04.800941Z	   22 Query	USE `nspj_database`
+2017-07-25T06:31:04.800941Z	   22 Query	set autocommit=1
+2017-07-25T06:31:04.800941Z	   22 Query	SHOW SESSION VARIABLES LIKE 'sql_mode'
+2017-07-25T06:31:04.800941Z	   22 Query	SHOW SESSION VARIABLES LIKE 'version_comment'
+2017-07-25T06:31:04.800941Z	   22 Query	SHOW SESSION VARIABLES LIKE 'version'
+2017-07-25T06:31:04.800941Z	   22 Query	SELECT current_user()
+2017-07-25T06:31:04.800941Z	   22 Query	SHOW SESSION VARIABLES LIKE 'lower_case_table_names'
+2017-07-25T06:31:05.176387Z	   21 Query	SHOW DATABASES
+2017-07-25T06:31:05.176387Z	   21 Query	show databases
+2017-07-25T06:31:05.176387Z	   22 Query	SHOW SESSION VARIABLES LIKE 'version_compile_os'
+2017-07-25T06:31:05.176387Z	   21 Query	SELECT NAME FROM mysql.func
+2017-07-25T06:31:05.176387Z	   21 Query	SELECT logfile_group_name FROM information_schema.FILES
+2017-07-25T06:31:05.176387Z	   21 Query	SELECT tablespace_name FROM information_schema.FILES
+2017-07-25T06:31:05.176387Z	   22 Query	SHOW SESSION VARIABLES LIKE 'offline_mode'
+2017-07-25T06:31:05.176387Z	   21 Query	SHOW GLOBAL VARIABLES
+2017-07-25T06:31:05.192045Z	   21 Query	SHOW ENGINES
+2017-07-25T06:31:05.192045Z	   21 Query	show charset
+2017-07-25T06:31:05.192045Z	   21 Query	show collation
+2017-07-25T06:31:05.192045Z	   22 Query	SHOW SESSION VARIABLES LIKE 'wait_timeout'
+2017-07-25T06:31:05.192045Z	   22 Query	SHOW SESSION VARIABLES LIKE 'interactive_timeout'
+2017-07-25T06:31:06.223410Z	   21 Query	SHOW FULL TABLES FROM `nspj_database`
+2017-07-25T06:31:06.223410Z	   21 Query	SHOW PROCEDURE STATUS WHERE Db='nspj_database'
+2017-07-25T06:31:06.223410Z	   21 Query	SHOW FUNCTION STATUS WHERE Db='nspj_database'
+2017-07-25T06:31:06.223410Z	   21 Query	SHOW COLUMNS FROM `nspj_database`.`file`
+2017-07-25T06:31:06.223410Z	   21 Query	SHOW COLUMNS FROM `nspj_database`.`lesson`
+2017-07-25T06:31:06.223410Z	   21 Query	SHOW COLUMNS FROM `nspj_database`.`login`
+2017-07-25T06:31:06.223410Z	   21 Query	SHOW COLUMNS FROM `nspj_database`.`student`
+2017-07-25T06:31:06.223410Z	   21 Query	SHOW COLUMNS FROM `nspj_database`.`teacher`
+2017-07-25T06:31:06.223410Z	   21 Query	SHOW COLUMNS FROM `nspj_database`.`user`
+2017-07-25T06:31:07.911069Z	   22 Query	SELECT * FROM File
+LIMIT 0, 1000
+2017-07-25T06:31:07.942340Z	   21 Query	SELECT st.* FROM performance_schema.events_statements_current st JOIN performance_schema.threads thr ON thr.thread_id = st.thread_id WHERE thr.processlist_id = 22
+2017-07-25T06:31:07.942340Z	   21 Query	SELECT st.* FROM performance_schema.events_stages_history_long st WHERE st.nesting_event_id = 22
+2017-07-25T06:31:07.942340Z	   21 Query	SELECT st.* FROM performance_schema.events_waits_history_long st WHERE st.nesting_event_id = 22
+2017-07-25T06:31:07.942340Z	   21 Query	SHOW INDEX FROM `nspj_database`.`File`
+2017-07-25T06:31:22.673107Z	   22 Query	ALTER TABLE file AUTO_INCREMENT = 1
+2017-07-25T06:31:25.429885Z	   22 Query	set autocommit=0
+2017-07-25T06:31:26.351706Z	   22 Prepare	DELETE FROM `nspj_database`.`File` WHERE `fileID`='1'
+2017-07-25T06:31:26.351706Z	   22 Execute	DELETE FROM `nspj_database`.`File` WHERE `fileID`='1'
+2017-07-25T06:31:26.461248Z	   22 Prepare	DELETE FROM `nspj_database`.`File` WHERE `fileID`='2'
+2017-07-25T06:31:26.461248Z	   22 Close stmt	
+2017-07-25T06:31:26.461248Z	   22 Execute	DELETE FROM `nspj_database`.`File` WHERE `fileID`='2'
+2017-07-25T06:31:26.461248Z	   22 Prepare	DELETE FROM `nspj_database`.`File` WHERE `fileID`='3'
+2017-07-25T06:31:26.461248Z	   22 Close stmt	
+2017-07-25T06:31:26.461248Z	   22 Execute	DELETE FROM `nspj_database`.`File` WHERE `fileID`='3'
+2017-07-25T06:31:26.461248Z	   22 Prepare	DELETE FROM `nspj_database`.`File` WHERE `fileID`='4'
+2017-07-25T06:31:26.461248Z	   22 Close stmt	
+2017-07-25T06:31:26.461248Z	   22 Execute	DELETE FROM `nspj_database`.`File` WHERE `fileID`='4'
+2017-07-25T06:31:26.461248Z	   22 Prepare	DELETE FROM `nspj_database`.`File` WHERE `fileID`='5'
+2017-07-25T06:31:26.461248Z	   22 Close stmt	
+2017-07-25T06:31:26.461248Z	   22 Execute	DELETE FROM `nspj_database`.`File` WHERE `fileID`='5'
+2017-07-25T06:31:26.461248Z	   22 Prepare	DELETE FROM `nspj_database`.`File` WHERE `fileID`='6'
+2017-07-25T06:31:26.461248Z	   22 Close stmt	
+2017-07-25T06:31:26.461248Z	   22 Execute	DELETE FROM `nspj_database`.`File` WHERE `fileID`='6'
+2017-07-25T06:31:26.461248Z	   22 Prepare	DELETE FROM `nspj_database`.`File` WHERE `fileID`='7'
+2017-07-25T06:31:26.461248Z	   22 Close stmt	
+2017-07-25T06:31:26.461248Z	   22 Execute	DELETE FROM `nspj_database`.`File` WHERE `fileID`='7'
+2017-07-25T06:31:26.461248Z	   22 Query	commit
+2017-07-25T06:31:26.570636Z	   22 Close stmt	
+2017-07-25T06:31:26.570636Z	   22 Query	SELECT * FROM File
+LIMIT 0, 1000
+2017-07-25T06:31:26.570636Z	   21 Query	SHOW INDEX FROM `nspj_database`.`File`
+2017-07-25T06:31:27.476824Z	   22 Query	set autocommit=1
+2017-07-25T06:31:55.208895Z	   23 Connect	Student@172.27.181.127 on nspj_database using SSL/TLS
+2017-07-25T06:31:55.208895Z	   23 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-25T06:31:55.224531Z	   23 Query	SET character_set_results = NULL
+2017-07-25T06:31:55.224531Z	   23 Query	SET autocommit=1
+2017-07-25T06:31:55.224531Z	   23 Query	SELECT * FROM File LEFT JOIN User ON User.userID = File.userID
+2017-07-25T06:32:56.166744Z	   24 Connect	Student@172.27.181.127 on nspj_database using SSL/TLS
+2017-07-25T06:32:56.166744Z	   24 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-25T06:32:56.182352Z	   24 Query	SET character_set_results = NULL
+2017-07-25T06:32:56.182352Z	   24 Query	SET autocommit=1
+2017-07-25T06:32:56.182352Z	   24 Query	SELECT * FROM File LEFT JOIN User ON User.userID = File.userID
+2017-07-25T06:39:38.915580Z	   25 Connect	Student@172.27.181.127 on nspj_database using SSL/TLS
+2017-07-25T06:39:38.938749Z	   25 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-25T06:39:39.224723Z	   25 Query	SET character_set_results = NULL
+2017-07-25T06:39:39.230079Z	   25 Query	SET autocommit=1
+2017-07-25T06:39:50.828872Z	   26 Connect	Student@172.27.181.127 on nspj_database using SSL/TLS
+2017-07-25T06:39:50.834635Z	   26 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-25T06:39:50.841090Z	   26 Query	SET character_set_results = NULL
+2017-07-25T06:39:50.846168Z	   26 Query	SET autocommit=1
+2017-07-25T06:40:14.634086Z	   21 Query	SHOW FULL TABLES FROM `nspj_database`
+2017-07-25T06:40:14.634086Z	   21 Query	SHOW FULL TABLES FROM `nspj_database`
+2017-07-25T06:40:14.634086Z	   21 Query	SHOW PROCEDURE STATUS WHERE Db='nspj_database'
+2017-07-25T06:40:14.634086Z	   21 Query	SHOW FUNCTION STATUS WHERE Db='nspj_database'
+2017-07-25T06:40:14.634086Z	   21 Query	SELECT EVENT_NAME FROM information_schema.EVENTS WHERE EVENT_SCHEMA = 'nspj_database'
+2017-07-25T06:40:14.634086Z	   21 Query	SHOW COLUMNS FROM `nspj_database`.`file`
+2017-07-25T06:40:14.634086Z	   21 Query	SHOW TRIGGERS FROM `nspj_database` WHERE `Table` = 'file'
+2017-07-25T06:40:14.634086Z	   21 Query	SHOW COLUMNS FROM `nspj_database`.`lesson`
+2017-07-25T06:40:14.634086Z	   21 Query	SHOW TRIGGERS FROM `nspj_database` WHERE `Table` = 'lesson'
+2017-07-25T06:40:14.634086Z	   21 Query	SHOW COLUMNS FROM `nspj_database`.`login`
+2017-07-25T06:40:14.634086Z	   21 Query	SHOW TRIGGERS FROM `nspj_database` WHERE `Table` = 'login'
+2017-07-25T06:40:14.634086Z	   21 Query	SHOW COLUMNS FROM `nspj_database`.`student`
+2017-07-25T06:40:14.634086Z	   21 Query	SHOW TRIGGERS FROM `nspj_database` WHERE `Table` = 'student'
+2017-07-25T06:40:14.634086Z	   21 Query	SHOW COLUMNS FROM `nspj_database`.`teacher`
+2017-07-25T06:40:14.634086Z	   21 Query	SHOW TRIGGERS FROM `nspj_database` WHERE `Table` = 'teacher'
+2017-07-25T06:40:14.634086Z	   21 Query	SHOW COLUMNS FROM `nspj_database`.`user`
+2017-07-25T06:40:14.649435Z	   21 Query	SHOW TRIGGERS FROM `nspj_database` WHERE `Table` = 'user'
+2017-07-25T06:40:15.305754Z	   22 Query	SELECT * FROM User
+LIMIT 0, 1000
+2017-07-25T06:40:15.337006Z	   21 Query	SELECT st.* FROM performance_schema.events_statements_current st JOIN performance_schema.threads thr ON thr.thread_id = st.thread_id WHERE thr.processlist_id = 22
+2017-07-25T06:40:15.337006Z	   21 Query	SELECT st.* FROM performance_schema.events_stages_history_long st WHERE st.nesting_event_id = 53
+2017-07-25T06:40:15.337006Z	   21 Query	SELECT st.* FROM performance_schema.events_waits_history_long st WHERE st.nesting_event_id = 53
+2017-07-25T06:40:15.337006Z	   21 Query	SHOW INDEX FROM `nspj_database`.`User`
+2017-07-25T06:40:26.961062Z	   22 Query	set autocommit=0
+2017-07-25T06:40:27.992183Z	   22 Prepare	DELETE FROM `nspj_database`.`User` WHERE `UserID`='14'
+2017-07-25T06:40:27.992183Z	   22 Execute	DELETE FROM `nspj_database`.`User` WHERE `UserID`='14'
+2017-07-25T06:40:28.148463Z	   22 Query	rollback
+2017-07-25T06:40:28.273736Z	   22 Close stmt	
+2017-07-25T06:40:29.717662Z	   22 Query	set autocommit=1
+2017-07-25T06:41:37.970121Z	   27 Connect	Student@172.27.181.127 on nspj_database using SSL/TLS
+2017-07-25T06:41:37.985747Z	   27 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-25T06:41:38.110781Z	   27 Query	SET character_set_results = NULL
+2017-07-25T06:41:38.126399Z	   27 Query	SET autocommit=1
+2017-07-25T06:42:15.491732Z	   28 Connect	Student@172.27.181.127 on nspj_database using SSL/TLS
+2017-07-25T06:42:15.507362Z	   28 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-25T06:42:15.601126Z	   28 Query	SET character_set_results = NULL
+2017-07-25T06:42:15.616796Z	   28 Query	SET autocommit=1
+2017-07-25T06:42:59.508696Z	   29 Connect	Student@172.27.181.127 on nspj_database using SSL/TLS
+2017-07-25T06:42:59.649344Z	   29 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-25T06:42:59.774355Z	   29 Query	SET character_set_results = NULL
+2017-07-25T06:42:59.789704Z	   29 Query	SET autocommit=1
+2017-07-25T06:43:00.008748Z	   30 Connect	Student@172.27.181.127 on nspj_database using SSL/TLS
+2017-07-25T06:43:00.024395Z	   30 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-25T06:43:00.133755Z	   30 Query	SET character_set_results = NULL
+2017-07-25T06:43:00.149383Z	   30 Query	SET autocommit=1
+2017-07-25T06:43:00.258787Z	   30 Query	INSERT INTO File(UserID, FileName, Size, Data, Date) VALUES (13, 'fking frog.gif', 53902, _binary'ñ.8ìî6?Û5¢|◊m<z}Õ◊[Q)}ú™ˇô‹•êoﬂs’‹K˙Ñ≈ç∆£ñ<ø‚b∆TCáÑRò/øeÁAÖ6Ï£h=Ö≈&ˇ2ﬂ
+°µì—', '2017-07-24')
+2017-07-25T06:43:00.477564Z	   30 Quit	
+C:\Program Files\MySQL\MySQL Server 5.7\bin\mysqld.exe, Version: 5.7.18-log (MySQL Community Server (GPL)). started with:
+TCP Port: 3306, Named Pipe: (null)
+Time                 Id Command    Argument
+2017-07-26T01:19:43.458653Z	    2 Query	SELECT TABLE_SCHEMA, TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE CREATE_OPTIONS LIKE '%partitioned%';
+2017-07-26T01:23:13.991854Z	    3 Connect	root@localhost on nspj_database using SSL/TLS
+2017-07-26T01:23:13.999353Z	    3 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-26T01:23:14.018892Z	    3 Query	SET character_set_results = NULL
+2017-07-26T01:23:14.019884Z	    3 Query	SET autocommit=1
+2017-07-26T01:23:30.730900Z	    4 Connect	root@localhost on nspj_database using SSL/TLS
+2017-07-26T01:23:30.735914Z	    4 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-26T01:23:30.755003Z	    4 Query	SET character_set_results = NULL
+2017-07-26T01:23:30.755968Z	    4 Query	SET autocommit=1
+2017-07-26T01:23:41.726306Z	    5 Connect	root@localhost on nspj_database using SSL/TLS
+2017-07-26T01:23:41.731311Z	    5 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-26T01:23:41.752330Z	    5 Query	SET character_set_results = NULL
+2017-07-26T01:23:41.752330Z	    5 Query	SET autocommit=1
+2017-07-26T01:24:03.478837Z	    6 Connect	root@localhost on  using SSL/TLS
+2017-07-26T01:24:03.479803Z	    6 Query	set autocommit=1
+2017-07-26T01:24:03.479803Z	    6 Query	SET SESSION TRANSACTION ISOLATION LEVEL REPEATABLE READ
+2017-07-26T01:24:03.479803Z	    6 Query	SHOW SESSION VARIABLES LIKE 'lower_case_table_names'
+2017-07-26T01:24:03.481851Z	    6 Query	SELECT current_user()
+2017-07-26T01:24:03.482809Z	    6 Query	SET CHARACTER SET utf8
+2017-07-26T01:24:03.482809Z	    6 Query	SET NAMES utf8
+2017-07-26T01:24:03.482809Z	    6 Query	SHOW SESSION VARIABLES LIKE 'sql_mode'
+2017-07-26T01:24:03.485850Z	    6 Query	SELECT CONNECTION_ID()
+2017-07-26T01:24:03.486822Z	    6 Query	SHOW SESSION STATUS LIKE 'Ssl_cipher'
+2017-07-26T01:24:03.487824Z	    6 Query	USE `nspj_database`
+2017-07-26T01:24:03.487824Z	    6 Query	set autocommit=1
+2017-07-26T01:24:03.513931Z	    7 Connect	root@localhost on  using SSL/TLS
+2017-07-26T01:24:03.514933Z	    7 Query	set autocommit=1
+2017-07-26T01:24:03.514933Z	    7 Query	SET SESSION TRANSACTION ISOLATION LEVEL REPEATABLE READ
+2017-07-26T01:24:03.514933Z	    7 Query	SHOW SESSION VARIABLES LIKE 'lower_case_table_names'
+2017-07-26T01:24:03.516905Z	    7 Query	SELECT current_user()
+2017-07-26T01:24:03.516905Z	    7 Query	SET CHARACTER SET utf8
+2017-07-26T01:24:03.516905Z	    7 Query	SET NAMES utf8
+2017-07-26T01:24:03.516905Z	    7 Query	SET SQL_SAFE_UPDATES=1
+2017-07-26T01:24:03.516905Z	    7 Query	SELECT CONNECTION_ID()
+2017-07-26T01:24:03.517903Z	    7 Query	SHOW SESSION STATUS LIKE 'Ssl_cipher'
+2017-07-26T01:24:03.518905Z	    7 Query	USE `nspj_database`
+2017-07-26T01:24:03.518905Z	    7 Query	set autocommit=1
+2017-07-26T01:24:03.518905Z	    7 Query	SHOW SESSION VARIABLES LIKE 'sql_mode'
+2017-07-26T01:24:03.519908Z	    7 Query	SHOW SESSION VARIABLES LIKE 'version_comment'
+2017-07-26T01:24:03.521913Z	    7 Query	SHOW SESSION VARIABLES LIKE 'version'
+2017-07-26T01:24:03.527931Z	    7 Query	SELECT current_user()
+2017-07-26T01:24:03.527931Z	    7 Query	SHOW SESSION VARIABLES LIKE 'lower_case_table_names'
+2017-07-26T01:24:03.529935Z	    6 Query	USE `nspj_database`
+2017-07-26T01:24:03.529935Z	    7 Query	USE `nspj_database`
+2017-07-26T01:24:04.029448Z	    6 Query	SHOW DATABASES
+2017-07-26T01:24:04.033461Z	    7 Query	SHOW SESSION VARIABLES LIKE 'version_compile_os'
+2017-07-26T01:24:04.034464Z	    6 Query	show databases
+2017-07-26T01:24:04.034464Z	    6 Query	SELECT NAME FROM mysql.func
+2017-07-26T01:24:04.035466Z	    7 Query	SHOW SESSION VARIABLES LIKE 'offline_mode'
+2017-07-26T01:24:04.035466Z	    6 Query	SELECT logfile_group_name FROM information_schema.FILES
+2017-07-26T01:24:04.036513Z	    6 Query	SELECT tablespace_name FROM information_schema.FILES
+2017-07-26T01:24:04.037471Z	    6 Query	SHOW GLOBAL VARIABLES
+2017-07-26T01:24:04.059590Z	    6 Query	SHOW ENGINES
+2017-07-26T01:24:04.059590Z	    6 Query	show charset
+2017-07-26T01:24:04.083901Z	    6 Query	show collation
+2017-07-26T01:24:04.127995Z	    7 Query	SHOW SESSION VARIABLES LIKE 'wait_timeout'
+2017-07-26T01:24:04.130002Z	    7 Query	SHOW SESSION VARIABLES LIKE 'interactive_timeout'
+2017-07-26T01:24:05.545216Z	    6 Query	SHOW FULL TABLES FROM `nspj_database`
+2017-07-26T01:24:05.546219Z	    6 Query	SHOW PROCEDURE STATUS WHERE Db='nspj_database'
+2017-07-26T01:24:05.603371Z	    6 Query	SHOW FUNCTION STATUS WHERE Db='nspj_database'
+2017-07-26T01:24:05.603371Z	    6 Query	SHOW COLUMNS FROM `nspj_database`.`file`
+2017-07-26T01:24:05.652502Z	    6 Query	SHOW COLUMNS FROM `nspj_database`.`lesson`
+2017-07-26T01:24:05.654507Z	    6 Query	SHOW COLUMNS FROM `nspj_database`.`login`
+2017-07-26T01:24:05.655515Z	    6 Query	SHOW COLUMNS FROM `nspj_database`.`student`
+2017-07-26T01:24:05.673817Z	    6 Query	SHOW COLUMNS FROM `nspj_database`.`teacher`
+2017-07-26T01:24:05.691670Z	    6 Query	SHOW COLUMNS FROM `nspj_database`.`user`
+2017-07-26T01:24:15.838082Z	    7 Quit	
+2017-07-26T01:24:15.838082Z	    6 Quit	
+2017-07-26T01:24:26.029625Z	    8 Connect	root@localhost on nspj_database using SSL/TLS
+2017-07-26T01:24:26.033672Z	    8 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-26T01:24:26.053705Z	    8 Query	SET character_set_results = NULL
+2017-07-26T01:24:26.054681Z	    8 Query	SET autocommit=1
+2017-07-26T01:24:36.747755Z	    9 Connect	root@localhost on  using SSL/TLS
+2017-07-26T01:24:36.748758Z	    9 Query	set autocommit=1
+2017-07-26T01:24:36.748758Z	    9 Query	SET SESSION TRANSACTION ISOLATION LEVEL REPEATABLE READ
+2017-07-26T01:24:36.748758Z	    9 Query	SHOW SESSION VARIABLES LIKE 'lower_case_table_names'
+2017-07-26T01:24:36.750764Z	    9 Query	SELECT current_user()
+2017-07-26T01:24:36.750764Z	    9 Query	SET CHARACTER SET utf8
+2017-07-26T01:24:36.751767Z	    9 Query	SET NAMES utf8
+2017-07-26T01:24:36.751767Z	    9 Query	SHOW SESSION VARIABLES LIKE 'sql_mode'
+2017-07-26T01:24:36.752769Z	    9 Query	SELECT CONNECTION_ID()
+2017-07-26T01:24:36.752769Z	    9 Query	SHOW SESSION STATUS LIKE 'Ssl_cipher'
+2017-07-26T01:24:36.754783Z	    9 Query	USE `nspj_database`
+2017-07-26T01:24:36.754783Z	    9 Query	set autocommit=1
+2017-07-26T01:24:36.782897Z	   10 Connect	root@localhost on  using SSL/TLS
+2017-07-26T01:24:36.782897Z	   10 Query	set autocommit=1
+2017-07-26T01:24:36.783852Z	   10 Query	SET SESSION TRANSACTION ISOLATION LEVEL REPEATABLE READ
+2017-07-26T01:24:36.783852Z	   10 Query	SHOW SESSION VARIABLES LIKE 'lower_case_table_names'
+2017-07-26T01:24:36.785857Z	   10 Query	SELECT current_user()
+2017-07-26T01:24:36.785857Z	   10 Query	SET CHARACTER SET utf8
+2017-07-26T01:24:36.785857Z	   10 Query	SET NAMES utf8
+2017-07-26T01:24:36.785857Z	   10 Query	SET SQL_SAFE_UPDATES=1
+2017-07-26T01:24:36.785857Z	   10 Query	SELECT CONNECTION_ID()
+2017-07-26T01:24:36.786861Z	   10 Query	SHOW SESSION STATUS LIKE 'Ssl_cipher'
+2017-07-26T01:24:36.787862Z	   10 Query	USE `nspj_database`
+2017-07-26T01:24:36.787862Z	   10 Query	set autocommit=1
+2017-07-26T01:24:36.787862Z	   10 Query	SHOW SESSION VARIABLES LIKE 'sql_mode'
+2017-07-26T01:24:36.789868Z	   10 Query	SHOW SESSION VARIABLES LIKE 'version_comment'
+2017-07-26T01:24:36.791876Z	   10 Query	SHOW SESSION VARIABLES LIKE 'version'
+2017-07-26T01:24:36.798891Z	   10 Query	SELECT current_user()
+2017-07-26T01:24:36.799894Z	   10 Query	SHOW SESSION VARIABLES LIKE 'lower_case_table_names'
+2017-07-26T01:24:37.149212Z	    9 Query	SHOW DATABASES
+2017-07-26T01:24:37.149212Z	    9 Query	show databases
+2017-07-26T01:24:37.149212Z	   10 Query	SHOW SESSION VARIABLES LIKE 'version_compile_os'
+2017-07-26T01:24:37.150214Z	    9 Query	SELECT NAME FROM mysql.func
+2017-07-26T01:24:37.151224Z	    9 Query	SELECT logfile_group_name FROM information_schema.FILES
+2017-07-26T01:24:37.151224Z	    9 Query	SELECT tablespace_name FROM information_schema.FILES
+2017-07-26T01:24:37.152219Z	   10 Query	SHOW SESSION VARIABLES LIKE 'offline_mode'
+2017-07-26T01:24:37.152219Z	    9 Query	SHOW GLOBAL VARIABLES
+2017-07-26T01:24:37.157278Z	    9 Query	SHOW ENGINES
+2017-07-26T01:24:37.158279Z	    9 Query	show charset
+2017-07-26T01:24:37.160248Z	    9 Query	show collation
+2017-07-26T01:24:37.163299Z	   10 Query	SHOW SESSION VARIABLES LIKE 'wait_timeout'
+2017-07-26T01:24:37.165261Z	   10 Query	SHOW SESSION VARIABLES LIKE 'interactive_timeout'
+2017-07-26T01:24:37.976145Z	    9 Query	SHOW FULL TABLES FROM `nspj_database`
+2017-07-26T01:24:37.976145Z	    9 Query	SHOW PROCEDURE STATUS WHERE Db='nspj_database'
+2017-07-26T01:24:37.978137Z	    9 Query	SHOW FUNCTION STATUS WHERE Db='nspj_database'
+2017-07-26T01:24:37.978137Z	    9 Query	SHOW COLUMNS FROM `nspj_database`.`file`
+2017-07-26T01:24:37.980142Z	    9 Query	SHOW COLUMNS FROM `nspj_database`.`lesson`
+2017-07-26T01:24:37.982154Z	    9 Query	SHOW COLUMNS FROM `nspj_database`.`login`
+2017-07-26T01:24:37.983150Z	    9 Query	SHOW COLUMNS FROM `nspj_database`.`student`
+2017-07-26T01:24:37.985155Z	    9 Query	SHOW COLUMNS FROM `nspj_database`.`teacher`
+2017-07-26T01:24:37.986156Z	    9 Query	SHOW COLUMNS FROM `nspj_database`.`user`
+2017-07-26T01:24:42.149227Z	   10 Query	SELECT User.Keys FROM User WHERE UserID = 13
+LIMIT 0, 1000
+2017-07-26T01:24:42.194172Z	    9 Query	SELECT st.* FROM performance_schema.events_statements_current st JOIN performance_schema.threads thr ON thr.thread_id = st.thread_id WHERE thr.processlist_id = 10
+2017-07-26T01:24:42.195175Z	    9 Query	SELECT st.* FROM performance_schema.events_stages_history_long st WHERE st.nesting_event_id = 22
+2017-07-26T01:24:42.195175Z	    9 Query	SELECT st.* FROM performance_schema.events_waits_history_long st WHERE st.nesting_event_id = 22
+2017-07-26T01:24:42.196177Z	    9 Query	SHOW INDEX FROM `nspj_database`.`User`
+2017-07-26T01:24:49.266537Z	   11 Connect	root@localhost on nspj_database using SSL/TLS
+2017-07-26T01:24:49.270591Z	   11 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-26T01:24:49.292611Z	   11 Query	SET character_set_results = NULL
+2017-07-26T01:24:49.292611Z	   11 Query	SET autocommit=1
+2017-07-26T01:24:49.295649Z	   11 Query	SELECT User.Keys FROM User WHERE UserID = 13
+2017-07-26T01:25:05.294580Z	   12 Connect	root@localhost on nspj_database using SSL/TLS
+2017-07-26T01:25:05.299627Z	   12 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-26T01:25:05.321652Z	   12 Query	SET character_set_results = NULL
+2017-07-26T01:25:05.322693Z	   12 Query	SET autocommit=1
+2017-07-26T01:25:05.325689Z	   12 Query	SELECT User.Keys FROM User WHERE UserID = 13
+2017-07-26T01:25:05.327667Z	   12 Quit	
+2017-07-26T01:25:06.405580Z	   10 Quit	
+2017-07-26T01:25:06.405580Z	    9 Quit	
+2017-07-26T01:25:47.691880Z	   13 Connect	root@localhost on  using SSL/TLS
+2017-07-26T01:25:47.691880Z	   13 Query	set autocommit=1
+2017-07-26T01:25:47.691880Z	   13 Query	SET SESSION TRANSACTION ISOLATION LEVEL REPEATABLE READ
+2017-07-26T01:25:47.691880Z	   13 Query	SHOW SESSION VARIABLES LIKE 'lower_case_table_names'
+2017-07-26T01:25:47.693885Z	   13 Query	SELECT current_user()
+2017-07-26T01:25:47.693885Z	   13 Query	SET CHARACTER SET utf8
+2017-07-26T01:25:47.694888Z	   13 Query	SET NAMES utf8
+2017-07-26T01:25:47.694888Z	   13 Query	SHOW SESSION VARIABLES LIKE 'sql_mode'
+2017-07-26T01:25:47.695890Z	   13 Query	SELECT CONNECTION_ID()
+2017-07-26T01:25:47.696893Z	   13 Query	SHOW SESSION STATUS LIKE 'Ssl_cipher'
+2017-07-26T01:25:47.697896Z	   13 Query	USE `nspj_database`
+2017-07-26T01:25:47.697896Z	   13 Query	set autocommit=1
+2017-07-26T01:25:47.731987Z	   14 Connect	root@localhost on  using SSL/TLS
+2017-07-26T01:25:47.731987Z	   14 Query	set autocommit=1
+2017-07-26T01:25:47.732995Z	   14 Query	SET SESSION TRANSACTION ISOLATION LEVEL REPEATABLE READ
+2017-07-26T01:25:47.732995Z	   14 Query	SHOW SESSION VARIABLES LIKE 'lower_case_table_names'
+2017-07-26T01:25:47.734996Z	   14 Query	SELECT current_user()
+2017-07-26T01:25:47.734996Z	   14 Query	SET CHARACTER SET utf8
+2017-07-26T01:25:47.734996Z	   14 Query	SET NAMES utf8
+2017-07-26T01:25:47.734996Z	   14 Query	SET SQL_SAFE_UPDATES=1
+2017-07-26T01:25:47.734996Z	   14 Query	SELECT CONNECTION_ID()
+2017-07-26T01:25:47.735998Z	   14 Query	SHOW SESSION STATUS LIKE 'Ssl_cipher'
+2017-07-26T01:25:47.738009Z	   14 Query	USE `nspj_database`
+2017-07-26T01:25:47.738009Z	   14 Query	set autocommit=1
+2017-07-26T01:25:47.739006Z	   14 Query	SHOW SESSION VARIABLES LIKE 'sql_mode'
+2017-07-26T01:25:47.740010Z	   14 Query	SHOW SESSION VARIABLES LIKE 'version_comment'
+2017-07-26T01:25:47.742019Z	   14 Query	SHOW SESSION VARIABLES LIKE 'version'
+2017-07-26T01:25:47.748031Z	   14 Query	SELECT current_user()
+2017-07-26T01:25:47.748031Z	   14 Query	SHOW SESSION VARIABLES LIKE 'lower_case_table_names'
+2017-07-26T01:25:48.103623Z	   13 Query	SHOW DATABASES
+2017-07-26T01:25:48.103623Z	   13 Query	show databases
+2017-07-26T01:25:48.103623Z	   14 Query	SHOW SESSION VARIABLES LIKE 'version_compile_os'
+2017-07-26T01:25:48.104649Z	   13 Query	SELECT NAME FROM mysql.func
+2017-07-26T01:25:48.104649Z	   13 Query	SELECT logfile_group_name FROM information_schema.FILES
+2017-07-26T01:25:48.104649Z	   13 Query	SELECT tablespace_name FROM information_schema.FILES
+2017-07-26T01:25:48.105650Z	   13 Query	SHOW GLOBAL VARIABLES
+2017-07-26T01:25:48.105650Z	   14 Query	SHOW SESSION VARIABLES LIKE 'offline_mode'
+2017-07-26T01:25:48.112284Z	   13 Query	SHOW ENGINES
+2017-07-26T01:25:48.112284Z	   13 Query	show charset
+2017-07-26T01:25:48.115292Z	   13 Query	show collation
+2017-07-26T01:25:48.118300Z	   14 Query	SHOW SESSION VARIABLES LIKE 'wait_timeout'
+2017-07-26T01:25:48.120337Z	   14 Query	SHOW SESSION VARIABLES LIKE 'interactive_timeout'
+2017-07-26T01:25:48.934059Z	   13 Query	SHOW FULL TABLES FROM `nspj_database`
+2017-07-26T01:25:48.935060Z	   13 Query	SHOW PROCEDURE STATUS WHERE Db='nspj_database'
+2017-07-26T01:25:48.936030Z	   13 Query	SHOW FUNCTION STATUS WHERE Db='nspj_database'
+2017-07-26T01:25:48.937033Z	   13 Query	SHOW COLUMNS FROM `nspj_database`.`file`
+2017-07-26T01:25:48.938035Z	   13 Query	SHOW COLUMNS FROM `nspj_database`.`lesson`
+2017-07-26T01:25:48.940077Z	   13 Query	SHOW COLUMNS FROM `nspj_database`.`login`
+2017-07-26T01:25:48.942271Z	   13 Query	SHOW COLUMNS FROM `nspj_database`.`student`
+2017-07-26T01:25:48.943291Z	   13 Query	SHOW COLUMNS FROM `nspj_database`.`teacher`
+2017-07-26T01:25:48.944278Z	   13 Query	SHOW COLUMNS FROM `nspj_database`.`user`
+2017-07-26T01:26:45.555655Z	   13 Query	SHOW FULL TABLES FROM `nspj_database` WHERE `Tables_in_nspj_database` = 'blacklist' AND Table_type != 'VIEW'
+2017-07-26T01:26:45.561381Z	   13 Query	SHOW FULL TABLES FROM `nspj_database` WHERE `Tables_in_nspj_database` = 'blacklist' AND Table_type = 'VIEW'
+2017-07-26T01:26:47.670356Z	   14 Query	CREATE TABLE `nspj_database`.`blacklist` (
+  `ipAddress` INT NOT NULL,
+  PRIMARY KEY (`ipAddress`))
+2017-07-26T01:26:48.605228Z	   13 Query	SHOW TRIGGERS FROM `nspj_database` WHERE `Table` = 'blacklist'
+2017-07-26T01:26:48.605228Z	   13 Query	SHOW CREATE TABLE `nspj_database`.`blacklist`
+2017-07-26T01:26:48.638823Z	   13 Query	SHOW SESSION VARIABLES LIKE 'sql_mode'
+2017-07-26T01:26:50.189106Z	   13 Query	SHOW TRIGGERS FROM `nspj_database` WHERE `Table` = 'blacklist'
+2017-07-26T01:26:50.190141Z	   13 Query	SHOW CREATE TABLE `nspj_database`.`blacklist`
+2017-07-26T01:26:50.190141Z	   13 Query	SHOW SESSION VARIABLES LIKE 'sql_mode'
+2017-07-26T01:26:51.838471Z	   13 Query	SHOW FULL COLUMNS FROM `nspj_database`.`blacklist`
+2017-07-26T01:26:51.854549Z	   13 Query	SHOW INDEXES FROM `nspj_database`.`blacklist`
+2017-07-26T01:26:55.923698Z	   13 Query	SHOW FULL TABLES FROM `nspj_database`
+2017-07-26T01:26:55.924834Z	   13 Query	SHOW FULL TABLES FROM `nspj_database`
+2017-07-26T01:26:55.925579Z	   13 Query	SHOW PROCEDURE STATUS WHERE Db='nspj_database'
+2017-07-26T01:26:55.925579Z	   13 Query	SHOW FUNCTION STATUS WHERE Db='nspj_database'
+2017-07-26T01:26:55.926918Z	   13 Query	SELECT EVENT_NAME FROM information_schema.EVENTS WHERE EVENT_SCHEMA = 'nspj_database'
+2017-07-26T01:26:55.927586Z	   13 Query	SHOW COLUMNS FROM `nspj_database`.`blacklist`
+2017-07-26T01:26:55.927586Z	   13 Query	SHOW TRIGGERS FROM `nspj_database` WHERE `Table` = 'blacklist'
+2017-07-26T01:26:55.928732Z	   13 Query	SHOW COLUMNS FROM `nspj_database`.`file`
+2017-07-26T01:26:55.928732Z	   13 Query	SHOW TRIGGERS FROM `nspj_database` WHERE `Table` = 'file'
+2017-07-26T01:26:55.929737Z	   13 Query	SHOW COLUMNS FROM `nspj_database`.`lesson`
+2017-07-26T01:26:55.929737Z	   13 Query	SHOW TRIGGERS FROM `nspj_database` WHERE `Table` = 'lesson'
+2017-07-26T01:26:55.930739Z	   13 Query	SHOW COLUMNS FROM `nspj_database`.`login`
+2017-07-26T01:26:55.931742Z	   13 Query	SHOW TRIGGERS FROM `nspj_database` WHERE `Table` = 'login'
+2017-07-26T01:26:55.931742Z	   13 Query	SHOW COLUMNS FROM `nspj_database`.`student`
+2017-07-26T01:26:55.932765Z	   13 Query	SHOW TRIGGERS FROM `nspj_database` WHERE `Table` = 'student'
+2017-07-26T01:26:55.932765Z	   13 Query	SHOW COLUMNS FROM `nspj_database`.`teacher`
+2017-07-26T01:26:55.933747Z	   13 Query	SHOW TRIGGERS FROM `nspj_database` WHERE `Table` = 'teacher'
+2017-07-26T01:26:55.933747Z	   13 Query	SHOW COLUMNS FROM `nspj_database`.`user`
+2017-07-26T01:26:55.934750Z	   13 Query	SHOW TRIGGERS FROM `nspj_database` WHERE `Table` = 'user'
+2017-07-26T01:27:01.539123Z	   14 Query	SELECT * FROM Blacklist
+LIMIT 0, 1000
+2017-07-26T01:27:01.563242Z	   13 Query	SELECT st.* FROM performance_schema.events_statements_current st JOIN performance_schema.threads thr ON thr.thread_id = st.thread_id WHERE thr.processlist_id = 14
+2017-07-26T01:27:01.564854Z	   13 Query	SELECT st.* FROM performance_schema.events_stages_history_long st WHERE st.nesting_event_id = 24
+2017-07-26T01:27:01.565180Z	   13 Query	SELECT st.* FROM performance_schema.events_waits_history_long st WHERE st.nesting_event_id = 24
+2017-07-26T01:27:01.566186Z	   13 Query	SHOW INDEX FROM `nspj_database`.`Blacklist`
+2017-07-26T01:27:58.765521Z	   14 Query	set autocommit=0
+2017-07-26T01:28:00.446691Z	   14 Query	set autocommit=1
+2017-07-26T01:28:03.263407Z	   14 Query	set autocommit=0
+2017-07-26T01:28:04.058810Z	   14 Prepare	INSERT INTO `nspj_database`.`Blacklist` (`ipAddress`) VALUES ('192.168.1.29')
+2017-07-26T01:28:04.059794Z	   14 Execute	INSERT INTO `nspj_database`.`Blacklist` (`ipAddress`) VALUES ('192.168.1.29')
+2017-07-26T01:28:04.068176Z	   14 Query	rollback
+2017-07-26T01:28:04.068176Z	   14 Close stmt	
+2017-07-26T01:28:12.305796Z	   14 Query	set autocommit=1
+2017-07-26T01:28:20.104100Z	   13 Query	SHOW TRIGGERS FROM `nspj_database` WHERE `Table` = 'blacklist'
+2017-07-26T01:28:20.104100Z	   13 Query	SHOW CREATE TABLE `nspj_database`.`blacklist`
+2017-07-26T01:28:20.105104Z	   13 Query	SHOW SESSION VARIABLES LIKE 'sql_mode'
+2017-07-26T01:28:47.995146Z	   14 Query	ALTER TABLE `nspj_database`.`blacklist` 
+CHANGE COLUMN `ipAddress` `ipAddress` VARCHAR(15) NOT NULL
+2017-07-26T01:28:48.869294Z	   13 Query	SHOW FULL COLUMNS FROM `nspj_database`.`blacklist`
+2017-07-26T01:28:48.870663Z	   13 Query	SHOW INDEXES FROM `nspj_database`.`blacklist`
+2017-07-26T01:28:48.871667Z	   13 Query	SHOW TRIGGERS FROM `nspj_database` WHERE `Table` = 'blacklist'
+2017-07-26T01:28:48.871667Z	   13 Query	SHOW CREATE TABLE `nspj_database`.`blacklist`
+2017-07-26T01:28:48.872671Z	   13 Query	SHOW SESSION VARIABLES LIKE 'sql_mode'
+2017-07-26T01:28:50.063446Z	   13 Query	SHOW TRIGGERS FROM `nspj_database` WHERE `Table` = 'blacklist'
+2017-07-26T01:28:50.064450Z	   13 Query	SHOW CREATE TABLE `nspj_database`.`blacklist`
+2017-07-26T01:28:50.064450Z	   13 Query	SHOW SESSION VARIABLES LIKE 'sql_mode'
+2017-07-26T01:28:57.664277Z	   14 Query	set autocommit=0
+2017-07-26T01:28:58.531331Z	   14 Prepare	INSERT INTO `nspj_database`.`Blacklist` (`ipAddress`) VALUES ('192.168.1.29')
+2017-07-26T01:28:58.531331Z	   14 Execute	INSERT INTO `nspj_database`.`Blacklist` (`ipAddress`) VALUES ('192.168.1.29')
+2017-07-26T01:28:58.554396Z	   14 Query	commit
+2017-07-26T01:28:58.598494Z	   14 Close stmt	
+2017-07-26T01:28:58.599527Z	   14 Query	SELECT * FROM Blacklist
+LIMIT 0, 1000
+2017-07-26T01:28:58.599527Z	   13 Query	SHOW INDEX FROM `nspj_database`.`Blacklist`
+2017-07-26T01:28:59.591132Z	   14 Query	set autocommit=1
+2017-07-26T01:29:04.042075Z	   14 Quit	
+2017-07-26T01:29:04.042075Z	   13 Quit	
+2017-07-26T01:39:42.678401Z	   15 Connect	root@localhost on  using SSL/TLS
+2017-07-26T01:39:42.678401Z	   15 Query	set autocommit=1
+2017-07-26T01:39:42.679404Z	   15 Query	SET SESSION TRANSACTION ISOLATION LEVEL REPEATABLE READ
+2017-07-26T01:39:42.679404Z	   15 Query	SHOW SESSION VARIABLES LIKE 'lower_case_table_names'
+2017-07-26T01:39:42.682412Z	   15 Query	SELECT current_user()
+2017-07-26T01:39:42.682412Z	   15 Query	SET CHARACTER SET utf8
+2017-07-26T01:39:42.682412Z	   15 Query	SET NAMES utf8
+2017-07-26T01:39:42.682412Z	   15 Query	SHOW SESSION VARIABLES LIKE 'sql_mode'
+2017-07-26T01:39:42.685420Z	   15 Query	SELECT CONNECTION_ID()
+2017-07-26T01:39:42.685420Z	   15 Query	SHOW SESSION STATUS LIKE 'Ssl_cipher'
+2017-07-26T01:39:42.686423Z	   15 Query	USE `nspj_database`
+2017-07-26T01:39:42.687426Z	   15 Query	set autocommit=1
+2017-07-26T01:39:42.719511Z	   16 Connect	root@localhost on  using SSL/TLS
+2017-07-26T01:39:42.719511Z	   16 Query	set autocommit=1
+2017-07-26T01:39:42.719511Z	   16 Query	SET SESSION TRANSACTION ISOLATION LEVEL REPEATABLE READ
+2017-07-26T01:39:42.719511Z	   16 Query	SHOW SESSION VARIABLES LIKE 'lower_case_table_names'
+2017-07-26T01:39:42.721516Z	   16 Query	SELECT current_user()
+2017-07-26T01:39:42.722519Z	   16 Query	SET CHARACTER SET utf8
+2017-07-26T01:39:42.722519Z	   16 Query	SET NAMES utf8
+2017-07-26T01:39:42.722519Z	   16 Query	SET SQL_SAFE_UPDATES=1
+2017-07-26T01:39:42.722519Z	   16 Query	SELECT CONNECTION_ID()
+2017-07-26T01:39:42.723522Z	   16 Query	SHOW SESSION STATUS LIKE 'Ssl_cipher'
+2017-07-26T01:39:42.724524Z	   16 Query	USE `nspj_database`
+2017-07-26T01:39:42.724524Z	   16 Query	set autocommit=1
+2017-07-26T01:39:42.725527Z	   16 Query	SHOW SESSION VARIABLES LIKE 'sql_mode'
+2017-07-26T01:39:42.727532Z	   16 Query	SHOW SESSION VARIABLES LIKE 'version_comment'
+2017-07-26T01:39:42.730542Z	   16 Query	SHOW SESSION VARIABLES LIKE 'version'
+2017-07-26T01:39:42.737558Z	   16 Query	SELECT current_user()
+2017-07-26T01:39:42.738561Z	   16 Query	SHOW SESSION VARIABLES LIKE 'lower_case_table_names'
+2017-07-26T01:39:43.095302Z	   15 Query	SHOW DATABASES
+2017-07-26T01:39:43.096265Z	   16 Query	SHOW SESSION VARIABLES LIKE 'version_compile_os'
+2017-07-26T01:39:43.096265Z	   15 Query	show databases
+2017-07-26T01:39:43.097280Z	   15 Query	SELECT NAME FROM mysql.func
+2017-07-26T01:39:43.097280Z	   15 Query	SELECT logfile_group_name FROM information_schema.FILES
+2017-07-26T01:39:43.098272Z	   16 Query	SHOW SESSION VARIABLES LIKE 'offline_mode'
+2017-07-26T01:39:43.098272Z	   15 Query	SELECT tablespace_name FROM information_schema.FILES
+2017-07-26T01:39:43.099275Z	   15 Query	SHOW GLOBAL VARIABLES
+2017-07-26T01:39:43.103283Z	   15 Query	SHOW ENGINES
+2017-07-26T01:39:43.103283Z	   15 Query	show charset
+2017-07-26T01:39:43.106291Z	   15 Query	show collation
+2017-07-26T01:39:43.108297Z	   16 Query	SHOW SESSION VARIABLES LIKE 'wait_timeout'
+2017-07-26T01:39:43.110319Z	   16 Query	SHOW SESSION VARIABLES LIKE 'interactive_timeout'
+2017-07-26T01:39:43.855018Z	   15 Query	SHOW FULL TABLES FROM `nspj_database`
+2017-07-26T01:39:43.855998Z	   15 Query	SHOW PROCEDURE STATUS WHERE Db='nspj_database'
+2017-07-26T01:39:43.857037Z	   15 Query	SHOW FUNCTION STATUS WHERE Db='nspj_database'
+2017-07-26T01:39:43.858003Z	   15 Query	SHOW COLUMNS FROM `nspj_database`.`blacklist`
+2017-07-26T01:39:43.859008Z	   15 Query	SHOW COLUMNS FROM `nspj_database`.`file`
+2017-07-26T01:39:43.861011Z	   15 Query	SHOW COLUMNS FROM `nspj_database`.`lesson`
+2017-07-26T01:39:43.863468Z	   15 Query	SHOW COLUMNS FROM `nspj_database`.`login`
+2017-07-26T01:39:43.864474Z	   15 Query	SHOW COLUMNS FROM `nspj_database`.`student`
+2017-07-26T01:39:43.865475Z	   15 Query	SHOW COLUMNS FROM `nspj_database`.`teacher`
+2017-07-26T01:39:43.867480Z	   15 Query	SHOW COLUMNS FROM `nspj_database`.`user`
+2017-07-26T01:39:45.462983Z	   15 Query	SHOW FULL COLUMNS FROM `nspj_database`.`blacklist`
+2017-07-26T01:39:45.463986Z	   15 Query	SHOW INDEXES FROM `nspj_database`.`blacklist`
+2017-07-26T01:39:46.861826Z	   15 Query	SHOW TRIGGERS FROM `nspj_database` WHERE `Table` = 'blacklist'
+2017-07-26T01:39:46.862832Z	   15 Query	SHOW CREATE TABLE `nspj_database`.`blacklist`
+2017-07-26T01:39:46.862832Z	   15 Query	SHOW SESSION VARIABLES LIKE 'sql_mode'
+2017-07-26T01:39:54.076195Z	   15 Query	SHOW FULL COLUMNS FROM `nspj_database`.`lesson`
+2017-07-26T01:39:54.077237Z	   15 Query	SHOW INDEXES FROM `nspj_database`.`lesson`
+2017-07-26T01:40:53.934557Z	   16 Query	ALTER TABLE `nspj_database`.`blacklist` 
+ADD COLUMN `ID` INT NOT NULL AUTO_INCREMENT FIRST,
+DROP PRIMARY KEY,
+ADD PRIMARY KEY (`ID`),
+ADD UNIQUE INDEX `ID_UNIQUE` (`ID` ASC)
+2017-07-26T01:40:55.372771Z	   15 Query	SHOW FULL COLUMNS FROM `nspj_database`.`blacklist`
+2017-07-26T01:40:55.374208Z	   15 Query	SHOW INDEXES FROM `nspj_database`.`blacklist`
+2017-07-26T01:40:55.374880Z	   15 Query	SHOW TRIGGERS FROM `nspj_database` WHERE `Table` = 'blacklist'
+2017-07-26T01:40:55.375446Z	   15 Query	SHOW CREATE TABLE `nspj_database`.`blacklist`
+2017-07-26T01:40:55.375874Z	   15 Query	SHOW SESSION VARIABLES LIKE 'sql_mode'
+2017-07-26T01:40:56.468743Z	   15 Query	SHOW TRIGGERS FROM `nspj_database` WHERE `Table` = 'blacklist'
+2017-07-26T01:40:56.469742Z	   15 Query	SHOW CREATE TABLE `nspj_database`.`blacklist`
+2017-07-26T01:40:56.469742Z	   15 Query	SHOW SESSION VARIABLES LIKE 'sql_mode'
+2017-07-26T01:40:58.613296Z	   16 Query	SELECT * FROM Blacklist
+LIMIT 0, 1000
+2017-07-26T01:40:58.663594Z	   15 Query	SELECT st.* FROM performance_schema.events_statements_current st JOIN performance_schema.threads thr ON thr.thread_id = st.thread_id WHERE thr.processlist_id = 16
+2017-07-26T01:40:58.664406Z	   15 Query	SELECT st.* FROM performance_schema.events_stages_history_long st WHERE st.nesting_event_id = 24
+2017-07-26T01:40:58.664406Z	   15 Query	SELECT st.* FROM performance_schema.events_waits_history_long st WHERE st.nesting_event_id = 24
+2017-07-26T01:40:58.665410Z	   15 Query	SHOW INDEX FROM `nspj_database`.`Blacklist`
+2017-07-26T01:41:03.904073Z	   16 Quit	
+2017-07-26T01:41:03.904073Z	   15 Quit	
+2017-07-26T01:51:04.420407Z	   17 Connect	root@localhost on  using SSL/TLS
+2017-07-26T01:51:04.421411Z	   17 Query	set autocommit=1
+2017-07-26T01:51:04.421411Z	   17 Query	SET SESSION TRANSACTION ISOLATION LEVEL REPEATABLE READ
+2017-07-26T01:51:04.421411Z	   17 Query	SHOW SESSION VARIABLES LIKE 'lower_case_table_names'
+2017-07-26T01:51:04.423417Z	   17 Query	SELECT current_user()
+2017-07-26T01:51:04.423417Z	   17 Query	SET CHARACTER SET utf8
+2017-07-26T01:51:04.423417Z	   17 Query	SET NAMES utf8
+2017-07-26T01:51:04.424417Z	   17 Query	SHOW SESSION VARIABLES LIKE 'sql_mode'
+2017-07-26T01:51:04.425446Z	   17 Query	SELECT CONNECTION_ID()
+2017-07-26T01:51:04.425446Z	   17 Query	SHOW SESSION STATUS LIKE 'Ssl_cipher'
+2017-07-26T01:51:04.426449Z	   17 Query	USE `nspj_database`
+2017-07-26T01:51:04.427428Z	   17 Query	set autocommit=1
+2017-07-26T01:51:04.458548Z	   18 Connect	root@localhost on  using SSL/TLS
+2017-07-26T01:51:04.459515Z	   18 Query	set autocommit=1
+2017-07-26T01:51:04.459515Z	   18 Query	SET SESSION TRANSACTION ISOLATION LEVEL REPEATABLE READ
+2017-07-26T01:51:04.459515Z	   18 Query	SHOW SESSION VARIABLES LIKE 'lower_case_table_names'
+2017-07-26T01:51:04.461516Z	   18 Query	SELECT current_user()
+2017-07-26T01:51:04.461516Z	   18 Query	SET CHARACTER SET utf8
+2017-07-26T01:51:04.462539Z	   18 Query	SET NAMES utf8
+2017-07-26T01:51:04.462539Z	   18 Query	SET SQL_SAFE_UPDATES=1
+2017-07-26T01:51:04.462539Z	   18 Query	SELECT CONNECTION_ID()
+2017-07-26T01:51:04.462539Z	   18 Query	SHOW SESSION STATUS LIKE 'Ssl_cipher'
+2017-07-26T01:51:04.463523Z	   18 Query	USE `nspj_database`
+2017-07-26T01:51:04.464525Z	   18 Query	set autocommit=1
+2017-07-26T01:51:04.464525Z	   18 Query	SHOW SESSION VARIABLES LIKE 'sql_mode'
+2017-07-26T01:51:04.465553Z	   18 Query	SHOW SESSION VARIABLES LIKE 'version_comment'
+2017-07-26T01:51:04.467547Z	   18 Query	SHOW SESSION VARIABLES LIKE 'version'
+2017-07-26T01:51:04.473549Z	   18 Query	SELECT current_user()
+2017-07-26T01:51:04.474562Z	   18 Query	SHOW SESSION VARIABLES LIKE 'lower_case_table_names'
+2017-07-26T01:51:04.835509Z	   17 Query	SHOW DATABASES
+2017-07-26T01:51:04.836514Z	   17 Query	show databases
+2017-07-26T01:51:04.836514Z	   18 Query	SHOW SESSION VARIABLES LIKE 'version_compile_os'
+2017-07-26T01:51:04.836514Z	   17 Query	SELECT NAME FROM mysql.func
+2017-07-26T01:51:04.837557Z	   17 Query	SELECT logfile_group_name FROM information_schema.FILES
+2017-07-26T01:51:04.837557Z	   17 Query	SELECT tablespace_name FROM information_schema.FILES
+2017-07-26T01:51:04.838518Z	   18 Query	SHOW SESSION VARIABLES LIKE 'offline_mode'
+2017-07-26T01:51:04.838518Z	   17 Query	SHOW GLOBAL VARIABLES
+2017-07-26T01:51:04.846209Z	   17 Query	SHOW ENGINES
+2017-07-26T01:51:04.847227Z	   17 Query	show charset
+2017-07-26T01:51:04.851223Z	   17 Query	show collation
+2017-07-26T01:51:04.854231Z	   18 Query	SHOW SESSION VARIABLES LIKE 'wait_timeout'
+2017-07-26T01:51:04.855234Z	   18 Query	SHOW SESSION VARIABLES LIKE 'interactive_timeout'
+2017-07-26T01:51:05.674557Z	   17 Query	SHOW FULL TABLES FROM `nspj_database`
+2017-07-26T01:51:05.675560Z	   17 Query	SHOW PROCEDURE STATUS WHERE Db='nspj_database'
+2017-07-26T01:51:05.676563Z	   17 Query	SHOW FUNCTION STATUS WHERE Db='nspj_database'
+2017-07-26T01:51:05.677576Z	   17 Query	SHOW COLUMNS FROM `nspj_database`.`blacklist`
+2017-07-26T01:51:05.679433Z	   17 Query	SHOW COLUMNS FROM `nspj_database`.`file`
+2017-07-26T01:51:05.680437Z	   17 Query	SHOW COLUMNS FROM `nspj_database`.`lesson`
+2017-07-26T01:51:05.682709Z	   17 Query	SHOW COLUMNS FROM `nspj_database`.`login`
+2017-07-26T01:51:05.683714Z	   17 Query	SHOW COLUMNS FROM `nspj_database`.`student`
+2017-07-26T01:51:05.685720Z	   17 Query	SHOW COLUMNS FROM `nspj_database`.`teacher`
+2017-07-26T01:51:05.686722Z	   17 Query	SHOW COLUMNS FROM `nspj_database`.`user`
+2017-07-26T01:51:08.150300Z	   18 Query	SELECT * FROM Blacklist
+LIMIT 0, 1000
+2017-07-26T01:51:08.174154Z	   17 Query	SELECT st.* FROM performance_schema.events_statements_current st JOIN performance_schema.threads thr ON thr.thread_id = st.thread_id WHERE thr.processlist_id = 18
+2017-07-26T01:51:08.175170Z	   17 Query	SELECT st.* FROM performance_schema.events_stages_history_long st WHERE st.nesting_event_id = 22
+2017-07-26T01:51:08.176124Z	   17 Query	SELECT st.* FROM performance_schema.events_waits_history_long st WHERE st.nesting_event_id = 22
+2017-07-26T01:51:08.177129Z	   17 Query	SHOW INDEX FROM `nspj_database`.`Blacklist`
+2017-07-26T01:51:16.960833Z	   18 Query	set autocommit=0
+2017-07-26T01:51:21.022766Z	   18 Query	set autocommit=1
+2017-07-26T01:51:21.632249Z	   18 Query	SELECT * FROM Blacklist
+LIMIT 0, 1000
+2017-07-26T01:51:21.632249Z	   17 Query	SHOW INDEX FROM `nspj_database`.`Blacklist`
+2017-07-26T01:51:22.804204Z	   18 Quit	
+2017-07-26T01:51:22.804204Z	   17 Quit	
+2017-07-26T02:08:26.423793Z	   19 Connect	Student@Wolf on nspj_database using SSL/TLS
+2017-07-26T02:08:26.439420Z	   19 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-26T02:08:26.455048Z	   19 Query	SET character_set_results = NULL
+2017-07-26T02:08:26.455048Z	   19 Query	SET autocommit=1
+2017-07-26T02:08:26.501927Z	   19 Query	SELECT User.UserID, Login.Username, Login.Password, Login.Salt, User.NRIC, User.Name, User.Gender, User.DOB, User.ContactNo, User.Email, User.Class, User.Address, User.Keys, Student.CCA, Teacher.TeacherID, Teacher.Department FROM User LEFT OUTER JOIN Login ON (User.UserID = Login.UserID) LEFT OUTER JOIN Student ON (User.UserID = Student.UserID) LEFT OUTER JOIN Teacher ON (User.UserID = Teacher.UserID) ORDER BY UserID
+2017-07-26T02:08:26.611576Z	   19 Quit	
+2017-07-26T02:13:51.596517Z	   20 Connect	Student@Wolf on nspj_database using SSL/TLS
+2017-07-26T02:13:51.612144Z	   20 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-26T02:13:51.643397Z	   20 Query	SET character_set_results = NULL
+2017-07-26T02:13:51.643397Z	   20 Query	SET autocommit=1
+2017-07-26T02:13:51.643397Z	   20 Query	SELECT User.UserID, Login.Username, Login.Password, Login.Salt, User.NRIC, User.Name, User.Gender, User.DOB, User.ContactNo, User.Email, User.Class, User.Address, User.Keys, Student.CCA, Teacher.TeacherID, Teacher.Department FROM User LEFT OUTER JOIN Login ON (User.UserID = Login.UserID) LEFT OUTER JOIN Student ON (User.UserID = Student.UserID) LEFT OUTER JOIN Teacher ON (User.UserID = Teacher.UserID) ORDER BY UserID
+2017-07-26T02:13:51.659026Z	   20 Quit	
+2017-07-26T02:18:48.319051Z	   21 Connect	Student@Wolf on nspj_database using SSL/TLS
+2017-07-26T02:18:48.319051Z	   21 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-26T02:18:48.320053Z	   21 Query	SET character_set_results = NULL
+2017-07-26T02:18:48.321056Z	   21 Query	SET autocommit=1
+2017-07-26T02:18:48.321056Z	   21 Query	SELECT User.UserID, Login.Username, Login.Password, Login.Salt, User.NRIC, User.Name, User.Gender, User.DOB, User.ContactNo, User.Email, User.Class, User.Address, User.Keys, Student.CCA, Teacher.TeacherID, Teacher.Department FROM User LEFT OUTER JOIN Login ON (User.UserID = Login.UserID) LEFT OUTER JOIN Student ON (User.UserID = Student.UserID) LEFT OUTER JOIN Teacher ON (User.UserID = Teacher.UserID) ORDER BY UserID
+2017-07-26T02:18:48.327072Z	   21 Quit	
+2017-07-26T02:18:56.306727Z	   22 Connect	Student@Wolf on nspj_database using SSL/TLS
+2017-07-26T02:18:56.307720Z	   22 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-26T02:18:56.308725Z	   22 Query	SET character_set_results = NULL
+2017-07-26T02:18:56.308725Z	   22 Query	SET autocommit=1
+2017-07-26T02:18:56.317740Z	   22 Query	SELECT User.UserID, Login.Username, Login.Password, Login.Salt, User.Name, User.Gender, User.DOB, User.ContactNo, User.Email, User.Class, User.Address, Student.NRIC, Student.CCA, Teacher.TeacherID, Teacher.Department FROM User LEFT OUTER JOIN Login ON (User.UserID = Login.UserID) LEFT OUTER JOIN Student ON (User.UserID = Student.UserID) LEFT OUTER JOIN Teacher ON (User.UserID = Teacher.UserID) WHERE User.Name LIKE '%d%'
+2017-07-26T02:19:09.528668Z	   23 Connect	Student@Wolf on nspj_database using SSL/TLS
+2017-07-26T02:19:09.529656Z	   23 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-26T02:19:09.529656Z	   23 Query	SET character_set_results = NULL
+2017-07-26T02:19:09.530660Z	   23 Query	SET autocommit=1
+2017-07-26T02:19:09.530660Z	   23 Query	SELECT User.UserID, Login.Username, Login.Password, Login.Salt, User.NRIC, User.Name, User.Gender, User.DOB, User.ContactNo, User.Email, User.Class, User.Address, User.Keys, Student.CCA, Teacher.TeacherID, Teacher.Department FROM User LEFT OUTER JOIN Login ON (User.UserID = Login.UserID) LEFT OUTER JOIN Student ON (User.UserID = Student.UserID) LEFT OUTER JOIN Teacher ON (User.UserID = Teacher.UserID) ORDER BY UserID
+2017-07-26T02:19:09.536637Z	   23 Quit	
+2017-07-26T02:25:16.781752Z	   24 Connect	Student@Wolf on nspj_database using SSL/TLS
+2017-07-26T02:25:16.781752Z	   24 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-26T02:25:16.797380Z	   24 Query	SET character_set_results = NULL
+2017-07-26T02:25:16.797380Z	   24 Query	SET autocommit=1
+2017-07-26T02:25:16.844259Z	   24 Query	SELECT User.UserID, Login.Username, Login.Password, Login.Salt, User.NRIC, User.Name, User.Gender, User.DOB, User.ContactNo, User.Email, User.Class, User.Address, User.Keys, Student.CCA, Teacher.TeacherID, Teacher.Department FROM User LEFT OUTER JOIN Login ON (User.UserID = Login.UserID) LEFT OUTER JOIN Student ON (User.UserID = Student.UserID) LEFT OUTER JOIN Teacher ON (User.UserID = Teacher.UserID) ORDER BY UserID
+2017-07-26T02:25:16.859892Z	   24 Quit	
+2017-07-26T02:26:20.663094Z	   25 Connect	Student@Wolf on nspj_database using SSL/TLS
+2017-07-26T02:26:20.678723Z	   25 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-26T02:26:20.694350Z	   25 Query	SET character_set_results = NULL
+2017-07-26T02:26:20.694350Z	   25 Query	SET autocommit=1
+2017-07-26T02:26:20.741227Z	   25 Query	SELECT User.UserID, Login.Username, Login.Password, Login.Salt, User.NRIC, User.Name, User.Gender, User.DOB, User.ContactNo, User.Email, User.Class, User.Address, User.Keys, Student.CCA, Teacher.TeacherID, Teacher.Department FROM User LEFT OUTER JOIN Login ON (User.UserID = Login.UserID) LEFT OUTER JOIN Student ON (User.UserID = Student.UserID) LEFT OUTER JOIN Teacher ON (User.UserID = Teacher.UserID) ORDER BY UserID
+2017-07-26T02:26:20.741227Z	   25 Quit	
+2017-07-26T02:26:47.690016Z	   26 Connect	Student@Wolf on nspj_database using SSL/TLS
+2017-07-26T02:26:47.691018Z	   26 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-26T02:26:47.692021Z	   26 Query	SET character_set_results = NULL
+2017-07-26T02:26:47.692021Z	   26 Query	SET autocommit=1
+2017-07-26T02:26:47.693049Z	   26 Query	SELECT User.UserID, Login.Username, Login.Password, Login.Salt, User.NRIC, User.Name, User.Gender, User.DOB, User.ContactNo, User.Email, User.Class, User.Address, User.Keys, Student.CCA, Teacher.TeacherID, Teacher.Department FROM User LEFT OUTER JOIN Login ON (User.UserID = Login.UserID) LEFT OUTER JOIN Student ON (User.UserID = Student.UserID) LEFT OUTER JOIN Teacher ON (User.UserID = Teacher.UserID) ORDER BY UserID
+2017-07-26T02:26:47.697467Z	   26 Quit	
+2017-07-26T02:29:31.688414Z	   27 Connect	Student@Wolf on nspj_database using SSL/TLS
+2017-07-26T02:29:31.688414Z	   27 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-26T02:29:31.719633Z	   27 Query	SET character_set_results = NULL
+2017-07-26T02:29:31.719633Z	   27 Query	SET autocommit=1
+2017-07-26T02:29:31.766536Z	   27 Query	SELECT User.UserID, Login.Username, Login.Password, Login.Salt, User.NRIC, User.Name, User.Gender, User.DOB, User.ContactNo, User.Email, User.Class, User.Address, User.Keys, Student.CCA, Teacher.TeacherID, Teacher.Department FROM User LEFT OUTER JOIN Login ON (User.UserID = Login.UserID) LEFT OUTER JOIN Student ON (User.UserID = Student.UserID) LEFT OUTER JOIN Teacher ON (User.UserID = Teacher.UserID) ORDER BY UserID
+2017-07-26T02:29:31.766536Z	   27 Quit	
+2017-07-26T02:29:43.080788Z	   28 Connect	Student@Wolf on nspj_database using SSL/TLS
+2017-07-26T02:29:43.081779Z	   28 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-26T02:29:43.082782Z	   28 Query	SET character_set_results = NULL
+2017-07-26T02:29:43.082782Z	   28 Query	SET autocommit=1
+2017-07-26T02:29:43.083788Z	   28 Query	SELECT User.UserID, Login.Username, Login.Password, Login.Salt, User.NRIC, User.Name, User.Gender, User.DOB, User.ContactNo, User.Email, User.Class, User.Address, User.Keys, Student.CCA, Teacher.TeacherID, Teacher.Department FROM User LEFT OUTER JOIN Login ON (User.UserID = Login.UserID) LEFT OUTER JOIN Student ON (User.UserID = Student.UserID) LEFT OUTER JOIN Teacher ON (User.UserID = Teacher.UserID) ORDER BY UserID
+2017-07-26T02:29:43.088803Z	   28 Quit	
+C:\Program Files\MySQL\MySQL Server 5.7\bin\mysqld.exe, Version: 5.7.18-log (MySQL Community Server (GPL)). started with:
+TCP Port: 3306, Named Pipe: (null)
+Time                 Id Command    Argument
+2017-07-26T11:45:49.134508Z	    2 Query	SELECT TABLE_SCHEMA, TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE CREATE_OPTIONS LIKE '%partitioned%';
+2017-07-26T11:54:53.966905Z	    3 Connect	Student@192.168.1.254 on nspj_database using SSL/TLS
+2017-07-26T11:54:54.034338Z	    3 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-26T11:54:54.132440Z	    3 Query	SET character_set_results = NULL
+2017-07-26T11:54:54.134446Z	    3 Query	SET autocommit=1
+2017-07-26T11:54:54.149224Z	    3 Query	SELECT User.UserID, Login.Username, Login.Password, Login.Salt, User.NRIC, User.Name, User.Gender, User.DOB, User.ContactNo, User.Email, User.Class, User.Address, User.Keys, Student.CCA, Teacher.TeacherID, Teacher.Department FROM User LEFT OUTER JOIN Login ON (User.UserID = Login.UserID) LEFT OUTER JOIN Student ON (User.UserID = Student.UserID) LEFT OUTER JOIN Teacher ON (User.UserID = Teacher.UserID) ORDER BY UserID
+2017-07-26T11:54:54.273333Z	    3 Quit	
+2017-07-26T11:58:36.967615Z	    4 Connect	Student@192.168.1.254 on nspj_database using SSL/TLS
+2017-07-26T11:58:36.975642Z	    4 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-26T11:58:37.046859Z	    4 Query	SET character_set_results = NULL
+2017-07-26T11:58:37.049524Z	    4 Query	SET autocommit=1
+2017-07-26T11:58:37.055540Z	    4 Query	SELECT User.UserID, Login.Username, Login.Password, Login.Salt, User.NRIC, User.Name, User.Gender, User.DOB, User.ContactNo, User.Email, User.Class, User.Address, User.Keys, Student.CCA, Teacher.TeacherID, Teacher.Department FROM User LEFT OUTER JOIN Login ON (User.UserID = Login.UserID) LEFT OUTER JOIN Student ON (User.UserID = Student.UserID) LEFT OUTER JOIN Teacher ON (User.UserID = Teacher.UserID) ORDER BY UserID
+2017-07-26T11:58:37.071427Z	    4 Quit	
+2017-07-26T12:00:40.524356Z	    5 Connect	Student@192.168.1.254 on nspj_database using SSL/TLS
+2017-07-26T12:00:40.536388Z	    5 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-26T12:00:40.566467Z	    5 Query	SET character_set_results = NULL
+2017-07-26T12:00:40.568487Z	    5 Query	SET autocommit=1
+2017-07-26T12:00:40.587568Z	    5 Query	SELECT User.UserID, Login.Username, Login.Password, Login.Salt, User.Name, User.Gender, User.DOB, User.ContactNo, User.Email, User.Class, User.Address, Student.NRIC, Student.CCA, Teacher.TeacherID, Teacher.Department FROM User LEFT OUTER JOIN Login ON (User.UserID = Login.UserID) LEFT OUTER JOIN Student ON (User.UserID = Student.UserID) LEFT OUTER JOIN Teacher ON (User.UserID = Teacher.UserID) WHERE User.Name LIKE '%Lee%'
+2017-07-26T12:09:11.982448Z	    6 Connect	Student@192.168.1.254 on nspj_database using SSL/TLS
+2017-07-26T12:09:11.989464Z	    6 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-26T12:09:12.013528Z	    6 Query	SET character_set_results = NULL
+2017-07-26T12:09:12.015534Z	    6 Query	SET autocommit=1
+2017-07-26T12:09:12.062658Z	    6 Query	SELECT User.UserID, Login.Username, Login.Password, Login.Salt, User.NRIC, User.Name, User.Gender, User.DOB, User.ContactNo, User.Email, User.Class, User.Address, User.Keys, Student.CCA, Teacher.TeacherID, Teacher.Department FROM User LEFT OUTER JOIN Login ON (User.UserID = Login.UserID) LEFT OUTER JOIN Student ON (User.UserID = Student.UserID) LEFT OUTER JOIN Teacher ON (User.UserID = Teacher.UserID) ORDER BY UserID
+2017-07-26T12:09:12.075694Z	    6 Quit	
+2017-07-26T12:19:09.312245Z	    7 Connect	Student@192.168.1.254 on nspj_database using SSL/TLS
+2017-07-26T12:19:09.321268Z	    7 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-26T12:19:09.351348Z	    7 Query	SET character_set_results = NULL
+2017-07-26T12:19:09.353355Z	    7 Query	SET autocommit=1
+2017-07-26T12:19:09.404490Z	    7 Query	SELECT User.UserID, Login.Username, Login.Password, Login.Salt, User.NRIC, User.Name, User.Gender, User.DOB, User.ContactNo, User.Email, User.Class, User.Address, User.Keys, Student.CCA, Teacher.TeacherID, Teacher.Department FROM User LEFT OUTER JOIN Login ON (User.UserID = Login.UserID) LEFT OUTER JOIN Student ON (User.UserID = Student.UserID) LEFT OUTER JOIN Teacher ON (User.UserID = Teacher.UserID) ORDER BY UserID
+2017-07-26T12:19:09.416523Z	    7 Quit	
+2017-07-26T12:19:45.778596Z	    8 Connect	Student@192.168.1.254 on nspj_database using SSL/TLS
+2017-07-26T12:19:45.784704Z	    8 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-26T12:19:45.811777Z	    8 Query	SET character_set_results = NULL
+2017-07-26T12:19:45.813789Z	    8 Query	SET autocommit=1
+2017-07-26T12:19:45.818830Z	    8 Query	SELECT User.UserID, Login.Username, Login.Password, Login.Salt, User.NRIC, User.Name, User.Gender, User.DOB, User.ContactNo, User.Email, User.Class, User.Address, User.Keys, Student.CCA, Teacher.TeacherID, Teacher.Department FROM User LEFT OUTER JOIN Login ON (User.UserID = Login.UserID) LEFT OUTER JOIN Student ON (User.UserID = Student.UserID) LEFT OUTER JOIN Teacher ON (User.UserID = Teacher.UserID) ORDER BY UserID
+2017-07-26T12:19:45.874949Z	    8 Quit	
+2017-07-26T12:20:32.396615Z	    9 Connect	Student@192.168.1.254 on nspj_database using SSL/TLS
+2017-07-26T12:20:32.404109Z	    9 Query	/* mysql-connector-java-5.1.42 ( Revision: 1f61b0b0270d9844b006572ba4e77f19c0f230d4 ) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_buffer_length AS net_buffer_length, @@net_write_timeout AS net_write_timeout, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS tx_isolation, @@wait_timeout AS wait_timeout
+2017-07-26T12:20:32.429181Z	    9 Query	SET character_set_results = NULL
+2017-07-26T12:20:32.431185Z	    9 Query	SET autocommit=1
+2017-07-26T12:20:32.436199Z	    9 Query	SELECT User.UserID, Login.Username, Login.Password, Login.Salt, User.NRIC, User.Name, User.Gender, User.DOB, User.ContactNo, User.Email, User.Class, User.Address, User.Keys, Student.CCA, Teacher.TeacherID, Teacher.Department FROM User LEFT OUTER JOIN Login ON (User.UserID = Login.UserID) LEFT OUTER JOIN Student ON (User.UserID = Student.UserID) LEFT OUTER JOIN Teacher ON (User.UserID = Teacher.UserID) ORDER BY UserID
+2017-07-26T12:20:32.490166Z	    9 Quit	

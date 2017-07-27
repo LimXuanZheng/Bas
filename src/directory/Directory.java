@@ -17,23 +17,19 @@ import database.model.UserAll;
 
 //If I have time I confirm going to make the out.print nicer... For the time being deal with it
 @WebServlet("/Directory")
-public class Directory extends HttpServlet {
+public class Directory extends HttpServlet{
 	private static final long serialVersionUID = 1L;
     private int userType = 1;
     private static String username = "Bob";
-	
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String ipAddress = request.getHeader("X-FORWARDED-FOR");  
-		if (ipAddress == null) {  
-		   ipAddress = request.getRemoteAddr();  
-		}
-		System.out.println("IP Address: " + ipAddress);
+		//CheckIP.redirect(request, response);
 		HttpSession session = request.getSession(false);
 		if (session != null) {
 			username = (String)session.getAttribute("username");
 		}
 		else {
-			response.sendRedirect("Login");
+			//response.sendRedirect("Login");
 			System.out.println("Didn't work");
 		}
 		ArrayList<UserAll> userAllArray = new ArrayList<UserAll>();
@@ -43,6 +39,7 @@ public class Directory extends HttpServlet {
 			
 			response.setContentType("text/html;charset=UTF-8");
 	    	PrintWriter out = response.getWriter();
+	    			
 	    	out.println("<!DOCTYPE html>"
 	    			+ "<html>"
 	    			+ 	"<head>"
@@ -163,7 +160,7 @@ public class Directory extends HttpServlet {
 					+ 		"<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js' integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa' crossorigin='anonymous'>"
 					+ 		"</script>"
 					+ 	"</body>"
-					+ "</html>");
+					+ "</html>"); 
 			out.close(); //PrintWriter Closed...
 			dba.close(); //Database Connection Object Closed...
 		} catch (ClassNotFoundException e) {
@@ -304,4 +301,5 @@ public class Directory extends HttpServlet {
 		else
 			return false;
 	}
+
 }

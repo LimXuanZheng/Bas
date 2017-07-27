@@ -1,0 +1,35 @@
+--23480000-A--
+[26/Jul/2017:19:52:21 +0800] WXiCdcCo7wEAACUgJz8AAAAg 192.168.1.17 4225 192.168.1.17 80
+--23480000-B--
+GET /Bas/Home HTTP/1.1
+Host: 192.168.1.17
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.8
+
+--23480000-F--
+HTTP/1.1 200 200
+Content-Length: 2940
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Type: text/html;charset=UTF-8
+
+--23480000-E--
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'><link rel='stylesheet' href='css/homePageStyle.css'><!-- Font Mono-Sans --><link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'><!-- Latest compiled and minified CSS --><link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u' crossorigin='anonymous'><!-- Optional theme --><link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css' integrity='sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp' crossorigin='anonymous'><!-- My Own Script --><script src='script/homePageScript.js'></script><title>Home Pages</title></head><body><div class='container-fluid' id='Top-Container-Background'><div class='container-fluid' id='Top-Container'><!-- Navigation --><nav class='navbar navbar-default'><div class='container-fluid'><div class='navbar-header'><a class='navbar-brand' href='#'>Purple</a></div><div class='collapse navbar-collapse'><ul class='nav navbar-nav'><li class='active'><a href='#'>Home</a></li><li><a href='Directory'>Directory</a></li></ul><ul class='nav navbar-nav navbar-right'><li class='dropdown'><a class='dropdown-toggle' data-toggle='dropdown' href='#'>Welcome, Bob. </a><ul class='dropdown-menu'><li><a href='#'>Setting</a></li><li><a href='Login'>Logout</a></li></ul></li></ul></div></div></nav><!-- Center Words --><div id='Top-Center-Container'><h2 id='welcomeText'>Welcome to BasChunMaen!</h2></div></div></div><!-- Notification Tab --><span class='badge' id='notificationBadge'>3</span><div id='notificationTab' onclick='animateNotification()'><div id='HeadBox'><p id='notiIcon'><span class='glyphicon glyphicon-bullhorn'></span></p></div><div id='InfoBox'>
+<div>Testing 1</div><div>Hello</div><div>Please hand in your assignment by 12/3/17 -Mr Chew</div></div></div><!-- Bottom Naviagtion --><div class='container-fluid' id='Bot-Container'><div class='row' id='Bot-Container-Container'><div class='col-md-2'><p>View Grades</p></div><div class='col-md-2'onclick="location.href='html/beforeSubmission.html'" style="cursor: pointer;"><p>Assignment Submission</p></div><div class='col-md-2'onclick="location.href='html/studentDownload.html'" style="cursor: pointer;"><p>View Past Year Papers</p></div></div></div><!-- jQuery library --><script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script><!-- Latest compiled and minified JavaScript --><script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js' integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa' crossorigin='anonymous'></script></body></html>
+
+--23480000-H--
+Message: Warning. Pattern match "^[\\d.:]+$" at REQUEST_HEADERS:Host. [file "C:/Apache24/conf/rules/REQUEST-920-PROTOCOL-ENFORCEMENT.conf"] [line "810"] [id "920350"] [rev "2"] [msg "Host header is a numeric IP address"] [data "192.168.1.17"] [severity "WARNING"] [ver "OWASP_CRS/3.0.0"] [maturity "9"] [accuracy "9"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-protocol"] [tag "OWASP_CRS/PROTOCOL_VIOLATION/IP_HOST"] [tag "WASCTC/WASC-21"] [tag "OWASP_TOP_10/A7"] [tag "PCI/6.5.10"]
+Apache-Error: [file "apache2_util.c"] [line 271] [level 3] [client %s] ModSecurity: %s%s [uri "%s"]%s
+Apache-Handler: jakarta-servlet
+Stopwatch: 1501069941324966 208110 (- - -)
+Stopwatch2: 1501069941324966 208110; combined=141033, p1=116927, p2=1045, p3=0, p4=1003, p5=11029, sr=77490, sw=4009, l=0, gc=7020
+Response-Body-Transformed: Dechunked
+Producer: ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/); OWASP_CRS/3.0.2.
+Server: Apache/2.4.27 (Win64) mod_jk/1.2.42
+Engine-Mode: "ENABLED"
+
+--23480000-Z--

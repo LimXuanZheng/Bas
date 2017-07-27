@@ -1,6 +1,7 @@
-/fileScanning/
 /database/
 /directory/
+<<<<<<< HEAD
+=======
 /fileUpload/
 /hello/
 /homePage/
@@ -8,3 +9,4 @@
 /studentDownload/
 /teacherSharing/
 /beforeSubmission/
+>>>>>>> origin/master
