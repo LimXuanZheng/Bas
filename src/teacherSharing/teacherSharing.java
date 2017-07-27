@@ -21,6 +21,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import database.DatabaseAccess;
 import database.model.User;
+import database.model.UserAll;
 import fileUpload.CryptoException;
 import fileUpload.encryption;
 
@@ -57,8 +58,30 @@ public class teacherSharing extends HttpServlet {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}	
+		
+		
+		/*ArrayList<String> names = new ArrayList<String>();
+		try {
+			DatabaseAccess dbms = new DatabaseAccess(1);
+			ArrayList<User> alluser = dbms.getDatabaseUser();
+			for(User a: alluser){
+				String j = a.getName();
+				names.add(j);
+			}
+			
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		for(String s:names){
+			System.out.println(s);
+		}
+		
+		*/
 		//String key = "Mary has one cat";
-		/*
+		
 		String filename1 = "Nothing to show";
 		int filesize1;
 		Date date1;
@@ -93,14 +116,14 @@ public class teacherSharing extends HttpServlet {
 		        
 		        
 		        
-		        FileInputStream hh = new FileInputStream(decryptedFile);
-		        OutputStream h = response.getOutputStream();
+		        //FileInputStream hh = new FileInputStream(decryptedFile);
+		        //OutputStream h = response.getOutputStream();
 		       
-		        byte[] test = new byte[4096];
-		        int bytesRead = -1;
-		        while ((bytesRead = hh.read(test)) != -1) {
-		                           h.write(test, 0, bytesRead);
-		                       }
+		       // byte[] test = new byte[4096];
+		        //int bytesRead = -1;
+		        //while ((bytesRead = hh.read(test)) != -1) {
+		         //                  h.write(test, 0, bytesRead);
+		           //            }
 		        
 		        
 		        
@@ -113,7 +136,7 @@ public class teacherSharing extends HttpServlet {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}	
-		*/
+		
 		
 		
 		out.println("<!DOCTYPE html>"
@@ -166,7 +189,7 @@ public class teacherSharing extends HttpServlet {
 				+							"<span class='custom-file-control'></span>"
 				+						"</label>"
     			+						"<br><p id='nameOfNewButton'>Name of Folder: <input type='text' name='FName' id='getBtnName'></input></p>"
-    			+						"<br><div class='dropdown'>"
+    			+						"<br><div class='dropdown' id='dropdowns'>"						
 				+			    			"<button  type='button' onclick='showsomething()' class='dropbtn'>Dropdown</button>"
 				+			    			 "<div id='myDropdown' class='dropdown-content'>"
 				+			    			  	"<input type='text' placeholder='Search..' id='myInput' onkeyup='filterFunction()'>"
@@ -180,10 +203,10 @@ public class teacherSharing extends HttpServlet {
 				+			    			  "</div>"
 				+			    			"</div>"
 				+						"<input type='submit' id='submit' value='Submit'></input>"
-    			//+					"</form>"
-    			+					"<button id='confirm' onclick='confirm()' >Confirm</button>"
-    			+					"<button id='cancel' onclick='cancel()'>Cancel</button>"
     			+					"</form>"
+    			//+					"<button id='confirm' onclick='confirm()' >Confirm</button>"
+    			+					"<button type='button' id='cancel' onclick='cancel()'>Cancel</button>"
+    			//+					"</form>"
     			+				"</div>"
     			+			"</div>"
     			+			"<div>"

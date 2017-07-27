@@ -98,7 +98,7 @@ body{
 
 .dropdown {
     position: relative;
-    display: inline-block;
+    display: none;
 }
 
 .dropdown-content {
@@ -121,6 +121,8 @@ body{
 .dropdown a:hover {background-color: #ddd}
 
 .show {display:block;}
+
+
  
  
  

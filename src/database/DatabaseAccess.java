@@ -26,7 +26,7 @@ public class DatabaseAccess {
     final String USER = "root";
     final String PASS = "SassyPenguin@123";
     
-    final String DB_URL2="jdbc:mysql://119.74.135.44:3306/nspj_database";
+    final String DB_URL2="jdbc:mysql://172.27.178.184:3306/nspj_database";
     final String USER_S = "Student";
     final String PASS_S = "StudentPassword_101";
     
@@ -53,7 +53,7 @@ public class DatabaseAccess {
 	     stmt = conn.createStatement();
 	}
 
-	private ResultSet getDatabaseData(String sql) throws SQLException{
+	public ResultSet getDatabaseData(String sql) throws SQLException{
 		return stmt.executeQuery(sql);
 	}
 	

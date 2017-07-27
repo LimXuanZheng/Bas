@@ -133,7 +133,7 @@ public class Home extends HttpServlet {
 			out.print("<div class='col-md-2'");
 			switch(s){
 				case "Assignment Submission":
-					out.print("onclick=\"location.href='html/beforeSubmission.html'\" style=\"cursor: pointer;\"");
+					out.print("onclick=\"location.href='beforesubmission'\" style=\"cursor: pointer;\"");
 					break;
 				case "View Past Year Papers":
 					out.print("onclick=\"location.href='html/studentDownload.html'\" style=\"cursor: pointer;\"");

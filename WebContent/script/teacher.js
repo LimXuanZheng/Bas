@@ -7,12 +7,15 @@ function createNew(){
 function showHidden(){
 	if(document.getElementById("checkifnew").checked){
 		document.getElementById("nameOfNewButton").style.display="block";
+		document.getElementById("dropdowns").style.display="block";
 	}
 	else if(document.getElementById("checkifmy").checked){
 		document.getElementById("nameOfNewButton").style.display="none";
+		document.getElementById("dropdowns").style.display="none";
 	}
 	else if(document.getElementById("checkifshare").checked){
 		document.getElementById("nameOfNewButton").style.display="none";
+		document.getElementById("dropdowns").style.display="block";
 	}
 }
 
@@ -133,7 +136,9 @@ function display5s(){
 }
 
 function cancel(){
-	document.getElementById("overlay").style.display ="none";
+		document.getElementById("overlay").style.display ="none";
+		
+
 }
 
 function showsomething(){

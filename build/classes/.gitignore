@@ -1,2 +1,12 @@
 /database/
 /directory/
+<<<<<<< HEAD
+=======
+/fileUpload/
+/hello/
+/homePage/
+/login/
+/studentDownload/
+/teacherSharing/
+/beforeSubmission/
+>>>>>>> origin/master
