@@ -50,8 +50,11 @@ public class upload extends HttpServlet {
 		String key1 = "nhibgu";
 		try {
 			DatabaseAccess dbms = new DatabaseAccess(1);
-			String sql = "SELECT Keys FROM User WHERE UserID = 13";
-			key1 = dbms.getDatabaseData(sql).getString("Keys");
+			String query = "SELECT User.Keys FROM User WHERE UserID = 13;";
+	        ResultSet rs = dbms.getDatabaseData(query);
+			while(rs.next()){
+				key1 = rs.getString("Keys");
+			}
 			System.out.println(key1);
 		}
 		catch (ClassNotFoundException e) {
