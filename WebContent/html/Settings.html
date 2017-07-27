@@ -48,14 +48,27 @@
 				<div id="aDiv">
 					<form id="setForm">
 						<div id="showName">
+							<div class="categoryDiv">
+								<p>Username</p>
+							</div>
 							<div class="flexDiv">
-								<p>Username: </p>
+								<p>{Placeholder}</p>
 							</div>
 						</div>
 						<div id="showEmail">
+							<div class="categoryDiv">
+								<p>Email</p>
+							</div>
 							<div class="flexDiv">
-								<p id="showPEmail">Email: </p>
-								<span class="editLink">Edit</span>
+								<p id="showPEmail">{Placeholder}</p>
+								<span class="editLink" onclick="showChangeEmailDiv()">Edit</span>
+							</div>
+							<div id="changeEmailDiv">
+								<input type="email" id="inputEmail" name="inputEmail" required>
+								<div id="inputError">Please enter your email.</div>
+								<div id="emailBtnDiv">
+									<button id="emailBtn">Update email</button>
+								</div>
 							</div>
 						</div>
 						<div id="editPass">

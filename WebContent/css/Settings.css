@@ -43,16 +43,23 @@ body {
 	width: 100%;
 }
 
+.categoryDiv {
+	border-bottom: 1px solid #888888;
+	height: 30px;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+
 .flexDiv {
 	display: flex;
 }
 
 #showName {
-	
+	margin-bottom: 20px;
 }
 
 #showEmail {
-	
+	margin-bottom: 20px;
 }
 
 #showPEmail {
@@ -64,4 +71,62 @@ body {
 	cursor: pointer;
 	font-size: 15px;
 	padding-top: 5px;
+	padding-left: 10px;
+}
+
+#changeEmailDiv {
+	/*display: none;*/
+	position: relative;
+	-webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+@-webkit-keyframes animatetop {
+    from {top: -35px; opacity: 0} 
+    to {top: 0; opacity: 1}
+}
+
+@keyframes animatetop {
+    from {top: -35px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+#inputEmail {
+	height: 40px;
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+#inputError {
+	height: 40px;
+	width: 100%;
+	text-align: center;
+	padding: 5px;
+	background-color: #F74225;
+	color: white;
+	margin-bottom: 10px;
+}
+
+#emailBtnDiv {
+	width: 100%;
+}
+
+#emailBtn {
+	position: relative;
+    left: 80%;
+    height: 35px;
+    width: 140px;
+    border: none;
+    background-color: #9575CD;
+	cursor: pointer;
+	color: white;
+}
+
+#emailBtn:hover, #emailBtn:focus {
+	background-color: white;
+	border: 1px solid #9575CD;
+	color: #9575CD;
 }
