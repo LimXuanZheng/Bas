@@ -1,0 +1,52 @@
+--23480000-A--
+[25/Jul/2017:14:16:01 +0800] WXbiIawbsrgAACI8Kr8AAAAi 172.27.186.29 60318 172.27.178.184 80
+--23480000-B--
+GET /Bas/Login HTTP/1.1
+Host: 172.27.178.184
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Safari/602.1
+Accept-Language: en-sg
+DNT: 1
+Accept-Encoding: gzip, deflate
+
+--23480000-F--
+HTTP/1.1 403 Forbidden
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=iso-8859-1
+
+--23480000-E--
+<!doctype html><html lang="en"><head><title>HTTP Status [500] – [Internal Server Error]</title><style type="text/css">h1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} h2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} h3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} body {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} b {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} p {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;} a {color:black;} a.name {color:black;} .line {height:1px;background-color:#525D76;border:none;}</style></head><body><h1>HTTP Status [500] – [Internal Server Error]</h1><hr class="line" /><p><b>Type</b> Exception Report</p><p><b>Message</b> src\basicFirewall\WhiteBlackList.txt (The system cannot find the path specified)</p><p><b>Description</b> The server encountered an unexpected condition that prevented it from fulfilling the request.</p><p><b>Exception</b></p><pre>java.io.FileNotFoundException: src\basicFirewall\WhiteBlackList.txt (The system cannot find the path specified)
+	java.io.FileInputStream.open0(Native Method)
+	java.io.FileInputStream.open(FileInputStream.java:195)
+	java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:138)
+	java.util.Scanner.&lt;init&gt;(Scanner.java:611)
+	database.model.WhiteBlackListDAO.getWhiteListArray(WhiteBlackListDAO.java:23)
+	database.model.IpAddress.getWhiteList(IpAddress.java:25)
+	homePage.CheckIP.check(CheckIP.java:17)
+	homePage.CheckIP.redirect(CheckIP.java:26)
+	login.LoginServlet.doGet(LoginServlet.java:27)
+	javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+</pre><p><b>Note</b> The full stack trace of the root cause is available in the server logs.</p><hr class="line" /><h3>Apache Tomcat/9.0.0.M21</h3></body></html>
+--23480000-H--
+Message: Warning. Pattern match "^[\\d.:]+$" at REQUEST_HEADERS:Host. [file "C:/Apache24/conf/rules/REQUEST-920-PROTOCOL-ENFORCEMENT.conf"] [line "810"] [id "920350"] [rev "2"] [msg "Host header is a numeric IP address"] [data "172.27.178.184"] [severity "WARNING"] [ver "OWASP_CRS/3.0.0"] [maturity "9"] [accuracy "9"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-protocol"] [tag "OWASP_CRS/PROTOCOL_VIOLATION/IP_HOST"] [tag "WASCTC/WASC-21"] [tag "OWASP_TOP_10/A7"] [tag "PCI/6.5.10"]
+Message: Access denied with code 403 (phase 4). Pattern match "^5\\d{2}$" at RESPONSE_STATUS. [file "C:/Apache24/conf/rules/RESPONSE-950-DATA-LEAKAGES.conf"] [line "93"] [id "950100"] [rev "3"] [msg "The Application Returned a 500-Level Status Code"] [data "Matched Data: 500 found within RESPONSE_STATUS: 500"] [severity "ERROR"] [ver "OWASP_CRS/3.0.0"] [maturity "9"] [accuracy "9"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-disclosure"] [tag "WASCTC/WASC-13"] [tag "OWASP_TOP_10/A6"] [tag "PCI/6.5.6"] [tag "paranoia-level/2"]
+Message: Warning. Operator GE matched 4 at TX:outbound_anomaly_score. [file "C:/Apache24/conf/rules/RESPONSE-980-CORRELATION.conf"] [line "82"] [id "980140"] [msg "Outbound Anomaly Score Exceeded (score 4): The Application Returned a 500-Level Status Code"] [tag "event-correlation"]
+Apache-Error: [file "apache2_util.c"] [line 271] [level 3] [client %s] ModSecurity: %s%s [uri "%s"]%s
+Apache-Error: [file "apache2_util.c"] [line 271] [level 3] [client %s] ModSecurity: %s%s [uri "%s"]%s
+Apache-Error: [file "apache2_util.c"] [line 271] [level 3] [client %s] ModSecurity: %s%s [uri "%s"]%s
+Action: Intercepted (phase 4)
+Apache-Handler: jakarta-servlet
+Stopwatch: 1500963361520171 175831 (- - -)
+Stopwatch2: 1500963361520171 175831; combined=93522, p1=78146, p2=15376, p3=0, p4=0, p5=0, sr=62507, sw=0, l=0, gc=0
+Response-Body-Transformed: Dechunked
+Producer: ModSecurity for Apache/2.9.1 (http://www.modsecurity.org/); OWASP_CRS/3.0.2.
+Server: Apache/2.4.27 (Win64) mod_jk/1.2.42
+Engine-Mode: "ENABLED"
+
+--23480000-Z--

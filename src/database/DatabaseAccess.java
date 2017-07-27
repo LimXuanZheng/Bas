@@ -13,6 +13,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import database.model.File;
+import database.model.IpAddress;
 import database.model.Login;
 import database.model.Student;
 import database.model.Teacher;
@@ -242,6 +243,20 @@ public class DatabaseAccess {
 		return fileArray;
 	}
 	
+	public ArrayList<IpAddress> getDatabaseBlacklist() throws SQLException{
+		ResultSet rs = getDatabaseData("SELECT * FROM Blacklist;");
+		ArrayList<IpAddress> stringArray = new ArrayList<IpAddress>();
+		
+		while(rs.next()){
+			String ip = rs.getString("IpAddress");
+			IpAddress a = new IpAddress(ip);
+			stringArray.add(a);
+		}
+		
+		rs.close();
+		return stringArray;
+	}
+	
 	public ArrayList<UserAll> convertResultSetToArrayList(ResultSet rs) throws SQLException{
 		ArrayList<UserAll> userAllArray = new ArrayList<UserAll>();
 		
@@ -315,23 +330,13 @@ public class DatabaseAccess {
 	
 	/*
 	public static void main(String[] args) throws ClassNotFoundException, SQLException{
-		DatabaseDAO dao = new DatabaseDAO(0);
+		DatabaseAccess dao = new DatabaseAccess(0);
 		
-		String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-        StringBuilder salt = new StringBuilder();
-        Random rnd = new Random();
-        while (salt.length() < 16) { // length of the random string.
-            int index = (int) (rnd.nextFloat() * SALTCHARS.length());
-            salt.append(SALTCHARS.charAt(index));
-        }
-        String keys = salt.toString();
-        
-        Connection conn = dao.getConn();
-        String query = "UPDATE User SET User.Keys = ? WHERE User.UserID = 13";
-        PreparedStatement pstmt = conn.prepareStatement(query);
-        pstmt.setString(1, keys);
-        pstmt.execute();
-        
+        String query = "SELECT User.Keys FROM User WHERE UserID = 13;";
+        ResultSet rs = dao.getDatabaseData(query);
+        rs.next();
+        String key = rs.getString("Keys");
+        System.out.println(key);
 		dao.close();
 	}
 	*/
