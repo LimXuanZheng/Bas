@@ -166,6 +166,10 @@ function dosth(fgfg){
 	document.getElementById("downloadfile").submit();
 }
 
+function displayhello(){
+	document.getElementById("smaller").style.display = "block";
+}
+
 
 
 

@@ -154,9 +154,12 @@ public class teacherSharing extends HttpServlet {
 				+ 		"<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u' crossorigin='anonymous'>"
 				+ 		"<!-- Optional theme -->"
 				+ 		"<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css' integrity='sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp' crossorigin='anonymous'>"
+				+		"<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>"
 				+		"<link rel='stylesheet' href='css/teacherSharing.css'>"
 				+		"<title>TeacherSharing</title>"
 				+		"<script src='script/teacher.js'></script>"
+				+		"<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>"
+				+ 		"<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>"
 				+ 	"</head>"
 				+ 	"<body id='body' onload='loadalltheshit()'>"
 				+ 		"<div class='container-fluid' id='Container'>"
@@ -197,15 +200,33 @@ public class teacherSharing extends HttpServlet {
 				+			    			"<button  type='button' onclick='showsomething()' class='dropbtn'>Teachers/Students</button>"
 				+			    			 "<div id='myDropdown' class='dropdown-content'>"
 				+			    			  	"<input type='text' placeholder='Search..' id='myInput' onkeyup='filterFunction()'>"
-				+			    			    "<a href='#about'>Darren</a>"
-				+			    			    "<a href='#base'>Nicholson</a>"
-				+			    			    "<a href='#blog'>Mr Loo</a>"
-				+			    			    "<a href='#contact'>Mr Thumb</a>"
-				+			    			    "<a href='#custom'>Strong women</a>"
-				+			    			    "<a href='#support'>Matthew</a>"
-				+			    			    "<a href='#tools'>Doggy</a>"
+				+								"<div id='fixsize'>");
+		for(String n:names){
+				out.println(
+								
+								"<p class='niceparagraph' onclick ='displayhello()'> " + n + "</p>");
+							
+		}	    			    
+							    			    
+				
+				out.println(
+												"</div>"
 				+			    			  "</div>"
 				+			    			"</div>"
+				+								"<div id='showtable' class='container'>"
+				+									"<table class='table table-striped' id='smaller'>"
+				+										"<thead>"
+			    +										  "<tr>"
+			    +										    "<th style='font-size:20px'>Name</th>"
+			    +										  "<tr>"
+			    +										"<thead>"
+			    +										"<tbody>"
+			    +										  "<tr>"
+			    +										  	"<td>I am gay</td>"
+			    +										  "</tr>"
+			    +										"</tbody>"
+				+									"</table>"
+				+								"</div>"
 				+						"<input type='submit' class='duo' id='submit' value='Submit'></input>"
 				+					"</form>"
 				//+					"<button id='confirm' onclick='confirm()' >Confirm</button>"
