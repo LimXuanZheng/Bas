@@ -2,7 +2,7 @@
 
 function createNew(){
 	document.getElementById("overlay").style.display ="block";
-	}
+}
 
 function showHidden(){
 	if(document.getElementById("checkifnew").checked){
@@ -28,8 +28,8 @@ function confirm(){
 		var btnname = document.getElementById("getBtnName").value;
 		var link  = document.createElement("link");
 		link.rel  = "stylesheet";
-	    link.type = "text/css";
-	    link.href = "css/teacherSharing.css";
+		link.type = "text/css";
+		link.href = "css/teacherSharing.css";
 		var btn =  document.createElement("button");
 		//btn.setAttribute("style","color:white; display: block; margin: 5px; padding: 7px 35px; font: 300 150% langdon; background-color: #0022FF; border: 3px solid black; cursor: pointer; width:18%;");
 		btn.setAttribute("class", "button");
@@ -42,7 +42,7 @@ function confirm(){
 		//var filePath1 = document.getElementById("datafilepath").value;
 		//var filename1 = filePath1.replace(/^.*[\\\/]/, '');
 		//var myfile = new File(filePath1);
-		
+
 		document.getElementById("overlay").style.display ="none";
 	}
 	else if(document.getElementById("checkifmy").checked){
@@ -56,13 +56,13 @@ function confirm(){
 			document.getElementById("hidehere").innerHTML = filePath;
 			document.getElementById("overlay").style.display ="none";
 		}
-		
+
 	}
 	else if(document.getElementById("checkifshare").checked){
 		document.getElementById("lastOne").onclick = displayallshare();
 		document.getElementById("overlay").style.display ="none";
 	}
-	
+
 	//document.getElementById("body").style.color ="red";
 }
 /*function displayallmy(){
@@ -70,7 +70,7 @@ function confirm(){
 	var filename = filePath.replace(/^.*[\\\/]/, '');
 	var lengths = document.getElementById("displaying").row.length
 	if(lengths == 1){
-	
+
 	document.getElementById("row1.1").innerHTML = filename;
 	var fileInput =  document.getElementById("datafilepath");
 	   try{
@@ -81,7 +81,7 @@ function confirm(){
 	       var fileSize = e.size;
 	       document.getElementById("row1.4").innerHTML = fileSize;  
 	   }
-	   
+
 	}
 	else{
 		var lengths = document.getElementById("displaying").row.length;
@@ -98,24 +98,24 @@ function confirm(){
 		details4.setAttribute(id, ("row" + lengths + ".4"));
 		document.getElementById("displaying").appendChild(neew);
 		}
-		
-		
+
+
 }
 
-*/
+ */
 function displayallshare(){
 	var filePath = document.getElementById("datafilepath").value;
 	var filename = filePath.replace(/^.*[\\\/]/, '');
 	document.getElementById("row1.1").innerHTML = filename;
 	var fileInput =  document.getElementById("datafilepath");
-	   try{
-		   document.getElementById("row1.4").innerHTML = fileInput.files[0].size; // Size returned in bytes.
-	   }catch(e){
-	       var objFSO = new ActiveXObject("Scripting.FileSystemObject");
-	       var e = objFSO.getFile(fileInput.value);
-	       var fileSize = e.size;
-	       document.getElementById("row1.4").innerHTML = fileSize;  
-	   }
+	try{
+		document.getElementById("row1.4").innerHTML = fileInput.files[0].size; // Size returned in bytes.
+	}catch(e){
+		var objFSO = new ActiveXObject("Scripting.FileSystemObject");
+		var e = objFSO.getFile(fileInput.value);
+		var fileSize = e.size;
+		document.getElementById("row1.4").innerHTML = fileSize;  
+	}
 }
 
 function display5s(){
@@ -123,21 +123,21 @@ function display5s(){
 	var filename = filePath.replace(/^.*[\\\/]/, '');
 	document.getElementById("row1.1").innerHTML = filename;
 	var fileInput =  document.getElementById("datafilepath");
-	   try{
-		   document.getElementById("row1.4").innerHTML = fileInput.files[0].size; // Size returned in bytes.
-	   }catch(e){
-	       var objFSO = new ActiveXObject("Scripting.FileSystemObject");
-	       var e = objFSO.getFile(fileInput.value);
-	       var fileSize = e.size;
-	       document.getElementById("row1.4").innerHTML = fileSize;  
-	   }
+	try{
+		document.getElementById("row1.4").innerHTML = fileInput.files[0].size; // Size returned in bytes.
+	}catch(e){
+		var objFSO = new ActiveXObject("Scripting.FileSystemObject");
+		var e = objFSO.getFile(fileInput.value);
+		var fileSize = e.size;
+		document.getElementById("row1.4").innerHTML = fileSize;  
+	}
 	//var myfile = new File(filePath1);
-	   //checks from database to see if student have submitted their files
+	//checks from database to see if student have submitted their files
 }
 
 function cancel(){
-		document.getElementById("overlay").style.display ="none";
-		
+	document.getElementById("overlay").style.display ="none";
+
 
 }
 
@@ -146,19 +146,30 @@ function showsomething(){
 }
 
 function filterFunction() {
-    var input, filter, ul, li, a, i;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    div = document.getElementById("myDropdown");
-    a = div.getElementsByTagName("a");
-    for (i = 0; i < a.length; i++) {
-        if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
-            a[i].style.display = "";
-        } else {
-            a[i].style.display = "none";
-        }
-    }
+	var input, filter, ul, li, a, i;
+	input = document.getElementById("myInput");
+	filter = input.value.toUpperCase();
+	div = document.getElementById("myDropdown");
+	a = div.getElementsByTagName("a");
+	for (i = 0; i < a.length; i++) {
+		if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+			a[i].style.display = "";
+		} else {
+			a[i].style.display = "none";
+		}
+	}
 }
+
+
+function dosth(fgfg){
+	document.getElementById("pls").value = fgfg;
+	document.getElementById("downloadfile").submit();
+}
+
+
+
+
+
 
 
 

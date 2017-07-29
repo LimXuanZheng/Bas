@@ -1,13 +1,17 @@
+/beforeSubmission/
 /database/
 /directory/
-<<<<<<< HEAD
-=======
+/fileScanning/
 /fileUpload/
 /hello/
 /homePage/
 /login/
 /studentDownload/
 /teacherSharing/
+<<<<<<< HEAD
 /beforeSubmission/
 >>>>>>> origin/master
 /fileScanning/
+=======
+/settings/
+>>>>>>> origin/master

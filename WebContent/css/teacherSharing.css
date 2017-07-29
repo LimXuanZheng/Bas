@@ -64,7 +64,8 @@ body{
   }
   
  #content1{
- 	background-color: white;
+ 	background-color: #2AFCE5;
+ 	margin 5%;
  }
  #nameOfNewButton{
  	display: none;
@@ -121,6 +122,15 @@ body{
 .dropdown a:hover {background-color: #ddd}
 
 .show {display:block;}
+
+.duo{
+	display: inline-block;
+}
+
+#checkifshare{
+	margin-right:20px;
+	margin-left: 20px;
+}
 
 
  

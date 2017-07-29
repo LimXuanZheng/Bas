@@ -20,14 +20,14 @@ body {
 }
 
 #contentDiv {
-	height: 600px;
+	height: 900px;
 	width: 800px;
 	margin: auto;
 	font-size: 20px;
 }
 
 #headerDiv {
-	height: 10%;
+	/*height: 10%;*/
 	width: 100%;
 }
 
@@ -43,25 +43,258 @@ body {
 	width: 100%;
 }
 
+.categoryDiv {
+	border-bottom: 1px solid #888888;
+	height: 30px;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+
 .flexDiv {
 	display: flex;
 }
 
 #showName {
-	
+	margin-bottom: 20px;
 }
 
 #showEmail {
-	
+	margin-bottom: 20px;
 }
 
 #showPEmail {
 	width: 95%;
 }
 
-.editLink {
+#editEmailLink {
 	width: 5%;
 	cursor: pointer;
 	font-size: 15px;
 	padding-top: 5px;
+	padding-left: 10px;
+	color: #777;
+}
+
+#editEmailLink:hover, #editEmailLink:focus {
+	color: black;
+}
+
+#changeEmailDiv {
+	display: none;
+	position: relative;
+	-webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+@-webkit-keyframes animatetop {
+    from {top: -50px; opacity: 0} 
+    to {top: 0; opacity: 1}
+}
+
+@keyframes animatetop {
+    from {top: -50px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+#inputEmail {
+	height: 40px;
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+#inputError {
+	height: 40px;
+	width: 100%;
+	text-align: center;
+	padding: 5px;
+	background-color: #F74225;
+	color: white;
+	margin-bottom: 10px;
+}
+
+#changeEmailDiv #inputError::after {
+	content: "";
+    position: absolute;
+    bottom: 63%;
+    left: 93%;
+    margin-left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #F74225 transparent;
+}
+
+#emailBtnDiv {
+	width: 100%;
+}
+
+#emailBtn {
+	position: relative;
+    left: 80%;
+    height: 35px;
+    width: 140px;
+    border: none;
+    background-color: #9575CD;
+	cursor: pointer;
+	color: white;
+}
+
+#emailBtn:hover, #emailBtn:focus {
+	background-color: white;
+	border: 1px solid #9575CD;
+	color: #9575CD;
+}
+
+#editPass {
+	
+}
+
+#editPassLinkDiv {
+	height: 30px;
+	width: 100%;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+#editPassLink {
+	cursor: pointer;
+	color: #777;
+}
+
+#editPassLink:hover, #editPassLink:focus {
+	color: black;
+}
+
+#changePassDiv {
+	display: none;
+	position: relative;
+	-webkit-animation-name: passAnimateTop;
+	-webkit-animation-duration: 0.4s;
+	animation-name: passAnimateTop;
+	animation-duration: 0.4s;
+}
+
+@-webkit-keyframes passAnimateTop {
+    from {top: -40px; opacity: 0} 
+    to {top: 0; opacity: 1}
+}
+
+@keyframes passAnimateTop {
+    from {top: -40px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+.passInputLabel {
+	width: 30%;
+}
+
+.passInput {
+	height: 40px;
+	width: 70%;
+	padding: 10px;
+}
+
+#inputPError1 {
+	height: 40px;
+	width: 70%;
+	text-align: center;
+	padding: 5px;
+	background-color: #F74225;
+	color: white;
+	margin-bottom: 10px;
+	float: right;
+}
+
+#changePassDiv #inputPError1::after {
+	content: "";
+    position: absolute;
+    bottom: 85%;
+    left: 93%;
+    margin-left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #F74225 transparent;
+}
+
+#inputPError2 {
+	height: 40px;
+	width: 70%;
+	text-align: center;
+	padding: 5px;
+	background-color: #F74225;
+	color: white;
+	margin-bottom: 10px;
+	float: right;
+}
+
+#changePassDiv #inputPError2::after {
+	content: "";
+    position: absolute;
+    bottom: 55.2%;
+    left: 93%;
+    margin-left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #F74225 transparent;
+}
+
+#inputPError3 {
+	height: 40px;
+	width: 70%;
+	text-align: center;
+	padding: 5px;
+	background-color: #F74225;
+	color: white;
+	margin-bottom: 10px;
+	float: right;
+}
+
+#changePassDiv #inputPError3::after {
+	content: "";
+    position: absolute;
+    bottom: 25.3%;
+    left: 93%;
+    margin-left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #F74225 transparent;
+}
+
+#oldPassDiv {
+	margin-bottom: 10px;
+	clear: both;
+}
+
+#newPassDiv {
+	margin-bottom: 10px;
+	clear: both;
+}
+
+#confirmNewPassDiv {
+	margin-bottom: 10px;
+	clear: both;
+}
+
+#passBtnDiv {
+	width: 100%;
+	clear: both;
+}
+
+#passBtn {
+	position: relative;
+    left: 75%;
+    height: 35px;
+    width: 175px;
+    border: none;
+    background-color: #9575CD;
+	cursor: pointer;
+	color: white;
+}
+
+#passBtn:hover, #passBtn:focus {
+	background-color: white;
+	border: 1px solid #9575CD;
+	color: #9575CD;
 }
