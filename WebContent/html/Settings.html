@@ -10,6 +10,7 @@
 			<!-- Optional theme -->
 			<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css' integrity='sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp' crossorigin='anonymous'>
 			<link rel='stylesheet' href='../css/Settings.css'>
+			<script src="../script/Settings.js"></script>
 			<title>Settings</title>
 	</head>
 	<body>
@@ -61,7 +62,7 @@
 							</div>
 							<div class="flexDiv">
 								<p id="showPEmail">{Placeholder}</p>
-								<span class="editLink" onclick="showChangeEmailDiv()">Edit</span>
+								<span id="editEmailLink" onclick="showChangeEmailDiv()">Edit</span>
 							</div>
 							<div id="changeEmailDiv">
 								<input type="email" id="inputEmail" name="inputEmail" required>
@@ -72,7 +73,34 @@
 							</div>
 						</div>
 						<div id="editPass">
-							
+							<div class="categoryDiv">
+								<p>Password</p>
+							</div>
+							<div class="flexDiv">
+								<div id="editPassLinkDiv">
+									<span id="editPassLink" onclick="showChangePassDiv()">Click to change password.</span>
+								</div>
+							</div>
+							<div id="changePassDiv">
+								<div id="oldPassDiv" class="flexDiv">
+									<label class="passInputLabel">Old password: </label>
+									<input type="password" id="oldPass" class="passInput" name="oldPass" required>
+								</div>
+								<div id="inputPError1">Please enter your email.</div>
+								<div id="newPassDiv" class="flexDiv">
+									<label class="passInputLabel">New password: </label>
+									<input type="password" id="newPass" class="passInput" name="newPass" required>
+								</div>
+								<div id="inputPError2">Please enter your email.</div>
+								<div id="confirmNewPassDiv" class="flexDiv">
+									<label class="passInputLabel">Confirm password: </label>
+									<input type="password" id="confirmNewPass" class="passInput" name="confirmNewPass" required>
+								</div>
+								<div id="inputPError3">Please enter your email.</div>
+								<div id="passBtnDiv">
+									<button id="passBtn">Update password</button>
+								</div>
+							</div>
 						</div>
 					</form>
 				</div>
