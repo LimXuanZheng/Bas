@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import database.DatabaseAccess;
+import homePage.CheckIP;
 
 @WebServlet("/Login")
 public class LoginServlet extends HttpServlet {
@@ -23,6 +24,16 @@ public class LoginServlet extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		try {
+			CheckIP checkIP = new CheckIP(request);
+			checkIP.redirect(response);
+			//checkIP.getLocation();
+			//checkIP.showLocationOnGoogle(response);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		PrintWriter out = response.getWriter();
 		out.println("<!DOCTYPE html>"
 				+ "<html>"

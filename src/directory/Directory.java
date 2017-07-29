@@ -12,8 +12,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.json.simple.parser.ParseException;
+
+import com.maxmind.geoip2.exception.GeoIp2Exception;
+
 import database.DatabaseAccess;
 import database.model.UserAll;
+import homePage.CheckIP;
 
 //If I have time I confirm going to make the out.print nicer... For the time being deal with it
 @WebServlet("/Directory")
@@ -23,13 +28,26 @@ public class Directory extends HttpServlet{
     private static String username = "Bob";
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//CheckIP.redirect(request, response);
+		try {
+			CheckIP checkIP = new CheckIP(request);
+			checkIP.redirect(response);
+			//checkIP.getLocation();
+			//checkIP.showLocationOnGoogle(response);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} //catch (GeoIp2Exception e) {
+		//	e.printStackTrace();
+		//} catch (ParseException e) {
+		//	e.printStackTrace();
+		//}
 		HttpSession session = request.getSession(false);
 		if (session != null) {
 			username = (String)session.getAttribute("username");
 		}
 		else {
-			//response.sendRedirect("Login");
+			response.sendRedirect("Login");
 			System.out.println("Didn't work");
 		}
 		ArrayList<UserAll> userAllArray = new ArrayList<UserAll>();
