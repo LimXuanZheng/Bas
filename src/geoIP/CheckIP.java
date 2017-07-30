@@ -1,4 +1,4 @@
-package homePage;
+package geoIP;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
@@ -23,7 +23,6 @@ import org.json.simple.parser.ParseException;
 
 import com.maxmind.geoip2.exception.GeoIp2Exception;
 
-import database.GeoIPDao;
 import database.model.IpAddress;
 import database.model.UserLocation;
 
@@ -101,7 +100,7 @@ public class CheckIP {
 
 	public String getLatLongByGoogle(String search) throws ParseException, IOException{
 		JSONParser parser = new JSONParser();
-		JSONObject json = (JSONObject) parser.parse(getJSONByGoogle("CompassOne,Singapore"));
+		JSONObject json = (JSONObject) parser.parse(getJSONByGoogle(search));
 		System.out.println(json);
 		return search;
 	}

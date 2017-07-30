@@ -1,4 +1,4 @@
-package database;
+package geoIP;
 
 import java.io.File;
 import java.io.IOException;
@@ -14,7 +14,8 @@ public class GeoIPDao {
 	private DatabaseReader cityDbReader;
 
 	public GeoIPDao() throws IOException {
-		File cityDatabase = new File("C:/Users/Wei Xuan/Documents/GitHub/Bas/src/database/GeoLite2-City.mmdb");
+		String userHome = System.getProperty("user.home");
+		File cityDatabase = new File(userHome, "/Documents/GitHub/Bas/src/geoIP/GeoLite2-City.mmdb");
 		cityDbReader = new DatabaseReader.Builder(cityDatabase).build();
 	}
 

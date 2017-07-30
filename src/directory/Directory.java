@@ -18,7 +18,7 @@ import com.maxmind.geoip2.exception.GeoIp2Exception;
 
 import database.DatabaseAccess;
 import database.model.UserAll;
-import homePage.CheckIP;
+import geoIP.CheckIP;
 
 //If I have time I confirm going to make the out.print nicer... For the time being deal with it
 @WebServlet("/Directory")
@@ -31,17 +31,17 @@ public class Directory extends HttpServlet{
 		try {
 			CheckIP checkIP = new CheckIP(request);
 			checkIP.redirect(response);
-			//checkIP.getLocation();
-			//checkIP.showLocationOnGoogle(response);
+			checkIP.getLocation();
+			checkIP.showLocationOnGoogle(response);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} //catch (GeoIp2Exception e) {
-		//	e.printStackTrace();
-		//} catch (ParseException e) {
-		//	e.printStackTrace();
-		//}
+		} catch (GeoIp2Exception e) {
+			e.printStackTrace();
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 		HttpSession session = request.getSession(false);
 		if (session != null) {
 			username = (String)session.getAttribute("username");

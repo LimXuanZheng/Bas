@@ -1,7 +1,6 @@
 package database;
 
 import java.io.InputStream;
-import java.security.SecureRandom;
 import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.Date;
@@ -12,6 +11,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import database.model.Announcement;
 import database.model.File;
 import database.model.IpAddress;
 import database.model.Login;
@@ -19,6 +19,7 @@ import database.model.Student;
 import database.model.Teacher;
 import database.model.User;
 import database.model.UserAll;
+import database.model.UserGroup;
 
 public class DatabaseAccess {
 	final String JDBC_DRIVER="com.mysql.jdbc.Driver";  
@@ -250,6 +251,47 @@ public class DatabaseAccess {
 		while(rs.next()){
 			String ip = rs.getString("IpAddress");
 			IpAddress a = new IpAddress(ip);
+			stringArray.add(a);
+		}
+		
+		rs.close();
+		return stringArray;
+	}
+	
+	public ArrayList<UserGroup> getDatabaseUserGroup() throws SQLException{
+		ResultSet rs = getDatabaseData("SELECT * FROM UserGroup;");
+		ArrayList<UserGroup> stringArray = new ArrayList<UserGroup>();
+		
+		while(rs.next()){
+			int idUserGroup = rs.getInt("idAnnouncement");
+			String groupName = rs.getString("GroupName");
+			String members = rs.getString("Members");
+			String owner = rs.getString("Owner");
+			UserGroup a = new UserGroup(idUserGroup, groupName, members, owner);
+			stringArray.add(a);
+		}
+		
+		rs.close();
+		return stringArray;
+	}
+	
+	public ArrayList<Announcement> getDatabaseAnnoucement() throws SQLException{
+		ResultSet rs = getDatabaseData("SELECT * FROM Announcement INNER JOIN UserGroup ON Announcement.groupName = UserGroup.groupName;");
+		ArrayList<Announcement> stringArray = new ArrayList<Announcement>();
+		
+		while(rs.next()){
+			int idUserGroup = rs.getInt("idAnnouncement");
+			String groupName = rs.getString("GroupName");
+			String members = rs.getString("Members");
+			String owner = rs.getString("Owner");
+			UserGroup b = new UserGroup(idUserGroup, groupName, members, owner);
+			
+			int idAnnouncement = rs.getInt("idAnnouncement");
+			int userFrom = rs.getInt("UserFrom");
+			String message = rs.getString("Message");
+			Date expireDate = rs.getDate("ExpireDate");
+			String recipient = rs.getString("Rcipient");
+			Announcement a = new Announcement(idAnnouncement, userFrom, message, expireDate, b, recipient);
 			stringArray.add(a);
 		}
 		

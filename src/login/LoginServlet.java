@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import database.DatabaseAccess;
-import homePage.CheckIP;
+import geoIP.CheckIP;
 
 @WebServlet("/Login")
 public class LoginServlet extends HttpServlet {
