@@ -50,7 +50,8 @@ public class Home extends HttpServlet {
 			username = (String)session.getAttribute("username");
 		}
 		else {
-			System.out.println("Didn't work");
+			//response.sendRedirect("Login");
+			System.out.println("Session not created - redirect to login");
 		}
 		response.setContentType("text/html;charset=UTF-8");
 		ArrayList<String> notificationArray = new ArrayList<String>();

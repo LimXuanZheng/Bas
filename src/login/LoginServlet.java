@@ -1,10 +1,18 @@
 package login;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.InetAddress;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Scanner;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,26 +20,68 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.ThreadContext;
+import org.json.simple.parser.ParseException;
+
+import com.maxmind.geoip2.exception.GeoIp2Exception;
+
 import database.DatabaseAccess;
 import geoIP.CheckIP;
 
 @WebServlet("/Login")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private static final Logger logger = LogManager.getLogger(LoginServlet.class.getName());
        
     public LoginServlet() {
         super();
     }
+    
+    public void init(ServletConfig config) throws ServletException {
+    	String logFile = System.getProperty("user.home");
+    	File file = new File(logFile, "/Documents/GitHub/Bas/WebContent/WEB-INF/classes/log4j2.xml");
+    	ArrayList<String> arr = new ArrayList<String>();
+    	try {
+			Scanner sc = new Scanner(file);
+			while (sc.hasNextLine()) {
+				arr.add(sc.nextLine());
+			}
+			arr.set(3, "<File name=\"MyFile\" filename=\"" + logFile + "\\Documents\\GitHub\\Bas\\Log4j2Log.log" + "\">");
+			FileWriter fw = new FileWriter(file);
+			BufferedWriter bw = new BufferedWriter(fw);
+			PrintWriter outFile = new PrintWriter(bw);
+			for (String str : arr) {
+				outFile.println(str);
+			}
+			sc.close();
+			outFile.close();
+			bw.close();
+			fw.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    	
+	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
 			CheckIP checkIP = new CheckIP(request);
 			checkIP.redirect(response);
-			//checkIP.getLocation();
-			//checkIP.showLocationOnGoogle(response);
+			checkIP.getLocation();
+			checkIP.showLocationOnGoogle(response);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (GeoIp2Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		PrintWriter out = response.getWriter();
@@ -138,11 +188,17 @@ public class LoginServlet extends HttpServlet {
 				HashPass HP = new HashPass();
 				byte [] saltDecoded = HP.getDecodedSalt(login.getString("Salt"));
 				String hashedPassword = HP.getHashedPassword(password, saltDecoded);
+				
 				if (login.getString("Password").equals(hashedPassword)) {
 					System.out.println("Entered If");
 					HttpSession session = request.getSession();
 					session.setAttribute("username", username);
 					response.sendRedirect("Home");
+					
+					ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
+					ThreadContext.put("Username", username);
+					logger.debug("Logged in successfully");
+					ThreadContext.clearAll();
 				}
 				else {
 					System.out.println("Entered Else");

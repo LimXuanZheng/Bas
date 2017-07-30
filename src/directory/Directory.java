@@ -2,6 +2,7 @@ package directory;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.InetAddress;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -12,6 +13,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.ThreadContext;
 import org.json.simple.parser.ParseException;
 
 import com.maxmind.geoip2.exception.GeoIp2Exception;
@@ -19,37 +23,43 @@ import com.maxmind.geoip2.exception.GeoIp2Exception;
 import database.DatabaseAccess;
 import database.model.UserAll;
 import geoIP.CheckIP;
+import login.LoginServlet;
 
 //If I have time I confirm going to make the out.print nicer... For the time being deal with it
 @WebServlet("/Directory")
 public class Directory extends HttpServlet{
 	private static final long serialVersionUID = 1L;
+	private static final Logger logger = LogManager.getLogger(Directory.class.getName());
     private int userType = 1;
     private static String username = "Bob";
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
+		ThreadContext.put("Username", username);
+		logger.debug("Entered Directory page");
+		ThreadContext.clearAll();
+		
 		try {
 			CheckIP checkIP = new CheckIP(request);
 			checkIP.redirect(response);
 			checkIP.getLocation();
-			//checkIP.showLocationOnGoogle(response);
+			checkIP.showLocationOnGoogle(response);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} 
-		catch (GeoIp2Exception e) {
+		} catch (GeoIp2Exception e) {
 			e.printStackTrace();
-		} //catch (ParseException e) {
-			//e.printStackTrace();
-		//}
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 		HttpSession session = request.getSession(false);
 		if (session != null) {
 			username = (String)session.getAttribute("username");
 		}
 		else {
 			//response.sendRedirect("Login");
-			System.out.println("Didn't work");
+			System.out.println("Session not created - redirect to login");
 		}
 		ArrayList<UserAll> userAllArray = new ArrayList<UserAll>();
 		try {
@@ -203,13 +213,20 @@ public class Directory extends HttpServlet{
 			//userAllArray = dba.getDatabaseUserAll();
 			
 			String sqlline = "SELECT User.UserID, Login.Username, Login.Password, Login.Salt, User.NRIC, User.Name, User.Gender, User.DOB, User.ContactNo, User.Email, User.Class, User.Address, User.Keys, Student.CCA, Teacher.TeacherID, Teacher.Department FROM User LEFT OUTER JOIN Login ON (User.UserID = Login.UserID) LEFT OUTER JOIN Student ON (User.UserID = Student.UserID) LEFT OUTER JOIN Teacher ON (User.UserID = Teacher.UserID) WHERE User.Name LIKE ?;"; //Testing Search Name (It's Working)
-			if(validateName(name)){ //If name is not letters, method is exited and (prompts error)
+			//if(validateName(name)){ //If name is not letters, method is exited and (prompts error)
 				userAllArray = dba.convertResultSetToArrayList(dba.getSearchDatabaseData(sqlline, name));
-			}else{
-				dba.close();
-				response.sendRedirect("Directory");
-				return;
-			}
+				
+				ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
+				ThreadContext.put("Username", username);
+				logger.debug("Searched for: " + name);
+				ThreadContext.clearAll();
+				
+				System.out.println("Searched for something in Directory");
+			//}else{
+				//dba.close();
+				//response.sendRedirect("Directory");
+				//return;
+			//}
 			
 	    	response.setContentType("text/html;charset=UTF-8");
 	    	PrintWriter out = response.getWriter();

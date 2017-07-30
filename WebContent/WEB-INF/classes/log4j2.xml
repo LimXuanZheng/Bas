@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="TRACE">
+  <Appenders>
+<File name="MyFile" filename="C:\Users\serwe\Documents\GitHub\Bas\Log4j2Log.log">
+      <PatternLayout>
+        <Pattern>%d{yyyy-MM-dd HH:mm:ss};%X{IP};%X{Username};%m%n</Pattern>
+      </PatternLayout>
+    </File>
+    <Console name="Console" target="SYSTEM_OUT">
+  		<PatternLayout>
+  			<Pattern>%d{yyyy-MM-dd HH:mm:ss};%X{IP};%X{Username};%m%n</Pattern>
+  		</PatternLayout>
+  	</Console>
+  </Appenders>
+  <Loggers>
+    <Root level="DEBUG">
+    	<AppenderRef ref="MyFile"/>
+		<AppenderRef ref="Console"/>
+    </Root>
+  </Loggers>
+</Configuration>
