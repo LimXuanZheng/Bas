@@ -32,22 +32,23 @@ public class Directory extends HttpServlet{
 			CheckIP checkIP = new CheckIP(request);
 			checkIP.redirect(response);
 			checkIP.getLocation();
-			checkIP.showLocationOnGoogle(response);
+			//checkIP.showLocationOnGoogle(response);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} catch (GeoIp2Exception e) {
+		} 
+		catch (GeoIp2Exception e) {
 			e.printStackTrace();
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
+		} //catch (ParseException e) {
+			//e.printStackTrace();
+		//}
 		HttpSession session = request.getSession(false);
 		if (session != null) {
 			username = (String)session.getAttribute("username");
 		}
 		else {
-			response.sendRedirect("Login");
+			//response.sendRedirect("Login");
 			System.out.println("Didn't work");
 		}
 		ArrayList<UserAll> userAllArray = new ArrayList<UserAll>();
@@ -201,7 +202,7 @@ public class Directory extends HttpServlet{
 			DatabaseAccess dba = new DatabaseAccess(userType);
 			//userAllArray = dba.getDatabaseUserAll();
 			
-			String sqlline = "SELECT User.UserID, Login.Username, Login.Password, Login.Salt, User.Name, User.Gender, User.DOB, User.ContactNo, User.Email, User.Class, User.Address, Student.NRIC, Student.CCA, Teacher.TeacherID, Teacher.Department FROM User LEFT OUTER JOIN Login ON (User.UserID = Login.UserID) LEFT OUTER JOIN Student ON (User.UserID = Student.UserID) LEFT OUTER JOIN Teacher ON (User.UserID = Teacher.UserID) WHERE User.Name LIKE ?;"; //Testing Search Name (It's Working)
+			String sqlline = "SELECT User.UserID, Login.Username, Login.Password, Login.Salt, User.NRIC, User.Name, User.Gender, User.DOB, User.ContactNo, User.Email, User.Class, User.Address, User.Keys, Student.CCA, Teacher.TeacherID, Teacher.Department FROM User LEFT OUTER JOIN Login ON (User.UserID = Login.UserID) LEFT OUTER JOIN Student ON (User.UserID = Student.UserID) LEFT OUTER JOIN Teacher ON (User.UserID = Teacher.UserID) WHERE User.Name LIKE ?;"; //Testing Search Name (It's Working)
 			if(validateName(name)){ //If name is not letters, method is exited and (prompts error)
 				userAllArray = dba.convertResultSetToArrayList(dba.getSearchDatabaseData(sqlline, name));
 			}else{
