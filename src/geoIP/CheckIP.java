@@ -71,7 +71,8 @@ public class CheckIP {
 
 	public void showLocationOnGoogle(HttpServletResponse response) throws IOException, GeoIp2Exception, ParseException{
 		UserLocation location = getLocation();
-		File file2 = new File("C:/Users/Wei Xuan/Documents/GitHub/Bas/WebContent/script/mapScript.js");
+		String userHome = System.getProperty("user.home");
+		File file2 = new File(userHome, "/Documents/GitHub/Bas/WebContent/script/mapScript.js");
 		ArrayList<String> lines = new ArrayList<String>(Files.readAllLines(file2.toPath()));
 		lines.set(3, "\t\tcenter: {lat: " + location.getLatitude() + ", lng: " + location.getLongitude() + "},");
 		lines.set(27, "\t\t\t\tcenter: {lat: " + location.getLatitude() + ", lng: " + location.getLongitude() + "},");
