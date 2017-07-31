@@ -1,6 +1,8 @@
 package database.model;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class File {
 	int fileID;
@@ -11,15 +13,19 @@ public class File {
 	String recipient;
 	Date date;
 	User user;
-	
-	
-	public File(int fileID, User user, String fileName, int fileSize, byte[] fileData,String recipient, Date date) {
+
+
+	public File(int fileID, User user, String fileName, int fileSize, byte[] fileData, String recipient, Date date) {
 		this.fileID = fileID;
 		UserID = user.getUserID();
 		this.fileName = fileName;
 		this.fileSize = fileSize;
 		this.fileData = fileData;
-		this.recipient = recipient;
+		if(!recipient.isEmpty()){
+			this.recipient = recipient;
+		}else{
+			this.recipient = null;
+		}
 		this.date = date;
 		this.user = user;
 	}
@@ -73,6 +79,16 @@ public class File {
 	}
 	public void setDate(Date date) {
 		this.date = date;
+	}
+
+	public ArrayList<String>convertRecipient(){
+		ArrayList<String> arrayString = new ArrayList<String>();
+		Scanner sc = new Scanner(this.recipient);
+		sc.useDelimiter(",");
+		while(sc.hasNext()){
+			arrayString.add(sc.next());
+		}
+		return arrayString;
 	}
 
 }
