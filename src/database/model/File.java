@@ -1,6 +1,8 @@
 package database.model;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class File {
 	int fileID;
@@ -75,4 +77,13 @@ public class File {
 		this.date = date;
 	}
 
+	public ArrayList<String>convertRecipient(){
+		ArrayList<String> arrayString = new ArrayList<String>();
+		Scanner sc = new Scanner(this.recipient);
+		sc.useDelimiter(",");
+		while(sc.hasNext()){
+			arrayString.add(sc.next());
+		}
+		return arrayString;
+	}
 }
