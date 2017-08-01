@@ -8,6 +8,7 @@ function showHidden(){
 	if(document.getElementById("checkifnew").checked){
 		document.getElementById("nameOfNewButton").style.display="block";
 		document.getElementById("dropdowns").style.display="block";
+		
 	}
 	else if(document.getElementById("checkifmy").checked){
 		document.getElementById("nameOfNewButton").style.display="none";
@@ -20,7 +21,21 @@ function showHidden(){
 }
 
 function asubmit(){
-	alert("Successful");
+	if(document.getElementById("checkifmy").checked){
+		document.getElementById("sp").value = "solo";
+	}
+	else if(document.getElementById("checkifshare").checked){
+		var table = document.getElementById("smaller");
+		var text ="";
+		for (var i = 1, row; row = table.rows[i]; i++) {
+		   for (var j = 0, col; col = row.cells[j]; j++) {
+		    text += col.innerHTML + ";";
+		   }  
+		}
+		alert(text);
+		document.getElementById("sp").value = text;
+	}
+	
 }
 
 function confirm(){
@@ -166,8 +181,14 @@ function dosth(fgfg){
 	document.getElementById("downloadfile").submit();
 }
 
-function displayhello(){
+function displayhello(thiss){
 	document.getElementById("smaller").style.display = "block";
+	var tdd = document.createElement("td");
+	var dd = document.createElement("tr");
+	dd.appendChild(tdd);
+	tdd.innerHTML = thiss.innerHTML;
+	document.getElementById("smaller").appendChild(dd);
+	
 }
 
 

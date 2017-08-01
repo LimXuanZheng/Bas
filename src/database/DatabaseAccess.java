@@ -345,13 +345,14 @@ public class DatabaseAccess {
         }
 	}
 	
-	public void updateDatabaseDataFileUpload(String sql, int userID, String fileName, long fileSize, InputStream data, Date date) throws SQLException{
+	public void updateDatabaseDataFileUpload(String sql, int userID, String fileName, long fileSize, InputStream data,String recipient, Date date) throws SQLException{
 		ppstmt = conn.prepareStatement(sql);
 		ppstmt.setInt(1, userID);
 		ppstmt.setString(2, fileName);
 		ppstmt.setLong(3, fileSize);
 		ppstmt.setBlob(4, data);
-		ppstmt.setObject(5, date);
+		ppstmt.setString(5, recipient);
+		ppstmt.setObject(6, date);
 		
 		int count = ppstmt.executeUpdate();
         if(count ==0){

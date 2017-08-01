@@ -13,15 +13,19 @@ public class File {
 	String recipient;
 	Date date;
 	User user;
-	
-	
-	public File(int fileID, User user, String fileName, int fileSize, byte[] fileData,String recipient, Date date) {
+
+
+	public File(int fileID, User user, String fileName, int fileSize, byte[] fileData, String recipient, Date date) {
 		this.fileID = fileID;
 		UserID = user.getUserID();
 		this.fileName = fileName;
 		this.fileSize = fileSize;
 		this.fileData = fileData;
-		this.recipient = recipient;
+		if(!recipient.isEmpty()){
+			this.recipient = recipient;
+		}else{
+			this.recipient = null;
+		}
 		this.date = date;
 		this.user = user;
 	}
@@ -86,4 +90,8 @@ public class File {
 		}
 		return arrayString;
 	}
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 }

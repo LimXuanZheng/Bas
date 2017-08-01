@@ -86,6 +86,7 @@ public class teacherSharing extends HttpServlet {
 
 
 		String filename1 = "Nothing to show";
+
 		int filesize1;
 		Date date1;
 		byte [] filedata;
@@ -187,7 +188,9 @@ public class teacherSharing extends HttpServlet {
 				+			"<p id='hidehere'>The class path is here</p>"
 				+			"<div id='overlay'>"
 				+				"<div id='content1'>"
-				+					"<form id='anything' action='teacherupload' onsubmit='asubmit()'>"
+
+				+					"<form id='anything'  action='teacherupload' onsubmit='asubmit()'>"
+				+						"<input type='hidden' name='stringofpeople' id='sp'></input>"
 				+						"<input type='radio'  id='checkifmy' name='chooseFile' onclick='javascript:showHidden();' checked>My Drive</input>"
 				+						"<input type='radio'  id='checkifshare' name='chooseFile' onclick='javascript:showHidden();'>Shared Drive</input>"
 				+						"<input type='radio'  id='checkifnew' name='chooseFile' onclick='javascript:showHidden();'>New Drive</input>"
@@ -202,66 +205,66 @@ public class teacherSharing extends HttpServlet {
 				+			    			  	"<input type='text' placeholder='Search..' id='myInput' onkeyup='filterFunction()'>"
 				+								"<div id='fixsize'>");
 		for(String n:names){
-				out.println(
-								
-								"<p class='niceparagraph' onclick ='displayhello()'> " + n + "</p>");
-							
+			out.println(
+
+					"<p class='niceparagraph'  onclick ='displayhello(this)'> " + n + "</p>");
+
 		}	    			    
-							    			    
-				
-				out.println(
-												"</div>"
-				+			    			  "</div>"
-				+			    			"</div>"
-				+								"<div id='showtable' class='container'>"
-				+									"<table class='table table-striped' id='smaller'>"
-				+										"<thead>"
-			    +										  "<tr>"
-			    +										    "<th style='font-size:20px'>Name</th>"
-			    +										  "<tr>"
-			    +										"<thead>"
-			    +										"<tbody>"
-			    +										  "<tr>"
-			    +										  	"<td>I am gay</td>"
-			    +										  "</tr>"
-			    +										"</tbody>"
-				+									"</table>"
-				+								"</div>"
-				+						"<input type='submit' class='duo' id='submit' value='Submit'></input>"
-				+					"</form>"
-				//+					"<button id='confirm' onclick='confirm()' >Confirm</button>"
-				+					"<button type='button' class='duo' id='cancel' onclick='cancel()'>Cancel</button>"
-				//+					"</form>"
-				+				"</div>"
-				+			"</div>"
-				+			"<div>"
-				+				"<div class='contents' id='storeButton'>"
-				+					"<button class='button' id='newbutton' onclick='createNew()'>New</button>"
-				+					"<button class='button' id='mybutton'>My Drive</button>"//onclick='displayallmy()'
-				+					"<button class='button' id='lastOne'>Shared Drive</button>"
-				+				"</div>"
-				+				"<div class='contents' id='storeTable'>"
-				+					"<table id='displaying'>"
-				+						"<tr>"
-				+							"<th>Name</th>"
-				+							"<th>Owner</th>"
-				+							"<th>Last Modified</th>"
-				+							"<th>File Size</th>"
-				+						"</tr>"
+
+
+		out.println(
+				"</div>"
+						+			    			  "</div>"
+						+			    			"</div>"
+						+								"<div id='showtable' class='container'>"
+						+									"<table class='table table-striped' id='smaller'>"
+						+										"<thead>"
+						+										  "<tr>"
+						+										    "<th style='font-size:20px'>Name</th>"
+						+										  "<tr>"
+						+										"<thead>"
+						+										"<tbody>"
+						+										"</tbody>"
+						+									"</table>"
+						+								"</div>"
+						+						"<input type='submit' class='duo' id='submit' value='Submit'></input>"
+						+					"</form>"
+						//+					"<button id='confirm' onclick='confirm()' >Confirm</button>"
+						+					"<button type='button' class='duo' id='cancel' onclick='cancel()'>Cancel</button>"
+						//+					"</form>"
+						+				"</div>"
+						+			"</div>"
+						+			"<div>"
+						+				"<div class='contents' id='storeButton'>"
+						+					"<button class='button' id='newbutton' onclick='createNew()'>New</button>"
+						+					"<button class='button' id='mybutton'>My Drive</button>"//onclick='displayallmy()'
+						+					"<button class='button' id='lastOne'>Shared Drive</button>"
+						+				"</div>"
+						+				"<div class='contents' id='storeTable'>"
+						+					"<table id='displaying'>"
+						+						"<tr>"
+						+							"<th>Name</th>"
+						+							"<th>Owner</th>"
+						+							"<th>Last Modified</th>"
+						+							"<th>File Size</th>"
+						+						"</tr>"
 				);
 		out.println("<form id='downloadfile' action='teachersharing' method='post'>");
 
 		for(database.model.File f: fileArray){
-
-			out.println(
-					"<tr>"
-							+		"<td onclick='dosth(" + f.getFileID() + ")' name='whatisthisfile'>  " + f.getFileName() +  "</td>"
-							//		+		"<td  onclick='downloadfile(this)'>" + f.getFileName() + "</td>"
-							+		"<td>" + f.getUser().getName() + "</td>"
-							+		"<td>" + f.getDate() + "</td>"
-							+		"<td>" + f.getFileSize() + "</td>"
-							+	"</tr>"
-					);
+			for(String hai : f.convertRecipient()){
+				if(hai.equals("13")){
+					out.println(
+							"<tr>"
+									+		"<td onclick='dosth(" + f.getFileID() + ")' name='whatisthisfile'>  " + f.getFileName() +  "</td>"
+									//		+		"<td  onclick='downloadfile(this)'>" + f.getFileName() + "</td>"
+									+		"<td>" + f.getUser().getName() + "</td>"
+									+		"<td>" + f.getDate() + "</td>"
+									+		"<td>" + f.getFileSize() + "</td>"
+									+	"</tr>"
+							);
+				}
+			}
 		}
 		out.println(					"</table>"
 				+				"</div>"
@@ -301,7 +304,7 @@ public class teacherSharing extends HttpServlet {
 			ArrayList<database.model.File> fileArray = dbms.getDatabaseFile();
 			for(database.model.File d: fileArray){
 				if(d.getFileID() == sss){
-					
+
 					File tempFile = File.createTempFile(d.getFileName(), ".tmp", null);
 					FileOutputStream fos = new FileOutputStream(tempFile);
 					fos.write(d.getFileData());
