@@ -90,8 +90,4 @@ public class File {
 		}
 		return arrayString;
 	}
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
 }

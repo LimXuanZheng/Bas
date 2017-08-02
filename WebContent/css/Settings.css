@@ -106,6 +106,7 @@ body {
 }
 
 #inputError {
+	display: none;
 	height: 40px;
 	width: 100%;
 	text-align: center;
@@ -197,6 +198,7 @@ body {
 }
 
 #inputPError1 {
+	display: none;
 	height: 40px;
 	width: 70%;
 	text-align: center;
@@ -210,15 +212,16 @@ body {
 #changePassDiv #inputPError1::after {
 	content: "";
     position: absolute;
-    bottom: 85%;
+    bottom: 78%;
     left: 93%;
-    margin-left: -10px;
-    border-width: 10px;
+    margin-left: -12px;
+    border-width: 12px;
     border-style: solid;
     border-color: transparent transparent #F74225 transparent;
 }
 
 #inputPError2 {
+	display: none;
 	height: 40px;
 	width: 70%;
 	text-align: center;
@@ -232,15 +235,16 @@ body {
 #changePassDiv #inputPError2::after {
 	content: "";
     position: absolute;
-    bottom: 55.2%;
+    bottom: 56.5%;
     left: 93%;
-    margin-left: -10px;
-    border-width: 10px;
+    margin-left: -12px;
+    border-width: 12px;
     border-style: solid;
     border-color: transparent transparent #F74225 transparent;
 }
 
 #inputPError3 {
+	display: none;
 	height: 40px;
 	width: 70%;
 	text-align: center;
@@ -254,10 +258,10 @@ body {
 #changePassDiv #inputPError3::after {
 	content: "";
     position: absolute;
-    bottom: 25.3%;
+    bottom: 35.4%;
     left: 93%;
-    margin-left: -10px;
-    border-width: 10px;
+    margin-left: -12px;
+    border-width: 12px;
     border-style: solid;
     border-color: transparent transparent #F74225 transparent;
 }
