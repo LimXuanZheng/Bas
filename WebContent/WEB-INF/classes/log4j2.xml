@@ -2,9 +2,13 @@
 <Configuration status="WARN">
   <Appenders>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <File name="MyFile" filename="C:\Users\Wei Xuan\Documents\GitHub\Bas\Log4j2Log.log">
 =======
 <File name="MyFile" filename="C:\Users\Lim Xuan Zheng\Documents\GitHub\Bas\Log4j2Log.log">
+>>>>>>> origin/master
+=======
+<File name="MyFile" filename="C:\Users\serwe\Documents\GitHub\purplebackup\Log4j2Log.log">
 >>>>>>> origin/master
       <PatternLayout>
         <Pattern>%d{yyyy-MM-dd HH:mm:ss};%X{IP};%X{Username};%m%n</Pattern>

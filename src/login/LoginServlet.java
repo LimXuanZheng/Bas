@@ -49,7 +49,7 @@ public class LoginServlet extends HttpServlet {
 			while (sc.hasNextLine()) {
 				arr.add(sc.nextLine());
 			}
-			arr.set(3, "<File name=\"MyFile\" filename=\"" + logFile + "\\Documents\\GitHub\\Bas\\Log4j2Log.log" + "\">");
+			arr.set(3, "<File name=\"MyFile\" filename=\"" + logFile + "\\Documents\\GitHub\\purplebackup\\Log4j2Log.log" + "\">");
 			FileWriter fw = new FileWriter(file);
 			BufferedWriter bw = new BufferedWriter(fw);
 			PrintWriter outFile = new PrintWriter(bw);
