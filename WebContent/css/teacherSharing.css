@@ -49,6 +49,7 @@ body{
  td{
  	border: 1px solid black;
  	padding:5px;
+ 	bgcolor: #FFFFFF;
  }
  
 
@@ -71,7 +72,6 @@ body{
 	width: 100%; /* Full width (cover the whole page) */
     height: 100%; /* Full height (cover the whole page) */
  	background-color: #2AFCE5;
- 	margin 5%;
  	overflow-y: auto;
  }
  #nameOfNewButton{
@@ -154,9 +154,12 @@ body{
 #smaller{
 	overflow-y:scroll;
 	font-size:15px;
-	width:40%;
+	width:20%;
 	display:none;
 	margin-left:30%;
+}
+#moveleft{
+	margin-left:5%;
 }
 
 
