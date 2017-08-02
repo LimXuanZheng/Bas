@@ -1,0 +1,28 @@
+@CHARSET "UTF-8";
+
+*{
+	padding: 0px;
+	margin: 0px;
+}
+
+html,body{
+	height: 100%;
+	width: 100%;
+}
+
+iframe{
+	overflow: hidden;
+	border: none;
+}
+
+#sendMessageInput{
+	height: 20%;
+	width: 100%;
+	background-color: white;
+}
+
+#receiveMessageBox{
+	height: 80%;
+	width: 100%;
+	background-color: white;
+}
