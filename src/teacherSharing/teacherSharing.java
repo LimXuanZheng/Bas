@@ -190,24 +190,27 @@ public class teacherSharing extends HttpServlet {
 				+				"<div id='content1'>"
 
 				+					"<form id='anything'  action='teacherupload' onsubmit='asubmit()'>"
+				+						"<p style='font-size:50px;'>Select Your Upload Method</p>"
 				+						"<input type='hidden' name='stringofpeople' id='sp'></input>"
-				+						"<input type='radio'  id='checkifmy' name='chooseFile' onclick='javascript:showHidden();' checked>My Drive</input>"
-				+						"<input type='radio'  id='checkifshare' name='chooseFile' onclick='javascript:showHidden();'>Shared Drive</input>"
-				+						"<input type='radio'  id='checkifnew' name='chooseFile' onclick='javascript:showHidden();'>New Drive</input>"
-				+						"<br><label class='custom-file'>"
+				+						"<input type='radio'  id='checkifmy' name='chooseFile' onclick='javascript:showHidden();' style='width:20px; height:20px;' checked></input><label style='font-size:30px;'>My Drive</label>"
+				+						"<label style='margin-right:10px; margin-left:10px;'><input type='radio'  id='checkifshare' name='chooseFile' onclick='javascript:showHidden();' style='width:20px; height:20px;'></input><label style='font-size:30px;'>Shared Drive</label></label>"
+				+						"<input type='radio'  id='checkifnew' name='chooseFile' onclick='javascript:showHidden();' style='width:20px; height:20px;'></input><label style='font-size:30px;'>New Drive</label>"
+				+						"<br><p onclick='enablebtn()'><label class='custom-file'>"
 				+							"<input type='file' id='datafilepath' class='custom-file-input' name='datafile' style='font-size:20px;'>"
 				+							"<span class='custom-file-control'></span>"
-				+						"</label>"
+				+						"</label></p>"
 				+						"<br><p id='nameOfNewButton'>Name of Folder: <input type='text' name='FName' id='getBtnName'></input></p>"
-				+						"<br><div class='dropdown' id='dropdowns'>"						
+				+						"<br><div id='bigone'><div class='dropdown' id='dropdowns'>"						
 				+			    			"<button  type='button' onclick='showsomething()' class='dropbtn'>Teachers/Students</button>"
 				+			    			 "<div id='myDropdown' class='dropdown-content'>"
 				+			    			  	"<input type='text' placeholder='Search..' id='myInput' onkeyup='filterFunction()'>"
 				+								"<div id='fixsize'>");
+
 		for(String n:names){
+
 			out.println(
 
-					"<p class='niceparagraph'  onclick ='displayhello(this)'> " + n + "</p>");
+					"<p class='niceparagraph' id='ppp'  onclick ='displayhello(this)'> " + n + "</p>");
 
 		}	    			    
 
@@ -217,20 +220,21 @@ public class teacherSharing extends HttpServlet {
 						+			    			  "</div>"
 						+			    			"</div>"
 						+								"<div id='showtable' class='container'>"
-						+									"<table class='table table-striped' id='smaller'>"
+						+									"<table id='smaller'>"
 						+										"<thead>"
 						+										  "<tr>"
-						+										    "<th style='font-size:20px'>Name</th>"
+						+										    "<th bgcolor='#0341FB' style='font-size:20px'>Name</th>"
 						+										  "<tr>"
 						+										"<thead>"
 						+										"<tbody>"
 						+										"</tbody>"
 						+									"</table>"
 						+								"</div>"
-						+						"<input type='submit' class='duo' id='submit' value='Submit'></input>"
+						+								"</div>"
+						+						"<input type='submit' class='duo' id='submit' value='Submit' disabled='true'></input>"
+						+						"<button type='button' class='duo' id='cancel' onclick='cancel1()'>Cancel</button>"
 						+					"</form>"
 						//+					"<button id='confirm' onclick='confirm()' >Confirm</button>"
-						+					"<button type='button' class='duo' id='cancel' onclick='cancel()'>Cancel</button>"
 						//+					"</form>"
 						+				"</div>"
 						+			"</div>"
@@ -260,7 +264,7 @@ public class teacherSharing extends HttpServlet {
 									//		+		"<td  onclick='downloadfile(this)'>" + f.getFileName() + "</td>"
 									+		"<td>" + f.getUser().getName() + "</td>"
 									+		"<td>" + f.getDate() + "</td>"
-									+		"<td>" + f.getFileSize() + "</td>"
+									+		"<td>" + f.getFileSize() + " KB</td>"
 									+	"</tr>"
 							);
 				}
@@ -274,7 +278,6 @@ public class teacherSharing extends HttpServlet {
 				+	"</body>"
 				+"</html>"
 				);
-
 	}
 
 	/**
