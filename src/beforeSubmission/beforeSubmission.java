@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class beforeSubmission
@@ -29,6 +30,15 @@ public class beforeSubmission extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
+		String teemo = null;
+		HttpSession session = request.getSession(false);
+		if (session != null) {
+			teemo = (String)session.getAttribute("userID");
+		}
+		else {
+			//response.sendRedirect("Login");
+			System.out.println("Session not created - redirect to login");
+		}
 		out.println(
 				"<!DOCTYPE html>"
 		    			+ "<html>"
@@ -85,8 +95,14 @@ public class beforeSubmission extends HttpServlet {
 		    			+					"</div>"
 		    			+				"</div>"
 		    			+			"</div>"
-		    			+		"</div>"
-		    			+	"</body>"
+		    			+		"</div>");
+		out.println(
+				"<p>"+ teemo + "</p>"
+				
+				);
+		out.println(
+		    			
+		    				"</body>"
 		    			+"</html>"
 				
 				);

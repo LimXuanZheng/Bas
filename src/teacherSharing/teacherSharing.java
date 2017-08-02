@@ -268,6 +268,7 @@ public class teacherSharing extends HttpServlet {
 									+	"</tr>"
 							);
 				}
+				
 			}
 		}
 		out.println(					"</table>"
