@@ -34,6 +34,7 @@ import geoIP.CheckIP;
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final Logger logger = LogManager.getLogger(LoginServlet.class.getName());
+	String userID = null;
        
     public LoginServlet() {
         super();
@@ -180,7 +181,7 @@ public class LoginServlet extends HttpServlet {
 		System.out.println("Password: " + password);
 		try {
 			DatabaseAccess dba = new DatabaseAccess(1);
-			String sqlline = "SELECT Login.UserID, Login.Username, Login.Password, Login.Salt FROM Login WHERE Username = ?;"; 
+			String sqlline = "SELECT Login.UserID, Login.Username, Login.Password, Login.Salt FROM Login WHERE Username = ?;";
 			ResultSet login = dba.getDatabaseData(sqlline, username);
 			if (login.next()) {
 				//Base64.Decoder dnc = Base64.getDecoder();
@@ -190,9 +191,15 @@ public class LoginServlet extends HttpServlet {
 				String hashedPassword = HP.getHashedPassword(password, saltDecoded);
 				
 				if (login.getString("Password").equals(hashedPassword)) {
+					String userIDLine = "SELECT User.userID FROM User INNER JOIN Login ON User.UserID = Login.UserID WHERE Login.Username = \"" + username + "\";";
+					ResultSet rs = dba.getDatabaseData(userIDLine);
+					rs.next();
+					userID = rs.getString("userID");
+					System.out.println(userID);
 					System.out.println("Entered If");
 					HttpSession session = request.getSession();
 					session.setAttribute("username", username);
+					session.setAttribute("userID", userID);
 					response.sendRedirect("Home");
 					
 					ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());

@@ -37,14 +37,18 @@ body{
  	width:22%;
  }
  
- table, th{
- 	 border: 1px solid black;
+ table{
+ 	 border: 3px solid black;
  }
  th{
  	font-size:35px;
  }
  table{
  	width:180%;
+ }
+ td{
+ 	border: 1px solid black;
+ 	padding:5px;
  }
  
 
@@ -64,8 +68,11 @@ body{
   }
   
  #content1{
+	width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
  	background-color: #2AFCE5;
  	margin 5%;
+ 	overflow-y: auto;
  }
  #nameOfNewButton{
  	display: none;
@@ -126,12 +133,18 @@ body{
 
 .duo{
 	display: inline-block;
+	font-size:38px;
+	border:none;
+	margin:5px;
+	border-radius:5px;
+	padding:3px;
+}
+#cancel{
+	border: none;
+    background-color: white;
+    cursor: pointer;
 }
 
-#checkifshare{
-	margin-right:20px;
-	margin-left: 20px;
-}
 #fixsize{
 	overflow-y: scroll;
 	height:200px;
@@ -139,10 +152,16 @@ body{
 }
 
 #smaller{
+	overflow-y:scroll;
 	font-size:15px;
 	width:40%;
 	display:none;
+	margin-left:30%;
 }
+
+
+
+
 
 
 

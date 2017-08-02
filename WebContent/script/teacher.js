@@ -13,6 +13,7 @@ function showHidden(){
 	else if(document.getElementById("checkifmy").checked){
 		document.getElementById("nameOfNewButton").style.display="none";
 		document.getElementById("dropdowns").style.display="none";
+		document.getElementById("smaller").style.display = "block";
 	}
 	else if(document.getElementById("checkifshare").checked){
 		document.getElementById("nameOfNewButton").style.display="none";
@@ -21,6 +22,8 @@ function showHidden(){
 }
 
 function asubmit(){
+	var dc = document.getElementById("datafilepath").value;
+	if(dc.equals(null) && dc.equals("")){
 	if(document.getElementById("checkifmy").checked){
 		document.getElementById("sp").value = "solo";
 	}
@@ -35,7 +38,15 @@ function asubmit(){
 		alert(text);
 		document.getElementById("sp").value = text;
 	}
+	}
+	else{
+		alert("Please select a file");
+	}
 	
+}
+
+function enablebtn(){
+	document.getElementById("submit").disabled = false;
 }
 
 function confirm(){
@@ -150,7 +161,7 @@ function display5s(){
 	//checks from database to see if student have submitted their files
 }
 
-function cancel(){
+function cancel1(){
 	document.getElementById("overlay").style.display ="none";
 
 
@@ -165,7 +176,7 @@ function filterFunction() {
 	input = document.getElementById("myInput");
 	filter = input.value.toUpperCase();
 	div = document.getElementById("myDropdown");
-	a = div.getElementsByTagName("a");
+	a = div.getElementsById("ppp");
 	for (i = 0; i < a.length; i++) {
 		if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
 			a[i].style.display = "";
@@ -182,15 +193,38 @@ function dosth(fgfg){
 }
 
 function displayhello(thiss){
+	var table = document.getElementById("smaller");
+	var text ="";
+	for (var i = 1, row; row = table.rows[i]; i++) {
+	   for (var j = 0, col; col = row.cells[j]; j++) {
+	    text += col.innerHTML + ";";
+	   }  
+	}
+	//alert(text);
+	var sd = document.getElementById("smaller");
 	document.getElementById("smaller").style.display = "block";
-	var tdd = document.createElement("td");
 	var dd = document.createElement("tr");
-	dd.appendChild(tdd);
+	var tdd = document.createElement("td");
+	//var tdd2 = document.createElement("td");
+	var btttttttttn = document.createElement("BUTTON");
+	var t2 = document.createTextNode("Delete");
+	btttttttttn.setAttribute("type", "button");
+	btttttttttn.setAttribute("style", "background-color:red; border:none");
+	btttttttttn.appendChild(t2);
+	btttttttttn.setAttribute("onclick", "jjjj(this)");
 	tdd.innerHTML = thiss.innerHTML;
+	dd.appendChild(tdd);
+	dd.appendChild(btttttttttn);
 	document.getElementById("smaller").appendChild(dd);
 	
 }
 
+function jjjj(thiss){
+	var p=thiss.parentNode;
+    p.parentNode.removeChild(p);
+	//document.getElementById("smaller").deleteRow(thiss);
+	
+}
 
 
 

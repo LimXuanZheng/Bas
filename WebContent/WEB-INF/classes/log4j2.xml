@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="TRACE">
+<Configuration status="WARN">
   <Appenders>
+<<<<<<< HEAD
 <File name="MyFile" filename="C:\Users\Wei Xuan\Documents\GitHub\Bas\Log4j2Log.log">
+=======
+<File name="MyFile" filename="C:\Users\Lim Xuan Zheng\Documents\GitHub\Bas\Log4j2Log.log">
+>>>>>>> origin/master
       <PatternLayout>
         <Pattern>%d{yyyy-MM-dd HH:mm:ss};%X{IP};%X{Username};%m%n</Pattern>
       </PatternLayout>

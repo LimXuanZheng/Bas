@@ -94,7 +94,7 @@ public class Home extends HttpServlet {
 		+							"<li class='dropdown'>"
 		+					   			"<a class='dropdown-toggle' data-toggle='dropdown' href='#'>Welcome, " + username + ". </a>"
 		+					        	"<ul class='dropdown-menu'>"
-		+					        		"<li><a href='#'>Setting</a></li>"
+		+					        		"<li><a href='Settings'>Setting</a></li>"
 		+					        		"<li><a href='Login'>Logout</a></li>"
 		+								"</ul>"
 		+							"</li>"
