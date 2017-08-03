@@ -13,25 +13,6 @@
 2017-07-30 20:26:41;MSI/192.168.1.5;Bob;Entered Directory page
 2017-07-30 20:26:51;MSI/192.168.1.5;Bob;Entered Directory page
 2017-07-30 20:26:58;MSI/192.168.1.5;Bob;Searched for: Lee Kuan You
-<<<<<<< HEAD
-2017-08-02 17:08:27;Wolf/192.168.239.1;T0122332Y;Logged in successfully
-2017-08-02 17:09:27;Wolf/192.168.239.1;S3675418I;Logged in successfully
-2017-08-02 17:12:56;Wolf/192.168.239.1;T0122332Y;Logged in successfully
-2017-08-02 17:13:44;Wolf/192.168.239.1;S3675418I;Logged in successfully
-2017-08-02 17:14:08;Wolf/192.168.239.1;T0122332Y;Logged in successfully
-2017-08-02 17:15:34;Wolf/192.168.239.1;S3675418I;Logged in successfully
-2017-08-02 17:15:49;Wolf/192.168.239.1;T0122332Y;Logged in successfully
-2017-08-02 17:17:34;Wolf/192.168.239.1;T0122332Y;Logged in successfully
-2017-08-02 17:17:48;Wolf/192.168.239.1;S3675418I;Logged in successfully
-2017-08-02 17:23:59;Wolf/192.168.239.1;S3675418I;Logged in successfully
-2017-08-02 17:24:18;Wolf/192.168.239.1;T0122332Y;Logged in successfully
-2017-08-02 17:32:10;Wolf/192.168.239.1;T0122332Y;Logged in successfully
-2017-08-02 17:32:31;Wolf/192.168.239.1;S3675418I;Logged in successfully
-2017-08-02 17:35:20;Wolf/192.168.239.1;S3675418I;Logged in successfully
-2017-08-02 17:35:34;Wolf/192.168.239.1;T0122332Y;Logged in successfully
-2017-08-02 17:49:40;Wolf/192.168.239.1;T0122332Y;Logged in successfully
-2017-08-02 18:05:33;Wolf/192.168.239.1;S3675418I;Logged in successfully
-=======
 2017-08-01 11:28:50;MSI/172.27.181.76;T0122332Y;Logged in successfully
 2017-08-01 11:30:39;MSI/172.27.181.76;T0122332Y;Logged in successfully
 2017-08-01 11:31:26;MSI/172.27.181.76;T0122332Y;Logged in successfully
@@ -54,4 +35,3 @@
 2017-08-02 10:43:34;DESKTOP-6QNIVP9/172.27.181.116;T0122332Y;Logged in successfully
 2017-08-02 10:44:12;DESKTOP-6QNIVP9/172.27.181.116;T0122332Y;Logged in successfully
 2017-08-02 10:45:15;DESKTOP-6QNIVP9/172.27.181.116;T0122332Y;Logged in successfully
->>>>>>> origin/master

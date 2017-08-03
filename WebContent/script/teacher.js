@@ -13,7 +13,7 @@ function showHidden(){
 	else if(document.getElementById("checkifmy").checked){
 		document.getElementById("nameOfNewButton").style.display="none";
 		document.getElementById("dropdowns").style.display="none";
-		document.getElementById("smaller").style.display = "block";
+		document.getElementById("smaller").style.display = "none";
 	}
 	else if(document.getElementById("checkifshare").checked){
 		document.getElementById("nameOfNewButton").style.display="none";
@@ -23,11 +23,12 @@ function showHidden(){
 
 function asubmit(){
 	var dc = document.getElementById("datafilepath").value;
-	if(dc.equals(null) && dc.equals("")){
 	if(document.getElementById("checkifmy").checked){
+		alert("myone");
 		document.getElementById("sp").value = "solo";
 	}
 	else if(document.getElementById("checkifshare").checked){
+		alert("shareone");
 		var table = document.getElementById("smaller");
 		var text ="";
 		for (var i = 1, row; row = table.rows[i]; i++) {
@@ -38,10 +39,30 @@ function asubmit(){
 		alert(text);
 		document.getElementById("sp").value = text;
 	}
+	else if(document.getElementById("checkifnew").checked){
+		alert("newone");
+		var btnname = document.getElementById("getBtnName").value;
+		var btn =  document.createElement("button");
+		var deta = document.createTextNode(btnname);
+		btn.appendChild(deta);
+		document.getElementById("storeButton").appendChild(btn);
+		
+		/*alert(document.getElementById("getBtnName").value);
+		var link  = document.createElement("link");
+		link.rel  = "stylesheet";
+		link.type = "text/css";
+		link.href = "css/teacherSharing.css";
+		var btn =  document.createElement("button");
+		//btn.setAttribute("style","color:white; display: block; margin: 5px; padding: 7px 35px; font: 300 150% langdon; background-color: #0022FF; border: 3px solid black; cursor: pointer; width:18%;");
+		btn.setAttribute("class", "button");
+		btn.setAttribute("id", btnname);
+		document.getElementById("storeButton").appendChild(btn);
+		document.getElementById(btnname).onclick = display5s();
+		document.getElementById(btnname).appendChild(link);
+		document.getElementById(btnname).innerText = btnname;
+		*/
 	}
-	else{
-		alert("Please select a file");
-	}
+	
 	
 }
 
@@ -205,11 +226,12 @@ function displayhello(thiss){
 	document.getElementById("smaller").style.display = "block";
 	var dd = document.createElement("tr");
 	var tdd = document.createElement("td");
+	tdd.setAttribute("align", "center");
 	//var tdd2 = document.createElement("td");
 	var btttttttttn = document.createElement("BUTTON");
 	var t2 = document.createTextNode("Delete");
 	btttttttttn.setAttribute("type", "button");
-	btttttttttn.setAttribute("style", "background-color:red; border:none");
+	btttttttttn.setAttribute("style", "background-color:red; border:none; font-size:16px; padding:5px;");
 	btttttttttn.appendChild(t2);
 	btttttttttn.setAttribute("onclick", "jjjj(this)");
 	tdd.innerHTML = thiss.innerHTML;
@@ -224,6 +246,10 @@ function jjjj(thiss){
     p.parentNode.removeChild(p);
 	//document.getElementById("smaller").deleteRow(thiss);
 	
+}
+
+function refreshpage(){
+	location.reload();
 }
 
 
