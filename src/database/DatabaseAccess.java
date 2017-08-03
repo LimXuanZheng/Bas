@@ -235,8 +235,9 @@ public class DatabaseAccess {
 			Blob dataBlob = rs.getBlob("Data");
 			String recipient = rs.getString("recipient");
 			Date date = rs.getDate("Date");
+			int shareType = rs.getInt("shareType");
 			byte [] fileData = dataBlob.getBytes(1, (int)dataBlob.length());
-			File file = new File(fileID, user, fileName, fileSize, fileData, recipient, date);
+			File file = new File(fileID, user, fileName, fileSize, fileData, recipient, date, shareType);
 			fileArray.add(file);
 		}
 		

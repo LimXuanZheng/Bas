@@ -12,10 +12,11 @@ public class File {
 	byte[] fileData;
 	String recipient;
 	Date date;
+	int shareType;
 	User user;
 
 
-	public File(int fileID, User user, String fileName, int fileSize, byte[] fileData, String recipient, Date date) {
+	public File(int fileID, User user, String fileName, int fileSize, byte[] fileData, String recipient, Date date, int shareType) {
 		this.fileID = fileID;
 		UserID = user.getUserID();
 		this.fileName = fileName;
@@ -27,7 +28,16 @@ public class File {
 			this.recipient = null;
 		}
 		this.date = date;
+		this.shareType = shareType;
 		this.user = user;
+	}
+
+	public int getShareType() {
+		return shareType;
+	}
+
+	public void setShareType(int shareType) {
+		this.shareType = shareType;
 	}
 
 	public User getUser() {
