@@ -34,9 +34,6 @@ public class SettingsServlet extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//String inputEmail = request.getParameter("inputEmail");
-		//' onclick='checkEmail(" + inputEmail + ", " + oldEmail + ")
-		
 		HttpSession session = request.getSession(false);
 		if (session != null) {
 			username = (String)session.getAttribute("username");
