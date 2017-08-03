@@ -18,7 +18,8 @@ import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.ThreadContext;
 
 import database.DatabaseAccess;
-import login.LoginServlet;
+import login.HashPass;
+import login.LoginModel;
 
 @WebServlet("/Settings")
 public class SettingsServlet extends HttpServlet {
@@ -823,11 +824,15 @@ public class SettingsServlet extends HttpServlet {
 			}
 			else if (!oldPass.equals(oldPassword) && !oldPass.equals(newPass) && newPass.equals(confirmNewPass)) {
 				System.out.println("Can change password successfully");
-				//Update new password to database
+				LoginModel LM = new LoginModel();
+				HashPass HP = new HashPass();
+				byte [] newSalt = HP.createSalt();
+				String newHashedPassword = HP.getHashedPassword(LM.getNewPass(), newSalt);
+				//Update the newly generated salt and hashed password to database given the username
 				/*
 				ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
 				ThreadContext.put("Username", username);
-				logger.debug("Changed password successfully");
+				logger.debug("changed password successfully");
 				ThreadContext.clearAll();
 				*/
 				PrintWriter out = response.getWriter();

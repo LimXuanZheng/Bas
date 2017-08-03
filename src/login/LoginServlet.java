@@ -49,7 +49,7 @@ public class LoginServlet extends HttpServlet {
 			while (sc.hasNextLine()) {
 				arr.add(sc.nextLine());
 			}
-			arr.set(3, "<File name=\"MyFile\" filename=\"" + logFile + "\\Documents\\GitHub\\purplebackup\\Log4j2Log.log" + "\">");
+			arr.set(3, "<File name=\"MyFile\" filename=\"" + logFile + "\\Documents\\GitHub\\purplebackup\\AuditLog.log" + "\">");
 			FileWriter fw = new FileWriter(file);
 			BufferedWriter bw = new BufferedWriter(fw);
 			PrintWriter outFile = new PrintWriter(bw);
@@ -166,16 +166,26 @@ public class LoginServlet extends HttpServlet {
 		String receipientEmail = request.getParameter("changeEmail");
 		String popupBtn = request.getParameter("popupBtn");
 		LoginModel LM = new LoginModel();
+		if (username.contains("<script>") && username.contains("</script>") || password.contains("</script>") && password.contains("</script>")) {
+			System.out.println("Attempted cross-site scripting");
+			ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
+			ThreadContext.put("Username", username);
+			logger.debug("Attempted cross-site scripting");
+			ThreadContext.clearAll();
+		}
+		/*
 		if (popupBtn == null) {
 			System.out.println("Button not clicked");
 		}
-		else if (popupBtn.equals("popupBtn")) {
+		*/
+		if (popupBtn.equals("popupBtn")) {
 			//LM.generateNewPass();
 			//LM.sendEmail(receipientEmail);
 			System.out.println("Button clicked");
 			HashPass HP = new HashPass();
-			String getNewHashedPassword = HP.getHashedPassword(LM.getNewPass(), HP.createSalt());
-			//Update the newly generated salt and hashed password to database
+			byte [] resetSalt = HP.createSalt();
+			String resetHashedPassword = HP.getHashedPassword(LM.getNewPass(), resetSalt);
+			//Update the newly generated salt and hashed password to database given the email entered
 		}
 		System.out.println("Username: " + username);
 		System.out.println("Password: " + password);
@@ -204,7 +214,7 @@ public class LoginServlet extends HttpServlet {
 					
 					ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
 					ThreadContext.put("Username", username);
-					logger.debug("Logged in successfully");
+					logger.debug("logged in successfully");
 					ThreadContext.clearAll();
 				}
 				else {
