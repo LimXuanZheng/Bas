@@ -21,6 +21,7 @@ public class Home extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private ArrayList<String> boxes = new ArrayList<String>();
 	private static String username = "Bob";
+	public static String toUser = null;
 	
     public Home() {
         super();

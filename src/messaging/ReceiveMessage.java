@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Map;
 
 import javax.jms.JMSException;
 import javax.jms.Message;
@@ -18,7 +17,6 @@ import javax.jms.Session;
 import javax.jms.TextMessage;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,7 +24,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.activemq.broker.BrokerService;
+import homePage.Home;
 
 /**
  * Servlet implementation class ReceiveMessage
@@ -44,14 +42,28 @@ public class ReceiveMessage extends HttpServlet {
 		super();
 	}
 
-	@Override
-	public void init(ServletConfig config) throws ServletException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession(false);
+		if (session != null) {
+			userID = (String) session.getAttribute("UserID");
+		}
+		else {
+			//response.sendRedirect("Login");
+			//System.out.println("Session not created - redirect to login");
+		}
+		
 		try {
 			InitialContext initCtx = new InitialContext();
 			QueueConnectionFactory connectionFactory = (QueueConnectionFactory) initCtx.lookup("java:comp/env/jms/ConnectionFactory");
 			queueConnection = connectionFactory.createQueueConnection();
 			QueueSession queueSession = queueConnection.createQueueSession(false, Session.AUTO_ACKNOWLEDGE);
-			Queue queue = (Queue) initCtx.lookup("java:comp/env/jms/queue/MyQueue");
+			//Queue queue = (Queue) initCtx.lookup("java:comp/env/jms/queue/MyQueue");
+			Queue queue = null;
+			if(Integer.parseInt(userID) < Integer.parseInt(Home.toUser)){
+				queue = queueSession.createQueue(userID + "&" + Home.toUser);
+			}else{
+				queue = queueSession.createQueue(Home.toUser + "&" + userID);
+			}
 			consumer = queueSession.createConsumer(queue);
 			queueConnection.start();
 			messageLoop ml = new messageLoop();
@@ -61,22 +73,9 @@ public class ReceiveMessage extends HttpServlet {
 		} catch (NamingException e) {
 			e.printStackTrace();
 		}
-	}
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession(false);
 		
-		if (session != null) {
-			userID = (String)session.getAttribute("username");
-		}
-		else {
-			//response.sendRedirect("Login");
-			System.out.println("Session not created - redirect to login");
-		}
-
 		out = response.getWriter();
 
-		//consumer.setMessageListener(new ConsumerMessageListener(pw));
 		out.println(
 				"<html>"
 				+ 	"<head>"
@@ -96,7 +95,7 @@ public class ReceiveMessage extends HttpServlet {
 				+ 		"</style>"
 				+ 	"</head>"
 				+ 	"<body>"
-				+ 		"<div>");
+				+ 		"<div style='overflow:auto'>");
 
 		for(TextModel s:arrayString){
 			if(s.getUserID().equals(userID))
@@ -110,7 +109,7 @@ public class ReceiveMessage extends HttpServlet {
 				+ 	"</body>"
 				+ "</html>");
 		
-		response.setIntHeader("Refresh", 1);
+		response.setIntHeader("refresh", 1);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

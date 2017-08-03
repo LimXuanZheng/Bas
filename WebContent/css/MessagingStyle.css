@@ -5,9 +5,53 @@
 	margin: 0px;
 }
 
-html,body{
-	height: 100%;
-	width: 100%;
+#leftUserList{
+	height: 100vh;
+	width: 8%;
+	float: left;
+	background-color: yellow;
+}
+
+.usersOfChat{
+	text-align: center;
+	padding: 10px;
+	background-color: white;
+	-webkit-box-shadow: inset 3px 3px 103px -45px rgba(0,0,0,0.75);
+	-moz-box-shadow: inset 3px 3px 103px -45px rgba(0,0,0,0.75);
+	box-shadow: inset 3px 3px 103px -45px rgba(0,0,0,0.75);
+}
+
+#wholeChatBox{
+	position: absolute;
+	left: 8%;
+	bottom: 0px;
+	height: 240px;
+	width: 210px;
+	float: right;
+	display: none;
+}
+
+#topBarOfChatBox{
+	height: 30px;
+	background-color: grey;
+}
+
+#leftFloat{
+	width: 80%;
+	float: left;
+	padding: 5px;
+}
+
+#rightFloat{
+	width: 20%;
+	float: right;
+	text-align: right;
+	padding: 5px;
+}
+
+#chatBox{
+	position: absolute;
+	background-color: orange;
 }
 
 iframe{
@@ -16,13 +60,13 @@ iframe{
 }
 
 #sendMessageInput{
-	height: 20%;
+	height: 50px;
 	width: 100%;
 	background-color: white;
 }
 
 #receiveMessageBox{
-	height: 80%;
+	height: 100%;
 	width: 100%;
 	background-color: white;
 }

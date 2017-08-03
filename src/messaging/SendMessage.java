@@ -23,10 +23,11 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.activemq.broker.BrokerService;
 
+import homePage.Home;
+
 @WebServlet("/SendMessage")
 public class SendMessage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
 	
     public SendMessage() {
         super();
@@ -62,6 +63,16 @@ public class SendMessage extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
+			HttpSession session = request.getSession(false);
+			String userID = "4";
+			if (session != null) {
+				userID = (String) session.getAttribute("UserID");
+			}
+			else {
+				//response.sendRedirect("Login");
+				System.out.println("Session not created - redirect to login");
+			}
+			
 			//DateFormat df = new SimpleDateFormat("HH:mm:ss");
 			//Date date = new Date();
 			
@@ -71,11 +82,17 @@ public class SendMessage extends HttpServlet {
 			InitialContext initCtx = new InitialContext();
 			ConnectionFactory connectionFactory = (ConnectionFactory) initCtx.lookup("java:comp/env/jms/ConnectionFactory");
 			Connection connection = connectionFactory.createConnection();
-			Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-			Queue queue = (Queue) initCtx.lookup("java:comp/env/jms/queue/MyQueue");
-			MessageProducer producer = session.createProducer(queue);
+			Session connSession = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
+			//Queue queue = (Queue) initCtx.lookup("java:comp/env/jms/queue/MyQueue");
+			Queue queue = null;
+			if(Integer.parseInt(userID) < Integer.parseInt(Home.toUser)){
+				queue = connSession.createQueue(userID + "&" + Home.toUser);
+			}else{
+				queue = connSession.createQueue(Home.toUser + "&" + userID);
+			}
+			MessageProducer producer = connSession.createProducer(queue);
 			
-			TextMessage testMessage = session.createTextMessage();
+			TextMessage testMessage = connSession.createTextMessage();
 			testMessage.setText(message);
 			producer.send(testMessage);
 			
