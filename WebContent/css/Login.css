@@ -156,10 +156,10 @@ body {
 #namePart #inputNError::after {
 	content: "";
     position: absolute;
-    bottom: 52%;
+    bottom: 49.5%;
     left: 87%;
-    margin-left: -10px;
-    border-width: 10px;
+    margin-left: -12px;
+    border-width: 12px;
     border-style: solid;
     border-color: transparent transparent #F74225 transparent;
 }
@@ -197,10 +197,10 @@ body {
 #passPart #inputPError::after {
 	content: "";
     position: absolute;
-    bottom: 39%;
+    bottom: 32%;
     left: 87%;
-    margin-left: -10px;
-    border-width: 10px;
+    margin-left: -12px;
+    border-width: 12px;
     border-style: solid;
     border-color: transparent transparent #F74225 transparent;
 }

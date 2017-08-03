@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="WARN">
   <Appenders>
-	<File name="MyFile" filename="C:\Users\serwe\Documents\GitHub\purplebackup\AuditLog.log">
+<File name="MyFile" filename="C:\Users\serwe\Documents\GitHub\purplebackup\AuditLog.log">
       <PatternLayout>
         <Pattern>%d{yyyy/MM/dd hh:mm a};%X{IP};%X{Username};%m%n</Pattern>
       </PatternLayout>
