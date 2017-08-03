@@ -346,7 +346,7 @@ public class DatabaseAccess {
         }
 	}
 	
-	public void updateDatabaseDataFileUpload(String sql, int userID, String fileName, long fileSize, InputStream data,String recipient, Date date) throws SQLException{
+	public void updateDatabaseDataFileUpload(String sql, int userID, String fileName, long fileSize, InputStream data,String recipient, Date date, int shareType) throws SQLException{
 		ppstmt = conn.prepareStatement(sql);
 		ppstmt.setInt(1, userID);
 		ppstmt.setString(2, fileName);
@@ -354,6 +354,7 @@ public class DatabaseAccess {
 		ppstmt.setBlob(4, data);
 		ppstmt.setString(5, recipient);
 		ppstmt.setObject(6, date);
+		ppstmt.setInt(7, shareType);
 		
 		int count = ppstmt.executeUpdate();
         if(count ==0){

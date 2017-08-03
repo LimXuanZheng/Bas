@@ -190,8 +190,8 @@ public class upload extends HttpServlet {
         
         try {
                     DatabaseAccess dba = new DatabaseAccess(1);
-                    String sqlline = "INSERT INTO File(UserID, FileName, Size, Data, Recipient, Date) VALUES (?, ?, ?, ?,?, ?);";
-                    dba.updateDatabaseDataFileUpload(sqlline, 13, name, f.length(), in, "13", sqlDate);
+                    String sqlline = "INSERT INTO File(UserID, FileName, Size, Data, Recipient, Date, shareType) VALUES (?, ?, ?, ?, ?, ?, ?);";
+                    dba.updateDatabaseDataFileUpload(sqlline, 13, name, f.length(), in, "13", sqlDate, 0);
                     dba.close();
                 } catch (ClassNotFoundException e) {
                     e.printStackTrace();

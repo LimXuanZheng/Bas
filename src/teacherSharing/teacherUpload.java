@@ -44,8 +44,10 @@ public class teacherUpload extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		ArrayList<String> nm = new ArrayList<String>();
 		String kak;
-		System.out.println(request.getParameter("stringofpeople"));
 		String allname = request.getParameter("stringofpeople");
+		String uploadway = request.getParameter("define1");
+		int uploadway1 = Integer.parseInt(uploadway);
+		System.out.println("uploadway");
 		Scanner sc = new Scanner(allname);
 		sc.useDelimiter(";");
 
@@ -139,12 +141,12 @@ public class teacherUpload extends HttpServlet {
 
 			DatabaseAccess dba = new DatabaseAccess(1);
 
-			String sqlline = "INSERT INTO File(UserID, FileName, Size, Data, Recipient, Date) VALUES (?, ?, ?, ?, ?, ?);";
+			String sqlline = "INSERT INTO File(UserID, FileName, Size, Data, Recipient, Date, shareType) VALUES (?, ?, ?, ?, ?, ?, ?);";
 			if(allname.equals("solo")){
-				dba.updateDatabaseDataFileUpload(sqlline, 13, name, f.length(), in, "13", sqlDate);
+				dba.updateDatabaseDataFileUpload(sqlline, 13, name, f.length(), in, "13", sqlDate, uploadway1);
 			}
 			else{
-				dba.updateDatabaseDataFileUpload(sqlline, 13, name, f.length(), in, line, sqlDate);
+				dba.updateDatabaseDataFileUpload(sqlline, 13, name, f.length(), in, line, sqlDate, uploadway1);
 			}
 			
 			dba.close();
