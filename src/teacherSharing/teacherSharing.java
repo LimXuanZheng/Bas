@@ -195,10 +195,11 @@ public class teacherSharing extends HttpServlet {
 				+					"<div id='moveleft'>"
 				+					"<form id='anything'  action='teacherupload' onsubmit='asubmit()'>"
 				+						"<p style='font-size:50px;'>Select Your Upload Method</p>"
+				+						"<input type='hidden' name='define1' id='d1'></input>"
 				+						"<input type='hidden' name='stringofpeople' id='sp'></input>"
 				+						"<input type='radio'  id='checkifmy' name='chooseFile' onclick='javascript:showHidden();' style='width:20px; height:20px;' checked></input><label style='font-size:30px;'>My Drive</label>"
 				+						"<label style='margin-right:30px; margin-left:30px;'><input type='radio'  id='checkifshare' name='chooseFile' onclick='javascript:showHidden();' style='width:20px; height:20px;'></input><label style='font-size:30px;'>Shared Drive</label></label>"
-				+						"<input type='radio'  id='checkifnew' name='chooseFile' onclick='javascript:showHidden();' style='width:20px; height:20px;'></input><label style='font-size:30px;'>New Drive</label>"
+				+						"<input type='radio'  id='checkifnew' name='chooseFile' onclick='javascript:showHidden();' style='width:20px; height:20px;'></input><label style='font-size:30px;'>Create new Assigment</label>"
 				+						"<br><p onclick='enablebtn()'><label class='custom-file'>"
 				+							"<input type='file' id='datafilepath' class='custom-file-input' name='datafile' style='font-size:20px;'>"
 				+							"<span class='custom-file-control'></span>"
@@ -333,8 +334,8 @@ public class teacherSharing extends HttpServlet {
 			                       }
 			                       */
 					response.setHeader("Content-Disposition", "attachment;filename=" + d.getFileName());
-					byte[] bytesArray = new byte[(int) decryptedFile.length()];
-					response.getOutputStream().write(bytesArray);
+					//byte[] bytesArray = new byte[(int) decryptedFile.length()];
+					//response.getOutputStream().write(bytesArray);
 				}
 			}
 		}

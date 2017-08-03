@@ -26,6 +26,7 @@ function asubmit(){
 	if(document.getElementById("checkifmy").checked){
 		alert("myone");
 		document.getElementById("sp").value = "solo";
+		document.getElementById("d1").value = "0";
 	}
 	else if(document.getElementById("checkifshare").checked){
 		alert("shareone");
@@ -38,6 +39,7 @@ function asubmit(){
 		}
 		alert(text);
 		document.getElementById("sp").value = text;
+		document.getElementById("d1").value = "1";
 	}
 	else if(document.getElementById("checkifnew").checked){
 		alert("newone");
@@ -46,6 +48,8 @@ function asubmit(){
 		var deta = document.createTextNode(btnname);
 		btn.appendChild(deta);
 		document.getElementById("storeButton").appendChild(btn);
+		document.getElementById("sp").value = text;
+		document.getElementById("d1").value = "2";
 		
 		/*alert(document.getElementById("getBtnName").value);
 		var link  = document.createElement("link");
@@ -183,7 +187,8 @@ function display5s(){
 }
 
 function cancel1(){
-	document.getElementById("overlay").style.display ="none";
+	alert("newone");
+	//document.getElementById("overlay").style.display ="none";
 
 
 }
