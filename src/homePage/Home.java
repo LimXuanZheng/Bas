@@ -47,7 +47,7 @@ public class Home extends HttpServlet {
     	if(user.equals("Student")){
     		boxes.add("View Grades");
     		boxes.add("Assignment Submission");
-    		boxes.add("View Past Year Papers");
+    		boxes.add("Student Materials");
     	}
     	else if(user.equals("Teacher")){
     		boxes.add("Attendance");
@@ -169,7 +169,7 @@ public class Home extends HttpServlet {
 				case "Assignment Submission":
 					out.print("onclick=\"location.href='beforesubmission'\" style=\"cursor: pointer;\"");
 					break;
-				case "View Past Year Papers":
+				case "Student Materials":
 					out.print("onclick=\"location.href='html/studentDownload.html'\" style=\"cursor: pointer;\"");
 					break;
 			}

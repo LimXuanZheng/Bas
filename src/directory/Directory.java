@@ -36,7 +36,7 @@ public class Directory extends HttpServlet{
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
 		ThreadContext.put("Username", username);
-		logger.debug("Entered Directory page");
+		logger.debug("entered Directory page");
 		ThreadContext.clearAll();
 		
 		try {
@@ -218,7 +218,7 @@ public class Directory extends HttpServlet{
 				
 				ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
 				ThreadContext.put("Username", username);
-				logger.debug("Searched for: " + name);
+				logger.debug("searched for: " + name);
 				ThreadContext.clearAll();
 				
 				System.out.println("Searched for something in Directory");
