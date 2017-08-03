@@ -252,6 +252,14 @@ function refreshpage(){
 	location.reload();
 }
 
+function cleartable(){
+	var i;
+	var ee = (document.getElementById("displaying").rows.length) - 1;
+	for(i = ee; i > 0; i--){
+		document.getElementById("displaying").deleteRow(i);
+	}
+}
+
 
 
 

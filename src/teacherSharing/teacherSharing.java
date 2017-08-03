@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.nio.file.Files;
 import java.sql.Blob;
 import java.sql.Date;
 import java.sql.ResultSet;
@@ -105,6 +106,9 @@ public class teacherSharing extends HttpServlet {
 				System.out.println(filename1);
 				System.out.println(filesize1);
 				System.out.println(date1);
+				
+				
+				/*
 				File tempFile = File.createTempFile(filename1, ".tmp", null);
 				FileOutputStream fos = new FileOutputStream(tempFile);
 				fos.write(filedata);
@@ -119,7 +123,7 @@ public class teacherSharing extends HttpServlet {
 				}
 
 
-				/*
+				
 
 				FileInputStream hh = new FileInputStream(decryptedFile);
 				OutputStream h = response.getOutputStream();
@@ -240,7 +244,7 @@ public class teacherSharing extends HttpServlet {
 						+				"<div class='contents' id='storeButton'>"
 						+					"<button class='button' id='newbutton' onclick='createNew()'>New</button>"
 						+					"<button class='button' id='mybutton' onclick='refreshpage()'>My Drive</button>"//onclick='displayallmy()'
-						+					"<button class='button' id='lastOne'>Shared With Me</button>"
+						+					"<button class='button' id='lastOne' onclick='cleartable()'>Shared With Me</button>"
 						+				"</div>"
 						+				"<div class='contents' id='storeTable'>"
 						+					"<table id='displaying'>"
@@ -274,6 +278,7 @@ public class teacherSharing extends HttpServlet {
 				+			"</div>"
 				+		"</div>"
 				+	"<input type='hidden' name='index' id='pls'></input>"
+				+	"</form>"
 				+	"</body>"
 				+"</html>"
 				);
@@ -318,6 +323,15 @@ public class teacherSharing extends HttpServlet {
 						ex.printStackTrace();
 						System.out.println("fail");
 					}
+					/*FileInputStream hh = new FileInputStream(decryptedFile);
+			        OutputStream h = response.getOutputStream();
+			       
+			        byte[] test = new byte[4096];
+			        int bytesRead = -1;
+			        while ((bytesRead = hh.read(test)) != -1) {
+			                           h.write(test, 0, bytesRead);
+			                       }
+			                       */
 					response.setHeader("Content-Disposition", "attachment;filename=" + d.getFileName());
 					byte[] bytesArray = new byte[(int) decryptedFile.length()];
 					response.getOutputStream().write(bytesArray);

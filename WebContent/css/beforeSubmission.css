@@ -24,24 +24,15 @@ nav{
 #whole{
 	margin-left:2%;
 }
-#first{
+.centralized{
 	margin-bottom:2%;
 	background-color:#EDE7F6;
 	
 }
-#second{
-	margin-bottom:2%;
-	background-color:#EDE7F6;
-}
-#third{
-	margin-bottom:2%;
-	background-color:#EDE7F6;
-	
-}
-#title{
+.title{
 	font-weight:bold;
 	font-size:30px;
 }
-#comments{
+.comments{
 	font-size:15px;
 }
