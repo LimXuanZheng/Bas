@@ -200,6 +200,7 @@ public class LoginServlet extends HttpServlet {
 					HttpSession session = request.getSession();
 					session.setAttribute("username", username);
 					session.setAttribute("userID", userID);
+					session.setAttribute("toUser", "13");
 					response.sendRedirect("Home");
 					
 					ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());

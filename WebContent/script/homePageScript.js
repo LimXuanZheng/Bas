@@ -59,3 +59,53 @@ function animateNotification(){
 	    open = false;
 	}
 }
+
+var chatOpen = false;
+var opening = true;
+function minimiseChat(){
+	var elem = document.getElementById("wholeChatBox");  
+	if(opening){
+		var pos = 0;
+		var id = setInterval(frame, 5);
+		function frame() {
+			if (pos == -210) {
+				clearInterval(id);
+			} else {
+				pos -= 10; 
+				elem.style.bottom = pos + 'px';
+			}
+		}
+		opening = false;
+	}else{
+		var pos = -210;
+		var id = setInterval(frame, 5);
+		function frame() {
+			if (pos == 0) {
+				clearInterval(id);
+			} else {
+				pos += 10; 
+				elem.style.bottom = pos + 'px';
+			}
+		}
+		opening = true;
+	}
+}
+
+function closeChat(){
+	document.getElementById("wholeChatBox").style.display = "none";
+	chatOpen = false;
+}
+
+function changeUser(div){
+	if(document.getElementById("userToName").innerHTML == div.children[1].innerHTML){
+		
+	}else{
+		document.getElementById("hiddenInput").value = div.children[2].innerHTML;
+		if(!chatOpen){
+			document.getElementById("hiddenInput1").value = "Show";
+		}
+		
+		document.getElementById("hiddenInput2").value = div.children[1].innerHTML;
+		document.getElementById("someform").submit();
+	}
+}

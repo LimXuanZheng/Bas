@@ -9,6 +9,7 @@ import java.util.Date;
 import javax.jms.Connection;
 import javax.jms.ConnectionFactory;
 import javax.jms.Destination;
+import javax.jms.Message;
 import javax.jms.MessageProducer;
 import javax.jms.Queue;
 import javax.jms.Session;
@@ -28,6 +29,7 @@ import homePage.Home;
 @WebServlet("/SendMessage")
 public class SendMessage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private String userTo;
 	
     public SendMessage() {
         super();
@@ -66,34 +68,41 @@ public class SendMessage extends HttpServlet {
 			HttpSession session = request.getSession(false);
 			String userID = "4";
 			if (session != null) {
-				userID = (String) session.getAttribute("UserID");
+				userID = (String) session.getAttribute("userID");
+				userTo = (String) session.getAttribute("toUser");
 			}
 			else {
 				//response.sendRedirect("Login");
 				System.out.println("Session not created - redirect to login");
 			}
 			
-			//DateFormat df = new SimpleDateFormat("HH:mm:ss");
-			//Date date = new Date();
+			DateFormat df = new SimpleDateFormat("HH:mm:ss");
+			Date date = new Date();
 			
 			String message = request.getParameter("message");
-			//String timestamp = df.format(date);
+			String timestamp = df.format(date);
 			
 			InitialContext initCtx = new InitialContext();
-			ConnectionFactory connectionFactory = (ConnectionFactory) initCtx.lookup("java:comp/env/jms/ConnectionFactory");
+			ConnectionFactory connectionFactory = (ConnectionFactory) initCtx.lookup("java:/comp/env/jms/ConnectionFactory");
 			Connection connection = connectionFactory.createConnection();
 			Session connSession = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 			//Queue queue = (Queue) initCtx.lookup("java:comp/env/jms/queue/MyQueue");
-			Queue queue = null;
-			if(Integer.parseInt(userID) < Integer.parseInt(Home.toUser)){
-				queue = connSession.createQueue(userID + "&" + Home.toUser);
+			
+			String line = "java:/comp/env/jms/queue/";
+			if(Integer.parseInt(userID) < Integer.parseInt(userTo)){
+				line += userID + "~" + userTo;
 			}else{
-				queue = connSession.createQueue(Home.toUser + "&" + userID);
+				line += userTo + "~" + userID;
 			}
+			
+			Queue queue = (Queue) initCtx.lookup(line);
 			MessageProducer producer = connSession.createProducer(queue);
 			
-			TextMessage testMessage = connSession.createTextMessage();
-			testMessage.setText(message);
+			Message testMessage = connSession.createMessage();
+			testMessage.setStringProperty("Message", message);
+			testMessage.setStringProperty("Timestamp", timestamp);
+			testMessage.setStringProperty("Owner", userID);
+			
 			producer.send(testMessage);
 			
 			response.setIntHeader("refresh", 1);

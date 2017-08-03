@@ -113,3 +113,73 @@
 	height: auto;
 	font-size: 16px;
 }
+
+/* Chat Box */
+#leftUserList{
+	position: fixed;
+	top: 50px;
+	left: 0px;
+	width: 8%;
+	float: left;
+	background-color: #B39DDB;
+}
+
+.usersOfChat{
+	text-align: center;
+	padding: 10px;
+	background-color: white;
+	-webkit-box-shadow: inset 3px 3px 103px -45px rgba(0,0,0,0.75);
+	-moz-box-shadow: inset 3px 3px 103px -45px rgba(0,0,0,0.75);
+	box-shadow: inset 3px 3px 103px -45px rgba(0,0,0,0.75);
+	cursor: pointer;
+}
+
+#wholeChatBox{
+	position: fixed;
+	left: 8%;
+	bottom: 0px;
+	height: 240px;
+	width: 210px;
+	float: right;
+	display: none;
+}
+
+#topBarOfChatBox{
+	height: 30px;
+	background-color: grey;
+}
+
+#leftFloat{
+	width: 80%;
+	float: left;
+	padding: 5px;
+}
+
+#rightFloat{
+	width: 20%;
+	float: right;
+	text-align: right;
+	padding: 5px;
+}
+
+#chatBox{
+	position: absolute;
+	background-color: #FAD7A0;
+}
+
+iframe{
+	overflow: hidden;
+	border: none;
+}
+
+#sendMessageInput{
+	height: 50px;
+	width: 100%;
+	background-color: white;
+}
+
+#receiveMessageBox{
+	height: 100%;
+	width: 100%;
+	background-color: white;
+}

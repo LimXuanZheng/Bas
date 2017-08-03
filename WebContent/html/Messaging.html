@@ -12,35 +12,35 @@
 		<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css' integrity='sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp' crossorigin='anonymous'>
 		<title>Messaging</title>
 		<!-- My Own Script -->
-		<script src="../script/MessagingScript.js"></script>
+		<script src='../script/MessagingScript.js'></script>
 	</head>
 	<body>
-		<div id="wholeChatBox">
-			<div id="topBarOfChatBox">
-				<div id="leftFloat">
-					<p id="userToName">{Name of Receiver}</p>
+		<div id='wholeChatBox'>
+			<div id='topBarOfChatBox'>
+				<div id='leftFloat'>
+					<p id='userToName'>{Name of Receiver}</p>
 				</div>
-				<div id="rightFloat">
-					<span class="glyphicon glyphicon-minus" onclick='minimiseChat()'></span>
-					<span class="glyphicon glyphicon-remove" onclick='closeChat()'></span>
+				<div id='rightFloat'>
+					<span class='glyphicon glyphicon-minus' onclick='minimiseChat()'></span>
+					<span class='glyphicon glyphicon-remove' onclick='closeChat()'></span>
 				</div>
 			</div>
-			<div id="chatBox">
-				<iframe src="../ReceiveMessage" id="receiveMessageBox"></iframe>
-				<iframe src="../SendMessage" id="sendMessageInput"></iframe>
+			<div id='chatBox'>
+				<iframe src='../ReceiveMessage' id='receiveMessageBox'></iframe>
+				<iframe src='../SendMessage' id='sendMessageInput'></iframe>
 			</div>
 		</div>
-		<div id="leftUserList">
-			<div class="usersOfChat" id="user1" onclick="changeUser(this)">
-				<span class="glyphicon glyphicon-user"></span>
+		<div id='leftUserList'>
+			<div class='usersOfChat' id='user1' onclick='changeUser(this)'>
+				<span class='glyphicon glyphicon-user'></span>
 				<p>Lee Kuan You</p>
 			</div>
-			<div class="usersOfChat" id="user2" onclick="changeUser(this)">
-				<span class="glyphicon glyphicon-user"></span>
+			<div class='usersOfChat' id='user2' onclick='changeUser(this)'>
+				<span class='glyphicon glyphicon-user'></span>
 				<p>Lee Kuan You2</p>
 			</div>
-			<div class="usersOfChat" id="user3" onclick="changeUser(this)">
-				<span class="glyphicon glyphicon-user"></span>
+			<div class='usersOfChat' id='user3' onclick='changeUser(this)'>
+				<span class='glyphicon glyphicon-user'></span>
 				<p>Lee Kuan You3</p>
 			</div>
 		</div>

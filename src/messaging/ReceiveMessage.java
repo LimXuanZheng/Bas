@@ -4,6 +4,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.io.PrintWriter;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.jms.JMSException;
@@ -24,6 +26,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import database.DatabaseAccess;
 import homePage.Home;
 
 /**
@@ -35,35 +38,40 @@ public class ReceiveMessage extends HttpServlet {
 	private PrintWriter out;
 	private QueueConnection queueConnection;
 	private MessageConsumer consumer;
-	private ArrayList<TextModel> arrayString = new ArrayList<TextModel>();
-	private String userID = "4";
+	public static ArrayList<TextModel> arrayString = new ArrayList<TextModel>();
+	private String userID = null;
+	private String userTo = null;
 
 	public ReceiveMessage() {
 		super();
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		boolean name = false;
 		HttpSession session = request.getSession(false);
 		if (session != null) {
-			userID = (String) session.getAttribute("UserID");
+			userID = (String) session.getAttribute("userID");
+			userTo = (String) session.getAttribute("toUser");
 		}
 		else {
-			//response.sendRedirect("Login");
+			response.sendRedirect("Login");
 			//System.out.println("Session not created - redirect to login");
 		}
 		
 		try {
 			InitialContext initCtx = new InitialContext();
-			QueueConnectionFactory connectionFactory = (QueueConnectionFactory) initCtx.lookup("java:comp/env/jms/ConnectionFactory");
+			QueueConnectionFactory connectionFactory = (QueueConnectionFactory) initCtx.lookup("java:/comp/env/jms/ConnectionFactory");
 			queueConnection = connectionFactory.createQueueConnection();
 			QueueSession queueSession = queueConnection.createQueueSession(false, Session.AUTO_ACKNOWLEDGE);
 			//Queue queue = (Queue) initCtx.lookup("java:comp/env/jms/queue/MyQueue");
-			Queue queue = null;
-			if(Integer.parseInt(userID) < Integer.parseInt(Home.toUser)){
-				queue = queueSession.createQueue(userID + "&" + Home.toUser);
+			
+			String line = "java:/comp/env/jms/queue/";
+			if(Integer.parseInt(userID) < Integer.parseInt(userTo)){
+				line += userID + "~" + userTo;
 			}else{
-				queue = queueSession.createQueue(Home.toUser + "&" + userID);
+				line += userTo + "~" + userID;
 			}
+			Queue queue = (Queue) initCtx.lookup(line);
 			consumer = queueSession.createConsumer(queue);
 			queueConnection.start();
 			messageLoop ml = new messageLoop();
@@ -89,19 +97,23 @@ public class ReceiveMessage extends HttpServlet {
 				+ 			"}"
 				+ 			".textMessage{"
 				+ 				"width:90vw;"
-				+ 				"height: 30px;"
-				+ 				"padding: 10px;"
 				+ 			"}"
+				+ "#textDiv{"
+				+ "overflow-x: none;"
+				+ "overflow-y: auto;"
 				+ 		"</style>"
 				+ 	"</head>"
 				+ 	"<body>"
-				+ 		"<div style='overflow:auto'>");
+				+ 		"<div id='textDiv'");
 
+		if(arrayString.size() > 3){
+			arrayString.remove(0);
+		}
 		for(TextModel s:arrayString){
 			if(s.getUserID().equals(userID))
-				out.println("<div class='textMessage' style='text-align:right;color:green;''><p>" + s.getMessage() + "</p></div>");
+				out.println("<div class='textMessage' style='text-align:right;color:green;''><p>" + s.getMessage() + " " + s.getTimestamp() + "</p></div>");
 			else{
-				out.println("<div class='textMessage' style='text-align:left;color:blue;''><p>" + s.getMessage() + "</p></div>");
+				out.println("<div class='textMessage' style='text-align:left;color:blue;''><p>" + s.getMessage() + " " + s.getTimestamp() + "</p></div>");
 			}
 		}
 		
@@ -122,17 +134,12 @@ public class ReceiveMessage extends HttpServlet {
 			try {
 				queueConnection.start();
 				while(true){
-					Message m = consumer.receive(1000);
-					if (m != null && m instanceof TextMessage) {
-						TextMessage tm = (TextMessage) m;
-						ByteArrayOutputStream baos = new ByteArrayOutputStream();
-						PrintStream ps = new PrintStream(baos);
-						PrintStream old = System.out;
-						System.setOut(ps);
-						System.out.println(tm.getText());
-						System.out.flush();
-						System.setOut(old);
-						arrayString.add(new TextModel(baos.toString(), userID));
+					Message m = consumer.receive();
+					if (m != null && m instanceof Message) {
+						String message = m.getStringProperty("Message");
+						String timestamp = m.getStringProperty("Timestamp");
+						String owner = m.getStringProperty("Owner");
+						arrayString.add(new TextModel(message, timestamp, owner));
 					}
 					Thread.sleep(100);
 				}
@@ -146,21 +153,29 @@ public class ReceiveMessage extends HttpServlet {
 
 	private class TextModel{
 		private String message;
+		private String timestamp;
 		private String userID;
 		
-		private TextModel(String message, String userID){
+		private TextModel(String message, String timestamp, String userID){
 			this.message = message;
+			this.timestamp = timestamp;
 			this.userID = userID;
 		}
 
 		public String getMessage() {
 			return message;
 		}
+		public String getTimestamp() {
+			return timestamp;
+		}
 		public String getUserID() {
 			return userID;
 		}
 		public void setMessage(String message) {
 			this.message = message;
+		}
+		public void setTimestamp(String timestamp) {
+			this.timestamp = timestamp;
 		}
 		public void setUserID(String userID) {
 			this.userID = userID;
