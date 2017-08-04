@@ -2,6 +2,8 @@ package homePage;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.security.NoSuchAlgorithmException;
+import java.security.NoSuchProviderException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -20,6 +22,7 @@ import com.maxmind.geoip2.exception.GeoIp2Exception;
 import database.DatabaseAccess;
 import database.model.User;
 import geoIP.CheckIP;
+import messaging.GenerationOfKey;
 import messaging.ReceiveMessage;
 
 /**
@@ -63,27 +66,27 @@ public class Home extends HttpServlet {
 			checkIP.redirect(response);
 			checkIP.getLocation();
 			//checkIP.showLocationOnGoogle(response);
+		
+			HttpSession session = request.getSession(false);
+			if (session != null) {
+				username = (String)session.getAttribute("username");
+				userID = (String)session.getAttribute("userID");
+				toUser1 = (String)session.getAttribute("toUser");
+				whetherToShowTheUserOrNot1 = (String)session.getAttribute("whetherToShowTheUserOrNot");
+				userClicked1 = (String)session.getAttribute("userClicked");
+			}
+			else {
+				response.sendRedirect("Login");
+				System.out.println("Session not created - redirect to login");
+			}
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (GeoIp2Exception e) {
 			e.printStackTrace();
-		} //catch (ParseException e) {
-		//	e.printStackTrace();
-		//}
-		HttpSession session = request.getSession(false);
-		if (session != null) {
-			username = (String)session.getAttribute("username");
-			userID = (String)session.getAttribute("userID");
-			toUser1 = (String)session.getAttribute("toUser");
-			whetherToShowTheUserOrNot1 = (String)session.getAttribute("whetherToShowTheUserOrNot");
-			userClicked1 = (String)session.getAttribute("userClicked");
 		}
-		else {
-			response.sendRedirect("Login");
-			System.out.println("Session not created - redirect to login");
-		}
+		
 		response.setContentType("text/html;charset=UTF-8");
 		ArrayList<String> notificationArray = new ArrayList<String>();
 		notificationArray.add("Testing 1");
@@ -183,30 +186,26 @@ public class Home extends HttpServlet {
 		+ 	"</div>");
 		
 		if(Integer.parseInt(userID) > 10){
-			out.println(
-					"<div id='wholeChatBox'>"
-			+		"<div id='topBarOfChatBox'>"
-			+ 			"<div id='leftFloat'>");
-			
 			if(whetherToShowTheUserOrNot1 != null){
-				out.println("<p id='userToName'>" + whetherToShowTheUserOrNot1 + "</p>");
-			}else{
-				out.println("<p id='userToName'>{placeholder}</p>");
+				out.println(
+						"<div id='wholeChatBox'>"
+				+		"<div id='topBarOfChatBox'>"
+				+ 			"<div id='leftFloat'>"
+				+ 			"<p id='userToName'>" + whetherToShowTheUserOrNot1 + "</p>"
+				+			"</div>"
+				+ 			"<div id='rightFloat'>"
+				+ 				"<span class='glyphicon glyphicon-minus' onclick='minimiseChat()'></span>"
+				+ 				"<span class='glyphicon glyphicon-remove' onclick='closeChat()'></span>"
+				+ 			"</div>"
+				+		 "</div>"
+				+ 		"<div id='chatBox'>"
+				+ 			"<iframe src='ReceiveMessage' id='receiveMessageBox' scrolling='no'></iframe>"
+				+ 			"<iframe src='SendMessage' id='sendMessageInput' scrolling='no'></iframe>"
+				+ 		"</div>"
+				+ 	"</div>");
 			}
-			
-			out.println(
-						"</div>"
-			+ 			"<div id='rightFloat'>"
-			+ 				"<span class='glyphicon glyphicon-minus' onclick='minimiseChat()'></span>"
-			+ 				"<span class='glyphicon glyphicon-remove' onclick='closeChat()'></span>"
-			+ 			"</div>"
-			+		 "</div>"
-			+ 		"<div id='chatBox'>"
-			+ 			"<iframe src='ReceiveMessage' id='receiveMessageBox' scrolling='no'></iframe>"
-			+ 			"<iframe src='SendMessage' id='sendMessageInput' scrolling='no'></iframe>"
-			+ 		"</div>"
-			+ 	"</div>"
-			+ 	"<div id='leftUserList'>"
+				out.println(
+				"<div id='leftUserList'>"
 			+ 		"<form action='Home' id='someform' method='POST'>"
 			+ 			"<input type='hidden' id='hiddenInput' name='hiddenInput'>"
 			+ 			"<input type='hidden' id='hiddenInput1' name='hiddenInputName'>"
@@ -260,6 +259,23 @@ public class Home extends HttpServlet {
 		session.setAttribute("userClicked", userClicked);
 		String whetherToShowTheUserOrNot = request.getParameter("hiddenInputShown");
 		session.setAttribute("whetherToShowTheUserOrNot", whetherToShowTheUserOrNot);
+		
+		GenerationOfKey gok;
+		try {
+			gok = new GenerationOfKey();
+			gok.createKeys();
+			session.setAttribute("privateKey", gok.getPrivateKey());
+			session.setAttribute("publicKey", gok.getPublicKey());
+			if(GenerationOfKey.publicKey2 == null){
+				GenerationOfKey.publicKey2 = gok.getPublicKey();
+			}
+		} catch (NoSuchAlgorithmException e) {
+			e.printStackTrace();
+		} catch (NoSuchProviderException e) {
+			e.printStackTrace();
+		}
+		
+				
 		ReceiveMessage.arrayString.clear();
 		response.setIntHeader("refresh", 1);
 	}

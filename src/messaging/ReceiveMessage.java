@@ -1,12 +1,13 @@
 package messaging;
 
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.PrintStream;
 import java.io.PrintWriter;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.security.NoSuchAlgorithmException;
+import java.security.NoSuchProviderException;
+import java.security.PrivateKey;
+import java.security.PublicKey;
 import java.util.ArrayList;
+import java.util.Base64;
 
 import javax.jms.JMSException;
 import javax.jms.Message;
@@ -16,7 +17,6 @@ import javax.jms.QueueConnection;
 import javax.jms.QueueConnectionFactory;
 import javax.jms.QueueSession;
 import javax.jms.Session;
-import javax.jms.TextMessage;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.servlet.ServletException;
@@ -25,9 +25,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-import database.DatabaseAccess;
-import homePage.Home;
 
 /**
  * Servlet implementation class ReceiveMessage
@@ -41,17 +38,21 @@ public class ReceiveMessage extends HttpServlet {
 	public static ArrayList<TextModel> arrayString = new ArrayList<TextModel>();
 	private String userID = null;
 	private String userTo = null;
+	private GenerationOfKey gok;
+	private PrivateKey privateKey;
 
 	public ReceiveMessage() {
 		super();
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		boolean name = false;
 		HttpSession session = request.getSession(false);
 		if (session != null) {
 			userID = (String) session.getAttribute("userID");
 			userTo = (String) session.getAttribute("toUser");
+			privateKey = (PrivateKey) session.getAttribute("privateKey");
 		}
 		else {
 			response.sendRedirect("Login");
@@ -59,6 +60,7 @@ public class ReceiveMessage extends HttpServlet {
 		}
 		
 		try {
+			gok = new GenerationOfKey();
 			InitialContext initCtx = new InitialContext();
 			QueueConnectionFactory connectionFactory = (QueueConnectionFactory) initCtx.lookup("java:/comp/env/jms/ConnectionFactory");
 			queueConnection = connectionFactory.createQueueConnection();
@@ -79,6 +81,12 @@ public class ReceiveMessage extends HttpServlet {
 		} catch (JMSException e) {
 			e.printStackTrace();
 		} catch (NamingException e) {
+			e.printStackTrace();
+		} catch (NoSuchAlgorithmException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NoSuchProviderException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -136,16 +144,27 @@ public class ReceiveMessage extends HttpServlet {
 				while(true){
 					Message m = consumer.receive();
 					if (m != null && m instanceof Message) {
-						String message = m.getStringProperty("Message");
+						byte[] message = m.getStringProperty("Message").getBytes();
 						String timestamp = m.getStringProperty("Timestamp");
 						String owner = m.getStringProperty("Owner");
-						arrayString.add(new TextModel(message, timestamp, owner));
+						PublicKey publickey = (PublicKey) m.getObjectProperty("PublicKey");
+						byte[] signature = m.getStringProperty("Signature").getBytes();
+						if(gok.verifySignature(gok.getHash(Base64.getDecoder().decode(message)), signature, publickey)){
+							String text = gok.decrypt(message, privateKey);
+							arrayString.add(new TextModel(text, timestamp, owner));
+						}
 					}
 					Thread.sleep(100);
 				}
 			} catch (JMSException e) {
 				e.printStackTrace();
 			} catch (InterruptedException e) {
+				e.printStackTrace();
+			} catch (NoSuchAlgorithmException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}

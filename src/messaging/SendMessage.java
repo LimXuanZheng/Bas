@@ -2,18 +2,19 @@ package messaging;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.security.PrivateKey;
+import java.security.PublicKey;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Base64;
 import java.util.Date;
 
 import javax.jms.Connection;
 import javax.jms.ConnectionFactory;
-import javax.jms.Destination;
 import javax.jms.Message;
 import javax.jms.MessageProducer;
 import javax.jms.Queue;
 import javax.jms.Session;
-import javax.jms.TextMessage;
 import javax.naming.InitialContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,10 +22,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-import org.apache.activemq.broker.BrokerService;
-
-import homePage.Home;
 
 @WebServlet("/SendMessage")
 public class SendMessage extends HttpServlet {
@@ -66,8 +63,14 @@ public class SendMessage extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
 			HttpSession session = request.getSession(false);
+			GenerationOfKey gok = new GenerationOfKey();
 			String userID = "4";
 			if (session != null) {
+				gok.createKeys();
+				session.setAttribute("privateKey", gok.getPrivateKey());
+				session.setAttribute("publicKey", gok.getPublicKey());
+				gok.setPrivateKey((PrivateKey)session.getAttribute("privateKey"));
+				gok.setPublicKey((PublicKey)session.getAttribute("publicKey"));
 				userID = (String) session.getAttribute("userID");
 				userTo = (String) session.getAttribute("toUser");
 			}
@@ -98,10 +101,15 @@ public class SendMessage extends HttpServlet {
 			Queue queue = (Queue) initCtx.lookup(line);
 			MessageProducer producer = connSession.createProducer(queue);
 			
+			byte[] encryptedMessage = gok.encrypt(message, GenerationOfKey.publicKey2);
+			byte[] signature = gok.signHash(gok.getHash(encryptedMessage), gok.getPrivateKey());
 			Message testMessage = connSession.createMessage();
-			testMessage.setStringProperty("Message", message);
+			testMessage.setStringProperty("Message", new String(Base64.getEncoder().encode(encryptedMessage)));
 			testMessage.setStringProperty("Timestamp", timestamp);
 			testMessage.setStringProperty("Owner", userID);
+			testMessage.setObjectProperty("PublicKey", gok.getPublicKey());
+			testMessage.setStringProperty("Signature", new String(Base64.getEncoder().encode(signature)));
+			
 			
 			producer.send(testMessage);
 			
