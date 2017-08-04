@@ -1,6 +1,7 @@
 package teacherSharing;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -326,7 +327,17 @@ public class teacherSharing2 extends HttpServlet {
 			                           h.write(test, 0, bytesRead);
 			                       }
 			                       */
-					response.setHeader("Content-Disposition", "attachment;filename=" + d.getFileName());
+					response.setContentType("text/html");
+					PrintWriter out = response.getWriter();  
+					response.setContentType("APPLICATION/OCTET-STREAM");
+					response.setHeader("Content-Disposition", "attachment;filename=\"" + d.getFileName() +"\"");
+					FileInputStream stream = new FileInputStream(decryptedFile);
+					int i;   
+					while ((i=stream.read()) != -1) {  
+					out.write(i);   
+					}   
+					stream.close();   
+					out.close();
 					//byte[] bytesArray = new byte[(int) decryptedFile.length()];
 					//response.getOutputStream().write(bytesArray);
 				}
