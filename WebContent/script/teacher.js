@@ -188,7 +188,14 @@ function display5s(){
 
 function cancel1(){
 	alert("newone");
-	//document.getElementById("overlay").style.display ="none";
+	var btnname = document.getElementById("getBtnName").value;
+	var btn =  document.createElement("button");
+	var deta = document.createTextNode(btnname);
+	btn.appendChild(deta);
+	btn.setAttribute("id", btnname);
+	btn.setAttribute("class", "button");
+	document.getElementById("storeButton").appendChild(btn);
+	document.getElementById("overlay").style.display ="none";
 
 
 }
@@ -257,13 +264,6 @@ function refreshpage(){
 	location.reload();
 }
 
-function cleartable(){
-	var i;
-	var ee = (document.getElementById("displaying").rows.length) - 1;
-	for(i = ee; i > 0; i--){
-		document.getElementById("displaying").deleteRow(i);
-	}
-}
 
 
 

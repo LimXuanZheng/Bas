@@ -1,18 +1,12 @@
 package teacherSharing;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.io.PrintWriter;
-import java.nio.file.Files;
-import java.sql.Blob;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -23,27 +17,24 @@ import javax.servlet.http.HttpServletResponse;
 
 import database.DatabaseAccess;
 import database.model.User;
-import database.model.UserAll;
 import fileUpload.CryptoException;
-import fileUpload.encryption;
 
 /**
- * Servlet implementation class teacherSharing
+ * Servlet implementation class teacherSharing2
  */
-@WebServlet("/teachersharing")
-public class teacherSharing extends HttpServlet {
+@WebServlet("/teacherSharing2")
+public class teacherSharing2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public teacherSharing2() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
-	private String filepathes;
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
-	public teacherSharing() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
 
 		String key1 = "nhibgu";
@@ -244,8 +235,8 @@ public class teacherSharing extends HttpServlet {
 						+			"<div>"
 						+				"<div class='contents' id='storeButton'>"
 						+					"<button class='button' id='newbutton' onclick='createNew()'>New</button>"
-						+					"<button class='button' id='mybutton' onclick='refreshpage()'>My Drive</button>"//onclick='displayallmy()'
-						+					"<a href='teacherSharing2'><button class='button' id='lastOne'>Shared With Me</button></a>"
+						+					"<a href='teachersharing'><button class='button' id='mybutton'>My Drive</button></a>"//onclick='displayallmy()'
+						+					"<button class='button' id='lastOne' onclick='refreshpage()'>Shared With Me</button>"
 						+				"</div>"
 						+				"<div class='contents' id='storeTable'>"
 						+					"<table id='displaying'>"
@@ -260,7 +251,7 @@ public class teacherSharing extends HttpServlet {
 
 		for(database.model.File f: fileArray){
 			for(String hai : f.convertRecipient()){
-				if(hai.equals("13") && f.getShareType() == 0){
+				if(hai.equals("13") && f.getShareType() == 1){
 					out.println(
 							"<tr>"
 									+		"<td onclick='dosth(" + f.getFileID() + ")' name='whatisthisfile'>  " + f.getFileName() +  "</td>"

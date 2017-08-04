@@ -1,5 +1,7 @@
 package studentDownload;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.ResultSet;
@@ -13,6 +15,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import database.DatabaseAccess;
+import fileUpload.CryptoException;
+import teacherSharing.decryption;
 
 /**
  * Servlet implementation class studentDownload
@@ -29,11 +33,8 @@ public class studentDownload extends HttpServlet {
 		// TODO Auto-generated constructor stub
 	}
 
-	/**
-	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		PrintWriter out = response.getWriter();
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+PrintWriter out = response.getWriter();
 		
 		String key1 = "nhibgu";
 		try {
@@ -81,6 +82,10 @@ public class studentDownload extends HttpServlet {
 						+		"<link rel='stylesheet' href='css/studentDownload.css'>"
 						+		"<title>Student Download</title>"
 						+		"<script>function goHome() {window.location('Home');}"
+						+		"function dosth(fgfg){"
+						+			"document.getElementById('pls').value = fgfg;"
+						+			"document.getElementById('downloadfile1').submit();"
+						+			"}"
 						+		"</script>"
 						+ 	"</head>"
 						+ 	"<body>"
@@ -105,40 +110,90 @@ public class studentDownload extends HttpServlet {
 						+ 						"</li>"
 						+ 					"</ul>"
 						+ 				"</div>"
-						+ 			"</nav>");
+						+ 			"</nav>"
+						+			"<form id='downloadfile1' action='studentdownload' method='post'>");
 		for(database.model.File f: fileArray){
 			for(String hai : f.convertRecipient()){
 				if(hai.equals("13")){
 					out.println(
 											"<div class='whole'>"
 							+				"<p style='font-size:60px; background-color:#FFA07A;'>Exam Papers</p>"
-							+				"<p>Attached files : <a href='../studentdownload'><img src='images/attached.png' height='2%' width='2%'>" + f.getFileName() + "</a></p>"	
+							+				"<p>Attached files : <button onclick='dosth(" + f.getFileID() + ")'><img src='images/attached.png' height='2%' width='2%'>" + f.getFileName() + "</button></p>"	
+							+				"<input type='hidden' name='index' id='pls'></input>"
 							+			"</div>"
 							);
 				}
 				}
 		}
 		
-		out.println(				
-								"</div>"
+		out.println(		"</form>"		
+						+		"</div>"
 						+	"</body>"
 						+"</html>");
-	}
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		String key1 = "nhibgu";
+		try {
+			DatabaseAccess dbms = new DatabaseAccess(1);
+			String query = "SELECT User.Keys FROM User WHERE UserID = 13;";
+			ResultSet rs = dbms.getDatabaseData(query);
+			while(rs.next()){
+				key1 = rs.getString("Keys");
+			}
+			System.out.println(key1);
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		//PrintWriter out = response.getWriter();
+		int sss = Integer.parseInt(request.getParameter("index"));
+		System.out.println(sss);
+		try{
+			DatabaseAccess dbms = new DatabaseAccess(1);
+			ArrayList<database.model.File> fileArray = dbms.getDatabaseFile();
+			for(database.model.File d: fileArray){
+				if(d.getFileID() == sss){
+
+					File tempFile = File.createTempFile(d.getFileName(), ".tmp", null);
+					FileOutputStream fos = new FileOutputStream(tempFile);
+					fos.write(d.getFileData());
+					File decryptedFile = new File("document.decrypted");
+					try {
+						decryption.decrypt(key1, tempFile, decryptedFile);
+					} catch (CryptoException ex) {
+						System.out.println(ex.getMessage());
+						ex.printStackTrace();
+						System.out.println("fail");
+					}
+					/*FileInputStream hh = new FileInputStream(decryptedFile);
+			        OutputStream h = response.getOutputStream();
+			       
+			        byte[] test = new byte[4096];
+			        int bytesRead = -1;
+			        while ((bytesRead = hh.read(test)) != -1) {
+			                           h.write(test, 0, bytesRead);
+			                       }
+			                       */
+					response.setHeader("Content-Disposition", "attachment;filename=" + d.getFileName());
+					//byte[] bytesArray = new byte[(int) decryptedFile.length()];
+					//response.getOutputStream().write(bytesArray);
+				}
+			}
+		}
+		catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
 	}
 
 }
