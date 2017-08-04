@@ -352,6 +352,11 @@ public class SettingsServlet extends HttpServlet {
 						+ 		"<link rel='stylesheet' href='css/Settings.css'>"
 						+ 		"<script src='script/Settings.js'></script>"
 						+ 		"<title>Settings</title>"
+						+		"<style>"
+						+ 			"#snackbar { min-width: 250px; margin-left: -175px; background-color: #333; color: #FFF; text-align: center; border-radius: 2px; padding: 16px; position: fixed; z-index: 1; left: 50%; bottom: 30px; font-size: 17px; }>"
+						+			"#snackBtn { width: 100px; border: none; color:#FFEB3B; background: inherit; }"
+						+			"#snackBtn:focus { border: none; }"
+						+ 		"</style>"
 						+ 	"</head>"
 						+ 	"<body>"
 						+ 		"<div id='theDiv'>"
@@ -448,6 +453,9 @@ public class SettingsServlet extends HttpServlet {
 						+ 						"</div>"
 						+ 					"</div>"
 						+ 				"</div>"
+						+				"<div id='snackbar'>"
+						+					"Email changed successfully <button id='snackBtn' onclick='hideSnackbar()'>Dismiss</button>"
+						+				"</div>"
 						+ 			"</div>"
 						+ 		"</div>"
 						+ 	"</body>"
@@ -474,8 +482,8 @@ public class SettingsServlet extends HttpServlet {
 						+ 		"<script src='script/Settings.js'></script>"
 						+ 		"<title>Settings</title>"
 						//+		"<style>"
-						//+			"#changePassDiv #inputPError1::after { content: ''; position: absolute; bottom: 78%; left: 93%; margin-left: -12px;  border-width: 12px; border-style: solid; border-color: transparent transparent #F74225 transparent;>'"
-						//+ 		"</style>"
+						//+			"#changePassDiv #inputPError1::after { content: ''; position: absolute; bottom: 78%; left: 93%; margin-left: -12px;  border-width: 12px; border-style: solid; border-color: transparent transparent #F74225 transparent; }>'"
+						//+ 	"</style>"
 						+ 	"</head>"
 						+ 	"<body>"
 						+ 		"<div id='theDiv'>"
@@ -595,8 +603,8 @@ public class SettingsServlet extends HttpServlet {
 						+ 		"<script src='script/Settings.js'></script>"
 						+ 		"<title>Settings</title>"
 						//+		"<style>"
-						//+			"#changePassDiv #inputPError2::after { content: ''; position: absolute; bottom: 56.5%; left: 93%; margin-left: -12px;  border-width: 12px; border-style: solid; border-color: transparent transparent #F74225 transparent;>'"
-						//+ 		"</style>"
+						//+			"#changePassDiv #inputPError2::after { content: ''; position: absolute; bottom: 56.5%; left: 93%; margin-left: -12px;  border-width: 12px; border-style: solid; border-color: transparent transparent #F74225 transparent; }>'"
+						//+ 	"</style>"
 						+ 	"</head>"
 						+ 	"<body>"
 						+ 		"<div id='theDiv'>"
@@ -716,8 +724,8 @@ public class SettingsServlet extends HttpServlet {
 						+ 		"<script src='script/Settings.js'></script>"
 						+ 		"<title>Settings</title>"
 						//+		"<style>"
-						//+			"#changePassDiv #inputPError3::after { content: ''; position: absolute; bottom: 35.4%; left: 93%; margin-left: -12px;  border-width: 12px; border-style: solid; border-color: transparent transparent #F74225 transparent;>'"
-						//+ 		"</style>"
+						//+			"#changePassDiv #inputPError3::after { content: ''; position: absolute; bottom: 35.4%; left: 93%; margin-left: -12px;  border-width: 12px; border-style: solid; border-color: transparent transparent #F74225 transparent; }>'"
+						//+ 	"</style>"
 						+ 	"</head>"
 						+ 	"<body>"
 						+ 		"<div id='theDiv'>"
@@ -819,12 +827,12 @@ public class SettingsServlet extends HttpServlet {
 						+ 	"</body>"
 						+ "</html>");
 			}
-			else if (!oldPass.equals(oldPassword) && !oldPass.equals(newPass) && newPass.equals(confirmNewPass)) {
+			else if (oldPass.equals(oldPassword) && !oldPass.equals(newPass) && newPass.equals(confirmNewPass)) {
 				System.out.println("Can change password successfully");
 				LoginModel LM = new LoginModel();
 				HashPass HP = new HashPass();
 				byte [] newSalt = HP.createSalt();
-				String newHashedPassword = HP.getHashedPassword(LM.getNewPass(), newSalt);
+				String newHashedPassword = HP.getHashedPassword(newPass, newSalt);
 				//Update the newly generated salt and hashed password to database given the username
 				/*
 				ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
@@ -847,6 +855,11 @@ public class SettingsServlet extends HttpServlet {
 						+ 		"<link rel='stylesheet' href='css/Settings.css'>"
 						+ 		"<script src='script/Settings.js'></script>"
 						+ 		"<title>Settings</title>"
+						+		"<style>"
+						+ 			"#snackbar { min-width: 250px; margin-left: -190px; background-color: #333; color: #FFF; text-align: center; border-radius: 2px; padding: 16px; position: fixed; z-index: 1; left: 50%; bottom: 30px; font-size: 17px; }>"
+						+			"#snackBtn { width: 100px; border: none; color: #FFEB3B; background: inherit; }"
+						+			"#snackBtn:focus { border: none; }"
+						+ 		"</style>"
 						+ 	"</head>"
 						+ 	"<body>"
 						+ 		"<div id='theDiv'>"
@@ -943,6 +956,9 @@ public class SettingsServlet extends HttpServlet {
 						+ 						"</div>"
 						+ 					"</div>"
 						+ 				"</div>"
+						+				"<div id='snackbar'>"
+						+					"Password changed successfully <button id='snackBtn' onclick='hideSnackbar()'>Dismiss</button>"
+						+				"</div>"
 						+ 			"</div>"
 						+ 		"</div>"
 						+ 	"</body>"

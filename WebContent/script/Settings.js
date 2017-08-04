@@ -31,14 +31,7 @@ function showChangePassDiv() {
 	}
 }
 
-function checkEmail(inputEmail, oldEmail) {
-	var changeEmailDiv = document.getElementById("changeEmailDiv");
-	//var inputEmail = document.getElementById("inputEmail").value;
-	var inputError = document.getElementById("inputError");
-	//var emailForm = document.getElementById("emailForm");
-	
-	if (inputEmail === oldEmail) {
-		changeEmailDiv.style.display = "block";
-		inputError.style.display = "block";
-	}
+function hideSnackbar() {
+	var snackbar = document.getElementById("snackbar");
+	snackbar.style.visibility = "hidden";
 }
