@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import database.DatabaseAccess;
 import database.model.User;
+import database.model.UserAll;
 
 /**
  * Servlet implementation class testttt
@@ -37,11 +38,11 @@ public class testttt extends HttpServlet {
 		ArrayList<String> names1 = new ArrayList<String>();
 		try {
 			DatabaseAccess dbms = new DatabaseAccess(1);
-			ArrayList<User> alluser1 = dbms.getDatabaseUser();
-			for(User ea: alluser1){
-				names1.add(ea.getName());
-				
+			ArrayList<UserAll> alluser1 = dbms.getDatabaseUserAll();
+			for(UserAll a:alluser1){
+				System.out.println(a.getUser().getName());
 			}
+			
 
 		}
 		catch (ClassNotFoundException e) {

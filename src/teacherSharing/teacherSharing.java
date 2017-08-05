@@ -68,12 +68,10 @@ public class teacherSharing extends HttpServlet {
 		ArrayList<String> names1 = new ArrayList<String>();
 		try {
 			DatabaseAccess dbms = new DatabaseAccess(1);
-			ArrayList<User> alluser1 = dbms.getDatabaseUser();
-			for(User ea: alluser1){
-				names1.add(ea.getName());
-				
+			ArrayList<UserAll> alluser1 = dbms.getDatabaseUserAll();
+			for(UserAll ea: alluser1){
+				names1.add(ea.getUser().getName());
 			}
-
 		}
 		catch (ClassNotFoundException e) {
 			e.printStackTrace();
@@ -83,7 +81,6 @@ public class teacherSharing extends HttpServlet {
 		for(String s:names1){
 			System.out.println(s);
 		}
-
 
 
 
@@ -357,6 +354,7 @@ public class teacherSharing extends HttpServlet {
 					}   
 					stream.close();   
 					out.close();   
+					fos.close();
 					}  
 					//byte[] bytesArray = new byte[(int) decryptedFile.length()];
 					//response.getOutputStream().write(bytesArray);

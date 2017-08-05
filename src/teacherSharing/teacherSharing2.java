@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import database.DatabaseAccess;
 import database.model.User;
+import database.model.UserAll;
 import fileUpload.CryptoException;
 
 /**
@@ -57,22 +58,20 @@ public class teacherSharing2 extends HttpServlet {
 
 
 
-		ArrayList<String> names = new ArrayList<String>();
+		ArrayList<String> names1 = new ArrayList<String>();
 		try {
 			DatabaseAccess dbms = new DatabaseAccess(1);
-			ArrayList<User> alluser = dbms.getDatabaseUser();
-			for(User a: alluser){
-				String j = a.getName();
-				names.add(j);
+			ArrayList<UserAll> alluser1 = dbms.getDatabaseUserAll();
+			for(UserAll ea: alluser1){
+				names1.add(ea.getUser().getName());
 			}
-
 		}
 		catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		for(String s:names){
+		for(String s:names1){
 			System.out.println(s);
 		}
 
@@ -206,7 +205,7 @@ public class teacherSharing2 extends HttpServlet {
 				+			    			  	"<input type='text' placeholder='Search..' id='myInput' onkeyup='filterFunction()'>"
 				+								"<div id='fixsize'>");
 
-		for(String n:names){
+		for(String n:names1){
 
 			out.println(
 
