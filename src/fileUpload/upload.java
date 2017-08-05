@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.net.InetAddress;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;
@@ -20,6 +21,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.ThreadContext;
+
+import beforeSubmission.beforeSubmission;
 import database.DatabaseAccess;
 import database.model.User;
 import fileScanning.ScanningThread;
@@ -33,6 +39,8 @@ import teacherSharing.decryption;
 @WebServlet("/uploads")
 public class upload extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private static final Logger logger = LogManager.getLogger(upload.class.getName());
+	private String username = "Bob";
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -193,6 +201,12 @@ public class upload extends HttpServlet {
                     String sqlline = "INSERT INTO File(UserID, FileName, Size, Data, Recipient, Date, shareType) VALUES (?, ?, ?, ?, ?, ?, ?);";
                     dba.updateDatabaseDataFileUpload(sqlline, 13, name, f.length(), in, "13", sqlDate, 0);
                     dba.close();
+                    
+                    ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
+					ThreadContext.put("Username", username);
+					logger.debug("downloaded a file");
+					ThreadContext.clearAll();
+					
                 } catch (ClassNotFoundException e) {
                     e.printStackTrace();
                 } catch (SQLException e) { 

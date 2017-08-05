@@ -35,6 +35,7 @@ import geoIP.CheckIP;
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final Logger logger = LogManager.getLogger(LoginServlet.class.getName());
+	private String username = "Bob";
 	String userID = null;
        
     public LoginServlet() {
@@ -70,7 +71,23 @@ public class LoginServlet extends HttpServlet {
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("doGet previous URL: " + request.getHeader("referer"));
+		String previousURL = request.getHeader("referer");
+		HttpSession session = request.getSession(false);
+		if (session != null) {
+			username = (String)session.getAttribute("username");
+		}
+		else {
+			//response.sendRedirect("Login");
+			System.out.println("Session not created - redirect to login");
+		}
+		
+		if (previousURL != null) {
+			ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
+			ThreadContext.put("Username", username);
+			logger.debug("logged out successfully");
+			ThreadContext.clearAll();
+		}
+		
 		try {
 			CheckIP checkIP = new CheckIP(request);
 			checkIP.redirect(response);
@@ -163,7 +180,6 @@ public class LoginServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("doPost previous URL: " + request.getHeader("referer"));
 		Base64.Encoder enc = Base64.getEncoder();
 		String username = request.getParameter("userID");
 		String password = request.getParameter("passID");
@@ -176,8 +192,9 @@ public class LoginServlet extends HttpServlet {
 		}
 		else if (postBtn.equals("popupBtn")) {
 			System.out.println("Email button clicked");
-			//LM.generateNewPass();
-			//LM.sendEmail(receipientEmail);
+			LM.generateNewPass();
+			LM.sendEmail(receipientEmail);
+			System.out.println(receipientEmail);
 			//HashPass HP = new HashPass();
 			//byte [] resetSalt = HP.createSalt();
 			//String newSaltStr = enc.encodeToString(resetSalt);
@@ -194,9 +211,7 @@ public class LoginServlet extends HttpServlet {
 					+ 		"<script src='script/Login.js'></script>"
 					+ 		"<title>Login</title>"
 					+		"<style>"
-					+ 			"#snackbar { min-width: 250px; margin-left: -175px; background-color: #333; color: #FFF; text-align: center; border-radius: 2px; padding: 16px; position: fixed; z-index: 1; left: 50%; bottom: 30px; font-size: 17px; }>"
-					+			"#snackBtn { width: 100px; border: none; color:#FFEB3B; background: inherit; }"
-					+			"#snackBtn:focus { border: none; }"
+					+ 			"#snackbar { min-width: 250px; margin-left: -130px; background-color: #333; color: #FFF; text-align: center; border-radius: 2px; padding: 16px; position: fixed; z-index: 1; left: 50%; bottom: 30px; font-size: 17px; }"
 					+ 		"</style>"
 					+ 	"</head>"
 					+ 	"<body>"
@@ -237,7 +252,7 @@ public class LoginServlet extends HttpServlet {
 					+ 				"</div>"
 					+ 			"</div>"
 					+			"<div id='snackbar'>"
-					+				"Password changed successfully <button id='snackBtn' onclick='hideSnackbar()'>Dismiss</button>"
+					+				"Password changed successfully"
 					+			"</div>"
 					+ 		"</div>"
 					+ 		"<div id='popupDiv'>"

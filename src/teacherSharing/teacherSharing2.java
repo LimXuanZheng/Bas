@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.InetAddress;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -15,6 +16,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.ThreadContext;
 
 import database.DatabaseAccess;
 import database.model.User;
@@ -27,6 +33,8 @@ import fileUpload.CryptoException;
 @WebServlet("/teacherSharing2")
 public class teacherSharing2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private static final Logger logger = LogManager.getLogger(teacherSharing2.class.getName());
+	private String username = "Bob";
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -37,6 +45,20 @@ public class teacherSharing2 extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	HttpSession session = request.getSession(false);
+		if (session != null) {
+			username = (String)session.getAttribute("username");
+		}
+		else {
+			//response.sendRedirect("Login");
+			System.out.println("Session not created - redirect to login");
+		}
+		
+		ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
+		ThreadContext.put("Username", username);
+		logger.debug("entered Teacher Sharing 2 page");
+		ThreadContext.clearAll();
+		
 		PrintWriter out = response.getWriter();
 		ArrayList<String> folder = new ArrayList<String>();
 
@@ -352,6 +374,12 @@ public class teacherSharing2 extends HttpServlet {
 					}   
 					stream.close();   
 					out.close();
+					
+					ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
+					ThreadContext.put("Username", username);
+					logger.debug("downloaded a file");
+					ThreadContext.clearAll();
+					
 					//byte[] bytesArray = new byte[(int) decryptedFile.length()];
 					//response.getOutputStream().write(bytesArray);
 				}
