@@ -50,6 +50,8 @@ public class teacherSharing3 extends HttpServlet {
     	HttpSession session = request.getSession(false);
 		if (session != null) {
 			username = (String)session.getAttribute("username");
+			teemo = (String)session.getAttribute("userID");
+			teemo1 = Integer.parseInt(teemo);
 		}
 		else {
 			//response.sendRedirect("Login");
@@ -63,11 +65,27 @@ public class teacherSharing3 extends HttpServlet {
 		
 		PrintWriter out = response.getWriter();
 		ArrayList<String> folder = new ArrayList<String>();
+		
+		String myname = "";
+		try {
+			DatabaseAccess dbms = new DatabaseAccess(1);
+			ArrayList<UserAll> fa = dbms.getDatabaseUserAll();
+			for(UserAll qq:fa){
+				if(qq.getUser().getUserID() == teemo1){
+					myname = qq.getUser().getName();
+				}
+			}
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}	
+		
 
 		String key1 = "nhibgu";
 		try {
 			DatabaseAccess dbms = new DatabaseAccess(1);
-			String query = "SELECT User.Keys FROM User WHERE UserID = 13;";
+			String query = "SELECT User.Keys FROM User WHERE UserID = " + teemo1 + ";";
 			ResultSet rs = dbms.getDatabaseData(query);
 			while(rs.next()){
 				key1 = rs.getString("Keys");
@@ -291,7 +309,7 @@ public class teacherSharing3 extends HttpServlet {
 
 		for(database.model.File f: fileArray){
 			for(String hai : f.convertRecipient()){
-				if(hai.equals("13") && f.getShareType() == 2){
+				if((hai.equals(teemo)|| hai.equals(myname)) && f.getShareType() == 2){
 					out.println(
 							"<tr>"
 									+		"<td onclick='dosth(" + f.getFileID() + ")' name='whatisthisfile'>  " + f.getFileName() +  "</td>"
@@ -325,7 +343,7 @@ public class teacherSharing3 extends HttpServlet {
 		String key1 = "nhibgu";
 		try {
 			DatabaseAccess dbms = new DatabaseAccess(1);
-			String query = "SELECT User.Keys FROM User WHERE UserID = 13;";
+			String query = "SELECT User.Keys FROM User WHERE UserID = " + teemo1 + ";";
 			ResultSet rs = dbms.getDatabaseData(query);
 			while(rs.next()){
 				key1 = rs.getString("Keys");

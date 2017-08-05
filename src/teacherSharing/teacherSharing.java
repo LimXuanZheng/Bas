@@ -42,6 +42,8 @@ public class teacherSharing extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final Logger logger = LogManager.getLogger(teacherSharing.class.getName());
 	private String username = "Bob";
+	private String teemo = null;
+	int teemo1 = 0;
 
 	private String filepathes;
 	/**
@@ -56,6 +58,8 @@ public class teacherSharing extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		if (session != null) {
 			username = (String)session.getAttribute("username");
+			teemo = (String)session.getAttribute("userID");
+			teemo1 = Integer.parseInt(teemo);
 		}
 		else {
 			//response.sendRedirect("Login");
@@ -69,11 +73,26 @@ public class teacherSharing extends HttpServlet {
 		
 		PrintWriter out = response.getWriter();
 		ArrayList<String> folder = new ArrayList<String>();
+		
+		String myname = "";
+		try {
+			DatabaseAccess dbms = new DatabaseAccess(1);
+			ArrayList<UserAll> fa = dbms.getDatabaseUserAll();
+			for(UserAll qq:fa){
+				if(qq.getUser().getUserID() == teemo1){
+					myname = qq.getUser().getName();
+				}
+			}
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}	
 
 		String key1 = "nhibgu";
 		try {
 			DatabaseAccess dbms = new DatabaseAccess(1);
-			String query = "SELECT User.Keys FROM User WHERE UserID = " + 13 + ";";
+			String query = "SELECT User.Keys FROM User WHERE UserID = " + teemo1 + ";";
 			ResultSet rs = dbms.getDatabaseData(query);
 			while(rs.next()){
 				key1 = rs.getString("Keys");
@@ -290,7 +309,7 @@ public class teacherSharing extends HttpServlet {
 
 		for(database.model.File f: fileArray){
 			for(String hai : f.convertRecipient()){
-				if(hai.equals("13") && f.getShareType() == 0){
+				if((hai.equals(teemo) || hai.equals(teemo)) && f.getShareType() == 0){
 					out.println(
 							"<tr>"
 									+		"<td onclick='dosth(" + f.getFileID() + ")' name='whatisthisfile'>  " + f.getFileName() +  "</td>"
@@ -325,7 +344,7 @@ public class teacherSharing extends HttpServlet {
 		String key1 = "nhibgu";
 		try {
 			DatabaseAccess dbms = new DatabaseAccess(1);
-			String query = "SELECT User.Keys FROM User WHERE UserID = " + 13 + ";";
+			String query = "SELECT User.Keys FROM User WHERE UserID = " + teemo1 + ";";
 			ResultSet rs = dbms.getDatabaseData(query);
 			while(rs.next()){
 				key1 = rs.getString("Keys");
