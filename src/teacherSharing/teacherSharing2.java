@@ -37,6 +37,7 @@ public class teacherSharing2 extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
+		ArrayList<String> folder = new ArrayList<String>();
 
 		String key1 = "nhibgu";
 		try {
@@ -90,6 +91,7 @@ public class teacherSharing2 extends HttpServlet {
 			database.model.File file1 = fileArray.get(0);
 			String name1 = file1.getUser().getName();
 			System.out.println(name1);
+			folder = file1.getUser().getArrayFolder();
 			for(database.model.File s:fileArray){
 				filename1 = s.getFileName();
 				filesize1 = s.getFileSize();
@@ -189,6 +191,7 @@ public class teacherSharing2 extends HttpServlet {
 				+						"<p style='font-size:50px;'>Select Your Upload Method</p>"
 				+						"<input type='hidden' name='define1' id='d1'></input>"
 				+						"<input type='hidden' name='stringofpeople' id='sp'></input>"
+				+						"<input type='hidden' name='folder1' id='f1'></input>"
 				+						"<input type='radio'  id='checkifmy' name='chooseFile' onclick='javascript:showHidden();' style='width:20px; height:20px;' checked></input><label style='font-size:30px;'>My Drive</label>"
 				+						"<label style='margin-right:30px; margin-left:30px;'><input type='radio'  id='checkifshare' name='chooseFile' onclick='javascript:showHidden();' style='width:20px; height:20px;'></input><label style='font-size:30px;'>Shared Drive</label></label>"
 				+						"<input type='radio'  id='checkifnew' name='chooseFile' onclick='javascript:showHidden();' style='width:20px; height:20px;'></input><label style='font-size:30px;'>Create new Assigment</label>"
@@ -237,8 +240,20 @@ public class teacherSharing2 extends HttpServlet {
 						+				"<div class='contents' id='storeButton'>"
 						+					"<button class='button' id='newbutton' onclick='createNew()'>New</button>"
 						+					"<a href='teachersharing'><button class='button' id='mybutton'>My Drive</button></a>"//onclick='displayallmy()'
-						+					"<button class='button' id='lastOne' onclick='refreshpage()'>Shared With Me</button>"
-						+				"</div>"
+						+					"<button class='button' id='lastOne' onclick='refreshpage()'>Shared With Me</button>");
+		
+		
+		
+		for(String sss:folder){
+			out.println("<a href='teacherSharing3'><button class='button'>"
+					+	sss 
+					+	"</button></a>");
+		}
+		
+		
+		
+		out.println(
+										"</div>"
 						+				"<div class='contents' id='storeTable'>"
 						+					"<table id='displaying'>"
 						+						"<tr>"

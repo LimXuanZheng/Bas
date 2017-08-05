@@ -42,10 +42,12 @@ public class teacherUpload extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
+		ArrayList<String> jjj = new ArrayList<String>();
 		ArrayList<String> nm = new ArrayList<String>();
-		String kak;
+		//String kak;
 		String allname = request.getParameter("stringofpeople");
 		String uploadway = request.getParameter("define1");
+		String foldd = request.getParameter("folder1");
 		int uploadway1 = Integer.parseInt(uploadway);
 		System.out.println("uploadway");
 		Scanner sc = new Scanner(allname);
@@ -60,8 +62,49 @@ public class teacherUpload extends HttpServlet {
 			}
 		}
 		sc.close();
-
-
+		if(foldd.equals(null) || foldd.equals("")){
+			System.out.println("not a student file");
+		}
+		else{
+		try {
+			System.out.println("It is a file");
+			DatabaseAccess dbms = new DatabaseAccess(1);
+			ArrayList<User> fdd = dbms.getDatabaseUser();
+			for(User aa:fdd){
+				if(aa.getUserID() == 13){
+					jjj = aa.getArrayFolder();
+				}
+			}
+			}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		jjj.add(foldd);
+		String gf = "";
+		for(String dssd:jjj){
+			gf += dssd + ";";
+		}
+		try {
+			DatabaseAccess dbms = new DatabaseAccess(1);
+			ArrayList<User> fdd = dbms.getDatabaseUser();
+			for(User aa:fdd){
+				if(aa.getUserID() == 13){
+					String sqlline = "UPDATE USER SET folder = " + gf + " WHERE UserID = " + 13 ;
+					dbms.updateDatabaseData(sqlline);
+				}
+			}
+			}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		}
+		
 
 		try {
 			DatabaseAccess dbms = new DatabaseAccess(1);
@@ -82,6 +125,7 @@ public class teacherUpload extends HttpServlet {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		
 
 
 		String line = "";
@@ -227,8 +271,9 @@ public class teacherUpload extends HttpServlet {
 				+			"</div>"
 
 				);
+}
 
-	}
+	
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)

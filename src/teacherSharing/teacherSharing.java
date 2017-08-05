@@ -45,11 +45,12 @@ public class teacherSharing extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
+		ArrayList<String> folder = new ArrayList<String>();
 
 		String key1 = "nhibgu";
 		try {
 			DatabaseAccess dbms = new DatabaseAccess(1);
-			String query = "SELECT User.Keys FROM User WHERE UserID = 13;";
+			String query = "SELECT User.Keys FROM User WHERE UserID = " + 13 + ";";
 			ResultSet rs = dbms.getDatabaseData(query);
 			while(rs.next()){
 				key1 = rs.getString("Keys");
@@ -64,13 +65,13 @@ public class teacherSharing extends HttpServlet {
 
 
 
-		ArrayList<String> names = new ArrayList<String>();
+		ArrayList<String> names1 = new ArrayList<String>();
 		try {
 			DatabaseAccess dbms = new DatabaseAccess(1);
-			ArrayList<User> alluser = dbms.getDatabaseUser();
-			for(User a: alluser){
-				String j = a.getName();
-				names.add(j);
+			ArrayList<User> alluser1 = dbms.getDatabaseUser();
+			for(User ea: alluser1){
+				names1.add(ea.getName());
+				
 			}
 
 		}
@@ -79,7 +80,7 @@ public class teacherSharing extends HttpServlet {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		for(String s:names){
+		for(String s:names1){
 			System.out.println(s);
 		}
 
@@ -97,15 +98,16 @@ public class teacherSharing extends HttpServlet {
 			fileArray = dbms.getDatabaseFile();
 			database.model.File file1 = fileArray.get(0);
 			String name1 = file1.getUser().getName();
+			folder = file1.getUser().getArrayFolder();
 			System.out.println(name1);
 			for(database.model.File s:fileArray){
 				filename1 = s.getFileName();
 				filesize1 = s.getFileSize();
 				date1 = s.getDate();
 				filedata = s.getFileData();
-				System.out.println(filename1);
-				System.out.println(filesize1);
-				System.out.println(date1);
+				//System.out.println(filename1);
+				//System.out.println(filesize1);
+				//System.out.println(date1);
 				
 				
 				/*
@@ -197,6 +199,7 @@ public class teacherSharing extends HttpServlet {
 				+						"<p style='font-size:50px;'>Select Your Upload Method</p>"
 				+						"<input type='hidden' name='define1' id='d1'></input>"
 				+						"<input type='hidden' name='stringofpeople' id='sp'></input>"
+				+						"<input type='hidden' name='folder1' id='f1'></input>"
 				+						"<input type='radio'  id='checkifmy' name='chooseFile' onclick='javascript:showHidden();' style='width:20px; height:20px;' checked></input><label style='font-size:30px;'>My Drive</label>"
 				+						"<label style='margin-right:30px; margin-left:30px;'><input type='radio'  id='checkifshare' name='chooseFile' onclick='javascript:showHidden();' style='width:20px; height:20px;'></input><label style='font-size:30px;'>Shared Drive</label></label>"
 				+						"<input type='radio'  id='checkifnew' name='chooseFile' onclick='javascript:showHidden();' style='width:20px; height:20px;'></input><label style='font-size:30px;'>Create new Assigment</label>"
@@ -211,7 +214,7 @@ public class teacherSharing extends HttpServlet {
 				+			    			  	"<input type='text' placeholder='Search..' id='myInput' onkeyup='filterFunction()'>"
 				+								"<div id='fixsize'>");
 
-		for(String n:names){
+		for(String n:names1){
 
 			out.println(
 
@@ -245,8 +248,15 @@ public class teacherSharing extends HttpServlet {
 						+				"<div class='contents' id='storeButton'>"
 						+					"<button class='button' id='newbutton' onclick='createNew()'>New</button>"
 						+					"<button class='button' id='mybutton' onclick='refreshpage()'>My Drive</button>"//onclick='displayallmy()'
-						+					"<a href='teacherSharing2'><button class='button' id='lastOne'>Shared With Me</button></a>"
-						+				"</div>"
+						+					"<a href='teacherSharing2'><button class='button' id='lastOne'>Shared With Me</button></a>");
+		for(String sss:folder){
+			out.println("<a href='teacherSharing3'><button class='button'>"
+					+	sss 
+					+	"</button></a>");
+		}
+		
+						
+						out.println(			"</div>"
 						+				"<div class='contents' id='storeTable'>"
 						+					"<table id='displaying'>"
 						+						"<tr>"
@@ -295,7 +305,7 @@ public class teacherSharing extends HttpServlet {
 		String key1 = "nhibgu";
 		try {
 			DatabaseAccess dbms = new DatabaseAccess(1);
-			String query = "SELECT User.Keys FROM User WHERE UserID = 13;";
+			String query = "SELECT User.Keys FROM User WHERE UserID = " + 13 + ";";
 			ResultSet rs = dbms.getDatabaseData(query);
 			while(rs.next()){
 				key1 = rs.getString("Keys");

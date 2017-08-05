@@ -50,17 +50,9 @@ function asubmit(){
 		   }  
 		}
 		var btnname = document.getElementById("getBtnName").value;
-		var ant = document.createElement("a");
-		var btn =  document.createElement("button");
-		var deta = document.createTextNode(btnname);
-		ant.setAttribute("href", "teacherSharing3");
-		btn.appendChild(deta);
-		btn.setAttribute("id", btnname);
-		btn.setAttribute("class", "button");
-		ant.appendChild(btn);
-		document.getElementById("storeButton").appendChild(ant);
 		document.getElementById("sp").value = text;
 		document.getElementById("d1").value = "2";
+		document.getElementById("f1").value = btnname;
 		
 		/*alert(document.getElementById("getBtnName").value);
 		var link  = document.createElement("link");
