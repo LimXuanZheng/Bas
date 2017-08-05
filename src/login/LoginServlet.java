@@ -91,16 +91,13 @@ public class LoginServlet extends HttpServlet {
 		try {
 			CheckIP checkIP = new CheckIP(request);
 			checkIP.redirect(response);
-			checkIP.getLocation();
+			//checkIP.getLocation();
 			//checkIP.showLocationOnGoogle(response);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} catch (GeoIp2Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} //catch (ParseException e) {
+		}
 			// TODO Auto-generated catch block
 			//e.printStackTrace();
 		//}
@@ -114,7 +111,7 @@ public class LoginServlet extends HttpServlet {
 				+ 		"<script src='script/Login.js'></script>"
 				+ 		"<title>Login</title>"
 				+ 	"</head>"
-				+ 	"<body>"
+				+ 	"<body onload='hello123()'>"
 				+ 		"<div id='theDiv'>"
 				+ 			"<div id='aDiv'>"
 				+ 				"<div id='bDiv'>"
@@ -148,6 +145,7 @@ public class LoginServlet extends HttpServlet {
 				+ 							"<span id='forPass' onclick='showPopup()'>Forgot your Password?</span>"
 				+ 							"<button type='submit' name='postBtn' value='btnLogin' id='btnLogin'>Login</button>"
 				+ 						"</div>"
+				+						"<input type='hidden' id='latlongLocation' name='latlongLocation'>"
 				+ 					"</form>"
 				+ 				"</div>"
 				+ 			"</div>"
@@ -185,8 +183,15 @@ public class LoginServlet extends HttpServlet {
 		String password = request.getParameter("passID");
 		String receipientEmail = request.getParameter("changeEmail");
 		String postBtn = request.getParameter("postBtn");
+		String latlongLocation = request.getParameter("latlongLocation");
 		LoginModel LM = new LoginModel();
-		
+		System.out.println("LatLong: " + latlongLocation);
+		/*
+		ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
+		ThreadContext.put("Username", username);
+		logger.debug("latlongLocation");
+		ThreadContext.clearAll();
+		*/
 		if (postBtn == null) {
 			System.out.println("Button not clicked");
 		}
@@ -195,11 +200,27 @@ public class LoginServlet extends HttpServlet {
 			LM.generateNewPass();
 			LM.sendEmail(receipientEmail);
 			System.out.println(receipientEmail);
-			//HashPass HP = new HashPass();
-			//byte [] resetSalt = HP.createSalt();
-			//String newSaltStr = enc.encodeToString(resetSalt);
-			//String resetHashedPassword = HP.getHashedPassword(LM.getNewPass(), resetSalt);
+			HashPass HP = new HashPass();
+			byte [] resetSalt = HP.createSalt();
+			String newSaltStr = enc.encodeToString(resetSalt);
+			String resetHashedPassword = HP.getHashedPassword(LM.getNewPass(), resetSalt);
 			//Update the newly generated salt and hashed password to database given the email entered
+			try {
+				DatabaseAccess dBA = new DatabaseAccess(1);
+				String sqlLine1 = "UPDATE Login INNER JOIN User ON Login.UserID = User.UserID SET Login.salt = \"" + newSaltStr + "\" WHERE User.email = \"" + receipientEmail + "\";";
+				String sqlLine2 = "UPDATE Login INNER JOIN User ON Login.UserID = User.UserID SET Login.password = \"" + resetHashedPassword + "\" WHERE User.email = \"" + receipientEmail + "\";";
+				ResultSet rs1 = dBA.getDatabaseData(sqlLine1);
+				rs1.next();
+				ResultSet rs2 = dBA.getDatabaseData(sqlLine2);
+				rs2.next();
+				rs2.close();
+				rs1.close();
+				dBA.close();
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 			
 			PrintWriter out = response.getWriter();
 			out.println("<!DOCTYPE html>"
@@ -248,6 +269,7 @@ public class LoginServlet extends HttpServlet {
 					+ 							"<span id='forPass' onclick='showPopup()'>Forgot your Password?</span>"
 					+ 							"<button type='submit' name='postBtn' value='btnLogin' id='btnLogin'>Login</button>"
 					+ 						"</div>"
+					+						"<input type='hidden' id='latlongLocation'>"
 					+ 					"</form>"
 					+ 				"</div>"
 					+ 			"</div>"
@@ -336,6 +358,7 @@ public class LoginServlet extends HttpServlet {
 						+ 							"<span id='forPass' onclick='showPopup()'>Forgot your Password?</span>"
 						+ 							"<button type='submit' name='postBtn' value='btnLogin' id='btnLogin'>Login</button>"
 						+ 						"</div>"
+						+						"<input type='hidden' id='latlongLocation'>"
 						+ 					"</form>"
 						+ 				"</div>"
 						+ 			"</div>"
@@ -419,6 +442,7 @@ public class LoginServlet extends HttpServlet {
 						+ 							"<span id='forPass' onclick='showPopup()'>Forgot your Password?</span>"
 						+ 							"<button type='submit' name='postBtn' value='btnLogin' id='btnLogin'>Login</button>"
 						+ 						"</div>"
+						+						"<input type='hidden' id='latlongLocation'>"
 						+ 					"</form>"
 						+ 				"</div>"
 						+ 			"</div>"
@@ -526,6 +550,7 @@ public class LoginServlet extends HttpServlet {
 									+ 							"<span id='forPass' onclick='showPopup()'>Forgot your Password?</span>"
 									+ 							"<button type='submit' name='postBtn' value='btnLogin' id='btnLogin'>Login</button>"
 									+ 						"</div>"
+									+						"<input type='hidden' id='latlongLocation'>"
 									+ 					"</form>"
 									+ 				"</div>"
 									+ 			"</div>"
@@ -604,6 +629,7 @@ public class LoginServlet extends HttpServlet {
 								+ 							"<span id='forPass' onclick='showPopup()'>Forgot your Password?</span>"
 								+ 							"<button type='submit' name='postBtn' value='btnLogin' id='btnLogin'>Login</button>"
 								+ 						"</div>"
+								+						"<input type='hidden' id='latlongLocation'>"
 								+ 					"</form>"
 								+ 				"</div>"
 								+ 			"</div>"

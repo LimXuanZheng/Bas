@@ -338,12 +338,24 @@ public class SettingsServlet extends HttpServlet {
 			else {
 				System.out.println("Can change email successfully");
 				//Update new email to database
-				/*
+				try {
+					DatabaseAccess dBA = new DatabaseAccess(1);
+					String sqlLine = "UPDATE User INNER JOIN Login ON User.UserID = Login.UserID SET User.email = \"" + inputEmail + "\" WHERE Login.Username = \"" + username + "\";";
+					ResultSet rs = dBA.getDatabaseData(sqlLine);
+					rs.next();
+					rs.close();
+					dBA.close();
+				} catch (ClassNotFoundException e) {
+					e.printStackTrace();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+				
 				ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
 				ThreadContext.put("Username", username);
 				logger.debug("Changed email successfully");
 				ThreadContext.clearAll();
-				*/
+				
 				PrintWriter out = response.getWriter();
 				out.println("<!DOCTYPE html>"
 						+ "<html>"
@@ -1210,18 +1222,33 @@ public class SettingsServlet extends HttpServlet {
 			else if (oldPass.equals(oldPassword) && !oldPass.equals(newPass) && newPass.equals(confirmNewPass)) {
 				System.out.println("Can change password successfully");
 				Base64.Encoder enc = Base64.getEncoder();
-				LoginModel LM = new LoginModel();
 				HashPass HP = new HashPass();
 				byte [] newSalt = HP.createSalt();
 				String newSaltStr = enc.encodeToString(newSalt);
-				String newHashedPassword = HP.getHashedPassword(newPass, newSalt);
+				String newHashedPassword = HP.getHashedPassword(confirmNewPass, newSalt);
 				//Update the newly generated salt and hashed password to database given the username
-				/*
+				try {
+					DatabaseAccess dBA = new DatabaseAccess(1);
+					String sqlLine1 = "UPDATE Login SET salt = \"" + newSaltStr + "\" WHERE username = \"" + username + "\";";
+					String sqlLine2 = "UPDATE Login SET password = \"" + newHashedPassword + "\" WHERE username = \"" + username + "\";";
+					ResultSet rs1 = dBA.getDatabaseData(sqlLine1);
+					rs1.next();
+					ResultSet rs2 = dBA.getDatabaseData(sqlLine2);
+					rs2.next();
+					rs2.close();
+					rs1.close();
+					dBA.close();
+				} catch (ClassNotFoundException e) {
+					e.printStackTrace();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+				
 				ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
 				ThreadContext.put("Username", username);
 				logger.debug("changed password successfully");
 				ThreadContext.clearAll();
-				*/
+				
 				PrintWriter out = response.getWriter();
 				out.println("<!DOCTYPE html>"
 						+ "<html>"

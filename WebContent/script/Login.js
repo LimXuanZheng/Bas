@@ -1,3 +1,11 @@
+function hello123(){
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(function(position) {
+			document.getElementById("latlongLocation").value = "Lat: " + position.coords.latitude + "Long: " + position.coords.longitude
+		});
+	}
+}
+
 function showPopup() {
 	var popup = document.getElementById("popupDiv");
 	popup.style.display = "block";
@@ -8,17 +16,4 @@ function closePopup() {
 	var pInputError = document.getElementById("pInputError");
 	popup.style.display = "none";
 	pInputError.style.display = "none";
-}
-
-function renewPass() {
-	var changeEmail = document.getElementById("changeEmail").value;
-	var pInputError = document.getElementById("pInputError");
-	if (changeEmail == null || changeEmail == "") {
-		pInputError.style.display = "block";
-	}
-}
-
-function hideSnackbar() {
-	var snackbar = document.getElementById("snackbar");
-	snackbar.style.visibility = "hidden";
 }
