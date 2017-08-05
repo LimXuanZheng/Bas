@@ -2,10 +2,12 @@ package messaging;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.security.KeyFactory;
 import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
 import java.security.PrivateKey;
 import java.security.PublicKey;
+import java.security.spec.X509EncodedKeySpec;
 import java.util.ArrayList;
 import java.util.Base64;
 
@@ -46,8 +48,6 @@ public class ReceiveMessage extends HttpServlet {
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		boolean name = false;
 		HttpSession session = request.getSession(false);
 		if (session != null) {
 			userID = (String) session.getAttribute("userID");
@@ -144,14 +144,23 @@ public class ReceiveMessage extends HttpServlet {
 				while(true){
 					Message m = consumer.receive();
 					if (m != null && m instanceof Message) {
-						byte[] message = m.getStringProperty("Message").getBytes();
+						byte[] message = Base64.getDecoder().decode(m.getStringProperty("Message"));
 						String timestamp = m.getStringProperty("Timestamp");
 						String owner = m.getStringProperty("Owner");
-						PublicKey publickey = (PublicKey) m.getObjectProperty("PublicKey");
-						byte[] signature = m.getStringProperty("Signature").getBytes();
-						if(gok.verifySignature(gok.getHash(Base64.getDecoder().decode(message)), signature, publickey)){
+						String publickey = m.getStringProperty("PublicKey");
+						
+						byte[] publicarray = Base64.getDecoder().decode(publickey);
+						X509EncodedKeySpec x509KeySpec = new X509EncodedKeySpec(publicarray);
+						KeyFactory keyFact = KeyFactory.getInstance("RSA");
+						PublicKey publicKeyDone = keyFact.generatePublic(x509KeySpec);
+						
+						byte[] signature = Base64.getDecoder().decode(m.getStringProperty("Signature"));
+						if(gok.verifySignature(Base64.getEncoder().encode(gok.getHash(message)), signature, publicKeyDone)){
 							String text = gok.decrypt(message, privateKey);
+							System.out.println("Success: " + text);
 							arrayString.add(new TextModel(text, timestamp, owner));
+						}else{
+							System.out.println("Failed");
 						}
 					}
 					Thread.sleep(100);

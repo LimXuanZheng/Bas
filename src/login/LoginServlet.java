@@ -75,7 +75,7 @@ public class LoginServlet extends HttpServlet {
 			CheckIP checkIP = new CheckIP(request);
 			checkIP.redirect(response);
 			checkIP.getLocation();
-			checkIP.showLocationOnGoogle(response);
+			//checkIP.showLocationOnGoogle(response);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
@@ -83,10 +83,10 @@ public class LoginServlet extends HttpServlet {
 		} catch (GeoIp2Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} catch (ParseException e) {
+		} //catch (ParseException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			//e.printStackTrace();
+		//}
 		PrintWriter out = response.getWriter();
 		out.println("<!DOCTYPE html>"
 				+ "<html>"

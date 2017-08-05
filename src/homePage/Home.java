@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
+import java.security.PrivateKey;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -48,7 +49,6 @@ public class Home extends HttpServlet {
     	user = "Student";
     	
     	if(user.equals("Student")){
-    		boxes.add("View Grades");
     		boxes.add("Assignment Submission");
     		boxes.add("Student Materials");
     	}
@@ -64,7 +64,7 @@ public class Home extends HttpServlet {
 		try {
 			CheckIP checkIP = new CheckIP(request);
 			checkIP.redirect(response);
-			checkIP.getLocation();
+			//checkIP.getLocation();
 			//checkIP.showLocationOnGoogle(response);
 		
 			HttpSession session = request.getSession(false);
@@ -82,8 +82,6 @@ public class Home extends HttpServlet {
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
-			e.printStackTrace();
-		} catch (GeoIp2Exception e) {
 			e.printStackTrace();
 		}
 		
@@ -186,26 +184,30 @@ public class Home extends HttpServlet {
 		+ 	"</div>");
 		
 		if(Integer.parseInt(userID) > 10){
+			out.println(
+					"<div id='wholeChatBox'>"
+			+		"<div id='topBarOfChatBox'>"
+			+ 			"<div id='leftFloat'>");
+			
 			if(whetherToShowTheUserOrNot1 != null){
-				out.println(
-						"<div id='wholeChatBox'>"
-				+		"<div id='topBarOfChatBox'>"
-				+ 			"<div id='leftFloat'>"
-				+ 			"<p id='userToName'>" + whetherToShowTheUserOrNot1 + "</p>"
-				+			"</div>"
-				+ 			"<div id='rightFloat'>"
-				+ 				"<span class='glyphicon glyphicon-minus' onclick='minimiseChat()'></span>"
-				+ 				"<span class='glyphicon glyphicon-remove' onclick='closeChat()'></span>"
-				+ 			"</div>"
-				+		 "</div>"
-				+ 		"<div id='chatBox'>"
-				+ 			"<iframe src='ReceiveMessage' id='receiveMessageBox' scrolling='no'></iframe>"
-				+ 			"<iframe src='SendMessage' id='sendMessageInput' scrolling='no'></iframe>"
-				+ 		"</div>"
-				+ 	"</div>");
+				out.println("<p id='userToName'>" + whetherToShowTheUserOrNot1 + "</p>");
+			}else{
+				out.println("<p id='userToName'>{placeholder}</p>");
 			}
-				out.println(
-				"<div id='leftUserList'>"
+			
+			out.println(
+						"</div>"
+			+ 			"<div id='rightFloat'>"
+			+ 				"<span class='glyphicon glyphicon-minus' onclick='minimiseChat()'></span>"
+			+ 				"<span class='glyphicon glyphicon-remove' onclick='closeChat()'></span>"
+			+ 			"</div>"
+			+		 "</div>"
+			+ 		"<div id='chatBox'>"
+			+ 			"<iframe src='ReceiveMessage' id='receiveMessageBox' scrolling='no'></iframe>"
+			+ 			"<iframe src='SendMessage' id='sendMessageInput' scrolling='no'></iframe>"
+			+ 		"</div>"
+			+ 	"</div>"
+			+ 	"<div id='leftUserList'>"
 			+ 		"<form action='Home' id='someform' method='POST'>"
 			+ 			"<input type='hidden' id='hiddenInput' name='hiddenInput'>"
 			+ 			"<input type='hidden' id='hiddenInput1' name='hiddenInputName'>"
@@ -260,15 +262,12 @@ public class Home extends HttpServlet {
 		String whetherToShowTheUserOrNot = request.getParameter("hiddenInputShown");
 		session.setAttribute("whetherToShowTheUserOrNot", whetherToShowTheUserOrNot);
 		
-		GenerationOfKey gok;
 		try {
-			gok = new GenerationOfKey();
+			GenerationOfKey gok = new GenerationOfKey();
 			gok.createKeys();
 			session.setAttribute("privateKey", gok.getPrivateKey());
 			session.setAttribute("publicKey", gok.getPublicKey());
-			if(GenerationOfKey.publicKey2 == null){
-				GenerationOfKey.publicKey2 = gok.getPublicKey();
-			}
+			GenerationOfKey.publicKey2 = gok.getPublicKey();
 		} catch (NoSuchAlgorithmException e) {
 			e.printStackTrace();
 		} catch (NoSuchProviderException e) {

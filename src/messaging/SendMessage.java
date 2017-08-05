@@ -55,7 +55,6 @@ public class SendMessage extends HttpServlet {
 				+ "</html>");
 			
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -66,9 +65,6 @@ public class SendMessage extends HttpServlet {
 			GenerationOfKey gok = new GenerationOfKey();
 			String userID = "4";
 			if (session != null) {
-				gok.createKeys();
-				session.setAttribute("privateKey", gok.getPrivateKey());
-				session.setAttribute("publicKey", gok.getPublicKey());
 				gok.setPrivateKey((PrivateKey)session.getAttribute("privateKey"));
 				gok.setPublicKey((PublicKey)session.getAttribute("publicKey"));
 				userID = (String) session.getAttribute("userID");
@@ -100,14 +96,18 @@ public class SendMessage extends HttpServlet {
 			
 			Queue queue = (Queue) initCtx.lookup(line);
 			MessageProducer producer = connSession.createProducer(queue);
-			
+			GenerationOfKey.publicKey2 = gok.getPublicKey();
 			byte[] encryptedMessage = gok.encrypt(message, GenerationOfKey.publicKey2);
-			byte[] signature = gok.signHash(gok.getHash(encryptedMessage), gok.getPrivateKey());
+			byte[] signature = gok.signHash(Base64.getEncoder().encode(gok.getHash(encryptedMessage)), gok.getPrivateKey());
+			
+			byte[] array = (gok.getPublicKey()).getEncoded();
+			String publicKey =  Base64.getEncoder().encodeToString(array);
 			Message testMessage = connSession.createMessage();
+			
 			testMessage.setStringProperty("Message", new String(Base64.getEncoder().encode(encryptedMessage)));
 			testMessage.setStringProperty("Timestamp", timestamp);
 			testMessage.setStringProperty("Owner", userID);
-			testMessage.setObjectProperty("PublicKey", gok.getPublicKey());
+			testMessage.setStringProperty("PublicKey", publicKey);
 			testMessage.setStringProperty("Signature", new String(Base64.getEncoder().encode(signature)));
 			
 			
