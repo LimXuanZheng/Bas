@@ -10,6 +10,7 @@ import java.net.InetAddress;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.Scanner;
 
 import javax.servlet.ServletConfig;
@@ -69,6 +70,7 @@ public class LoginServlet extends HttpServlet {
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("doGet previous URL: " + request.getHeader("referer"));
 		try {
 			CheckIP checkIP = new CheckIP(request);
 			checkIP.redirect(response);
@@ -150,7 +152,7 @@ public class LoginServlet extends HttpServlet {
 				+ 					"</div>"
 				+ 					"<div id='popupFooter'>"
 				+ 						"<div id='pBtnDiv'>"
-				+ 							"<button type='submit' name='postBtn' value='popupBtn' id='popupBtn' onclick='renewPass()'>Change Password</button>"
+				+ 							"<button type='submit' name='postBtn' value='popupBtn' id='popupBtn'>Change Password</button>"
 				+ 						"</div>"
 				+ 					"</div>"
 				+				"</form>"
@@ -161,6 +163,8 @@ public class LoginServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("doPost previous URL: " + request.getHeader("referer"));
+		Base64.Encoder enc = Base64.getEncoder();
 		String username = request.getParameter("userID");
 		String password = request.getParameter("passID");
 		String receipientEmail = request.getParameter("changeEmail");
@@ -171,11 +175,12 @@ public class LoginServlet extends HttpServlet {
 			System.out.println("Button not clicked");
 		}
 		else if (postBtn.equals("popupBtn")) {
+			System.out.println("Email button clicked");
 			//LM.generateNewPass();
 			//LM.sendEmail(receipientEmail);
-			System.out.println("Button clicked");
 			//HashPass HP = new HashPass();
 			//byte [] resetSalt = HP.createSalt();
+			//String newSaltStr = enc.encodeToString(resetSalt);
 			//String resetHashedPassword = HP.getHashedPassword(LM.getNewPass(), resetSalt);
 			//Update the newly generated salt and hashed password to database given the email entered
 			
@@ -188,6 +193,11 @@ public class LoginServlet extends HttpServlet {
 					+ 		"<link rel='stylesheet' href='css/Login.css'>"
 					+ 		"<script src='script/Login.js'></script>"
 					+ 		"<title>Login</title>"
+					+		"<style>"
+					+ 			"#snackbar { min-width: 250px; margin-left: -175px; background-color: #333; color: #FFF; text-align: center; border-radius: 2px; padding: 16px; position: fixed; z-index: 1; left: 50%; bottom: 30px; font-size: 17px; }>"
+					+			"#snackBtn { width: 100px; border: none; color:#FFEB3B; background: inherit; }"
+					+			"#snackBtn:focus { border: none; }"
+					+ 		"</style>"
 					+ 	"</head>"
 					+ 	"<body>"
 					+ 		"<div id='theDiv'>"
@@ -226,6 +236,9 @@ public class LoginServlet extends HttpServlet {
 					+ 					"</form>"
 					+ 				"</div>"
 					+ 			"</div>"
+					+			"<div id='snackbar'>"
+					+				"Password changed successfully <button id='snackBtn' onclick='hideSnackbar()'>Dismiss</button>"
+					+			"</div>"
 					+ 		"</div>"
 					+ 		"<div id='popupDiv'>"
 					+ 			"<div id='popupContent'>"
@@ -244,7 +257,7 @@ public class LoginServlet extends HttpServlet {
 					+ 					"</div>"
 					+ 					"<div id='popupFooter'>"
 					+ 						"<div id='pBtnDiv'>"
-					+ 							"<button type='submit' name='postBtn' value='popupBtn' id='popupBtn' onclick='renewPass()'>Change Password</button>"
+					+ 							"<button type='submit' name='postBtn' value='popupBtn' id='popupBtn'>Change Password</button>"
 					+ 						"</div>"
 					+ 					"</div>"
 					+				"</form>"
@@ -254,7 +267,8 @@ public class LoginServlet extends HttpServlet {
 					+ "</html>");
 		}
 		else if (postBtn.equals("btnLogin")) {
-			if (username.contains("<script>") && username.contains("</script>") || password.contains("</script>") && password.contains("</script>")) {
+			System.out.println("Password button clicked");
+			if (username.contains("<script>") && username.contains("</script>")) {
 				username = null;
 				System.out.println("Attempted cross-site scripting");
 				ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
@@ -295,7 +309,7 @@ public class LoginServlet extends HttpServlet {
 						+ 								"<img id='nameImg' src='images/Username.png'/>"
 						+ 								"<input type='text' id='userID' class='input' name='userID' placeholder='Username' required>"
 						+ 							"</div>"
-						+ 							"<div id='inputNError'>Username does not match.</div>"
+						+ 							"<div id='inputNError'>Cross-site scripting detected.</div>"
 						+ 						"</div>"
 						+ 						"<div id='passPart'>"
 						+ 							"<div id='flexPInput'>"
@@ -328,7 +342,90 @@ public class LoginServlet extends HttpServlet {
 						+ 					"</div>"
 						+ 					"<div id='popupFooter'>"
 						+ 						"<div id='pBtnDiv'>"
-						+ 							"<button type='submit' name='postBtn' value='popupBtn' id='popupBtn' onclick='renewPass()'>Change Password</button>"
+						+ 							"<button type='submit' name='postBtn' value='popupBtn' id='popupBtn'>Change Password</button>"
+						+ 						"</div>"
+						+ 					"</div>"
+						+				"</form>"
+						+ 			"</div>"
+						+ 		"</div>"
+						+ 	"</body>"
+						+ "</html>");
+			}
+			else if (password.contains("</script>") && password.contains("</script>")) {
+				username = null;
+				System.out.println("Attempted cross-site scripting");
+				ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
+				ThreadContext.put("Username", username);
+				logger.debug("Attempted cross-site scripting");
+				ThreadContext.clearAll();
+				
+				PrintWriter out = response.getWriter();
+				out.println("<!DOCTYPE html>"
+						+ "<html>"
+						+ 	"<head>"
+						+ 		"<meta charset='UTF-8'>"
+						+ 		"<link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>"
+						+ 		"<link rel='stylesheet' href='css/Login.css'>"
+						+ 		"<script src='script/Login.js'></script>"
+						+ 		"<title>Login</title>"
+						+ 	"</head>"
+						+ 	"<body>"
+						+ 		"<div id='theDiv'>"
+						+ 			"<div id='aDiv'>"
+						+ 				"<div id='bDiv'>"
+						+ 					"<div id='basImgDiv'>"
+						+ 						"<img id='basLogo' src='images/BasLogo.png'/>"
+						+ 					"</div>"
+						+ 					"<h3 id='basTitle'>"
+						+ 						"Purpleboard"
+						+ 					"</h3>"
+						+ 				"</div>"
+						+ 				"<div id='cDiv'>"
+						+ 					"<div id='loginHeaderDiv'>"
+						+ 						"<h3 id='loginHeader'>"
+						+ 							"Log in to your account"
+						+ 						"</h3>"
+						+	 				"</div>"
+						+ 					"<form id='loginForm' method='POST'>"
+						+ 						"<div id='namePart'>"
+						+ 							"<div id='flexUInput'>"
+						+ 								"<img id='nameImg' src='images/Username.png'/>"
+						+ 								"<input type='text' id='userID' class='input' name='userID' placeholder='Username' required>"
+						+ 							"</div>"
+						+						"</div>"
+						+ 						"<div id='passPart'>"
+						+ 							"<div id='flexPInput'>"
+						+ 								"<img id='passImg' src='images/Password.png'/>"
+						+ 								"<input type='password' id='passID' class='input' name='passID' placeholder='Password' required>"
+						+ 							"</div>"
+						+ 							"<div id='inputPError'>Cross-site scripting detected.</div>"
+						+ 						"</div>"
+						+ 						"<div id='btnDiv'>"
+						+ 							"<span id='forPass' onclick='showPopup()'>Forgot your Password?</span>"
+						+ 							"<button type='submit' name='postBtn' value='btnLogin' id='btnLogin'>Login</button>"
+						+ 						"</div>"
+						+ 					"</form>"
+						+ 				"</div>"
+						+ 			"</div>"
+						+ 		"</div>"
+						+ 		"<div id='popupDiv'>"
+						+ 			"<div id='popupContent'>"
+						+ 				"<div id='popupHeader'>"
+						+ 					"<span id='close' onclick='closePopup()'>&times</span>"
+						+ 					"<h2 id='popupTitle'>Forgot your Password?</h2>"
+						+ 				"</div>"
+						+				"<form id='popupForm' method='POST'>"
+						+ 					"<div id='popupBody'>"
+						+ 						"<div id='pInputDiv'>"
+						+ 							"<input type='email' id='changeEmail' name='changeEmail' placeholder='Email' required>"
+						//+ 							"<div id='pInputError'>Please enter your email.</div>"
+						+ 						"</div>"
+						+ 						"<p class='popupWords'>Enter your email address.</p>"
+						+ 						"<p class='popupWords'>Click the button for a new password to be sent to your email.</p>"
+						+ 					"</div>"
+						+ 					"<div id='popupFooter'>"
+						+ 						"<div id='pBtnDiv'>"
+						+ 							"<button type='submit' name='postBtn' value='popupBtn' id='popupBtn'>Change Password</button>"
 						+ 						"</div>"
 						+ 					"</div>"
 						+				"</form>"
@@ -435,7 +532,7 @@ public class LoginServlet extends HttpServlet {
 									+ 					"</div>"
 									+ 					"<div id='popupFooter'>"
 									+ 						"<div id='pBtnDiv'>"
-									+ 							"<button type='submit' name='postBtn' value='popupBtn' id='popupBtn' onclick='renewPass()'>Change Password</button>"
+									+ 							"<button type='submit' name='postBtn' value='popupBtn' id='popupBtn'>Change Password</button>"
 									+ 						"</div>"
 									+ 					"</div>"
 									+				"</form>"
@@ -513,7 +610,7 @@ public class LoginServlet extends HttpServlet {
 								+ 					"</div>"
 								+ 					"<div id='popupFooter'>"
 								+ 						"<div id='pBtnDiv'>"
-								+ 							"<button type='submit' name='postBtn' value='popupBtn' id='popupBtn' onclick='renewPass()'>Change Password</button>"
+								+ 							"<button type='submit' name='postBtn' value='popupBtn' id='popupBtn'>Change Password</button>"
 								+ 						"</div>"
 								+ 					"</div>"
 								+				"</form>"

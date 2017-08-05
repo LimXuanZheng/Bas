@@ -17,3 +17,8 @@ function renewPass() {
 		pInputError.style.display = "block";
 	}
 }
+
+function hideSnackbar() {
+	var snackbar = document.getElementById("snackbar");
+	snackbar.style.visibility = "hidden";
+}
