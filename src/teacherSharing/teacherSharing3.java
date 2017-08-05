@@ -36,6 +36,7 @@ public class teacherSharing3 extends HttpServlet {
 	private static final Logger logger = LogManager.getLogger(teacherSharing3.class.getName());
 	private String username = "Bob";
 	private String teemo = null;
+	private String location = null;
 	int teemo1 = 0;
        
     /**
@@ -50,6 +51,7 @@ public class teacherSharing3 extends HttpServlet {
     	HttpSession session = request.getSession(false);
 		if (session != null) {
 			username = (String)session.getAttribute("username");
+			location = (String)session.getAttribute("location");
 		}
 		else {
 			//response.sendRedirect("Login");
@@ -58,6 +60,7 @@ public class teacherSharing3 extends HttpServlet {
 		
 		ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
 		ThreadContext.put("Username", username);
+		ThreadContext.put("Location", location);
 		logger.debug("entered Teacher Sharing 3 page");
 		ThreadContext.clearAll();
 		
@@ -380,6 +383,7 @@ public class teacherSharing3 extends HttpServlet {
 					
 					ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
 					ThreadContext.put("Username", username);
+					ThreadContext.put("Location", location);
 					logger.debug("downloaded a file");
 					ThreadContext.clearAll();
 					

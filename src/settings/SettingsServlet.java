@@ -29,6 +29,7 @@ public class SettingsServlet extends HttpServlet {
 	private String username = "{Placeholder}";
 	String oldEmail = "oldEmail@gmail.com";
 	String oldPassword = "oldPassword";
+	String location = null;
 
     public SettingsServlet() {
         super();
@@ -38,6 +39,7 @@ public class SettingsServlet extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		if (session != null) {
 			username = (String)session.getAttribute("username");
+			location = (String)session.getAttribute("location");
 		}
 		else {
 			//response.sendRedirect("Login");
@@ -46,6 +48,7 @@ public class SettingsServlet extends HttpServlet {
 		
 		ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
 		ThreadContext.put("Username", username);
+		ThreadContext.put("Location", location);
 		logger.debug("entered Settings page");
 		ThreadContext.clearAll();
 		
@@ -191,6 +194,7 @@ public class SettingsServlet extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		if (session != null) {
 			username = (String)session.getAttribute("username");
+			location = (String)session.getAttribute("location");
 		}
 		else {
 			//response.sendRedirect("Login");
@@ -353,6 +357,7 @@ public class SettingsServlet extends HttpServlet {
 				
 				ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
 				ThreadContext.put("Username", username);
+				ThreadContext.put("Location", location);
 				logger.debug("Changed email successfully");
 				ThreadContext.clearAll();
 				
@@ -484,6 +489,7 @@ public class SettingsServlet extends HttpServlet {
 			if (oldPass.contains("<script>") && oldPass.contains("</script>")) {
 				ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
 				ThreadContext.put("Username", username);
+				ThreadContext.put("Location", location);
 				logger.debug("attempted cross-site scripting");
 				ThreadContext.clearAll();
 				
@@ -609,6 +615,7 @@ public class SettingsServlet extends HttpServlet {
 			else if (newPass.contains("<script>") && newPass.contains("</script>")) {
 				ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
 				ThreadContext.put("Username", username);
+				ThreadContext.put("Location", location);
 				logger.debug("attempted cross-site scripting");
 				ThreadContext.clearAll();
 				
@@ -734,6 +741,7 @@ public class SettingsServlet extends HttpServlet {
 			else if (confirmNewPass.contains("<script>") && confirmNewPass.contains("</script>")) {
 				ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
 				ThreadContext.put("Username", username);
+				ThreadContext.put("Location", location);
 				logger.debug("attempted cross-site scripting");
 				ThreadContext.clearAll();
 				
@@ -1246,6 +1254,7 @@ public class SettingsServlet extends HttpServlet {
 				
 				ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
 				ThreadContext.put("Username", username);
+				ThreadContext.put("Location", location);
 				logger.debug("changed password successfully");
 				ThreadContext.clearAll();
 				

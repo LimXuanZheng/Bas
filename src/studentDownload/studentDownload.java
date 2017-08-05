@@ -35,6 +35,7 @@ public class studentDownload extends HttpServlet {
 	private static final Logger logger = LogManager.getLogger(studentDownload.class.getName());
 	private String username = "Bob";
 	private String teemo = null;
+	private String location = null;
 	int teemo1 = 0;
 	
 
@@ -53,6 +54,7 @@ public class studentDownload extends HttpServlet {
 			username = (String)session.getAttribute("username");
 			teemo = (String)session.getAttribute("userID");
 			teemo1 = Integer.parseInt(teemo);
+			location = (String)session.getAttribute("location");
 		}
 		else {
 			//response.sendRedirect("Login");
@@ -61,6 +63,7 @@ public class studentDownload extends HttpServlet {
 		
 		ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
 		ThreadContext.put("Username", username);
+		ThreadContext.put("Location", location);
 		logger.debug("entered Student Download page");
 		ThreadContext.clearAll();
 		
@@ -224,6 +227,7 @@ public class studentDownload extends HttpServlet {
 					
 					ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
 					ThreadContext.put("Username", username);
+					ThreadContext.put("Location", location);
 					logger.debug("downloaded a file");
 					ThreadContext.clearAll();
 					

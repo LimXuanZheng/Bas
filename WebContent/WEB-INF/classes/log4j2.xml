@@ -3,12 +3,12 @@
   <Appenders>
 <File name="MyFile" filename="C:\Users\serwe\Documents\GitHub\purplebackup\AuditLog.log">
       <PatternLayout>
-        <Pattern>%d{yyyy/MM/dd hh:mm a};%X{IP};%X{Username};%m%n</Pattern>
+        <Pattern>%d{yyyy/MM/dd hh:mm a};%X{IP};%X{Location};%X{Username};%m%n</Pattern>
       </PatternLayout>
     </File>
     <Console name="Console" target="SYSTEM_OUT">
   		<PatternLayout>
-  			<Pattern>%d{yyyy/MM/dd hh:mm a};%X{IP};%X{Username};%m%n</Pattern>
+  			<Pattern>%d{yyyy/MM/dd hh:mm a};%X{IP};%X{Location};%X{Username};%m%n</Pattern>
   		</PatternLayout>
   	</Console>
   </Appenders>

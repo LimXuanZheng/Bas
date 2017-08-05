@@ -2,6 +2,7 @@ package homePage;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.InetAddress;
 import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
 import java.security.PrivateKey;
@@ -16,12 +17,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.ThreadContext;
 import org.json.simple.parser.ParseException;
 
 import com.maxmind.geoip2.exception.GeoIp2Exception;
 
 import database.DatabaseAccess;
 import database.model.User;
+import directory.Directory;
 import geoIP.CheckIP;
 import messaging.GenerationOfKey;
 import messaging.ReceiveMessage;
@@ -34,11 +39,13 @@ import messaging.ReceiveMessage;
 public class Home extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private ArrayList<String> boxes = new ArrayList<String>();
+	private static final Logger logger = LogManager.getLogger(Home.class.getName());
 	private static String username = "Bob";
 	public static String userID = null;
 	public String toUser1 = "13";
 	public String whetherToShowTheUserOrNot1 = null;
 	public String userClicked1 = null;
+	private String location = null;
 	
     public Home() {
         super();
@@ -74,11 +81,19 @@ public class Home extends HttpServlet {
 				toUser1 = (String)session.getAttribute("toUser");
 				whetherToShowTheUserOrNot1 = (String)session.getAttribute("whetherToShowTheUserOrNot");
 				userClicked1 = (String)session.getAttribute("userClicked");
+				location = (String)session.getAttribute("location");
 			}
 			else {
 				response.sendRedirect("Login");
 				System.out.println("Session not created - redirect to login");
 			}
+			
+			ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
+			ThreadContext.put("Username", username);
+			ThreadContext.put("Location", location);
+			logger.debug("entered Directory page");
+			ThreadContext.clearAll();
+			
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {

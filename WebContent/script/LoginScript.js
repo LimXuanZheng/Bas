@@ -1,7 +1,7 @@
-function hello123(){
+function getLocation(){
 	if (navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(function(position) {
-			document.getElementById("latlongLocation").value = "Lat: " + position.coords.latitude + "Long: " + position.coords.longitude
+			document.getElementById("latlongLocation").value = "Lat: " + position.coords.latitude + ", Long: " + position.coords.longitude;
 		});
 	}
 }

@@ -32,10 +32,23 @@ public class Directory extends HttpServlet{
 	private static final Logger logger = LogManager.getLogger(Directory.class.getName());
     private static String username = "Bob";
     private static String userID = "13";
+    private String location = null;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession(false);
+		if (session != null) {
+			username = (String)session.getAttribute("username");
+			userID = (String)session.getAttribute("userID");
+			location = (String)session.getAttribute("location");
+		}
+		else {
+			//response.sendRedirect("Login");
+			System.out.println("Session not created - redirect to login");
+		}
+		
 		ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
 		ThreadContext.put("Username", username);
+		ThreadContext.put("Location", location);
 		logger.debug("entered Directory page");
 		ThreadContext.clearAll();
 		
@@ -49,15 +62,7 @@ public class Directory extends HttpServlet{
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		HttpSession session = request.getSession(false);
-		if (session != null) {
-			username = (String)session.getAttribute("username");
-			userID = (String)session.getAttribute("userID");
-		}
-		else {
-			//response.sendRedirect("Login");
-			System.out.println("Session not created - redirect to login");
-		}
+		
 		ArrayList<UserAll> userAllArray = new ArrayList<UserAll>();
 		try {
 			DatabaseAccess dba = new DatabaseAccess(1);
@@ -201,6 +206,7 @@ public class Directory extends HttpServlet{
 				
 				ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
 				ThreadContext.put("Username", username);
+				ThreadContext.put("Location", location);
 				logger.debug("searched for: " + name);
 				ThreadContext.clearAll();
 				

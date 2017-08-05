@@ -37,6 +37,7 @@ public class LoginServlet extends HttpServlet {
 	private static final Logger logger = LogManager.getLogger(LoginServlet.class.getName());
 	private String username = "Bob";
 	String userID = null;
+	String location = null;
        
     public LoginServlet() {
         super();
@@ -75,6 +76,7 @@ public class LoginServlet extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		if (session != null) {
 			username = (String)session.getAttribute("username");
+			location = (String)session.getAttribute("location");
 		}
 		else {
 			//response.sendRedirect("Login");
@@ -84,8 +86,10 @@ public class LoginServlet extends HttpServlet {
 		if (previousURL != null) {
 			ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
 			ThreadContext.put("Username", username);
+			ThreadContext.put("Location", location);
 			logger.debug("logged out successfully");
 			ThreadContext.clearAll();
+			session.invalidate();
 		}
 		
 		try {
@@ -108,10 +112,10 @@ public class LoginServlet extends HttpServlet {
 				+ 		"<meta charset='UTF-8'>"
 				+ 		"<link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>"
 				+ 		"<link rel='stylesheet' href='css/Login.css'>"
-				+ 		"<script src='script/Login.js'></script>"
+				+ 		"<script src='script/LoginScript.js'></script>"
 				+ 		"<title>Login</title>"
 				+ 	"</head>"
-				+ 	"<body onload='hello123()'>"
+				+ 	"<body onload='getLocation()'>"
 				+ 		"<div id='theDiv'>"
 				+ 			"<div id='aDiv'>"
 				+ 				"<div id='bDiv'>"
@@ -185,13 +189,13 @@ public class LoginServlet extends HttpServlet {
 		String postBtn = request.getParameter("postBtn");
 		String latlongLocation = request.getParameter("latlongLocation");
 		LoginModel LM = new LoginModel();
-		System.out.println("LatLong: " + latlongLocation);
-		/*
+		String location = latlongLocation;
+		
 		ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
 		ThreadContext.put("Username", username);
 		logger.debug("latlongLocation");
 		ThreadContext.clearAll();
-		*/
+		
 		if (postBtn == null) {
 			System.out.println("Button not clicked");
 		}
@@ -207,8 +211,10 @@ public class LoginServlet extends HttpServlet {
 			//Update the newly generated salt and hashed password to database given the email entered
 			try {
 				DatabaseAccess dBA = new DatabaseAccess(1);
-				String sqlLine1 = "UPDATE Login INNER JOIN User ON Login.UserID = User.UserID SET Login.salt = \"" + newSaltStr + "\" WHERE User.email = \"" + receipientEmail + "\";";
-				String sqlLine2 = "UPDATE Login INNER JOIN User ON Login.UserID = User.UserID SET Login.password = \"" + resetHashedPassword + "\" WHERE User.email = \"" + receipientEmail + "\";";
+				String sqlLine1 = "UPDATE Login SET Login.salt = \"" + newSaltStr + "\" WHERE userID = (SELECT UserId FROM User WHERE User.email = \"" + receipientEmail + "\");";
+				//String sqlLine1 = "UPDATE Login INNER JOIN User ON Login.UserID = User.UserID SET Login.salt = \"" + newSaltStr + "\" WHERE User.email = \"" + receipientEmail + "\";";
+				String sqlLine2 = "UPDATE Login SET Login.password = \"" + resetHashedPassword + "\" WHERE userID = (SELECT UserId FROM User WHERE User.email = \"" + receipientEmail + "\");";
+				//String sqlLine2 = "UPDATE Login INNER JOIN User ON Login.UserID = User.UserID SET Login.password = \"" + resetHashedPassword + "\" WHERE User.email = \"" + receipientEmail + "\";";
 				ResultSet rs1 = dBA.getDatabaseData(sqlLine1);
 				rs1.next();
 				ResultSet rs2 = dBA.getDatabaseData(sqlLine2);
@@ -235,7 +241,7 @@ public class LoginServlet extends HttpServlet {
 					+ 			"#snackbar { min-width: 250px; margin-left: -130px; background-color: #333; color: #FFF; text-align: center; border-radius: 2px; padding: 16px; position: fixed; z-index: 1; left: 50%; bottom: 30px; font-size: 17px; }"
 					+ 		"</style>"
 					+ 	"</head>"
-					+ 	"<body>"
+					+ 	"<body onload='getLocation()'>"
 					+ 		"<div id='theDiv'>"
 					+ 			"<div id='aDiv'>"
 					+ 				"<div id='bDiv'>"
@@ -269,7 +275,7 @@ public class LoginServlet extends HttpServlet {
 					+ 							"<span id='forPass' onclick='showPopup()'>Forgot your Password?</span>"
 					+ 							"<button type='submit' name='postBtn' value='btnLogin' id='btnLogin'>Login</button>"
 					+ 						"</div>"
-					+						"<input type='hidden' id='latlongLocation'>"
+					+						"<input type='hidden' id='latlongLocation' name='latlongLocation'>"
 					+ 					"</form>"
 					+ 				"</div>"
 					+ 			"</div>"
@@ -310,6 +316,7 @@ public class LoginServlet extends HttpServlet {
 				System.out.println("Attempted cross-site scripting");
 				ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
 				ThreadContext.put("Username", username);
+				ThreadContext.put("Location", location);
 				logger.debug("Attempted cross-site scripting");
 				ThreadContext.clearAll();
 				
@@ -323,7 +330,7 @@ public class LoginServlet extends HttpServlet {
 						+ 		"<script src='script/Login.js'></script>"
 						+ 		"<title>Login</title>"
 						+ 	"</head>"
-						+ 	"<body>"
+						+ 	"<body onload='getLocation()'>"
 						+ 		"<div id='theDiv'>"
 						+ 			"<div id='aDiv'>"
 						+				"<div id='bDiv'>"
@@ -358,7 +365,7 @@ public class LoginServlet extends HttpServlet {
 						+ 							"<span id='forPass' onclick='showPopup()'>Forgot your Password?</span>"
 						+ 							"<button type='submit' name='postBtn' value='btnLogin' id='btnLogin'>Login</button>"
 						+ 						"</div>"
-						+						"<input type='hidden' id='latlongLocation'>"
+						+						"<input type='hidden' id='latlongLocation' name='latlongLocation'>"
 						+ 					"</form>"
 						+ 				"</div>"
 						+ 			"</div>"
@@ -394,6 +401,7 @@ public class LoginServlet extends HttpServlet {
 				System.out.println("Attempted cross-site scripting");
 				ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
 				ThreadContext.put("Username", username);
+				ThreadContext.put("Location", location);
 				logger.debug("Attempted cross-site scripting");
 				ThreadContext.clearAll();
 				
@@ -407,7 +415,7 @@ public class LoginServlet extends HttpServlet {
 						+ 		"<script src='script/Login.js'></script>"
 						+ 		"<title>Login</title>"
 						+ 	"</head>"
-						+ 	"<body>"
+						+ 	"<body onload='getLocation()'>"
 						+ 		"<div id='theDiv'>"
 						+ 			"<div id='aDiv'>"
 						+ 				"<div id='bDiv'>"
@@ -442,7 +450,7 @@ public class LoginServlet extends HttpServlet {
 						+ 							"<span id='forPass' onclick='showPopup()'>Forgot your Password?</span>"
 						+ 							"<button type='submit' name='postBtn' value='btnLogin' id='btnLogin'>Login</button>"
 						+ 						"</div>"
-						+						"<input type='hidden' id='latlongLocation'>"
+						+						"<input type='hidden' id='latlongLocation' name='latlongLocation'>"
 						+ 					"</form>"
 						+ 				"</div>"
 						+ 			"</div>"
@@ -496,10 +504,12 @@ public class LoginServlet extends HttpServlet {
 							HttpSession session = request.getSession();
 							session.setAttribute("username", username);
 							session.setAttribute("userID", userID);
+							session.setAttribute("location", location);
 							response.sendRedirect("Home");
 							
 							ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
 							ThreadContext.put("Username", username);
+							ThreadContext.put("Location", location);
 							logger.debug("logged in successfully");
 							ThreadContext.clearAll();
 						}
@@ -515,7 +525,7 @@ public class LoginServlet extends HttpServlet {
 									+ 		"<script src='script/Login.js'></script>"
 									+ 		"<title>Login</title>"
 									+ 	"</head>"
-									+ 	"<body>"
+									+ 	"<body onload='getLocation()'>"
 									+ 		"<div id='theDiv'>"
 									+ 			"<div id='aDiv'>"
 									+ 				"<div id='bDiv'>"
@@ -550,7 +560,7 @@ public class LoginServlet extends HttpServlet {
 									+ 							"<span id='forPass' onclick='showPopup()'>Forgot your Password?</span>"
 									+ 							"<button type='submit' name='postBtn' value='btnLogin' id='btnLogin'>Login</button>"
 									+ 						"</div>"
-									+						"<input type='hidden' id='latlongLocation'>"
+									+						"<input type='hidden' id='latlongLocation' name='latlongLocation'>"
 									+ 					"</form>"
 									+ 				"</div>"
 									+ 			"</div>"
@@ -594,7 +604,7 @@ public class LoginServlet extends HttpServlet {
 								+ 		"<script src='script/Login.js'></script>"
 								+ 		"<title>Login</title>"
 								+ 	"</head>"
-								+ 	"<body>"
+								+ 	"<body onload='getLocation()'>"
 								+ 		"<div id='theDiv'>"
 								+ 			"<div id='aDiv'>"
 								+				"<div id='bDiv'>"
@@ -629,7 +639,7 @@ public class LoginServlet extends HttpServlet {
 								+ 							"<span id='forPass' onclick='showPopup()'>Forgot your Password?</span>"
 								+ 							"<button type='submit' name='postBtn' value='btnLogin' id='btnLogin'>Login</button>"
 								+ 						"</div>"
-								+						"<input type='hidden' id='latlongLocation'>"
+								+						"<input type='hidden' id='latlongLocation' name='latlongLocation'>"
 								+ 					"</form>"
 								+ 				"</div>"
 								+ 			"</div>"

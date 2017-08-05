@@ -42,6 +42,7 @@ public class teacherSharing extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final Logger logger = LogManager.getLogger(teacherSharing.class.getName());
 	private String username = "Bob";
+	private String location = null;
 
 	private String filepathes;
 	/**
@@ -56,6 +57,7 @@ public class teacherSharing extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		if (session != null) {
 			username = (String)session.getAttribute("username");
+			location = (String)session.getAttribute("location");
 		}
 		else {
 			//response.sendRedirect("Login");
@@ -64,6 +66,7 @@ public class teacherSharing extends HttpServlet {
 		
 		ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
 		ThreadContext.put("Username", username);
+		ThreadContext.put("Location", location);
 		logger.debug("entered Teacher Sharing page");
 		ThreadContext.clearAll();
 		
@@ -384,6 +387,7 @@ public class teacherSharing extends HttpServlet {
 					
 					ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
 					ThreadContext.put("Username", username);
+					ThreadContext.put("Location", location);
 					logger.debug("downloaded a file");
 					ThreadContext.clearAll();
 				

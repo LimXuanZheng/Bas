@@ -36,6 +36,7 @@ public class teacherUpload extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final Logger logger = LogManager.getLogger(teacherUpload.class.getName());
 	private String username = "Bob";
+	private String location = null;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -52,6 +53,7 @@ public class teacherUpload extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		if (session != null) {
 			username = (String)session.getAttribute("username");
+			location = (String)session.getAttribute("location");
 		}
 		else {
 			//response.sendRedirect("Login");
@@ -60,6 +62,7 @@ public class teacherUpload extends HttpServlet {
 		
 		ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
 		ThreadContext.put("Username", username);
+		ThreadContext.put("Location", location);
 		logger.debug("entered Teacher Upload page");
 		ThreadContext.clearAll();
 		
@@ -217,6 +220,7 @@ public class teacherUpload extends HttpServlet {
 			
 			ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
 			ThreadContext.put("Username", username);
+			ThreadContext.put("Location", location);
 			logger.debug("uploaded file");
 			ThreadContext.clearAll();
 			
