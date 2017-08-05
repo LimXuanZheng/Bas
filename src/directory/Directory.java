@@ -30,8 +30,8 @@ import login.LoginServlet;
 public class Directory extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 	private static final Logger logger = LogManager.getLogger(Directory.class.getName());
-    private int userType = 1;
     private static String username = "Bob";
+    private static String userID = "13";
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
@@ -42,20 +42,17 @@ public class Directory extends HttpServlet{
 		try {
 			CheckIP checkIP = new CheckIP(request);
 			checkIP.redirect(response);
-			checkIP.getLocation();
-			checkIP.showLocationOnGoogle(response);
+			//checkIP.getLocation();
+			//checkIP.showLocationOnGoogle(response);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
-			e.printStackTrace();
-		} catch (GeoIp2Exception e) {
-			e.printStackTrace();
-		} catch (ParseException e) {
 			e.printStackTrace();
 		}
 		HttpSession session = request.getSession(false);
 		if (session != null) {
 			username = (String)session.getAttribute("username");
+			userID = (String)session.getAttribute("userID");
 		}
 		else {
 			//response.sendRedirect("Login");
@@ -63,7 +60,7 @@ public class Directory extends HttpServlet{
 		}
 		ArrayList<UserAll> userAllArray = new ArrayList<UserAll>();
 		try {
-			DatabaseAccess dba = new DatabaseAccess(userType);
+			DatabaseAccess dba = new DatabaseAccess(1);
 			userAllArray = dba.getDatabaseUserAll();
 			
 			response.setContentType("text/html;charset=UTF-8");
@@ -116,20 +113,6 @@ public class Directory extends HttpServlet{
 	    			+ 				"<div class='container-fluid' id='Left-Container'>"
 	    			+ 					"<form action='Directory' method='POST'>"
 	    			+ 						"<input type='text' name='search' id='searchBox' placeholder='Name'>"
-	    			+ 						"<select name='class'>"
-	    			+ 							"<option value='1E1'>1E1</option>"
-	    			+ 							"<option value='1E2'>1E2</option>"
-	    			+ 							"<option value='1E3'>1E3</option>"
-	    			+ 							"<option value='1E4'>1E4</option>"
-	    			+ 							"<option value='1E5'>1E5</option>"
-	    			+ 						"</select>"
-	    			+ 						"<select name='subject'>"
-	    			+ 							"<option value='English'>English</option>"
-	    			+ 							"<option value='Chinese'>Chinese</option>"
-	    			+ 							"<option value='Science'>Science</option>"
-	    			+ 							"<option value='Math'>Math</option>"
-	    			+ 							"<option value='Art'>Art</option>"
-	    			+ 						"</select>"
 	    			+ 						"<input type='submit' name='submit'>"
 	    			+ 					"</form>"
 	    			+ 				"</div>"
@@ -138,7 +121,7 @@ public class Directory extends HttpServlet{
 	    			+ 						"<thead>"
 	    			+ 							"<tr>");
 	    	
-	    			if(userType == 1){
+	    			if(Integer.parseInt(userID) <= 10){
 	    				out.println(
 	    						"<th><p>Name</p></th>"
 	    						+ "<th><p>Gender</p></th>"
@@ -156,7 +139,7 @@ public class Directory extends HttpServlet{
 	    					}
 	    				}
 	    			}
-	    			else if(userType == 2){
+	    			else if(Integer.parseInt(userID) > 10){
 	    				out.println(
 	    						"<th><p>NRIC</p></th>"
 	    						+ "<th><p>Name</p></th>"
@@ -170,7 +153,7 @@ public class Directory extends HttpServlet{
 	    		    			+ 		"<tbody>");
 	    				
 	    				for(UserAll u:userAllArray){
-    						out.println("<tr><td>" + u.getUser().getnRIC() + "</td><td>" + u.getUser().getName() + "</td><td>" + u.getUser().getGender() + "</td><td>" + u.getUser().getSchoolClass() + "</td><td>" + u.getUser().getContactNo() + "</td><td>" + u.getUser().getEmail() + "</td><td>" + u.getTeacher().getDepartment() + "</td></tr>");
+    						out.println("<tr><td>" + u.getUser().getnRIC() + "</td><td>" + u.getUser().getName() + "</td><td>" + u.getUser().getGender() + "</td><td>" + u.getUser().getSchoolClass() + "</td><td>" + u.getUser().getContactNo() + "</td><td>" + u.getUser().getEmail() + "</td><td>" + u.getStudent().getcCA() + "</td></tr>");
 	    				}
 	    			}
 	    	
@@ -209,7 +192,7 @@ public class Directory extends HttpServlet{
     	
     	ArrayList<UserAll> userAllArray = new ArrayList<UserAll>();
     	try {
-			DatabaseAccess dba = new DatabaseAccess(userType);
+			DatabaseAccess dba = new DatabaseAccess(1);
 			//userAllArray = dba.getDatabaseUserAll();
 			
 			String sqlline = "SELECT User.UserID, Login.Username, Login.Password, Login.Salt, User.NRIC, User.Name, User.Gender, User.DOB, User.ContactNo, User.Email, User.Class, User.Address, User.Keys, Student.CCA, Teacher.TeacherID, Teacher.Department FROM User LEFT OUTER JOIN Login ON (User.UserID = Login.UserID) LEFT OUTER JOIN Student ON (User.UserID = Student.UserID) LEFT OUTER JOIN Teacher ON (User.UserID = Teacher.UserID) WHERE User.Name LIKE ?;"; //Testing Search Name (It's Working)
@@ -275,33 +258,44 @@ public class Directory extends HttpServlet{
 	    			+ "<div class='container-fluid' id='Right-Container'>"
 	    			+ "<table class='table table-striped'>"
 	    			+ "<thead>"
-	    			+ "<tr>"
-	    			+ "<th><p>UserID</p></th>"
-	    			+ "<th><p>Username</p></th>"
-	    			+ "<th><p>Password</p></th>"
-	    			+ "<th><p>Name</p></th>"
+	    			+ "<tr>");
+	    	
+	    	if(Integer.parseInt(userID) <= 10){
+	    		out.println(
+	    			 "<th><p>Name</p></th>"
 	    			+ "<th><p>Gender</p></th>"
 	    			+ "<th><p>Date Of Birth</p></th>"
 	    			+ "<th><p>Contact Number</p></th>"
 	    			+ "<th><p>Email</p></th>"
 	    			+ "<th><p>Class</p></th>"
-	    			+ "<th><p>Address</p></th>"
-	    			+ "<th><p>NRIC</p></th>"
-	    			+ "<th><p>CCA</p></th>"
-	    			+ "<th><p>TeacherID</p></th>"
-	    			+ "<th><p>Department</p></th>"
-	    			+ "</tr>"
+	    			+ "<th><p>Department</p></th>");
+	    	}else if(Integer.parseInt(userID) > 10){
+	    		out.println("<th><p>Name</p></th>"
+		    			+ "<th><p>Gender</p></th>"
+		    			+ "<th><p>Date Of Birth</p></th>"
+		    			+ "<th><p>Contact Number</p></th>"
+		    			+ "<th><p>Email</p></th>"
+		    			+ "<th><p>Class</p></th>"
+		    			+ "<th><p>Address</p></th>"
+		    			+ "<th><p>NRIC</p></th>"
+		    			+ "<th><p>CCA</p></th>");
+	    	}
+	    	
+	    	out.println(
+	    			 "</tr>"
 	    			+ "</thead>"
 	    			+ "<tbody>");
 	    	
 			for(UserAll u:userAllArray){
-				if(userType == 1){
+				if(Integer.parseInt(userID) <= 10){
 		    		if(u.getTeacher().getTeacherID() > 0){ //Only shows if it is teacher...
-		    			out.println("<tr><td>" + u.getUser().getUserID() + "</td><td>" + u.getLogin().getUsername() + "</td><td>" + u.getLogin().getPassword() + "</td><td>" + u.getUser().getnRIC() + "</td><td>" + u.getUser().getName() + "</td><td>" + u.getUser().getGender() + "</td><td>" + u.getUser().getdOB() + "</td><td>" + u.getUser().getContactNo() + "</td><td>" + u.getUser().getEmail() + "</td><td>" + u.getUser().getSchoolClass() + "</td><td>" + u.getUser().getAddress() + "</td><td>" + u.getStudent().getcCA() + "</td><td>" + u.getTeacher().getTeacherID() + "</td><td>" + u.getTeacher().getDepartment() + "</td></tr>");
+		    			out.println("<tr><td>" + u.getUser().getName() + "</td><td>" + u.getUser().getGender() + "</td><td>" + u.getUser().getdOB() + "</td><td>" + u.getUser().getContactNo() + "</td><td>" + u.getUser().getEmail() + "</td><td>" + u.getUser().getSchoolClass() + "</td><td>" + u.getTeacher().getDepartment() + "</td></tr>");
+		    			//out.println("<tr><td>" + u.getUser().getUserID() + "</td><td>" + u.getLogin().getUsername() + "</td><td>" + u.getLogin().getPassword() + "</td><td>" + u.getUser().getnRIC() + "</td><td>" + u.getUser().getName() + "</td><td>" + u.getUser().getGender() + "</td><td>" + u.getUser().getdOB() + "</td><td>" + u.getUser().getContactNo() + "</td><td>" + u.getUser().getEmail() + "</td><td>" + u.getUser().getSchoolClass() + "</td><td>" + u.getUser().getAddress() + "</td><td>" + u.getStudent().getcCA() + "</td><td>" + u.getTeacher().getTeacherID() + "</td><td>" + u.getTeacher().getDepartment() + "</td></tr>");
 		    		}
 		    	}
-				else if(userType == 2){
-					out.println("<tr><td>" + u.getUser().getUserID() + "</td><td>" + u.getLogin().getUsername() + "</td><td>" + u.getLogin().getPassword() + "</td><td>" + u.getUser().getnRIC() + "</td><td>" + u.getUser().getName() + "</td><td>" + u.getUser().getGender() + "</td><td>" + u.getUser().getdOB() + "</td><td>" + u.getUser().getContactNo() + "</td><td>" + u.getUser().getEmail() + "</td><td>" + u.getUser().getSchoolClass() + "</td><td>" + u.getUser().getAddress() + "</td><td>" + u.getStudent().getcCA() + "</td><td>" + u.getTeacher().getTeacherID() + "</td><td>" + u.getTeacher().getDepartment() + "</td></tr>");
+				else if(Integer.parseInt(userID) > 10){
+					out.println("<tr><td>" + u.getUser().getName() + "</td><td>" + u.getUser().getGender() + "</td><td>" + u.getUser().getdOB() + "</td><td>" + u.getUser().getContactNo() + "</td><td>" + u.getUser().getEmail() + "</td><td>" + u.getUser().getSchoolClass() + "</td><td>" + u.getUser().getAddress() + "</td><td>" + u.getUser().getnRIC() + "</td><td>" + u.getStudent().getcCA() + "</td></tr>");
+					//out.println("<tr><td>" + u.getUser().getUserID() + "</td><td>" + u.getLogin().getUsername() + "</td><td>" + u.getLogin().getPassword() + "</td><td>" + u.getUser().getnRIC() + "</td><td>" + u.getUser().getName() + "</td><td>" + u.getUser().getGender() + "</td><td>" + u.getUser().getdOB() + "</td><td>" + u.getUser().getContactNo() + "</td><td>" + u.getUser().getEmail() + "</td><td>" + u.getUser().getSchoolClass() + "</td><td>" + u.getUser().getAddress() + "</td><td>" + u.getStudent().getcCA() + "</td><td>" + u.getTeacher().getTeacherID() + "</td><td>" + u.getTeacher().getDepartment() + "</td></tr>");
 				}
 			}
 			

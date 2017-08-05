@@ -48,7 +48,7 @@ public class CheckIP {
 
 	public void redirect(HttpServletResponse response) throws IOException, ClassNotFoundException, SQLException{
 		if(check()){
-			response.sendRedirect("Error403");
+			response.sendRedirect("html/Error403Page.html");
 		}
 	}
 
