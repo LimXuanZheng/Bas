@@ -111,15 +111,20 @@ public class teacherUpload extends HttpServlet {
 		
 		jjj.add(foldd);
 		String gf = "";
-		for(String dssd:jjj){
-			gf += dssd + ";";
+		for(int i = 0; i < jjj.size(); i++){
+		  if(i == 0){
+		    gf += jjj.get(i);
+		  }
+		  else{
+			    gf += ";" + jjj.get(i);
+			}
 		}
 		try {
 			DatabaseAccess dbms = new DatabaseAccess(1);
 			ArrayList<User> fdd = dbms.getDatabaseUser();
 			for(User aa:fdd){
 				if(aa.getUserID() == teemo1){
-					String sqlline = "UPDATE USER SET folder = " + gf + " WHERE UserID = " + teemo1 ;
+					String sqlline = "UPDATE User SET folder = \"" + gf + "\" WHERE UserID = " + teemo1;
 					dbms.updateDatabaseData(sqlline);
 				}
 			}

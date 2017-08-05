@@ -35,6 +35,7 @@ public class testttt extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
+		String gf = "hi";
 		ArrayList<String> haha = new ArrayList<String>();
 		ArrayList<UserAll> alluser1 = new ArrayList<UserAll>();
 		ArrayList<database.model.File> fileArray = new ArrayList<database.model.File>();
@@ -54,11 +55,16 @@ public class testttt extends HttpServlet {
 			System.out.println(f.getShareType());
 			System.out.println(f.getRecipient());
 		}
-		for(UserAll h:alluser1){
-			if(h.getUser().getUserID() == 13){
-				System.out.println(h.getUser().getnRIC());
+		for(UserAll gg:alluser1){
+			if(gg.getUser().getUserID() == 13){
+				haha = gg.getUser().getArrayFolder();
 			}
 		}
+		for(String q:haha){
+			System.out.println(q);
+		}
+		
+		
 		out.println("hello");
 	}
 
