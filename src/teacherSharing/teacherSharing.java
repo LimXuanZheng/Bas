@@ -376,18 +376,17 @@ public class teacherSharing extends HttpServlet {
 					out.write(i);   
 					}   
 					stream.close();   
-<<<<<<< HEAD
+
 					out.close();   
 					fos.close();
-=======
+
 					out.close();
 					
 					ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
 					ThreadContext.put("Username", username);
 					logger.debug("downloaded a file");
 					ThreadContext.clearAll();
-					
->>>>>>> origin/master
+				
 					}  
 					//byte[] bytesArray = new byte[(int) decryptedFile.length()];
 					//response.getOutputStream().write(bytesArray);

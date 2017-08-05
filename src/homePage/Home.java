@@ -171,7 +171,7 @@ public class Home extends HttpServlet {
 					out.print("onclick=\"location.href='beforesubmission'\" style=\"cursor: pointer;\"");
 					break;
 				case "Student Materials":
-					out.print("onclick=\"location.href='html/studentDownload.html'\" style=\"cursor: pointer;\"");
+					out.print("onclick=\"location.href='studentdownload'\" style=\"cursor: pointer;\"");
 					break;
 			}
 			out.print(">"

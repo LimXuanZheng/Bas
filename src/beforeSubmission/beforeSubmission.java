@@ -29,6 +29,7 @@ public class beforeSubmission extends HttpServlet {
 	private static final Logger logger = LogManager.getLogger(beforeSubmission.class.getName());
 	private String username = "Bob";
 	private String teemo = null; //Here
+	int teemo1 = 0;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -45,6 +46,7 @@ public class beforeSubmission extends HttpServlet {
 		if (session != null) {
 			username = (String)session.getAttribute("username");
 			teemo = (String)session.getAttribute("userID"); //Here 
+			teemo1 = Integer.parseInt(teemo);
 		}
 		else {
 			//response.sendRedirect("Login");
@@ -117,7 +119,7 @@ public class beforeSubmission extends HttpServlet {
 
 		for(database.model.File f: fileArray){
 			for(String hai : f.convertRecipient()){
-				if(hai.equals("13")){
+				if(hai.equals(teemo)){
 					out.println("<div class='centralized'>"
 							+ "<p class='title' onclick=\"location.href='html/StudentUpload.html'\" style='cursor:pointer;'><img src='images/checklist.gif'>" + f.getFileName() + "</p></a>"
 							+	"<p class='comments'>Submit your work here, home?</p>"

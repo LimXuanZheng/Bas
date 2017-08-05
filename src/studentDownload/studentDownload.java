@@ -34,6 +34,10 @@ public class studentDownload extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final Logger logger = LogManager.getLogger(studentDownload.class.getName());
 	private String username = "Bob";
+	private String teemo = null;
+	int teemo1 = 0;
+	
+
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -47,6 +51,8 @@ public class studentDownload extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		if (session != null) {
 			username = (String)session.getAttribute("username");
+			teemo = (String)session.getAttribute("userID");
+			teemo1 = Integer.parseInt(teemo);
 		}
 		else {
 			//response.sendRedirect("Login");
@@ -63,7 +69,7 @@ public class studentDownload extends HttpServlet {
 		String key1 = "nhibgu";
 		try {
 			DatabaseAccess dbms = new DatabaseAccess(1);
-			String query = "SELECT User.Keys FROM User WHERE UserID = 13;";
+			String query = "SELECT User.Keys FROM User WHERE UserID = " + teemo1 + ";";
 			ResultSet rs = dbms.getDatabaseData(query);
 			while(rs.next()){
 				key1 = rs.getString("Keys");
@@ -138,7 +144,7 @@ public class studentDownload extends HttpServlet {
 						+			"<form id='downloadfile1' action='studentdownload' method='post'>");
 		for(database.model.File f: fileArray){
 			for(String hai : f.convertRecipient()){
-				if(hai.equals("13")){
+				if(hai.equals(Integer.toString(teemo1))){
 					out.println(
 											"<div class='whole'>"
 							+				"<p style='font-size:60px; background-color:#FFA07A;'>Exam Papers</p>"
@@ -163,7 +169,7 @@ public class studentDownload extends HttpServlet {
 		String key1 = "nhibgu";
 		try {
 			DatabaseAccess dbms = new DatabaseAccess(1);
-			String query = "SELECT User.Keys FROM User WHERE UserID = 13;";
+			String query = "SELECT User.Keys FROM User WHERE UserID = " + teemo1 + ";";
 			ResultSet rs = dbms.getDatabaseData(query);
 			while(rs.next()){
 				key1 = rs.getString("Keys");
