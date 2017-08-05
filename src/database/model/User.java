@@ -1,5 +1,8 @@
 package database.model;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class User {
 	int userID;
 	String nRIC;
@@ -11,8 +14,9 @@ public class User {
 	String schoolClass;
 	String address;
 	String keys;
+	ArrayList<String> arrayFolder;//getter and setter?
 	
-	public User(int userID, String nRIC, String name, String gender, String dOB, String contactNo, String email, String schoolClass, String address, String keys) {
+	public User(int userID, String nRIC, String name, String gender, String dOB, String contactNo, String email, String schoolClass, String address, String keys, String folder) {
 		this.nRIC = nRIC;
 		this.userID = userID;
 		this.name = name;
@@ -23,6 +27,7 @@ public class User {
 		this.schoolClass = schoolClass;
 		this.address = address;
 		this.keys = keys;
+		this.arrayFolder = changeToArrayList(folder);
 	}
 	
 	public User(String nRIC, String name, String gender, String dOB, String contactNo, String email, String schoolClass, String address, String keys) {
@@ -97,8 +102,24 @@ public class User {
 	public void setKeys(String keys) {
 		this.keys = keys;
 	}
+	public ArrayList<String> getArrayFolder() {
+		return arrayFolder;
+	}
+	public void setArrayFolder(ArrayList<String> arrayFolder) {
+		this.arrayFolder = arrayFolder;
+	}
 	public void printInfo(){
 		System.out.println("UserID: " + userID + ", Name: " + name + ", Gender: " + gender + ", Date Of Birth: " + dOB + ", Contact Number: " + contactNo + ", Email: " + email + ", Class: " + schoolClass + ", Address: " + address + ", Keys: " + keys);
+	}
+	
+	private ArrayList<String> changeToArrayList(String string){
+		ArrayList<String> folderArray = new ArrayList<String>();
+		Scanner sc = new Scanner(string);
+		sc.useDelimiter(";");
+		while(sc.hasNext()){
+			folderArray.add(sc.next());
+		}
+		return folderArray;
 	}
 	
 }
