@@ -20,6 +20,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -41,6 +42,8 @@ public class upload extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final Logger logger = LogManager.getLogger(upload.class.getName());
 	private String username = "Bob";
+	private String teemo = null;
+	int teemo1 = 0;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -54,11 +57,21 @@ public class upload extends HttpServlet {
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession(false);
+		if (session != null) {
+			teemo = (String)session.getAttribute("userID");
+			teemo1 = Integer.parseInt(teemo);
+		}
+		else {
+			//response.sendRedirect("Login");
+			System.out.println("Session not created - redirect to login");
+		}
+		
 		PrintWriter out = response.getWriter();
 		String key1 = "nhibgu";
 		try {
 			DatabaseAccess dbms = new DatabaseAccess(1);
-			String query = "SELECT User.Keys FROM User WHERE UserID = 13;";
+			String query = "SELECT User.Keys FROM User WHERE UserID = " + teemo1 + ";";
 	        ResultSet rs = dbms.getDatabaseData(query);
 			while(rs.next()){
 				key1 = rs.getString("Keys");
@@ -199,7 +212,7 @@ public class upload extends HttpServlet {
         try {
                     DatabaseAccess dba = new DatabaseAccess(1);
                     String sqlline = "INSERT INTO File(UserID, FileName, Size, Data, Recipient, Date, shareType) VALUES (?, ?, ?, ?, ?, ?, ?);";
-                    dba.updateDatabaseDataFileUpload(sqlline, 13, name, f.length(), in, "13", sqlDate, 0);
+                    dba.updateDatabaseDataFileUpload(sqlline, 13, name, f.length(), in, "13", sqlDate, 2);
                     dba.close();
                     
                     ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
