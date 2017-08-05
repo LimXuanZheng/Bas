@@ -147,7 +147,7 @@ public class studentDownload extends HttpServlet {
 						+			"<form id='downloadfile1' action='studentdownload' method='post'>");
 		for(database.model.File f: fileArray){
 			for(String hai : f.convertRecipient()){
-				if(hai.equals(Integer.toString(teemo1))){
+				if(hai.equals(teemo)){
 					out.println(
 											"<div class='whole'>"
 							+				"<p style='font-size:60px; background-color:#FFA07A;'>Exam Papers</p>"

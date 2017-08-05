@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
 import java.net.InetAddress;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -36,7 +37,12 @@ public class teacherUpload extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final Logger logger = LogManager.getLogger(teacherUpload.class.getName());
 	private String username = "Bob";
+<<<<<<< HEAD
 	private String location = null;
+=======
+	private String teemo = null;
+	int teemo1 = 0;
+>>>>>>> origin/master
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -53,7 +59,12 @@ public class teacherUpload extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		if (session != null) {
 			username = (String)session.getAttribute("username");
+<<<<<<< HEAD
 			location = (String)session.getAttribute("location");
+=======
+			teemo = (String)session.getAttribute("userID");
+			teemo1 = Integer.parseInt(teemo);
+>>>>>>> origin/master
 		}
 		else {
 			//response.sendRedirect("Login");
@@ -109,15 +120,20 @@ public class teacherUpload extends HttpServlet {
 		
 		jjj.add(foldd);
 		String gf = "";
-		for(String dssd:jjj){
-			gf += dssd + ";";
+		for(int i = 0; i < jjj.size(); i++){
+		  if(i == 0){
+		    gf += jjj.get(i);
+		  }
+		  else{
+			    gf += ";" + jjj.get(i);
+			}
 		}
 		try {
 			DatabaseAccess dbms = new DatabaseAccess(1);
 			ArrayList<User> fdd = dbms.getDatabaseUser();
 			for(User aa:fdd){
-				if(aa.getUserID() == 13){
-					String sqlline = "UPDATE USER SET folder = " + gf + " WHERE UserID = " + 13 ;
+				if(aa.getUserID() == teemo1){
+					String sqlline = "UPDATE User SET folder = \"" + gf + "\" WHERE UserID = " + teemo1;
 					dbms.updateDatabaseData(sqlline);
 				}
 			}
@@ -167,7 +183,13 @@ public class teacherUpload extends HttpServlet {
 			DatabaseAccess dbms = new DatabaseAccess(1);
 			ArrayList<database.model.File> fileArray = dbms.getDatabaseFile();
 			database.model.File file1 = fileArray.get(0);
-			key1 = file1.getUser().getKeys();
+			String query = "SELECT User.Keys FROM User WHERE UserID = " + teemo1 + ";";
+			ResultSet rs = dbms.getDatabaseData(query);
+			while(rs.next()){
+				key1 = rs.getString("Keys");
+			}
+			System.out.println(key1);
+		
 		}
 		catch (ClassNotFoundException e) {
 			e.printStackTrace();
@@ -212,7 +234,7 @@ public class teacherUpload extends HttpServlet {
 
 			String sqlline = "INSERT INTO File(UserID, FileName, Size, Data, Recipient, Date, shareType) VALUES (?, ?, ?, ?, ?, ?, ?);";
 			if(allname.equals("solo")){
-				dba.updateDatabaseDataFileUpload(sqlline, 13, name, f.length(), in, "13", sqlDate, uploadway1);
+				dba.updateDatabaseDataFileUpload(sqlline, 13, name, f.length(), in, teemo, sqlDate, uploadway1);
 			}
 			else{
 				dba.updateDatabaseDataFileUpload(sqlline, 13, name, f.length(), in, line, sqlDate, uploadway1);

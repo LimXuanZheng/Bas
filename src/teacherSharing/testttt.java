@@ -35,24 +35,36 @@ public class testttt extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
-		ArrayList<String> names1 = new ArrayList<String>();
+		String gf = "hi";
+		ArrayList<String> haha = new ArrayList<String>();
+		ArrayList<UserAll> alluser1 = new ArrayList<UserAll>();
+		ArrayList<database.model.File> fileArray = new ArrayList<database.model.File>();
 		try {
 			DatabaseAccess dbms = new DatabaseAccess(1);
-			ArrayList<UserAll> alluser1 = dbms.getDatabaseUserAll();
-			for(UserAll a:alluser1){
-				System.out.println(a.getUser().getName());
+			fileArray = dbms.getDatabaseFile();
+			alluser1 = dbms.getDatabaseUserAll();
+		}
+	 catch (ClassNotFoundException e) {
+		e.printStackTrace();
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}	
+		
+		for(database.model.File f:fileArray){
+			System.out.println(f.getFileName());
+			System.out.println(f.getShareType());
+			System.out.println(f.getRecipient());
+		}
+		for(UserAll gg:alluser1){
+			if(gg.getUser().getUserID() == 13){
+				haha = gg.getUser().getArrayFolder();
 			}
-			
-
 		}
-		catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
+		for(String q:haha){
+			System.out.println(q);
 		}
-		for(String s:names1){
-			System.out.println(s);
-		}
+		
+		
 		out.println("hello");
 	}
 
