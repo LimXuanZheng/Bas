@@ -2,6 +2,7 @@ package beforeSubmission;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.InetAddress;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -12,7 +13,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.ThreadContext;
+
 import database.DatabaseAccess;
+import studentDownload.studentDownload;
 
 /**
  * Servlet implementation class beforeSubmission
@@ -20,19 +26,36 @@ import database.DatabaseAccess;
 @WebServlet("/beforesubmission")
 public class beforeSubmission extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private static final Logger logger = LogManager.getLogger(beforeSubmission.class.getName());
+	private String username = "Bob";
+	private String teemo = null; //Here
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
 	public beforeSubmission() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession(false);
+		if (session != null) {
+			username = (String)session.getAttribute("username");
+			teemo = (String)session.getAttribute("userID"); //Here 
+		}
+		else {
+			//response.sendRedirect("Login");
+			System.out.println("Session not created - redirect to login");
+		}
+		
+		ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
+		ThreadContext.put("Username", username);
+		logger.debug("entered Settings page");
+		ThreadContext.clearAll();
+		
 		PrintWriter out = response.getWriter();
 
 		ArrayList<database.model.File> fileArray = new ArrayList<database.model.File>();
@@ -48,15 +71,7 @@ public class beforeSubmission extends HttpServlet {
 		}
 
 
-		String teemo = null;
-		HttpSession session = request.getSession(false);
-		if (session != null) {
-			teemo = (String)session.getAttribute("userID");
-		}
-		else {
-			//response.sendRedirect("Login");
-			System.out.println("Session not created - redirect to login");
-		}
+		
 		out.println(
 				"<!DOCTYPE html>"
 						+ "<html>"

@@ -423,7 +423,7 @@ body {
 
 #snackbar {
     min-width: 250px;
-    margin-left: -125px;
+    margin-left: -130px;
     background-color: #333;
     color: #FFF;
     text-align: center;
@@ -434,15 +434,4 @@ body {
     left: 50%;
     bottom: 30px;
     font-size: 17px;
-}
-
-#snackBtn {
-	width: 100px;
-	border: none;
-	color: #FFEB3B;
-	background: inherit;
-}
-
-#snackBtn:focus {
-	border: none;
 }

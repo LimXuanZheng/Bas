@@ -43,6 +43,12 @@ public class SettingsServlet extends HttpServlet {
 			//response.sendRedirect("Login");
 			System.out.println("Session not created - redirect to login");
 		}
+		
+		ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
+		ThreadContext.put("Username", username);
+		logger.debug("entered Settings page");
+		ThreadContext.clearAll();
+		
 		try {
 			DatabaseAccess dBA = new DatabaseAccess(1);
 			String sqlLine = "SELECT User.Email FROM User INNER JOIN Login ON User.UserID = Login.UserID WHERE Login.Username = \"" + username + "\";";
@@ -355,8 +361,6 @@ public class SettingsServlet extends HttpServlet {
 						+ 		"<title>Settings</title>"
 						+		"<style>"
 						+ 			"#snackbar { min-width: 250px; margin-left: -175px; background-color: #333; color: #FFF; text-align: center; border-radius: 2px; padding: 16px; position: fixed; z-index: 1; left: 50%; bottom: 30px; font-size: 17px; }>"
-						+			"#snackBtn { width: 100px; border: none; color:#FFEB3B; background: inherit; }"
-						+			"#snackBtn:focus { border: none; }"
 						+ 		"</style>"
 						+ 	"</head>"
 						+ 	"<body>"
@@ -455,7 +459,7 @@ public class SettingsServlet extends HttpServlet {
 						+ 					"</div>"
 						+ 				"</div>"
 						+				"<div id='snackbar'>"
-						+					"Email changed successfully <button id='snackBtn' onclick='hideSnackbar()'>Dismiss</button>"
+						+					"Email changed successfully"
 						+				"</div>"
 						+ 			"</div>"
 						+ 		"</div>"
@@ -1235,8 +1239,6 @@ public class SettingsServlet extends HttpServlet {
 						+ 		"<title>Settings</title>"
 						+		"<style>"
 						+ 			"#snackbar { min-width: 250px; margin-left: -190px; background-color: #333; color: #FFF; text-align: center; border-radius: 2px; padding: 16px; position: fixed; z-index: 1; left: 50%; bottom: 30px; font-size: 17px; }>"
-						+			"#snackBtn { width: 100px; border: none; color: #FFEB3B; background: inherit; }"
-						+			"#snackBtn:focus { border: none; }"
 						+ 		"</style>"
 						+ 	"</head>"
 						+ 	"<body>"
@@ -1335,7 +1337,7 @@ public class SettingsServlet extends HttpServlet {
 						+ 					"</div>"
 						+ 				"</div>"
 						+				"<div id='snackbar'>"
-						+					"Password changed successfully <button id='snackBtn' onclick='hideSnackbar()'>Dismiss</button>"
+						+					"Password changed successfully"
 						+				"</div>"
 						+ 			"</div>"
 						+ 		"</div>"

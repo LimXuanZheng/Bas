@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
+import java.net.InetAddress;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -16,6 +17,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.ThreadContext;
 
 import database.DatabaseAccess;
 import database.model.User;
@@ -28,6 +34,8 @@ import fileUpload.encryption;
 @WebServlet("/teacherupload")
 public class teacherUpload extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private static final Logger logger = LogManager.getLogger(teacherUpload.class.getName());
+	private String username = "Bob";
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -41,6 +49,20 @@ public class teacherUpload extends HttpServlet {
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession(false);
+		if (session != null) {
+			username = (String)session.getAttribute("username");
+		}
+		else {
+			//response.sendRedirect("Login");
+			System.out.println("Session not created - redirect to login");
+		}
+		
+		ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
+		ThreadContext.put("Username", username);
+		logger.debug("entered Teacher Upload page");
+		ThreadContext.clearAll();
+		
 		PrintWriter out = response.getWriter();
 		ArrayList<String> jjj = new ArrayList<String>();
 		ArrayList<String> nm = new ArrayList<String>();
@@ -192,6 +214,11 @@ public class teacherUpload extends HttpServlet {
 			else{
 				dba.updateDatabaseDataFileUpload(sqlline, 13, name, f.length(), in, line, sqlDate, uploadway1);
 			}
+			
+			ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
+			ThreadContext.put("Username", username);
+			logger.debug("uploaded file");
+			ThreadContext.clearAll();
 			
 			dba.close();
 		} catch (ClassNotFoundException e) {
