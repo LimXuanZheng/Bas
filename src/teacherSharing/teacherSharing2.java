@@ -35,43 +35,37 @@ public class teacherSharing2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final Logger logger = LogManager.getLogger(teacherSharing2.class.getName());
 	private String username = "Bob";
-<<<<<<< HEAD
 	private String location = null;
-=======
 	private String teemo = null;
 	int teemo1 = 0;
->>>>>>> origin/master
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public teacherSharing2() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	HttpSession session = request.getSession(false);
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public teacherSharing2() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession(false);
 		if (session != null) {
 			username = (String)session.getAttribute("username");
-<<<<<<< HEAD
 			location = (String)session.getAttribute("location");
-=======
 			teemo = (String)session.getAttribute("userID");
 			teemo1 = Integer.parseInt(teemo);
->>>>>>> origin/master
 		}
 		else {
 			//response.sendRedirect("Login");
 			System.out.println("Session not created - redirect to login");
 		}
-		
+
 		ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
 		ThreadContext.put("Username", username);
 		ThreadContext.put("Location", location);
 		logger.debug("entered Teacher Sharing 2 page");
 		ThreadContext.clearAll();
-		
+
 		PrintWriter out = response.getWriter();
 		ArrayList<String> folder = new ArrayList<String>();
 
@@ -89,8 +83,8 @@ public class teacherSharing2 extends HttpServlet {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}	
-		
-		
+
+
 		String key1 = "nhibgu";
 		try {
 			DatabaseAccess dbms = new DatabaseAccess(1);
@@ -150,8 +144,8 @@ public class teacherSharing2 extends HttpServlet {
 				System.out.println(filename1);
 				System.out.println(filesize1);
 				System.out.println(date1);
-				
-				
+
+
 				/*
 				File tempFile = File.createTempFile(filename1, ".tmp", null);
 				FileOutputStream fos = new FileOutputStream(tempFile);
@@ -167,7 +161,7 @@ public class teacherSharing2 extends HttpServlet {
 				}
 
 
-				
+
 
 				FileInputStream hh = new FileInputStream(decryptedFile);
 				OutputStream h = response.getOutputStream();
@@ -291,19 +285,19 @@ public class teacherSharing2 extends HttpServlet {
 						+					"<button class='button' id='newbutton' onclick='createNew()'>New</button>"
 						+					"<a href='teachersharing'><button class='button' id='mybutton'>My Drive</button></a>"//onclick='displayallmy()'
 						+					"<button class='button' id='lastOne' onclick='refreshpage()'>Shared With Me</button>");
-		
-		
-		
+
+
+
 		for(String sss:folder){
 			out.println("<a href='teacherSharing3'><button class='button'>"
 					+	sss 
 					+	"</button></a>");
 		}
-		
-		
-		
+
+
+
 		out.println(
-										"</div>"
+				"</div>"
 						+				"<div class='contents' id='storeTable'>"
 						+					"<table id='displaying'>"
 						+						"<tr>"
@@ -337,10 +331,10 @@ public class teacherSharing2 extends HttpServlet {
 				+	"<input type='hidden' name='index' id='pls'></input>"
 				+	"</form>"
 				);
-				
+
 		out.println(	
 				"</body>"
-				+"</html>"
+						+"</html>"
 				);
 	}
 
@@ -366,6 +360,42 @@ public class teacherSharing2 extends HttpServlet {
 		//PrintWriter out = response.getWriter();
 		int sss = Integer.parseInt(request.getParameter("index"));
 		System.out.println(sss);
+		
+		
+
+		ArrayList<database.model.File> fa = new ArrayList<database.model.File>();
+		String hj = "";
+		try {
+			DatabaseAccess dbms = new DatabaseAccess(1);
+			fa = dbms.getDatabaseFile();
+			for(database.model.File c:fa){
+				if(c.getFileID() == sss){
+					hj = c.getUser().getKeys();
+				}
+			}
+			
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		try{
 			DatabaseAccess dbms = new DatabaseAccess(1);
 			ArrayList<database.model.File> fileArray = dbms.getDatabaseFile();
@@ -377,7 +407,7 @@ public class teacherSharing2 extends HttpServlet {
 					fos.write(d.getFileData());
 					File decryptedFile = new File("document.decrypted");
 					try {
-						decryption.decrypt(key1, tempFile, decryptedFile);
+						decryption.decrypt(hj, tempFile, decryptedFile);
 					} catch (CryptoException ex) {
 						System.out.println(ex.getMessage());
 						ex.printStackTrace();
@@ -385,13 +415,13 @@ public class teacherSharing2 extends HttpServlet {
 					}
 					/*FileInputStream hh = new FileInputStream(decryptedFile);
 			        OutputStream h = response.getOutputStream();
-			       
+
 			        byte[] test = new byte[4096];
 			        int bytesRead = -1;
 			        while ((bytesRead = hh.read(test)) != -1) {
 			                           h.write(test, 0, bytesRead);
 			                       }
-			                       */
+					 */
 					response.setContentType("text/html");
 					PrintWriter out = response.getWriter();  
 					response.setContentType("APPLICATION/OCTET-STREAM");
@@ -399,17 +429,17 @@ public class teacherSharing2 extends HttpServlet {
 					FileInputStream stream = new FileInputStream(decryptedFile);
 					int i;   
 					while ((i=stream.read()) != -1) {  
-					out.write(i);   
+						out.write(i);   
 					}   
 					stream.close();   
 					out.close();
-					
+
 					ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
 					ThreadContext.put("Username", username);
 					ThreadContext.put("Location", location);
 					logger.debug("downloaded a file");
 					ThreadContext.clearAll();
-					
+
 					//byte[] bytesArray = new byte[(int) decryptedFile.length()];
 					//response.getOutputStream().write(bytesArray);
 				}

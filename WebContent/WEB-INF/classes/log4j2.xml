@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="WARN">
   <Appenders>
+<<<<<<< HEAD
 <File name="MyFile" filename="C:\Users\serwe\Documents\GitHub\purplebackup\AuditLog.log">
+=======
+<File name="MyFile" filename="C:\Users\Wei Xuan\Documents\GitHub\purplebackup\AuditLog.log">
+>>>>>>> origin/master
       <PatternLayout>
         <Pattern>%d{yyyy/MM/dd hh:mm a};%X{IP};%X{Location};%X{Username};%m%n</Pattern>
       </PatternLayout>

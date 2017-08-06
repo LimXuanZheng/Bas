@@ -126,6 +126,7 @@ public class DatabaseAccess {
 			String folder = rs.getString("folder");
 			
 			User user = new User(userID, nRIC, name, gender, dOB, contactNo, email, schoolClass, address, keys, folder);
+			userArray.add(user);
 		}
 		
 		rs.close();
