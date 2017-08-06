@@ -162,9 +162,9 @@ public class studentDownload extends HttpServlet {
 			for(String hai : f.convertRecipient()){
 				if(hai.equals(teemo)|| hai.equals(myname)){
 					out.println(
-											"<div class='whole' style='margin-left:20px; width:80%;'>"
+											"<div class='whole' style='margin-left:20px; width:70%; background-color:lightblue;'>"
 							+				"<p style='font-size:60px; background-color:#FFA07A;'>Assignment</p>"
-							+				"<p style='width:400px;'>Attached files : <button onclick='dosth(" + f.getFileID() + ")'><img src='images/attached.png' height='2%' width='2%'>" + f.getFileName() + "</button></p>"	
+							+				"<p style='width:400px; display:inline;'>Attached files : <button onclick='dosth(" + f.getFileID() + ")' style='border:none; background-color:#C0C0C0'><img src='images/attached.png' height='2%' width='2%'>" + f.getFileName() + "</button></p>"	
 							+			"</div>"
 							);
 				}
