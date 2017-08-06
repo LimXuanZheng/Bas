@@ -22,8 +22,8 @@ public class DatabaseBackup{
 	public void backupDatabaseFile() throws IOException{
 		System.out.println("Started...");
 		String userHome = System.getProperty("user.home");
-		String cmd = "cmd.exe /c \"cd " + userHome.replace('\\', '/') + "/Documents/GitHub/Bas/\"";
-		String cmd2 = "cmd.exe /c \"mysqldump --opt -u root -p nspj_database file> nspj_databaseBackupFileOnly.sql\"";
+		String cmd = "cmd.exe /c \"cd " + userHome.replace('\\', '/') + "/Documents/GitHub/Bas/User Data\"";
+		String cmd2 = "cmd.exe /c \"mysqldump --opt -u root -p nspj_database file> nspj_UserData.sql\"";
 		String cmd3 = "cmd.exe /c \"SassyPenguin@123\"";
 		
 		Runtime rt = Runtime.getRuntime();
@@ -37,8 +37,8 @@ public class DatabaseBackup{
 	public void backupDatabase() throws IOException{
 		System.out.println("Started...");
 		String userHome = System.getProperty("user.home");
-		String cmd = "cmd.exe /c \"cd " + userHome.replace('\\', '/') + "/Documents/GitHub/Bas/\"";
-		String cmd2 = "cmd.exe /c \"mysqldump --opt -u root -p nspj_database announcement blacklist lesson login student teacher user usergroup> nspj_databaseBackup.sql\"";
+		String cmd = "cmd.exe /c \"cd " + userHome.replace('\\', '/') + "/Documents/GitHub/Bas/Cloud Files\"";
+		String cmd2 = "cmd.exe /c \"mysqldump --opt -u root -p nspj_database announcement blacklist lesson login student teacher user usergroup> nspj_CloudFiles.sql\"";
 		String cmd3 = "cmd.exe /c \"SassyPenguin@123\"";
 		
 		Runtime rt = Runtime.getRuntime();
