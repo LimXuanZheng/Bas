@@ -23,7 +23,6 @@ import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.ThreadContext;
 
 import database.DatabaseAccess;
-import database.model.User;
 import database.model.UserAll;
 import fileUpload.CryptoException;
 

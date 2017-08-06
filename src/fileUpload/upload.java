@@ -6,13 +6,11 @@ import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;
-import java.util.ArrayList;
 import java.util.Date;
 
 import javax.servlet.ServletException;
@@ -26,12 +24,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.ThreadContext;
 
-import beforeSubmission.beforeSubmission;
 import database.DatabaseAccess;
-import database.model.User;
 import fileScanning.ScanningThread;
-import fileUpload.CryptoException;
-import teacherSharing.decryption;
 
 
 /**

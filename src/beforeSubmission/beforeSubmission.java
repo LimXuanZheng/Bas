@@ -18,7 +18,6 @@ import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.ThreadContext;
 
 import database.DatabaseAccess;
-import studentDownload.studentDownload;
 
 /**
  * Servlet implementation class beforeSubmission

@@ -4,16 +4,11 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.net.InetAddress;
-import java.nio.file.Files;
-import java.sql.Blob;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -28,11 +23,8 @@ import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.ThreadContext;
 
 import database.DatabaseAccess;
-import database.model.User;
 import database.model.UserAll;
 import fileUpload.CryptoException;
-import fileUpload.encryption;
-import settings.SettingsServlet;
 
 /**
  * Servlet implementation class teacherSharing

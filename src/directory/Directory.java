@@ -16,14 +16,10 @@ import javax.servlet.http.HttpSession;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.ThreadContext;
-import org.json.simple.parser.ParseException;
-
-import com.maxmind.geoip2.exception.GeoIp2Exception;
 
 import database.DatabaseAccess;
 import database.model.UserAll;
 import geoIP.CheckIP;
-import login.LoginServlet;
 
 //If I have time I confirm going to make the out.print nicer... For the time being deal with it
 @WebServlet("/Directory")

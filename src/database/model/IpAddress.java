@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import database.model.WhiteBlackListDAO;
-
 public class IpAddress {
 	String ipAddress;
 

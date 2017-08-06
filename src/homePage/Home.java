@@ -5,7 +5,6 @@ import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
-import java.security.PrivateKey;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -20,13 +19,9 @@ import javax.servlet.http.HttpSession;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.ThreadContext;
-import org.json.simple.parser.ParseException;
-
-import com.maxmind.geoip2.exception.GeoIp2Exception;
 
 import database.DatabaseAccess;
 import database.model.User;
-import directory.Directory;
 import geoIP.CheckIP;
 import messaging.GenerationOfKey;
 import messaging.ReceiveMessage;
@@ -75,12 +70,13 @@ public class Home extends HttpServlet {
 			}
 			
 			if(Integer.parseInt(userID) <= 10){
+				boxes.clear();
 	    		boxes.add("Assignment Submission");
 	    		boxes.add("Student Materials");
 	    	}
 	    	else if(Integer.parseInt(userID) > 10){
-	    		boxes.add("Attendance");
-	    		boxes.add("Post Announcement");
+	    		boxes.clear();
+	    		boxes.add("Teacher Drive");
 	    	}else{
 	    		System.out.println("Not student nor teacher? Error");
 	    	}
@@ -184,6 +180,9 @@ public class Home extends HttpServlet {
 					break;
 				case "Student Materials":
 					out.print("onclick=\"location.href='studentdownload'\" style=\"cursor: pointer;\"");
+					break;
+				case "Teacher Drive":
+					out.print("onclick=\"location.href='teachersharing'\" style=\"cursor: pointer;\"");
 					break;
 			}
 			out.print(">"

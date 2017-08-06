@@ -24,9 +24,6 @@ import javax.servlet.http.HttpSession;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.ThreadContext;
-import org.json.simple.parser.ParseException;
-
-import com.maxmind.geoip2.exception.GeoIp2Exception;
 
 import database.DatabaseAccess;
 import geoIP.CheckIP;
@@ -213,12 +210,8 @@ public class LoginServlet extends HttpServlet {
 				DatabaseAccess dBA = new DatabaseAccess(1);
 				String sqlLine1 = "UPDATE Login SET Login.salt = \"" + newSaltStr + "\" WHERE userID = (SELECT UserId FROM User WHERE User.email = \"" + receipientEmail + "\");";
 				String sqlLine2 = "UPDATE Login SET Login.password = \"" + resetHashedPassword + "\" WHERE userID = (SELECT UserId FROM User WHERE User.email = \"" + receipientEmail + "\");";
-				ResultSet rs1 = dBA.getDatabaseData(sqlLine1);
-				rs1.next();
-				ResultSet rs2 = dBA.getDatabaseData(sqlLine2);
-				rs2.next();
-				rs2.close();
-				rs1.close();
+				dBA.updateDatabaseData(sqlLine1);
+				dBA.updateDatabaseData(sqlLine2);
 				dBA.close();
 			} catch (ClassNotFoundException e) {
 				e.printStackTrace();
@@ -233,7 +226,7 @@ public class LoginServlet extends HttpServlet {
 					+ 		"<meta charset='UTF-8'>"
 					+ 		"<link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>"
 					+ 		"<link rel='stylesheet' href='css/Login.css'>"
-					+ 		"<script src='script/Login.js'></script>"
+					+ 		"<script src='script/LoginScript.js'></script>"
 					+ 		"<title>Login</title>"
 					+		"<style>"
 					+ 			"#snackbar { min-width: 250px; margin-left: -130px; background-color: #333; color: #FFF; text-align: center; border-radius: 2px; padding: 16px; position: fixed; z-index: 1; left: 50%; bottom: 30px; font-size: 17px; }"
@@ -325,7 +318,7 @@ public class LoginServlet extends HttpServlet {
 						+ 		"<meta charset='UTF-8'>"
 						+ 		"<link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>"
 						+ 		"<link rel='stylesheet' href='css/Login.css'>"
-						+ 		"<script src='script/Login.js'></script>"
+						+ 		"<script src='script/LoginScript.js'></script>"
 						+ 		"<title>Login</title>"
 						+ 	"</head>"
 						+ 	"<body onload='getLocation()'>"
@@ -410,7 +403,7 @@ public class LoginServlet extends HttpServlet {
 						+ 		"<meta charset='UTF-8'>"
 						+ 		"<link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>"
 						+ 		"<link rel='stylesheet' href='css/Login.css'>"
-						+ 		"<script src='script/Login.js'></script>"
+						+ 		"<script src='script/LoginScript.js'></script>"
 						+ 		"<title>Login</title>"
 						+ 	"</head>"
 						+ 	"<body onload='getLocation()'>"
@@ -599,7 +592,7 @@ public class LoginServlet extends HttpServlet {
 								+ 		"<meta charset='UTF-8'>"
 								+ 		"<link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>"
 								+ 		"<link rel='stylesheet' href='css/Login.css'>"
-								+ 		"<script src='script/Login.js'></script>"
+								+ 		"<script src='script/LoginScript.js'></script>"
 								+ 		"<title>Login</title>"
 								+ 	"</head>"
 								+ 	"<body onload='getLocation()'>"

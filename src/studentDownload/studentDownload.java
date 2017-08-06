@@ -25,7 +25,6 @@ import database.DatabaseAccess;
 import database.model.UserAll;
 import fileUpload.CryptoException;
 import teacherSharing.decryption;
-import teacherSharing.teacherUpload;
 
 /**
  * Servlet implementation class studentDownload

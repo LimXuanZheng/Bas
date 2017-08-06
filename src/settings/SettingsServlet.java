@@ -20,7 +20,6 @@ import org.apache.logging.log4j.ThreadContext;
 
 import database.DatabaseAccess;
 import login.HashPass;
-import login.LoginModel;
 
 @WebServlet("/Settings")
 public class SettingsServlet extends HttpServlet {
@@ -28,6 +27,7 @@ public class SettingsServlet extends HttpServlet {
 	private static final Logger logger = LogManager.getLogger(SettingsServlet.class.getName());
 	private String username = "{Placeholder}";
 	String oldEmail = "oldEmail@gmail.com";
+	String storedSalt = null;
 	String oldPassword = "oldPassword";
 	String location = null;
 
@@ -189,6 +189,8 @@ public class SettingsServlet extends HttpServlet {
 		String newPass = request.getParameter("newPass");
 		String confirmNewPass = request.getParameter("confirmNewPass");
 		String updateBtn = request.getParameter("updateBtn");
+		HashPass HP = new HashPass();
+		
 		
 		HttpSession session = request.getSession(false);
 		if (session != null) {
@@ -200,19 +202,32 @@ public class SettingsServlet extends HttpServlet {
 			System.out.println("Session not created - redirect to login");
 		}
 		try {
-			DatabaseAccess dBA = new DatabaseAccess(1);
-			String sqlLine = "SELECT User.Password FROM User INNER JOIN Login ON User.UserID = Login.UserID WHERE Login.Username = \"" + username + "\";";
-			ResultSet rs = dBA.getDatabaseData(sqlLine);
-			rs.next();
-			oldPassword = rs.getString("Password");
-			rs.close();
-			dBA.close();
+			DatabaseAccess dBA1 = new DatabaseAccess(1);
+			DatabaseAccess dBA2 = new DatabaseAccess(1);
+			String sqlLine1 = "SELECT Login.Salt FROM Login WHERE Login.Username = \"" + username + "\";";
+			String sqlLine2 = "SELECT Login.Password FROM Login WHERE Login.Username = \"" + username + "\";";
+			
+			ResultSet rs1 = dBA1.getDatabaseData(sqlLine1);
+			ResultSet rs2 = dBA2.getDatabaseData(sqlLine2);
+			rs1.next();
+			rs2.next();
+			storedSalt = rs1.getString("Salt");
+			oldPassword = rs2.getString("Password");
+			dBA2.close();
+			dBA1.close();
+			
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		
+		byte [] oldSalt = HP.getDecodedSalt(storedSalt);
+		String inputHashedPassword = HP.getHashedPassword(oldPass, oldSalt);
+		
 		System.out.println("doPost - " + oldPassword);
+		System.out.println("doPost - " + storedSalt);
+		
 		/*
 		if (updateBtn == null) {
 			System.out.println("No button clicked");
@@ -343,10 +358,8 @@ public class SettingsServlet extends HttpServlet {
 				//Update new email to database
 				try {
 					DatabaseAccess dBA = new DatabaseAccess(1);
-					String sqlLine = "UPDATE Login SET User.email = \"" + inputEmail + "\" WHERE userID = (SELECT UserId FROM User WHERE Login.Username = \"" + username + "\");";
-					ResultSet rs = dBA.getDatabaseData(sqlLine);
-					rs.next();
-					rs.close();
+					String sqlLine = "UPDATE User SET User.email = \"" + inputEmail + "\" WHERE userID = (SELECT UserId FROM Login WHERE Login.Username = \"" + username + "\");";
+					dBA.updateDatabaseData(sqlLine);
 					dBA.close();
 				} catch (ClassNotFoundException e) {
 					e.printStackTrace();
@@ -863,7 +876,7 @@ public class SettingsServlet extends HttpServlet {
 						+ 	"</body>"
 						+ "</html>");
 			}
-			else if (!oldPass.equals(oldPassword)) {
+			else if (!inputHashedPassword.equals(oldPassword)) {
 				System.out.println("Wrong old password");
 				PrintWriter out = response.getWriter();
 				out.println("<!DOCTYPE html>"
@@ -1226,24 +1239,21 @@ public class SettingsServlet extends HttpServlet {
 						+ 	"</body>"
 						+ "</html>");
 			}
-			else if (oldPass.equals(oldPassword) && !oldPass.equals(newPass) && newPass.equals(confirmNewPass)) {
+			else if (inputHashedPassword.equals(oldPassword) && !oldPass.equals(newPass) && newPass.equals(confirmNewPass)) {
 				System.out.println("Can change password successfully");
 				Base64.Encoder enc = Base64.getEncoder();
-				HashPass HP = new HashPass();
 				byte [] newSalt = HP.createSalt();
 				String newSaltStr = enc.encodeToString(newSalt);
 				String newHashedPassword = HP.getHashedPassword(confirmNewPass, newSalt);
 				//Update the newly generated salt and hashed password to database given the username
 				try {
 					DatabaseAccess dBA = new DatabaseAccess(1);
-					String sqlLine1 = "UPDATE Login SET Login.salt = \"" + newSaltStr + "\" WHERE userID = (SELECT UserId FROM User WHERE Login.username = \"" + username + "\");";
-					String sqlLine2 = "UPDATE Login SET Login.password = \"" + newHashedPassword + "\" WHERE userID = (SELECT UserId FROM User WHERE Login.username = \"" + username + "\");";
-					ResultSet rs1 = dBA.getDatabaseData(sqlLine1);
-					rs1.next();
-					ResultSet rs2 = dBA.getDatabaseData(sqlLine2);
-					rs2.next();
-					rs2.close();
-					rs1.close();
+					String sqlLine1 = "UPDATE Login SET Login.salt = \"" + newSaltStr + "\" WHERE  Login.Username = \"" + username  + "\";";
+					String sqlLine2 = "UPDATE Login SET Login.password = \"" + newHashedPassword + "\" WHERE  Login.Username = \"" + username  + "\";";
+					System.out.println(sqlLine1);
+					System.out.println(sqlLine2);
+					dBA.updateDatabaseData(sqlLine1);
+					dBA.updateDatabaseData(sqlLine2);
 					dBA.close();
 				} catch (ClassNotFoundException e) {
 					e.printStackTrace();
@@ -1273,7 +1283,7 @@ public class SettingsServlet extends HttpServlet {
 						+ 		"<script src='script/Settings.js'></script>"
 						+ 		"<title>Settings</title>"
 						+		"<style>"
-						+ 			"#snackbar { min-width: 250px; margin-left: -190px; background-color: #333; color: #FFF; text-align: center; border-radius: 2px; padding: 16px; position: fixed; z-index: 1; left: 50%; bottom: 30px; font-size: 17px; }>"
+						+ 			"#snackbar { min-width: 250px; margin-left: -140px; background-color: #333; color: #FFF; text-align: center; border-radius: 2px; padding: 16px; position: fixed; z-index: 1; left: 50%; bottom: 30px; font-size: 17px; }>"
 						+ 		"</style>"
 						+ 	"</head>"
 						+ 	"<body>"

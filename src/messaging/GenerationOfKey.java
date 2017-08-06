@@ -1,8 +1,5 @@
 package messaging;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.security.InvalidKeyException;
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
@@ -13,7 +10,6 @@ import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.security.Signature;
 import java.security.SignatureException;
-import java.util.Base64;
 
 import javax.crypto.Cipher;
 
