@@ -54,16 +54,8 @@ public class testttt extends HttpServlet {
 			System.out.println(f.getFileName());
 			System.out.println(f.getShareType());
 			System.out.println(f.getRecipient());
+			System.out.println(f.getUser().getName());
 		}
-		for(UserAll gg:alluser1){
-			if(gg.getUser().getUserID() == 13){
-				haha = gg.getUser().getArrayFolder();
-			}
-		}
-		for(String q:haha){
-			System.out.println(q);
-		}
-		
 		
 		out.println("hello");
 	}

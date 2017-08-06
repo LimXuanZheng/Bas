@@ -22,6 +22,7 @@ import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.ThreadContext;
 
 import database.DatabaseAccess;
+import database.model.UserAll;
 import fileUpload.CryptoException;
 import teacherSharing.decryption;
 import teacherSharing.teacherUpload;
@@ -69,6 +70,22 @@ public class studentDownload extends HttpServlet {
 		
 		PrintWriter out = response.getWriter();
 		
+		String myname = "";
+		try {
+			DatabaseAccess dbms = new DatabaseAccess(1);
+			ArrayList<UserAll> fa = dbms.getDatabaseUserAll();
+			for(UserAll qq:fa){
+				if(qq.getUser().getUserID() == teemo1){
+					myname = qq.getUser().getName();
+				}
+			}
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}	
+		
+		
 		String key1 = "nhibgu";
 		try {
 			DatabaseAccess dbms = new DatabaseAccess(1);
@@ -114,11 +131,8 @@ public class studentDownload extends HttpServlet {
 						+ 		"<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css' integrity='sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp' crossorigin='anonymous'>"
 						+		"<link rel='stylesheet' href='css/studentDownload.css'>"
 						+		"<title>Student Download</title>"
+						+		"<script src='script/studentdownload.js'></script>"
 						+		"<script>function goHome() {window.location('Home');}"
-						+		"function dosth(fgfg){"
-						+			"document.getElementById('pls').value = fgfg;"
-						+			"document.getElementById('downloadfile1').submit();"
-						+			"}"
 						+		"</script>"
 						+ 	"</head>"
 						+ 	"<body>"
@@ -147,19 +161,19 @@ public class studentDownload extends HttpServlet {
 						+			"<form id='downloadfile1' action='studentdownload' method='post'>");
 		for(database.model.File f: fileArray){
 			for(String hai : f.convertRecipient()){
-				if(hai.equals(teemo)){
+				if(hai.equals(teemo)|| hai.equals(myname)){
 					out.println(
 											"<div class='whole'>"
 							+				"<p style='font-size:60px; background-color:#FFA07A;'>Exam Papers</p>"
 							+				"<p>Attached files : <button onclick='dosth(" + f.getFileID() + ")'><img src='images/attached.png' height='2%' width='2%'>" + f.getFileName() + "</button></p>"	
-							+				"<input type='hidden' name='index' id='pls'></input>"
 							+			"</div>"
 							);
 				}
 				}
 		}
 		
-		out.println(		"</form>"		
+		out.println(		"<input type='hidden' name='index' id='pls'></input>"	
+				+"</form>"		
 						+		"</div>"
 						+	"</body>"
 						+"</html>");
