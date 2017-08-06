@@ -42,29 +42,13 @@ public class Home extends HttpServlet {
 	private static final Logger logger = LogManager.getLogger(Home.class.getName());
 	private static String username = "Bob";
 	public static String userID = null;
-	public String toUser1 = "13";
+	public String toUser = null;
 	public String whetherToShowTheUserOrNot1 = null;
 	public String userClicked1 = null;
 	private String location = null;
 	
     public Home() {
         super();
-    }
-
-    public void init() throws ServletException{
-    	final String user;
-    	user = "Student";
-    	
-    	if(user.equals("Student")){
-    		boxes.add("Assignment Submission");
-    		boxes.add("Student Materials");
-    	}
-    	else if(user.equals("Teacher")){
-    		boxes.add("Attendance");
-    		boxes.add("Post Announcement");
-    	}else{
-    		System.out.println("Not student nor teacher? Error");
-    	}
     }
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -78,7 +62,9 @@ public class Home extends HttpServlet {
 			if (session != null) {
 				username = (String)session.getAttribute("username");
 				userID = (String)session.getAttribute("userID");
-				toUser1 = (String)session.getAttribute("toUser");
+				toUser = (String)session.getAttribute("toUser");
+				if(toUser == null)
+					toUser = "13";
 				whetherToShowTheUserOrNot1 = (String)session.getAttribute("whetherToShowTheUserOrNot");
 				userClicked1 = (String)session.getAttribute("userClicked");
 				location = (String)session.getAttribute("location");
@@ -87,6 +73,17 @@ public class Home extends HttpServlet {
 				response.sendRedirect("Login");
 				System.out.println("Session not created - redirect to login");
 			}
+			
+			if(Integer.parseInt(userID) <= 10){
+	    		boxes.add("Assignment Submission");
+	    		boxes.add("Student Materials");
+	    	}
+	    	else if(Integer.parseInt(userID) > 10){
+	    		boxes.add("Attendance");
+	    		boxes.add("Post Announcement");
+	    	}else{
+	    		System.out.println("Not student nor teacher? Error");
+	    	}
 			
 			ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
 			ThreadContext.put("Username", username);
@@ -232,6 +229,8 @@ public class Home extends HttpServlet {
 			try {
 				DatabaseAccess dba = new DatabaseAccess(1);
 				userArray = dba.getDatabaseUser();
+				if(userArray.isEmpty())
+					System.out.println("hello: empty");
 			} catch (ClassNotFoundException e) {
 				e.printStackTrace();
 			} catch (SQLException e) {
@@ -239,7 +238,8 @@ public class Home extends HttpServlet {
 			}
 			 
 			for(User u:userArray){
-				if(u.getUserID() > 10 && u.getUserID() != Integer.parseInt(userID)){
+				
+				if(u.getUserID() > 10 && (u.getUserID() != Integer.parseInt(userID))){
 					out.println(
 							"<div class='usersOfChat' onclick='changeUser(this)'>"
 					+ 			"<span class='glyphicon glyphicon-user'></span>"
@@ -271,6 +271,7 @@ public class Home extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String toUser = request.getParameter("hiddenInput");
 		HttpSession session = request.getSession();
+		session.removeAttribute("toUser");
 		session.setAttribute("toUser", toUser);
 		String userClicked = request.getParameter("hiddenInputName");
 		session.setAttribute("userClicked", userClicked);

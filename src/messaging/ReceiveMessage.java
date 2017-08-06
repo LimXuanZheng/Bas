@@ -52,6 +52,8 @@ public class ReceiveMessage extends HttpServlet {
 		if (session != null) {
 			userID = (String) session.getAttribute("userID");
 			userTo = (String) session.getAttribute("toUser");
+			if(userTo == null)
+				userTo = "13";
 			privateKey = (PrivateKey) session.getAttribute("privateKey");
 		}
 		else {
