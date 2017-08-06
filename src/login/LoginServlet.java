@@ -508,7 +508,7 @@ public class LoginServlet extends HttpServlet {
 									+ 		"<meta charset='UTF-8'>"
 									+ 		"<link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>"
 									+ 		"<link rel='stylesheet' href='css/Login.css'>"
-									+ 		"<script src='script/Login.js'></script>"
+									+ 		"<script src='script/LoginScript.js'></script>"
 									+ 		"<title>Login</title>"
 									+ 	"</head>"
 									+ 	"<body onload='getLocation()'>"
