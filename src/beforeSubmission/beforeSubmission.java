@@ -18,6 +18,11 @@ import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.ThreadContext;
 
 import database.DatabaseAccess;
+<<<<<<< HEAD
+=======
+import database.model.UserAll;
+import studentDownload.studentDownload;
+>>>>>>> origin/master
 
 /**
  * Servlet implementation class beforeSubmission
@@ -58,6 +63,22 @@ public class beforeSubmission extends HttpServlet {
 		ThreadContext.clearAll();
 		
 		PrintWriter out = response.getWriter();
+		
+		String myname = "";
+		try {
+			DatabaseAccess dbms = new DatabaseAccess(1);
+			ArrayList<UserAll> fa = dbms.getDatabaseUserAll();
+			for(UserAll qq:fa){
+				if(qq.getUser().getUserID() == teemo1){
+					myname = qq.getUser().getName();
+				}
+			}
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}	
+		
 
 		ArrayList<database.model.File> fileArray = new ArrayList<database.model.File>();
 		try {
@@ -118,10 +139,11 @@ public class beforeSubmission extends HttpServlet {
 
 		for(database.model.File f: fileArray){
 			for(String hai : f.convertRecipient()){
-				if(hai.equals(teemo)){
+				if(hai.equals(teemo) || hai.equals(myname)){
 					out.println("<div class='centralized'>"
-							+ "<p class='title' onclick=\"location.href='html/StudentUpload.html'\" style='cursor:pointer;'><img src='images/checklist.gif'>" + f.getFileName() + "</p></a>"
-							+	"<p class='comments'>Submit your work here, home?</p>"
+							+ "<p class='title' onclick=\"location.href='html/StudentUpload.html'\" style='cursor:pointer;'><img src='images/checklist.gif'>" + f.getFileName() + "Assignment" + "</p></a>"
+							+	"<p class='comments'>Submit your work here</p>"
+							+	"<p class='comments'>Finish your work before the due date</p>"
 							+	"</div>"
 							);
 
