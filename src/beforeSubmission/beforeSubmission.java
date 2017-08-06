@@ -19,6 +19,10 @@ import org.apache.logging.log4j.ThreadContext;
 
 import database.DatabaseAccess;
 import database.model.UserAll;
+<<<<<<< HEAD
+=======
+import studentDownload.studentDownload;
+>>>>>>> origin/master
 
 /**
  * Servlet implementation class beforeSubmission
@@ -137,7 +141,7 @@ public class beforeSubmission extends HttpServlet {
 			for(String hai : f.convertRecipient()){
 				if(hai.equals(teemo) || hai.equals(myname)){
 					out.println("<div class='centralized'>"
-							+ "<p class='title' onclick=\"location.href='html/StudentUpload.html'\" style='cursor:pointer;'><img src='images/checklist.gif'>" + f.getFileName() + "Assignment" + "</p></a>"
+							+ "<p class='title' onclick=\"location.href='html/StudentUpload.html'\" style='cursor:pointer;'><img src='images/checklist.gif'>" + f.getFileName() + "  Submission" + "</p></a>"
 							+	"<p class='comments'>Submit your work here</p>"
 							+	"<p class='comments'>Finish your work before the due date</p>"
 							+	"</div>"
