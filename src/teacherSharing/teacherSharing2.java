@@ -35,12 +35,9 @@ public class teacherSharing2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final Logger logger = LogManager.getLogger(teacherSharing2.class.getName());
 	private String username = "Bob";
-<<<<<<< HEAD
 	private String location = null;
-=======
 	private String teemo = null;
 	int teemo1 = 0;
->>>>>>> origin/master
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -54,12 +51,9 @@ public class teacherSharing2 extends HttpServlet {
     	HttpSession session = request.getSession(false);
 		if (session != null) {
 			username = (String)session.getAttribute("username");
-<<<<<<< HEAD
 			location = (String)session.getAttribute("location");
-=======
 			teemo = (String)session.getAttribute("userID");
 			teemo1 = Integer.parseInt(teemo);
->>>>>>> origin/master
 		}
 		else {
 			//response.sendRedirect("Login");

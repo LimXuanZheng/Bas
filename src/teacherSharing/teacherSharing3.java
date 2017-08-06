@@ -38,40 +38,37 @@ public class teacherSharing3 extends HttpServlet {
 	private String teemo = null;
 	private String location = null;
 	int teemo1 = 0;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public teacherSharing3() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	HttpSession session = request.getSession(false);
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public teacherSharing3() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession(false);
 		if (session != null) {
 			username = (String)session.getAttribute("username");
-<<<<<<< HEAD
 			location = (String)session.getAttribute("location");
-=======
 			teemo = (String)session.getAttribute("userID");
 			teemo1 = Integer.parseInt(teemo);
->>>>>>> origin/master
 		}
 		else {
 			//response.sendRedirect("Login");
 			System.out.println("Session not created - redirect to login");
 		}
-		
+
 		ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
 		ThreadContext.put("Username", username);
 		ThreadContext.put("Location", location);
 		logger.debug("entered Teacher Sharing 3 page");
 		ThreadContext.clearAll();
-		
+
 		PrintWriter out = response.getWriter();
 		ArrayList<String> folder = new ArrayList<String>();
-		
+
 		String myname = "";
 		try {
 			DatabaseAccess dbms = new DatabaseAccess(1);
@@ -86,7 +83,7 @@ public class teacherSharing3 extends HttpServlet {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}	
-		
+
 
 		String key1 = "nhibgu";
 		try {
@@ -147,8 +144,8 @@ public class teacherSharing3 extends HttpServlet {
 				System.out.println(filename1);
 				System.out.println(filesize1);
 				System.out.println(date1);
-				
-				
+
+
 				/*
 				File tempFile = File.createTempFile(filename1, ".tmp", null);
 				FileOutputStream fos = new FileOutputStream(tempFile);
@@ -164,7 +161,7 @@ public class teacherSharing3 extends HttpServlet {
 				}
 
 
-				
+
 
 				FileInputStream hh = new FileInputStream(decryptedFile);
 				OutputStream h = response.getOutputStream();
@@ -288,20 +285,20 @@ public class teacherSharing3 extends HttpServlet {
 						+					"<button class='button' id='newbutton' onclick='createNew()'>New</button>"
 						+					"<a href='teachersharing'><button class='button' id='mybutton'>My Drive</button></a>"//onclick='displayallmy()'
 						+					"<a href='teacherSharing2'><button class='button' id='lastOne'>Shared With Me</button></a>");
-						
-		
-		
+
+
+
 		for(String sss:folder){
 			out.println("<button class='button' onclick='refreshpage()'>"
 					+	sss 
 					+	"</button>");
 		}
-		
-		
-		
-				out.println(
-						
-										"</div>"
+
+
+
+		out.println(
+
+				"</div>"
 						+				"<div class='contents' id='storeTable'>"
 						+					"<table id='displaying'>"
 						+						"<tr>"
@@ -335,10 +332,10 @@ public class teacherSharing3 extends HttpServlet {
 				+	"<input type='hidden' name='index' id='pls'></input>"
 				+	"</form>"
 				);
-				
+
 		out.println(	
 				"</body>"
-				+"</html>"
+						+"</html>"
 				);
 	}
 
@@ -383,13 +380,13 @@ public class teacherSharing3 extends HttpServlet {
 					}
 					/*FileInputStream hh = new FileInputStream(decryptedFile);
 			        OutputStream h = response.getOutputStream();
-			       
+
 			        byte[] test = new byte[4096];
 			        int bytesRead = -1;
 			        while ((bytesRead = hh.read(test)) != -1) {
 			                           h.write(test, 0, bytesRead);
 			                       }
-			                       */
+					 */
 					response.setContentType("text/html");
 					PrintWriter out = response.getWriter();  
 					response.setContentType("APPLICATION/OCTET-STREAM");
@@ -397,17 +394,17 @@ public class teacherSharing3 extends HttpServlet {
 					FileInputStream stream = new FileInputStream(decryptedFile);
 					int i;   
 					while ((i=stream.read()) != -1) {  
-					out.write(i);   
+						out.write(i);   
 					}   
 					stream.close();   
 					out.close();
-					
+
 					ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
 					ThreadContext.put("Username", username);
 					ThreadContext.put("Location", location);
 					logger.debug("downloaded a file");
 					ThreadContext.clearAll();
-					
+
 					//byte[] bytesArray = new byte[(int) decryptedFile.length()];
 					//response.getOutputStream().write(bytesArray);
 				}
