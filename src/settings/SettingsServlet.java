@@ -65,7 +65,6 @@ public class SettingsServlet extends HttpServlet {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		System.out.println("doGet - " + oldEmail);
 		
 		PrintWriter out = response.getWriter();
 		out.println("<!DOCTYPE html>"
@@ -95,7 +94,7 @@ public class SettingsServlet extends HttpServlet {
 				+ 							"</div>"
 				+ 							"<div class='collapse navbar-collapse'>"
 				+ 								"<ul class='nav navbar-nav'>"
-				+ 									"<li class='active'><a href='#'>Home</a></li>"
+				+ 									"<li class='active'><a href='Home'>Home</a></li>"
 				+ 									"<li><a href='Directory'>Directory</a></li>"
 				+ 								"</ul>"
 				+ 								"<ul class='nav navbar-nav navbar-right'>"
@@ -103,7 +102,7 @@ public class SettingsServlet extends HttpServlet {
 				+ 										"<a class='dropdown-toggle' data-toggle='dropdown' href='#'>Welcome, Bob. </a>"
 				+ 										"<ul class='dropdown-menu'>"
 				+ 											"<li><a href='#'>Setting</a></li>"
-				+ 											"<li><a href='html/Login.html'>Logout</a></li>"
+				+ 											"<li><a href='Login'>Logout</a></li>"
 				+ 										"</ul>"
 				+ 									"</li>"
 				+ 								"</ul>"
@@ -251,7 +250,7 @@ public class SettingsServlet extends HttpServlet {
 						+ 							"</div>"
 						+ 							"<div class='collapse navbar-collapse'>"
 						+ 								"<ul class='nav navbar-nav'>"
-						+ 									"<li class='active'><a href='#'>Home</a></li>"
+						+ 									"<li class='active'><a href='Home'>Home</a></li>"
 						+ 									"<li><a href='Directory'>Directory</a></li>"
 						+ 								"</ul>"
 						+ 								"<ul class='nav navbar-nav navbar-right'>"
@@ -259,7 +258,7 @@ public class SettingsServlet extends HttpServlet {
 						+ 										"<a class='dropdown-toggle' data-toggle='dropdown' href='#'>Welcome, Bob. </a>"
 						+ 										"<ul class='dropdown-menu'>"
 						+ 											"<li><a href='#'>Setting</a></li>"
-						+ 											"<li><a href='html/Login.html'>Logout</a></li>"
+						+ 											"<li><a href='Login'>Logout</a></li>"
 						+ 										"</ul>"
 						+ 									"</li>"
 						+ 								"</ul>"
@@ -344,7 +343,8 @@ public class SettingsServlet extends HttpServlet {
 				//Update new email to database
 				try {
 					DatabaseAccess dBA = new DatabaseAccess(1);
-					String sqlLine = "UPDATE User INNER JOIN Login ON User.UserID = Login.UserID SET User.email = \"" + inputEmail + "\" WHERE Login.Username = \"" + username + "\";";
+					String sqlLine = "UPDATE Login SET User.email = \"" + inputEmail + "\" WHERE userID = (SELECT UserId FROM User WHERE Login.Username = \"" + username + "\");";
+					//String sqlLine = "UPDATE User INNER JOIN Login ON User.UserID = Login.UserID SET User.email = \"" + inputEmail + "\" WHERE Login.Username = \"" + username + "\";";
 					ResultSet rs = dBA.getDatabaseData(sqlLine);
 					rs.next();
 					rs.close();
@@ -392,7 +392,7 @@ public class SettingsServlet extends HttpServlet {
 						+ 							"</div>"
 						+ 							"<div class='collapse navbar-collapse'>"
 						+ 								"<ul class='nav navbar-nav'>"
-						+ 									"<li class='active'><a href='#'>Home</a></li>"
+						+ 									"<li class='active'><a href='Home'>Home</a></li>"
 						+ 									"<li><a href='Directory'>Directory</a></li>"
 						+ 								"</ul>"
 						+ 								"<ul class='nav navbar-nav navbar-right'>"
@@ -400,7 +400,7 @@ public class SettingsServlet extends HttpServlet {
 						+ 										"<a class='dropdown-toggle' data-toggle='dropdown' href='#'>Welcome, Bob. </a>"
 						+ 										"<ul class='dropdown-menu'>"
 						+ 											"<li><a href='#'>Setting</a></li>"
-						+ 											"<li><a href='html/Login.html'>Logout</a></li>"
+						+ 											"<li><a href='Login'>Logout</a></li>"
 						+ 										"</ul>"
 						+ 									"</li>"
 						+ 								"</ul>"
@@ -524,7 +524,7 @@ public class SettingsServlet extends HttpServlet {
 						+ 							"</div>"
 						+ 							"<div class='collapse navbar-collapse'>"
 						+ 								"<ul class='nav navbar-nav'>"
-						+ 									"<li class='active'><a href='#'>Home</a></li>"
+						+ 									"<li class='active'><a href='Home'>Home</a></li>"
 						+ 									"<li><a href='Directory'>Directory</a></li>"
 						+ 								"</ul>"
 						+ 								"<ul class='nav navbar-nav navbar-right'>"
@@ -532,7 +532,7 @@ public class SettingsServlet extends HttpServlet {
 						+ 										"<a class='dropdown-toggle' data-toggle='dropdown' href='#'>Welcome, Bob. </a>"
 						+ 										"<ul class='dropdown-menu'>"
 						+ 											"<li><a href='#'>Setting</a></li>"
-						+ 											"<li><a href='html/Login.html'>Logout</a></li>"
+						+ 											"<li><a href='Login'>Logout</a></li>"
 						+ 										"</ul>"
 						+ 									"</li>"
 						+ 								"</ul>"
@@ -650,7 +650,7 @@ public class SettingsServlet extends HttpServlet {
 						+ 							"</div>"
 						+ 							"<div class='collapse navbar-collapse'>"
 						+ 								"<ul class='nav navbar-nav'>"
-						+ 									"<li class='active'><a href='#'>Home</a></li>"
+						+ 									"<li class='active'><a href='Home'>Home</a></li>"
 						+ 									"<li><a href='Directory'>Directory</a></li>"
 						+ 								"</ul>"
 						+ 								"<ul class='nav navbar-nav navbar-right'>"
@@ -658,7 +658,7 @@ public class SettingsServlet extends HttpServlet {
 						+ 										"<a class='dropdown-toggle' data-toggle='dropdown' href='#'>Welcome, Bob. </a>"
 						+ 										"<ul class='dropdown-menu'>"
 						+ 											"<li><a href='#'>Setting</a></li>"
-						+ 											"<li><a href='html/Login.html'>Logout</a></li>"
+						+ 											"<li><a href='Login'>Logout</a></li>"
 						+ 										"</ul>"
 						+ 									"</li>"
 						+ 								"</ul>"
@@ -897,7 +897,7 @@ public class SettingsServlet extends HttpServlet {
 						+ 							"</div>"
 						+ 							"<div class='collapse navbar-collapse'>"
 						+ 								"<ul class='nav navbar-nav'>"
-						+ 									"<li class='active'><a href='#'>Home</a></li>"
+						+ 									"<li class='active'><a href='Home'>Home</a></li>"
 						+ 									"<li><a href='Directory'>Directory</a></li>"
 						+ 								"</ul>"
 						+ 								"<ul class='nav navbar-nav navbar-right'>"
@@ -905,7 +905,7 @@ public class SettingsServlet extends HttpServlet {
 						+ 										"<a class='dropdown-toggle' data-toggle='dropdown' href='#'>Welcome, Bob. </a>"
 						+ 										"<ul class='dropdown-menu'>"
 						+ 											"<li><a href='#'>Setting</a></li>"
-						+ 											"<li><a href='html/Login.html'>Logout</a></li>"
+						+ 											"<li><a href='Login'>Logout</a></li>"
 						+ 										"</ul>"
 						+ 									"</li>"
 						+ 								"</ul>"
@@ -1018,7 +1018,7 @@ public class SettingsServlet extends HttpServlet {
 						+ 							"</div>"
 						+ 							"<div class='collapse navbar-collapse'>"
 						+ 								"<ul class='nav navbar-nav'>"
-						+ 									"<li class='active'><a href='#'>Home</a></li>"
+						+ 									"<li class='active'><a href='Home'>Home</a></li>"
 						+ 									"<li><a href='Directory'>Directory</a></li>"
 						+ 								"</ul>"
 						+ 								"<ul class='nav navbar-nav navbar-right'>"
@@ -1026,7 +1026,7 @@ public class SettingsServlet extends HttpServlet {
 						+ 										"<a class='dropdown-toggle' data-toggle='dropdown' href='#'>Welcome, Bob. </a>"
 						+ 										"<ul class='dropdown-menu'>"
 						+ 											"<li><a href='#'>Setting</a></li>"
-						+ 											"<li><a href='html/Login.html'>Logout</a></li>"
+						+ 											"<li><a href='Login'>Logout</a></li>"
 						+ 										"</ul>"
 						+ 									"</li>"
 						+ 								"</ul>"
@@ -1139,7 +1139,7 @@ public class SettingsServlet extends HttpServlet {
 						+ 							"</div>"
 						+ 							"<div class='collapse navbar-collapse'>"
 						+ 								"<ul class='nav navbar-nav'>"
-						+ 									"<li class='active'><a href='#'>Home</a></li>"
+						+ 									"<li class='active'><a href='Home'>Home</a></li>"
 						+ 									"<li><a href='Directory'>Directory</a></li>"
 						+ 								"</ul>"
 						+ 								"<ul class='nav navbar-nav navbar-right'>"
@@ -1147,7 +1147,7 @@ public class SettingsServlet extends HttpServlet {
 						+ 										"<a class='dropdown-toggle' data-toggle='dropdown' href='#'>Welcome, Bob. </a>"
 						+ 										"<ul class='dropdown-menu'>"
 						+ 											"<li><a href='#'>Setting</a></li>"
-						+ 											"<li><a href='html/Login.html'>Logout</a></li>"
+						+ 											"<li><a href='Login'>Logout</a></li>"
 						+ 										"</ul>"
 						+ 									"</li>"
 						+ 								"</ul>"
@@ -1237,8 +1237,11 @@ public class SettingsServlet extends HttpServlet {
 				//Update the newly generated salt and hashed password to database given the username
 				try {
 					DatabaseAccess dBA = new DatabaseAccess(1);
-					String sqlLine1 = "UPDATE Login SET salt = \"" + newSaltStr + "\" WHERE username = \"" + username + "\";";
-					String sqlLine2 = "UPDATE Login SET password = \"" + newHashedPassword + "\" WHERE username = \"" + username + "\";";
+					String sqlLine1 = "UPDATE Login SET Login.salt = \"" + newSaltStr + "\" WHERE userID = (SELECT UserId FROM User WHERE Login.username = \"" + username + "\");";
+					String sqlLine2 = "UPDATE Login SET Login.password = \"" + newHashedPassword + "\" WHERE userID = (SELECT UserId FROM User WHERE Login.username = \"" + username + "\");";
+					//String sqlLine = "UPDATE Login SET User.email = \"" + inputEmail + "\" WHERE userID = (SELECT UserId FROM User WHERE Login.Username = \"" + username + "\");";
+					//String sqlLine1 = "UPDATE Login SET salt = \"" + newSaltStr + "\" WHERE username = \"" + username + "\";";
+					//String sqlLine2 = "UPDATE Login SET password = \"" + newHashedPassword + "\" WHERE username = \"" + username + "\";";
 					ResultSet rs1 = dBA.getDatabaseData(sqlLine1);
 					rs1.next();
 					ResultSet rs2 = dBA.getDatabaseData(sqlLine2);
@@ -1289,7 +1292,7 @@ public class SettingsServlet extends HttpServlet {
 						+ 							"</div>"
 						+ 							"<div class='collapse navbar-collapse'>"
 						+ 								"<ul class='nav navbar-nav'>"
-						+ 									"<li class='active'><a href='#'>Home</a></li>"
+						+ 									"<li class='active'><a href='Home'>Home</a></li>"
 						+ 									"<li><a href='Directory'>Directory</a></li>"
 						+ 								"</ul>"
 						+ 								"<ul class='nav navbar-nav navbar-right'>"
@@ -1297,7 +1300,7 @@ public class SettingsServlet extends HttpServlet {
 						+ 										"<a class='dropdown-toggle' data-toggle='dropdown' href='#'>Welcome, Bob. </a>"
 						+ 										"<ul class='dropdown-menu'>"
 						+ 											"<li><a href='#'>Setting</a></li>"
-						+ 											"<li><a href='html/Login.html'>Logout</a></li>"
+						+ 											"<li><a href='Login'>Logout</a></li>"
 						+ 										"</ul>"
 						+ 									"</li>"
 						+ 								"</ul>"
