@@ -35,7 +35,6 @@ function asubmit(){
 		    text += col.innerHTML + ";";
 		   }  
 		}
-		alert(text);
 		document.getElementById("sp").value = text;
 		document.getElementById("d1").value = "1";
 	}
