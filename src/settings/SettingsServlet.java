@@ -344,7 +344,6 @@ public class SettingsServlet extends HttpServlet {
 				try {
 					DatabaseAccess dBA = new DatabaseAccess(1);
 					String sqlLine = "UPDATE Login SET User.email = \"" + inputEmail + "\" WHERE userID = (SELECT UserId FROM User WHERE Login.Username = \"" + username + "\");";
-					//String sqlLine = "UPDATE User INNER JOIN Login ON User.UserID = Login.UserID SET User.email = \"" + inputEmail + "\" WHERE Login.Username = \"" + username + "\";";
 					ResultSet rs = dBA.getDatabaseData(sqlLine);
 					rs.next();
 					rs.close();
@@ -1239,9 +1238,6 @@ public class SettingsServlet extends HttpServlet {
 					DatabaseAccess dBA = new DatabaseAccess(1);
 					String sqlLine1 = "UPDATE Login SET Login.salt = \"" + newSaltStr + "\" WHERE userID = (SELECT UserId FROM User WHERE Login.username = \"" + username + "\");";
 					String sqlLine2 = "UPDATE Login SET Login.password = \"" + newHashedPassword + "\" WHERE userID = (SELECT UserId FROM User WHERE Login.username = \"" + username + "\");";
-					//String sqlLine = "UPDATE Login SET User.email = \"" + inputEmail + "\" WHERE userID = (SELECT UserId FROM User WHERE Login.Username = \"" + username + "\");";
-					//String sqlLine1 = "UPDATE Login SET salt = \"" + newSaltStr + "\" WHERE username = \"" + username + "\";";
-					//String sqlLine2 = "UPDATE Login SET password = \"" + newHashedPassword + "\" WHERE username = \"" + username + "\";";
 					ResultSet rs1 = dBA.getDatabaseData(sqlLine1);
 					rs1.next();
 					ResultSet rs2 = dBA.getDatabaseData(sqlLine2);

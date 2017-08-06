@@ -212,9 +212,7 @@ public class LoginServlet extends HttpServlet {
 			try {
 				DatabaseAccess dBA = new DatabaseAccess(1);
 				String sqlLine1 = "UPDATE Login SET Login.salt = \"" + newSaltStr + "\" WHERE userID = (SELECT UserId FROM User WHERE User.email = \"" + receipientEmail + "\");";
-				//String sqlLine1 = "UPDATE Login INNER JOIN User ON Login.UserID = User.UserID SET Login.salt = \"" + newSaltStr + "\" WHERE User.email = \"" + receipientEmail + "\";";
 				String sqlLine2 = "UPDATE Login SET Login.password = \"" + resetHashedPassword + "\" WHERE userID = (SELECT UserId FROM User WHERE User.email = \"" + receipientEmail + "\");";
-				//String sqlLine2 = "UPDATE Login INNER JOIN User ON Login.UserID = User.UserID SET Login.password = \"" + resetHashedPassword + "\" WHERE User.email = \"" + receipientEmail + "\";";
 				ResultSet rs1 = dBA.getDatabaseData(sqlLine1);
 				rs1.next();
 				ResultSet rs2 = dBA.getDatabaseData(sqlLine2);
