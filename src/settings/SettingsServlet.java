@@ -366,7 +366,7 @@ public class SettingsServlet extends HttpServlet {
 				ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
 				ThreadContext.put("Username", username);
 				ThreadContext.put("Location", location);
-				logger.debug("Changed email successfully");
+				logger.debug("changed email successfully");
 				ThreadContext.clearAll();
 				
 				PrintWriter out = response.getWriter();

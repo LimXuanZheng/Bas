@@ -196,7 +196,7 @@ public class Directory extends HttpServlet{
 			DatabaseAccess dba = new DatabaseAccess(1);
 			//userAllArray = dba.getDatabaseUserAll();
 			
-			String sqlline = "SELECT User.UserID, Login.Username, Login.Password, Login.Salt, User.NRIC, User.Name, User.Gender, User.DOB, User.ContactNo, User.Email, User.Class, User.Address, User.Keys, Student.CCA, Teacher.TeacherID, Teacher.Department FROM User LEFT OUTER JOIN Login ON (User.UserID = Login.UserID) LEFT OUTER JOIN Student ON (User.UserID = Student.UserID) LEFT OUTER JOIN Teacher ON (User.UserID = Teacher.UserID) WHERE User.Name LIKE ?;"; //Testing Search Name (It's Working)
+			String sqlline = "SELECT User.UserID, Login.Username, Login.Password, Login.Salt, User.NRIC, User.Name, User.Gender, User.DOB, User.ContactNo, User.Email, User.Class, User.Address, User.Keys, User.folder, Student.CCA, Teacher.TeacherID, Teacher.Department FROM User LEFT OUTER JOIN Login ON (User.UserID = Login.UserID) LEFT OUTER JOIN Student ON (User.UserID = Student.UserID) LEFT OUTER JOIN Teacher ON (User.UserID = Teacher.UserID) WHERE User.Name LIKE ?;"; //Testing Search Name (It's Working)
 			//if(validateName(name)){ //If name is not letters, method is exited and (prompts error)
 				userAllArray = dba.convertResultSetToArrayList(dba.getSearchDatabaseData(sqlline, name));
 				

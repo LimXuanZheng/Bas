@@ -84,7 +84,7 @@ public class Home extends HttpServlet {
 			ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
 			ThreadContext.put("Username", username);
 			ThreadContext.put("Location", location);
-			logger.debug("entered Directory page");
+			logger.debug("entered Home page");
 			ThreadContext.clearAll();
 			
 		} catch (ClassNotFoundException e) {
