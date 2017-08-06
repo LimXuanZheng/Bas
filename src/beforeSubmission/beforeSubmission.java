@@ -138,7 +138,7 @@ public class beforeSubmission extends HttpServlet {
 			for(String hai : f.convertRecipient()){
 				if(hai.equals(teemo) || hai.equals(myname)){
 					out.println("<div class='centralized'>"
-							+ "<p class='title' onclick=\"location.href='html/StudentUpload.html'\" style='cursor:pointer;'><img src='images/checklist.gif'>" + f.getFileName() + "  Submission" + "</p></a>"
+							+ "<p class='title' onclick=\"location.href='html/StudentUpload.html'\" style='cursor:pointer;'><img src='images/checklist.gif'>" + removeE(f.getFileName()) + "  Submission" + "</p></a>"
 							+	"<p class='comments'>Submit your work here</p>"
 							+	"<p class='comments'>Finish your work before the due date</p>"
 							+	"</div>"
@@ -178,6 +178,10 @@ public class beforeSubmission extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+	}
+	
+	private String removeE(String fff){
+		return fff.replaceFirst("[.][^.]+$", "");
 	}
 
 }
