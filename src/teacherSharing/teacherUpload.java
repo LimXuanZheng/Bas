@@ -129,6 +129,7 @@ public class teacherUpload extends HttpServlet {
 				if(aa.getUserID() == teemo1){
 					String sqlline = "UPDATE User SET folder = \"" + gf + "\" WHERE UserID = " + teemo1;
 					dbms.updateDatabaseData(sqlline);
+					System.out.println(gf);
 				}
 			}
 			}
@@ -228,10 +229,10 @@ public class teacherUpload extends HttpServlet {
 
 			String sqlline = "INSERT INTO File(UserID, FileName, Size, Data, Recipient, Date, shareType) VALUES (?, ?, ?, ?, ?, ?, ?);";
 			if(allname.equals("solo")){
-				dba.updateDatabaseDataFileUpload(sqlline, 13, name, f.length(), in, teemo, sqlDate, uploadway1);
+				dba.updateDatabaseDataFileUpload(sqlline, teemo1, name, f.length(), in, teemo, sqlDate, uploadway1);
 			}
 			else{
-				dba.updateDatabaseDataFileUpload(sqlline, 13, name, f.length(), in, line, sqlDate, uploadway1);
+				dba.updateDatabaseDataFileUpload(sqlline, teemo1, name, f.length(), in, line, sqlDate, uploadway1);
 			}
 			
 			ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());

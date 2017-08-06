@@ -67,7 +67,23 @@ public class teacherSharing2 extends HttpServlet {
 		ThreadContext.clearAll();
 
 		PrintWriter out = response.getWriter();
+		
+		
+		
 		ArrayList<String> folder = new ArrayList<String>();
+		try {
+			DatabaseAccess dbms = new DatabaseAccess(1);
+			ArrayList<UserAll> fa = dbms.getDatabaseUserAll();
+			for(UserAll qw: fa){
+				if(qw.getUser().getUserID() == teemo1){
+					folder = qw.getUser().getArrayFolder();
+				}
+			}
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 
 		String myname = "";
 		try {
@@ -135,7 +151,6 @@ public class teacherSharing2 extends HttpServlet {
 			database.model.File file1 = fileArray.get(0);
 			String name1 = file1.getUser().getName();
 			System.out.println(name1);
-			folder = file1.getUser().getArrayFolder();
 			for(database.model.File s:fileArray){
 				filename1 = s.getFileName();
 				filesize1 = s.getFileSize();
@@ -289,9 +304,14 @@ public class teacherSharing2 extends HttpServlet {
 
 
 		for(String sss:folder){
+			if(sss.equals("nothing")){
+				System.out.println("nothing to print");
+			}
+			else{
 			out.println("<a href='teacherSharing3'><button class='button'>"
 					+	sss 
 					+	"</button></a>");
+			}
 		}
 
 
@@ -342,6 +362,7 @@ public class teacherSharing2 extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("fuckyourmother");
 		String key1 = "nhibgu";
 		try {
 			DatabaseAccess dbms = new DatabaseAccess(1);
@@ -359,18 +380,21 @@ public class teacherSharing2 extends HttpServlet {
 		}
 		//PrintWriter out = response.getWriter();
 		int sss = Integer.parseInt(request.getParameter("index"));
-		System.out.println(sss);
+		//System.out.println(sss);
+		System.out.println("hello111");
+		
 		
 		
 
 		ArrayList<database.model.File> fa = new ArrayList<database.model.File>();
-		String hj = "";
+		String hj = "blahblah";
 		try {
 			DatabaseAccess dbms = new DatabaseAccess(1);
 			fa = dbms.getDatabaseFile();
 			for(database.model.File c:fa){
 				if(c.getFileID() == sss){
 					hj = c.getUser().getKeys();
+					System.out.println(hj);
 				}
 			}
 			
@@ -380,15 +404,9 @@ public class teacherSharing2 extends HttpServlet {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}	
-
-
-
-
-
-
-
-
-
+		
+		System.out.println("hello");
+		
 
 
 

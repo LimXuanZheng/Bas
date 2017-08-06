@@ -24,12 +24,10 @@ function showHidden(){
 function asubmit(){
 	var dc = document.getElementById("datafilepath").value;
 	if(document.getElementById("checkifmy").checked){
-		alert("myone");
 		document.getElementById("sp").value = "solo";
 		document.getElementById("d1").value = "0";
 	}
 	else if(document.getElementById("checkifshare").checked){
-		alert("shareone");
 		var table = document.getElementById("smaller");
 		var text ="";
 		for (var i = 1, row; row = table.rows[i]; i++) {

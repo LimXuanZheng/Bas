@@ -201,6 +201,33 @@ public class studentDownload extends HttpServlet {
 		//PrintWriter out = response.getWriter();
 		int sss = Integer.parseInt(request.getParameter("index"));
 		System.out.println(sss);
+		
+		
+		ArrayList<database.model.File> fa = new ArrayList<database.model.File>();
+		String hj = "blahblah";
+		try {
+			DatabaseAccess dbms = new DatabaseAccess(1);
+			fa = dbms.getDatabaseFile();
+			for(database.model.File c:fa){
+				if(c.getFileID() == sss){
+					hj = c.getUser().getKeys();
+					System.out.println(hj);
+				}
+			}
+			
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}	
+		
+		System.out.println(hj);
+		
+		
+		
+		
+		
 		try{
 			DatabaseAccess dbms = new DatabaseAccess(1);
 			ArrayList<database.model.File> fileArray = dbms.getDatabaseFile();
@@ -212,7 +239,7 @@ public class studentDownload extends HttpServlet {
 					fos.write(d.getFileData());
 					File decryptedFile = new File("document.decrypted");
 					try {
-						decryption.decrypt(key1, tempFile, decryptedFile);
+						decryption.decrypt(hj, tempFile, decryptedFile);
 					} catch (CryptoException ex) {
 						System.out.println(ex.getMessage());
 						ex.printStackTrace();

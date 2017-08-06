@@ -67,25 +67,25 @@ public class HashPass {
 			Salt: KeUrvHon2Uv9Fe1YyjSemw==
 			Hash: +G8wQNcpieMEbgE5mbV+gfDLrEA/OSrfC/9HSkHJ1kVIeRKccpUzpn75bhb95o212gtQfSlXNtRp5qNlnmyYPQ==
 			
-		S3675418I://tham
+		S3675418I://Lee Kuan You
 			Salt: JCI2dQ2+3F6SgoaYyh4mPQ==
 			Hash: X69dECvIhJfWJ8iNSTR1NKiODFv4mVv/YkL819TRee46SulqAuF0oBH1Yxxaz5rnejYKJdmEPvfyRRKC5SkG6Q==
 			
 		Student:
 		
-		T0122332Y: Huan pan
+		T0122332Y: Huan Pan
 			Salt: Hrb9kWHSxFlJVy9tn2mVVg==
 			Hash: RLmqx//VSr8QfklsRWx4TO1QstI4JobVsLLGPgcK8emTsDUPIc7+oClVWv2uXTbqDNVDekd66fhpDIEZPSAHGg==
 			
-		T0132425F:luoyangzhu
+		T0132425F: Luoyang Zhu
 			Salt: yUkxlB8T/ocx09MscWYDkg==
 			Hash: veJUkvADVWNjIhgOXsK7kfqVotKTXgcWyL9qa5dR0dDe87JZ+7hrmNrD8ga6Ys5VEncG+IkZB1DzOKmDKZnJ1g==
 			
-		T0133643O://xinyicao
+		T0133643O: Xinyi Cao
 			Salt: CrQZi0S8Fk+SJH/DaUhrLQ==
 			Hash: sie6f9/oVy++XBOzQdRl6xZNYS9k6mt3J0g+Ql5lFug/Nf0+7Ccbg3SpHlqkl0/jD1vKJVOXXUaMrIjLwEbZ6w==
 			
-		T0137182J://danqian
+		T0137182J: Dan Qian
 			Salt: PBdAbngf71ZANjLMSjecZQ==
 			Hash: LDQWKVB0cwoJsuaxD3RpoXBa0TB4d4hzfwDySUhCJj1oSm405isrh4hvENSwYF9tSByvJ32+ck9SzoiV9dwIjQ==
 			
@@ -109,7 +109,7 @@ public class HashPass {
 			Salt: Tede5Z0bglf4S0+5OlRBPw==
 			Hash: geBCACNkep+KxTIXvIykJenHjjgFmmI79A/NFgBBSnHDxr2iG/oKd/ieBLtt1FV2j3TvY0XfBWZzPZ3pqldfcQ==
 			
-		T0199283U://jiantao
+		T0199283U: Jian Tao
 			Salt: 0Rri/iJrxsbKoGo+I8TU6Q==
 			Hash: x77gSCkuo35wC5wwcY8GY7U18+EKeKnBoEUsihJsjRTxXODRGZi/oMZUSAwjJ2R0sdv9g0G/kdFNz8LKAGfbbw==
 		*/

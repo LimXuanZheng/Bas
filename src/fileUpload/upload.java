@@ -212,7 +212,7 @@ public class upload extends HttpServlet {
         try {
                     DatabaseAccess dba = new DatabaseAccess(1);
                     String sqlline = "INSERT INTO File(UserID, FileName, Size, Data, Recipient, Date, shareType) VALUES (?, ?, ?, ?, ?, ?, ?);";
-                    dba.updateDatabaseDataFileUpload(sqlline, 13, name, f.length(), in, "13", sqlDate, 2);
+                    dba.updateDatabaseDataFileUpload(sqlline, teemo1, name, f.length(), in, "13", sqlDate, 2);
                     dba.close();
                     
                     ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());

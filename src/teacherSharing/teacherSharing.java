@@ -76,7 +76,29 @@ public class teacherSharing extends HttpServlet {
 		ThreadContext.clearAll();
 		
 		PrintWriter out = response.getWriter();
+		
+		
+		
+		
 		ArrayList<String> folder = new ArrayList<String>();
+		try {
+			DatabaseAccess dbms = new DatabaseAccess(1);
+			ArrayList<UserAll> fa = dbms.getDatabaseUserAll();
+			for(UserAll qw: fa){
+				if(qw.getUser().getUserID() == teemo1){
+					folder = qw.getUser().getArrayFolder();
+				}
+			}
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		
+		
+		
+		
 		
 		String myname = "";
 		try {
@@ -141,7 +163,6 @@ public class teacherSharing extends HttpServlet {
 			fileArray = dbms.getDatabaseFile();
 			database.model.File file1 = fileArray.get(0);
 			String name1 = file1.getUser().getName();
-			folder = file1.getUser().getArrayFolder();
 			System.out.println(name1);
 			for(database.model.File s:fileArray){
 				filename1 = s.getFileName();
@@ -293,9 +314,14 @@ public class teacherSharing extends HttpServlet {
 						+					"<button class='button' id='mybutton' onclick='refreshpage()'>My Drive</button>"//onclick='displayallmy()'
 						+					"<a href='teacherSharing2'><button class='button' id='lastOne'>Shared With Me</button></a>");
 		for(String sss:folder){
+			if(sss.equals("nothing")){
+				System.out.println("nothing to print");
+			}
+			else{
 			out.println("<a href='teacherSharing3'><button class='button'>"
 					+	sss 
 					+	"</button></a>");
+			}
 		}
 		
 						
@@ -363,6 +389,31 @@ public class teacherSharing extends HttpServlet {
 		//PrintWriter out = response.getWriter();
 		int sss = Integer.parseInt(request.getParameter("index"));
 		System.out.println(sss);
+		
+		
+		ArrayList<database.model.File> fa = new ArrayList<database.model.File>();
+		String hj = "";
+		try {
+			DatabaseAccess dbms = new DatabaseAccess(1);
+			fa = dbms.getDatabaseFile();
+			for(database.model.File c:fa){
+				if(c.getFileID() == sss){
+					hj = c.getUser().getKeys();
+				}
+			}
+			
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}	
+		
+		
+		
+		
+		
+		
 		try{
 			DatabaseAccess dbms = new DatabaseAccess(1);
 			ArrayList<database.model.File> fileArray = dbms.getDatabaseFile();
@@ -374,7 +425,7 @@ public class teacherSharing extends HttpServlet {
 					fos.write(d.getFileData());
 					File decryptedFile = new File("document.decrypted");
 					try {
-						decryption.decrypt(key1, tempFile, decryptedFile);
+						decryption.decrypt(hj, tempFile, decryptedFile);
 					} catch (CryptoException ex) {
 						System.out.println(ex.getMessage());
 						ex.printStackTrace();

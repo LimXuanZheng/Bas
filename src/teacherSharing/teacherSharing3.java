@@ -67,7 +67,24 @@ public class teacherSharing3 extends HttpServlet {
 		ThreadContext.clearAll();
 
 		PrintWriter out = response.getWriter();
+		
+		
+		
 		ArrayList<String> folder = new ArrayList<String>();
+		try {
+			DatabaseAccess dbms = new DatabaseAccess(1);
+			ArrayList<UserAll> fa = dbms.getDatabaseUserAll();
+			for(UserAll qw: fa){
+				if(qw.getUser().getUserID() == teemo1){
+					folder = qw.getUser().getArrayFolder();
+				}
+			}
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
 
 		String myname = "";
 		try {
@@ -135,7 +152,6 @@ public class teacherSharing3 extends HttpServlet {
 			database.model.File file1 = fileArray.get(0);
 			String name1 = file1.getUser().getName();
 			System.out.println(name1);
-			folder = file1.getUser().getArrayFolder();
 			for(database.model.File s:fileArray){
 				filename1 = s.getFileName();
 				filesize1 = s.getFileSize();
@@ -289,9 +305,14 @@ public class teacherSharing3 extends HttpServlet {
 
 
 		for(String sss:folder){
+			if(sss.equals("nothing")){
+				System.out.println("nothing to print");
+			}
+			else{
 			out.println("<button class='button' onclick='refreshpage()'>"
 					+	sss 
 					+	"</button>");
+			}
 		}
 
 
@@ -361,6 +382,30 @@ public class teacherSharing3 extends HttpServlet {
 		//PrintWriter out = response.getWriter();
 		int sss = Integer.parseInt(request.getParameter("index"));
 		System.out.println(sss);
+		
+		
+		ArrayList<database.model.File> fa = new ArrayList<database.model.File>();
+		String hj = "blahblah";
+		try {
+			DatabaseAccess dbms = new DatabaseAccess(1);
+			fa = dbms.getDatabaseFile();
+			for(database.model.File c:fa){
+				if(c.getFileID() == sss){
+					hj = c.getUser().getKeys();
+					System.out.println(hj);
+				}
+			}
+			
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}	
+		
+		
+		
+		
 		try{
 			DatabaseAccess dbms = new DatabaseAccess(1);
 			ArrayList<database.model.File> fileArray = dbms.getDatabaseFile();
@@ -372,7 +417,7 @@ public class teacherSharing3 extends HttpServlet {
 					fos.write(d.getFileData());
 					File decryptedFile = new File("document.decrypted");
 					try {
-						decryption.decrypt(key1, tempFile, decryptedFile);
+						decryption.decrypt(hj, tempFile, decryptedFile);
 					} catch (CryptoException ex) {
 						System.out.println(ex.getMessage());
 						ex.printStackTrace();
