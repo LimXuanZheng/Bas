@@ -18,11 +18,7 @@ import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.ThreadContext;
 
 import database.DatabaseAccess;
-<<<<<<< HEAD
-=======
 import database.model.UserAll;
-import studentDownload.studentDownload;
->>>>>>> origin/master
 
 /**
  * Servlet implementation class beforeSubmission

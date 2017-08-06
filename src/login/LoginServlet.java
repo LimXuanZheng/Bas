@@ -188,11 +188,6 @@ public class LoginServlet extends HttpServlet {
 		LoginModel LM = new LoginModel();
 		String location = latlongLocation;
 		
-		ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
-		ThreadContext.put("Username", username);
-		logger.debug("latlongLocation");
-		ThreadContext.clearAll();
-		
 		if (postBtn == null) {
 			System.out.println("Button not clicked");
 		}

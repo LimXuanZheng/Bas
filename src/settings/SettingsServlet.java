@@ -191,7 +191,6 @@ public class SettingsServlet extends HttpServlet {
 		String updateBtn = request.getParameter("updateBtn");
 		HashPass HP = new HashPass();
 		
-		
 		HttpSession session = request.getSession(false);
 		if (session != null) {
 			username = (String)session.getAttribute("username");
@@ -221,9 +220,6 @@ public class SettingsServlet extends HttpServlet {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
-		byte [] oldSalt = HP.getDecodedSalt(storedSalt);
-		String inputHashedPassword = HP.getHashedPassword(oldPass, oldSalt);
 		
 		System.out.println("doPost - " + oldPassword);
 		System.out.println("doPost - " + storedSalt);
@@ -498,6 +494,9 @@ public class SettingsServlet extends HttpServlet {
 		}
 		else if (updateBtn.equals("passBtn")) {
 			System.out.println("Password button clicked");
+			byte [] oldSalt = HP.getDecodedSalt(storedSalt);
+			String inputHashedPassword = HP.getHashedPassword(oldPass, oldSalt);
+			
 			if (oldPass.contains("<script>") && oldPass.contains("</script>")) {
 				ThreadContext.put("IP", (InetAddress.getLocalHost()).toString());
 				ThreadContext.put("Username", username);
